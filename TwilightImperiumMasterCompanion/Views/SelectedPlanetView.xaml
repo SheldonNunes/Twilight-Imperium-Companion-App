@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TwilightImperiumMasterCompanion.SelectedPlanetView">
+	<ContentPage.Content>
+		<StackLayout>
+			<StackLayout HorizontalOptions="StartAndExpand" Spacing="20">
+				<Label Text="{Binding PlanetName}" />
+				<Editor Text="{Binding Description}" />
+			</StackLayout>
+			<StackLayout Orientation="Horizontal">
+
+
+			<Image WidthRequest="50" HeightRequest="50" Source="ResourceButton.png"/>
+				<Label Text="{Binding Resource}" HorizontalOptions="Start" />
+				<Label Text="{Binding Influence}" HorizontalOptions="End"/>
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

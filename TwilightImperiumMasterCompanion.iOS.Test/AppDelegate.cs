@@ -7,7 +7,7 @@ using UIKit;
 
 using Xunit.Runner;
 using Xunit.Sdk;
-using TwilightImperiumMasterCompanionTests;
+using TwilightImperiumMasterCompanion.Test;
 
 
 namespace TwilightImperiumMasterCompanion.iOS.Test

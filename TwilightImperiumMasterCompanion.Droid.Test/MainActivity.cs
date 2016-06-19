@@ -9,7 +9,7 @@ using Android.OS;
 
 using Xunit.Sdk;
 using Xunit.Runners.UI;
-using TwilightImperiumMasterCompanionTests;
+using TwilightImperiumMasterCompanion.Test;
 
 namespace TwilightImperiumMasterCompanion.Droid.Test
 {

@@ -37,7 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1422" y="1405"/>
+            <point key="canvasLocation" x="1709" y="1412"/>
         </scene>
         <scene sceneID="44">
             <objects>
@@ -85,9 +85,35 @@
                             <view contentMode="center" id="166" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                 <rect key="frame" x="0.0" y="554" width="600" height="46"/>
                                 <color key="backgroundColor" customColorSpace="calibratedWhite" colorSpace="calibratedRGB" red="0.18823529411764706" green="0.22352941176470589" blue="0.30588235294117649" alpha="1"/>
-                                <subviews/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" lineBreakMode="middleTruncation" id="623" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                        <rect key="frame" x="20" y="7" width="30" height="32"/>
+                                        <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                        </state>
+                                        <constraints>
+                                            <constraint id="638" firstItem="623" firstAttribute="width" constant="30"/>
+                                        </constraints>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" id="624" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                        <rect key="frame" x="550" y="8" width="30" height="30"/>
+                                        <state key="normal" backgroundImage="Images/Icons/cog.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <constraints>
+                                            <constraint id="637" firstItem="624" firstAttribute="width" constant="30"/>
+                                            <constraint id="643" firstItem="624" firstAttribute="height" constant="30"/>
+                                        </constraints>
+                                    </button>
+                                </subviews>
                                 <constraints>
                                     <constraint id="407" firstItem="166" firstAttribute="height" constant="50"/>
+                                    <constraint id="625" firstItem="623" firstAttribute="leading" secondItem="166" secondAttribute="leading" constant="20"/>
+                                    <constraint id="626" firstItem="623" firstAttribute="centerY" secondItem="166" secondAttribute="centerY"/>
+                                    <constraint id="627" firstItem="624" firstAttribute="centerY" secondItem="166" secondAttribute="centerY"/>
+                                    <constraint id="628" firstItem="166" firstAttribute="trailing" secondItem="624" secondAttribute="trailing" constant="20"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" id="492" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
@@ -100,13 +126,15 @@
                                         <state key="normal" title="Join Game">
                                             <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="102" y="236" width="172" height="40"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="284" y="374" width="172" height="40"/>
                                         </variation>
-                                        <connections/>
+                                        <connections>
+                                            <segue id="1415" destination="1347" kind="show"/>
+                                        </connections>
                                         <constraints>
                                             <constraint id="599" firstAttribute="width" constant="172"/>
                                             <constraint id="600" firstAttribute="height" constant="40"/>
@@ -116,13 +144,15 @@
                                         <rect key="frame" x="34" y="76" width="172" height="40"/>
                                         <color key="backgroundColor" colorSpace="calibratedWhite" white="0.666666666666667" alpha="1"/>
                                         <state key="normal" title="Host Game"/>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="102" y="236" width="172" height="40"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="284" y="374" width="172" height="40"/>
                                         </variation>
-                                        <connections/>
+                                        <connections>
+                                            <segue id="789" destination="BYZ-38-t0r" kind="show"/>
+                                        </connections>
                                         <constraints>
                                             <constraint id="603" firstAttribute="width" constant="172"/>
                                             <constraint id="604" firstAttribute="height" constant="40"/>
@@ -131,10 +161,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="568" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                         <rect key="frame" x="34" y="124" width="172" height="40"/>
                                         <color key="backgroundColor" colorSpace="calibratedWhite" white="0.666666666666667" alpha="1"/>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="102" y="236" width="172" height="40"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="284" y="374" width="172" height="40"/>
                                         </variation>
                                         <connections/>
@@ -147,10 +177,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="569" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                         <rect key="frame" x="34" y="172" width="172" height="40"/>
                                         <color key="backgroundColor" colorSpace="calibratedWhite" white="0.666666666666667" alpha="1"/>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="102" y="236" width="172" height="40"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="284" y="374" width="172" height="40"/>
                                         </variation>
                                         <connections/>
@@ -199,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="47" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="735" y="1411"/>
+            <point key="canvasLocation" x="654" y="1063"/>
         </scene>
         <scene sceneID="170">
             <objects>
@@ -214,43 +244,43 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="175" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-51" y="1405"/>
+            <point key="canvasLocation" x="-57" y="1067"/>
         </scene>
-        <scene sceneID="488">
+        <scene sceneID="1346">
             <objects>
-                <viewController id="487" sceneMemberID="viewController">
+                <viewController id="1347" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="483"/>
-                        <viewControllerLayoutGuide type="bottom" id="484"/>
+                        <viewControllerLayoutGuide type="top" id="1344"/>
+                        <viewControllerLayoutGuide type="bottom" id="1345"/>
                     </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="489">
+                    <view key="view" contentMode="scaleToFill" id="1348" customClass="UIView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" id="1443" translatesAutoresizingMaskIntoConstraints="NO" clipsSubviews="YES">
+                                <rect key="frame" x="59" y="127" width="482" height="430"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="1444" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                        <rect key="frame" x="0.0" y="0.0" width="482" height="430"/>
+                                        <color key="backgroundColor" customColorSpace="calibratedWhite" colorSpace="calibratedRGB" red="0.6" green="0.4" blue="0.2" alpha="1"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
+                                <inset key="scrollIndicatorInsets" minX="0.5" minY="0.5" maxX="5" maxY="0.5"/>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint id="1445" firstItem="1443" firstAttribute="top" secondItem="1348" secondAttribute="top" constant="127"/>
+                            <constraint id="1446" firstItem="1443" firstAttribute="leading" secondItem="1348" secondAttribute="leading" constant="59"/>
+                            <constraint id="1447" firstItem="1348" firstAttribute="trailing" secondItem="1443" secondAttribute="trailing" constant="59"/>
+                            <constraint id="1448" firstItem="1348" firstAttribute="bottom" secondItem="1443" secondAttribute="bottom" constant="43"/>
+                        </constraints>
                     </view>
-                    <toolbarItems/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="490" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1349" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1385" y="100"/>
-        </scene>
-        <scene sceneID="502">
-            <objects>
-                <viewController id="501" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="497"/>
-                        <viewControllerLayoutGuide type="bottom" id="498"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="503">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="504" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1385" y="100"/>
+            <point key="canvasLocation" x="1494" y="634"/>
         </scene>
     </scenes>
     <resources>
@@ -264,5 +294,10 @@
         <image name="Images/Icons/question-mark.jpg" width="768" height="768"/>
         <image name="Images/Icons/gear.png" width="720" height="720"/>
         <image name="Images/Backgrounds/RedBackground.jpg" width="3508" height="4961"/>
+        <image name="Images/Icons/cog.png" width="2000" height="2000"/>
+        <image name="Fonts/BodoniFLF-Bold.ttf" width="0" height="0"/>
+        <image name="Fonts/BodoniFLF-BoldItalic.ttf" width="0" height="0"/>
+        <image name="Fonts/BodoniFLF-Italic.ttf" width="0" height="0"/>
+        <image name="Fonts/BodoniFLF-Roman.ttf" width="0" height="0"/>
     </resources>
 </document>

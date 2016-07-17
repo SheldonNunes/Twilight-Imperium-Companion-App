@@ -11,19 +11,11 @@ using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-    [Register ("JoinGameController")]
-    partial class JoinGameController
+    [Register ("PlanetTableViewController")]
+    partial class PlanetTableViewController
     {
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView ContentView { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
-            if (ContentView != null) {
-                ContentView.Dispose ();
-                ContentView = null;
-            }
         }
     }
 }

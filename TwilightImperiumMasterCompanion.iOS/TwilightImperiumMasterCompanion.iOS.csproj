@@ -113,6 +113,11 @@
     <Compile Include="JoinGameController.designer.cs">
       <DependentUpon>JoinGameController.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSources\PlanetDataSource.cs" />
+    <Compile Include="PlanetTableViewController.cs" />
+    <Compile Include="PlanetTableViewController.designer.cs">
+      <DependentUpon>PlanetTableViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -127,6 +132,7 @@
     <Folder Include="Resources\Images\Backgrounds\" />
     <Folder Include="Resources\Images\Icons\" />
     <Folder Include="Resources\Fonts\" />
+    <Folder Include="DataSources\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Images\Logo\twilight-imperium-logo.png" />

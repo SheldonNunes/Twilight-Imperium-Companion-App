@@ -33,9 +33,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Planet.cs" />
     <Compile Include="Model\Player.cs" />
+    <Compile Include="DataServices\PlanetDataService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Model\" />
+    <Folder Include="DataServices\" />
   </ItemGroup>
 </Project>

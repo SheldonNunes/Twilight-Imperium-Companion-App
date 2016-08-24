@@ -34,10 +34,20 @@
     <Compile Include="Model\Planet.cs" />
     <Compile Include="Model\Player.cs" />
     <Compile Include="DataServices\PlanetDataService.cs" />
+    <Compile Include="Resources\UIStrings.Designer.cs">
+      <DependentUpon>UIStrings.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="DataServices\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\UIStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

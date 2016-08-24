@@ -97,27 +97,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
-      <DependentUpon>ViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PlanetViewController.cs" />
-    <Compile Include="PlanetViewController.designer.cs">
-      <DependentUpon>PlanetViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainMenuController.cs" />
-    <Compile Include="MainMenuController.designer.cs">
-      <DependentUpon>MainMenuController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="JoinGameController.cs" />
-    <Compile Include="JoinGameController.designer.cs">
-      <DependentUpon>JoinGameController.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataSources\PlanetDataSource.cs" />
-    <Compile Include="PlanetTableViewController.cs" />
-    <Compile Include="PlanetTableViewController.designer.cs">
-      <DependentUpon>PlanetTableViewController.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

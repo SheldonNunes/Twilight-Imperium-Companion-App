@@ -71,7 +71,7 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <CodesignKey>iPhone Developer: sheldon.nunes02@gmail.com (F52W5Z57TS)</CodesignKey>
     <MtouchUseSGen>true</MtouchUseSGen>
-    <CodesignProvision>ab0012bc-2e01-45c4-97d1-586570213dbd</CodesignProvision>
+    <CodesignProvision>99caaa8a-5a21-4d40-9580-5969173f9b70</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -98,6 +98,19 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="DataSources\PlanetDataSource.cs" />
+    <Compile Include="StarScene.cs" />
+    <Compile Include="MainMenuViewController.cs" />
+    <Compile Include="MainMenuViewController.designer.cs">
+      <DependentUpon>MainMenuViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenuBackgroundViewController.cs" />
+    <Compile Include="MainMenuBackgroundViewController.designer.cs">
+      <DependentUpon>MainMenuBackgroundViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreditsViewController.cs" />
+    <Compile Include="CreditsViewController.designer.cs">
+      <DependentUpon>CreditsViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -113,6 +126,7 @@
     <Folder Include="Resources\Images\Icons\" />
     <Folder Include="Resources\Fonts\" />
     <Folder Include="DataSources\" />
+    <Folder Include="Particles\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Images\Logo\twilight-imperium-logo.png" />
@@ -134,5 +148,8 @@
     <BundleResource Include="Resources\Fonts\BodoniFLF-Roman.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
+    <BundleResource Include="Resources\Images\Backgrounds\IPhone_L_MainMenu.png" />
+    <BundleResource Include="Particles\starSprite.png" />
+    <BundleResource Include="Particles\StarParticles.sks" />
   </ItemGroup>
 </Project>

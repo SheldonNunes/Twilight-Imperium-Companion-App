@@ -71,7 +71,7 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <CodesignKey>iPhone Developer: sheldon.nunes02@gmail.com (F52W5Z57TS)</CodesignKey>
     <MtouchUseSGen>true</MtouchUseSGen>
-    <CodesignProvision>99caaa8a-5a21-4d40-9580-5969173f9b70</CodesignProvision>
+    <CodesignProvision>ff0f4a16-8e65-4f90-8720-206e6528bdbb</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -99,18 +99,28 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="DataSources\PlanetDataSource.cs" />
     <Compile Include="StarScene.cs" />
-    <Compile Include="MainMenuViewController.cs" />
-    <Compile Include="MainMenuViewController.designer.cs">
-      <DependentUpon>MainMenuViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainMenuBackgroundViewController.cs" />
-    <Compile Include="MainMenuBackgroundViewController.designer.cs">
-      <DependentUpon>MainMenuBackgroundViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CreditsViewController.cs" />
-    <Compile Include="CreditsViewController.designer.cs">
+    <Compile Include="Constants\ColorConstants.cs" />
+    <Compile Include="ViewControllers\CreditsViewController.cs" />
+    <Compile Include="ViewControllers\CreditsViewController.designer.cs">
       <DependentUpon>CreditsViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewControllers\MainMenuBackgroundViewController.cs" />
+    <Compile Include="ViewControllers\MainMenuBackgroundViewController.designer.cs">
+      <DependentUpon>MainMenuBackgroundViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MenuNavigationController.cs" />
+    <Compile Include="ViewControllers\MenuNavigationController.designer.cs">
+      <DependentUpon>MenuNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MainMenuViewController.cs" />
+    <Compile Include="ViewControllers\MainMenuViewController.designer.cs">
+      <DependentUpon>MainMenuViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\JoinGameViewController.cs" />
+    <Compile Include="ViewControllers\JoinGameViewController.designer.cs">
+      <DependentUpon>JoinGameViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\BaseViewController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -127,11 +137,12 @@
     <Folder Include="Resources\Fonts\" />
     <Folder Include="DataSources\" />
     <Folder Include="Particles\" />
+    <Folder Include="Constants\" />
+    <Folder Include="ViewControllers\" />
+    <Folder Include="Resources\Images\Controls\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Images\Logo\twilight-imperium-logo.png" />
-    <BundleResource Include="Resources\Images\Backgrounds\MainBackground%402x.jpg" />
-    <BundleResource Include="Resources\Images\Backgrounds\MainBackground.jpg" />
     <BundleResource Include="Resources\Images\Icons\question-mark.jpg" />
     <BundleResource Include="Resources\Images\Icons\gear.png" />
     <BundleResource Include="Resources\Images\Backgrounds\RedBackground.jpg" />
@@ -151,5 +162,10 @@
     <BundleResource Include="Resources\Images\Backgrounds\IPhone_L_MainMenu.png" />
     <BundleResource Include="Particles\starSprite.png" />
     <BundleResource Include="Particles\StarParticles.sks" />
+    <BundleResource Include="Resources\Images\Logo\app-logo.png" />
+    <BundleResource Include="Resources\Images\Backgrounds\RuleBookBackground.png" />
+    <BundleResource Include="Resources\Images\Controls\button_black_gold.PNG" />
+    <BundleResource Include="Resources\Images\Backgrounds\RuleBookBackgroundBlue.png" />
+    <BundleResource Include="Resources\Images\Backgrounds\nebulaBlue.png" />
   </ItemGroup>
 </Project>

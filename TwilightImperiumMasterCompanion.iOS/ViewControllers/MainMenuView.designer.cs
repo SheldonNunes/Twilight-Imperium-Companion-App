@@ -11,8 +11,8 @@ using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-    [Register ("MainMenuViewController")]
-    partial class MainMenuViewController
+    [Register ("MainMenuView")]
+    partial class MainMenuView
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]

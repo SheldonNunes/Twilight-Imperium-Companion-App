@@ -1,19 +1,20 @@
 using Foundation;
 using System;
 using UIKit;
+using MvvmCross.iOS.Views;
+using TwilightImperiumMasterCompanion.Core;
 using SpriteKit;
-using System.Drawing;
 using CoreAnimation;
 using CoreGraphics;
+using System.Drawing;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-    public partial class MainMenuViewController : UIViewController
+    public partial class MainMenuView : MvxViewController<MainViewModel>
     {
-        public MainMenuViewController (IntPtr handle) : base (handle)
+        public MainMenuView (IntPtr handle) : base (handle)
         {
         }
-
 
 		public override void LoadView()
 		{
@@ -48,6 +49,14 @@ namespace TwilightImperiumMasterCompanion.iOS
 
 			joinGameButton.ShowsTouchWhenHighlighted = false;
 			base.ViewDidLoad();
+
+			this.NavigationController.NavigationBar.ClipsToBounds = true;
+			this.NavigationController.NavigationBar.SetBackgroundImage(new UIImage(), UIBarMetrics.Default);
+			this.NavigationController.NavigationBar.ShadowImage = new UIImage();
+
+			UINavigationBar.Appearance.TintColor = ColorConstants.WHITE;
+			UINavigationBar.Appearance.SetTitleTextAttributes(
+				new UITextAttributes() { TextColor = ColorConstants.WHITE });
 		}
 
 		public override void ViewWillLayoutSubviews()

@@ -7,7 +7,7 @@
         <!--Main Menu View Controller-->
         <scene sceneID="4">
             <objects>
-                <viewController id="5" customClass="MainMenuViewController" sceneMemberID="viewController">
+                <viewController id="5" customClass="MainMenuView" sceneMemberID="viewController" storyboardIdentifier="MainMenuView">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2"/>
                         <viewControllerLayoutGuide type="bottom" id="3"/>
@@ -45,9 +45,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="1650" kind="show" id="2689"/>
-                                        </connections>
+                                        <connections/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2803" fixedFrame="YES">
                                         <rect key="frame" x="0.0" y="57.5" width="560" height="47.5"/>
@@ -152,7 +150,7 @@
         <!--Menu Navigation Controller-->
         <scene sceneID="1553">
             <objects>
-                <navigationController definesPresentationContext="YES" id="1554" customClass="MenuNavigationController" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="1554" customClass="MainView" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1557">
                         <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -168,7 +166,7 @@
         <!--Join Game-->
         <scene sceneID="1649">
             <objects>
-                <viewController title="Join Game" id="1650" customClass="JoinGameViewController" sceneMemberID="viewController">
+                <viewController title="Join Game" id="1650" customClass="JoinGameView" sceneMemberID="viewController" storyboardIdentifier="JoinGameView">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1647"/>
                         <viewControllerLayoutGuide type="bottom" id="1648"/>
@@ -177,13 +175,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="redraw" image="Images/Backgrounds/RuleBookBackgroundBlue.png" translatesAutoresizingMaskIntoConstraints="NO" id="2726">
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" image="Images/Backgrounds/RuleBookBackgroundBlue.png" translatesAutoresizingMaskIntoConstraints="NO" id="2726" misplaced="YES">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </imageView>
-                            <view contentMode="scaleToFill" id="3108" translatesAutoresizingMaskIntoConstraints="NO">
+                            <view contentMode="scaleToFill" id="3108" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2546">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2546" misplaced="YES">
                                         <rect key="frame" x="20" y="158" width="560" height="160"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Name:" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="2534" fixedFrame="YES">
@@ -219,7 +217,7 @@
                                             <constraint id="3078" firstItem="2546" firstAttribute="height" constant="160"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2553">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2553" misplaced="YES">
                                         <rect key="frame" x="300" y="338" width="280" height="50"/>
                                         <state key="normal" title="Join" backgroundImage="Images/Controls/button_black_gold.PNG">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

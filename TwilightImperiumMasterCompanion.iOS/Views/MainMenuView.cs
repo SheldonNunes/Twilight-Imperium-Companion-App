@@ -7,6 +7,7 @@ using SpriteKit;
 using CoreAnimation;
 using CoreGraphics;
 using System.Drawing;
+using MvvmCross.Binding.BindingContext;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
@@ -37,6 +38,12 @@ namespace TwilightImperiumMasterCompanion.iOS
 
 		public override void ViewDidLoad()
 		{
+			base.ViewDidLoad();
+
+			var set = this.CreateBindingSet<MainMenuView, MainViewModel>();
+			set.Bind(joinGameButton).To(vm => vm.JoinGameCommand);
+			set.Apply();
+
 			UIColor gradientColor = ColorConstants.TWILIGHT_IMPERIUM_BLUE;
 			UIColor gradientColor2 = UIColor.FromRGBA(46, 92, 133, 0);
 
@@ -48,7 +55,6 @@ namespace TwilightImperiumMasterCompanion.iOS
 			gradientBackground.Layer.InsertSublayer(gradient, 0);
 
 			joinGameButton.ShowsTouchWhenHighlighted = false;
-			base.ViewDidLoad();
 
 			this.NavigationController.NavigationBar.ClipsToBounds = true;
 			this.NavigationController.NavigationBar.SetBackgroundImage(new UIImage(), UIBarMetrics.Default);

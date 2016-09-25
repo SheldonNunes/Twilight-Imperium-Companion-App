@@ -1,10 +1,21 @@
 ﻿using System;
+using MvvmCross;
+using MvvmCross.Core.ViewModels;
+
 namespace TwilightImperiumMasterCompanion.Core
 {
-	public class App
+	public class App : MvxApplication
 	{
-		public App()
+		public override void Initialize()
 		{
+			base.Initialize();
+
+			/*
+			 * 
+			 * CreatableTypes.EndingWith.AsInterfaces.Singltonlazyload
+			 * */
+
+			RegisterAppStart(new AppStart());
 		}
 	}
 }

@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
 namespace TwilightImperiumMasterCompanion.Core
 {
-	public class IShipRepository
+	public interface IShipRepository
 	{
-		public IShipRepository()
-		{
-		}
+		Task<IEnumerable<Ship>> GetShips();
 	}
 }

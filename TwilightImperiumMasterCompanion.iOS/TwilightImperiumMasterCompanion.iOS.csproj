@@ -81,6 +81,27 @@
     <Reference Include="Calabash">
       <HintPath>..\packages\Xamarin.TestCloud.Agent.0.19.1\lib\Xamarin.iOS10\Calabash.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\packages\MvvmCross.Platform.4.2.3\lib\Xamarin.iOS10\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform.iOS">
+      <HintPath>..\packages\MvvmCross.Platform.4.2.3\lib\Xamarin.iOS10\MvvmCross.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\packages\MvvmCross.Core.4.2.3\lib\Xamarin.iOS10\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.iOS">
+      <HintPath>..\packages\MvvmCross.Core.4.2.3\lib\Xamarin.iOS10\MvvmCross.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\packages\MvvmCross.Binding.4.2.3\lib\Xamarin.iOS10\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding.iOS">
+      <HintPath>..\packages\MvvmCross.Binding.4.2.3\lib\Xamarin.iOS10\MvvmCross.Binding.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\packages\MvvmCross.Binding.4.2.3\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
@@ -100,27 +121,26 @@
     <Compile Include="DataSources\PlanetDataSource.cs" />
     <Compile Include="StarScene.cs" />
     <Compile Include="Constants\ColorConstants.cs" />
-    <Compile Include="ViewControllers\CreditsViewController.cs" />
-    <Compile Include="ViewControllers\CreditsViewController.designer.cs">
-      <DependentUpon>CreditsViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\MainMenuBackgroundViewController.cs" />
-    <Compile Include="ViewControllers\MainMenuBackgroundViewController.designer.cs">
-      <DependentUpon>MainMenuBackgroundViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\MenuNavigationController.cs" />
-    <Compile Include="ViewControllers\MenuNavigationController.designer.cs">
+    <Compile Include="Views\MenuNavigationController.cs" />
+    <Compile Include="Views\MenuNavigationController.designer.cs">
       <DependentUpon>MenuNavigationController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\MainMenuViewController.cs" />
-    <Compile Include="ViewControllers\MainMenuViewController.designer.cs">
-      <DependentUpon>MainMenuViewController.cs</DependentUpon>
+    <Compile Include="Views\BaseViewController.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="StoryBoardContainer.cs" />
+    <Compile Include="Views\MainView.cs" />
+    <Compile Include="Views\MainView.designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\JoinGameViewController.cs" />
-    <Compile Include="ViewControllers\JoinGameViewController.designer.cs">
-      <DependentUpon>JoinGameViewController.cs</DependentUpon>
+    <Compile Include="Views\MainMenuView.cs" />
+    <Compile Include="Views\MainMenuView.designer.cs">
+      <DependentUpon>MainMenuView.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\BaseViewController.cs" />
+    <Compile Include="Views\JoinGameView.cs" />
+    <Compile Include="Views\JoinGameView.designer.cs">
+      <DependentUpon>JoinGameView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BaseView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -138,7 +158,7 @@
     <Folder Include="DataSources\" />
     <Folder Include="Particles\" />
     <Folder Include="Constants\" />
-    <Folder Include="ViewControllers\" />
+    <Folder Include="Views\" />
     <Folder Include="Resources\Images\Controls\" />
   </ItemGroup>
   <ItemGroup>

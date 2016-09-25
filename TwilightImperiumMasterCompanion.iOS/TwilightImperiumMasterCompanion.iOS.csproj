@@ -71,7 +71,7 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <CodesignKey>iPhone Developer: sheldon.nunes02@gmail.com (F52W5Z57TS)</CodesignKey>
     <MtouchUseSGen>true</MtouchUseSGen>
-    <CodesignProvision>99caaa8a-5a21-4d40-9580-5969173f9b70</CodesignProvision>
+    <CodesignProvision>ff0f4a16-8e65-4f90-8720-206e6528bdbb</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -80,6 +80,27 @@
     <Reference Include="Xamarin.iOS" />
     <Reference Include="Calabash">
       <HintPath>..\packages\Xamarin.TestCloud.Agent.0.19.1\lib\Xamarin.iOS10\Calabash.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\packages\MvvmCross.Platform.4.2.3\lib\Xamarin.iOS10\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform.iOS">
+      <HintPath>..\packages\MvvmCross.Platform.4.2.3\lib\Xamarin.iOS10\MvvmCross.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\packages\MvvmCross.Core.4.2.3\lib\Xamarin.iOS10\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.iOS">
+      <HintPath>..\packages\MvvmCross.Core.4.2.3\lib\Xamarin.iOS10\MvvmCross.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\packages\MvvmCross.Binding.4.2.3\lib\Xamarin.iOS10\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding.iOS">
+      <HintPath>..\packages\MvvmCross.Binding.4.2.3\lib\Xamarin.iOS10\MvvmCross.Binding.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\packages\MvvmCross.Binding.4.2.3\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -99,18 +120,27 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="DataSources\PlanetDataSource.cs" />
     <Compile Include="StarScene.cs" />
-    <Compile Include="MainMenuViewController.cs" />
-    <Compile Include="MainMenuViewController.designer.cs">
-      <DependentUpon>MainMenuViewController.cs</DependentUpon>
+    <Compile Include="Constants\ColorConstants.cs" />
+    <Compile Include="Views\MenuNavigationController.cs" />
+    <Compile Include="Views\MenuNavigationController.designer.cs">
+      <DependentUpon>MenuNavigationController.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainMenuBackgroundViewController.cs" />
-    <Compile Include="MainMenuBackgroundViewController.designer.cs">
-      <DependentUpon>MainMenuBackgroundViewController.cs</DependentUpon>
+    <Compile Include="Views\BaseViewController.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="StoryBoardContainer.cs" />
+    <Compile Include="Views\MainView.cs" />
+    <Compile Include="Views\MainView.designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreditsViewController.cs" />
-    <Compile Include="CreditsViewController.designer.cs">
-      <DependentUpon>CreditsViewController.cs</DependentUpon>
+    <Compile Include="Views\MainMenuView.cs" />
+    <Compile Include="Views\MainMenuView.designer.cs">
+      <DependentUpon>MainMenuView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\JoinGameView.cs" />
+    <Compile Include="Views\JoinGameView.designer.cs">
+      <DependentUpon>JoinGameView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BaseView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -127,11 +157,12 @@
     <Folder Include="Resources\Fonts\" />
     <Folder Include="DataSources\" />
     <Folder Include="Particles\" />
+    <Folder Include="Constants\" />
+    <Folder Include="Views\" />
+    <Folder Include="Resources\Images\Controls\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Images\Logo\twilight-imperium-logo.png" />
-    <BundleResource Include="Resources\Images\Backgrounds\MainBackground%402x.jpg" />
-    <BundleResource Include="Resources\Images\Backgrounds\MainBackground.jpg" />
     <BundleResource Include="Resources\Images\Icons\question-mark.jpg" />
     <BundleResource Include="Resources\Images\Icons\gear.png" />
     <BundleResource Include="Resources\Images\Backgrounds\RedBackground.jpg" />
@@ -151,5 +182,10 @@
     <BundleResource Include="Resources\Images\Backgrounds\IPhone_L_MainMenu.png" />
     <BundleResource Include="Particles\starSprite.png" />
     <BundleResource Include="Particles\StarParticles.sks" />
+    <BundleResource Include="Resources\Images\Logo\app-logo.png" />
+    <BundleResource Include="Resources\Images\Backgrounds\RuleBookBackground.png" />
+    <BundleResource Include="Resources\Images\Controls\button_black_gold.PNG" />
+    <BundleResource Include="Resources\Images\Backgrounds\RuleBookBackgroundBlue.png" />
+    <BundleResource Include="Resources\Images\Backgrounds\nebulaBlue.png" />
   </ItemGroup>
 </Project>

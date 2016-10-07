@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Windows.Input;
+using MvvmCross.Core.ViewModels;
+
 namespace TwilightImperiumMasterCompanion.Core
 {
 	public class JoinGameViewModel : BaseViewModel
@@ -27,8 +30,13 @@ namespace TwilightImperiumMasterCompanion.Core
 			}
 		}
 
-
-
+		public ICommand NavigateToRaceSelectionCommand
+		{
+			get
+			{
+				return new MvxCommand(() => ShowViewModel<RaceSelectionViewModel>());
+			}
+		}
 
 		public JoinGameViewModel()
 		{

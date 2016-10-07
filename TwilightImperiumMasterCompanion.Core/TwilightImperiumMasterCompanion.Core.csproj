@@ -46,6 +46,13 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\JoinGameViewModel.cs" />
+    <Compile Include="ViewModels\RaceSelectionViewModel.cs" />
+    <Compile Include="Model\Race.cs" />
+    <Compile Include="Repositories\IRaceRepository.cs" />
+    <Compile Include="Repositories\RaceRepository.cs" />
+    <Compile Include="Repositories\RaceRepositoryDecorator.cs" />
+    <Compile Include="Repositories\ShatteredEmpiresRaceRepository.cs" />
+    <Compile Include="Repositories\ShardsOfTheThroneRaceRepository.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>

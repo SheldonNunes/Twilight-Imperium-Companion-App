@@ -41,7 +41,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 			base.ViewDidLoad();
 
 			var set = this.CreateBindingSet<MainMenuView, MainViewModel>();
-			set.Bind(joinGameButton).To(vm => vm.JoinGameCommand);
+			set.Bind(joinGameButton).To(vm => vm.NavigateToJoinGameCommand);
 			set.Apply();
 
 			UIColor gradientColor = ColorConstants.TWILIGHT_IMPERIUM_BLUE;

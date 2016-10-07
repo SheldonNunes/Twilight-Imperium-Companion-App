@@ -71,7 +71,7 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <CodesignKey>iPhone Developer: sheldon.nunes02@gmail.com (F52W5Z57TS)</CodesignKey>
     <MtouchUseSGen>true</MtouchUseSGen>
-    <CodesignProvision>ff0f4a16-8e65-4f90-8720-206e6528bdbb</CodesignProvision>
+    <CodesignProvision>25dfcf6f-2751-4a13-a60a-e1eb6435d2c8</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -141,6 +141,12 @@
       <DependentUpon>JoinGameView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\BaseView.cs" />
+    <Compile Include="Views\RaceSelectionView.cs" />
+    <Compile Include="Views\RaceSelectionView.designer.cs">
+      <DependentUpon>RaceSelectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\BaseCollectionSource.cs" />
+    <Compile Include="Controls\RaceEmblemCell.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -160,6 +166,8 @@
     <Folder Include="Constants\" />
     <Folder Include="Views\" />
     <Folder Include="Resources\Images\Controls\" />
+    <Folder Include="Controls\" />
+    <Folder Include="Resources\Images\Emblems\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Images\Logo\twilight-imperium-logo.png" />
@@ -187,5 +195,6 @@
     <BundleResource Include="Resources\Images\Controls\button_black_gold.PNG" />
     <BundleResource Include="Resources\Images\Backgrounds\RuleBookBackgroundBlue.png" />
     <BundleResource Include="Resources\Images\Backgrounds\nebulaBlue.png" />
+    <BundleResource Include="Resources\Images\Emblems\baraony-of-letnev-emblem.png" />
   </ItemGroup>
 </Project>

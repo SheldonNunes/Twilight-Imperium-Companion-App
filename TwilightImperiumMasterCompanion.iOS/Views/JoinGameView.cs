@@ -22,6 +22,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 			var set = this.CreateBindingSet<JoinGameView, JoinGameViewModel>();
 			set.Bind(nameTextField).To(vm => vm.Name).OneWayToSource();
 			set.Bind(hostCodeTextField).To(vm => vm.Code).OneWayToSource();
+			set.Bind(joinButton).To(vm => vm.NavigateToRaceSelectionCommand);
 			set.Apply();
 
 			rootView.BackgroundColor = ColorConstants.TWILIGHT_IMPERIUM_BLUE;

@@ -7,7 +7,7 @@ namespace TwilightImperiumMasterCompanion.Core
 	public class MainViewModel : BaseViewModel
 	{
 		
-		public ICommand JoinGameCommand
+		public ICommand NavigateToJoinGameCommand
 		{
 			get
 			{

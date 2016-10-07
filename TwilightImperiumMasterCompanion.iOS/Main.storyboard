@@ -226,6 +226,7 @@
                                         <constraints>
                                             <constraint id="3082" firstItem="2553" firstAttribute="height" constant="50"/>
                                         </constraints>
+                                        <connections/>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -265,6 +266,89 @@
             </objects>
             <point key="canvasLocation" x="2999" y="1984"/>
         </scene>
+        <scene sceneID="3176">
+            <objects>
+                <viewController id="3177" sceneMemberID="viewController" customClass="RaceSelectionView" storyboardIdentifier="RaceSelectionView">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3174"/>
+                        <viewControllerLayoutGuide type="bottom" id="3175"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3178">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="1"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="3181" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="260" width="600" height="340"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3183">
+                                    <size key="itemSize" width="80" height="80"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3182">
+                                        <rect key="frame" x="20" y="0.0" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="20" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" id="3184" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="220" width="600" height="40"/>
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="0.666666666666667" alpha="1"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3209">
+                                        <rect key="frame" x="40" y="0.0" width="520" height="39"/>
+                                        <state key="normal" title="Confirm Selection" backgroundImage="Images/Controls/button_black_gold.PNG">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint id="3238" firstItem="3184" firstAttribute="height" constant="40"/>
+                                    <constraint id="3239" firstItem="3184" firstAttribute="trailing" secondItem="3209" secondAttribute="trailing" constant="40"/>
+                                    <constraint id="3240" firstItem="3209" firstAttribute="leading" secondItem="3184" secondAttribute="leading" constant="40"/>
+                                    <constraint id="3241" firstItem="3209" firstAttribute="top" secondItem="3184" secondAttribute="top"/>
+                                    <constraint id="3242" firstItem="3184" firstAttribute="bottom" secondItem="3209" secondAttribute="bottom" constant="1"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" id="3185" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="20" width="600" height="200"/>
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
+                                <subviews/>
+                                <constraints>
+                                    <constraint id="3192" firstItem="3185" firstAttribute="height" constant="200"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint id="3189" firstItem="3185" firstAttribute="top" secondItem="3174" secondAttribute="bottom"/>
+                            <constraint id="3190" firstItem="3185" firstAttribute="trailing" secondItem="3178" secondAttribute="trailing"/>
+                            <constraint id="3191" firstItem="3185" firstAttribute="leading" secondItem="3178" secondAttribute="leading"/>
+                            <constraint id="3235" firstItem="3184" firstAttribute="leading" secondItem="3178" secondAttribute="leading"/>
+                            <constraint id="3236" firstItem="3184" firstAttribute="trailing" secondItem="3178" secondAttribute="trailing"/>
+                            <constraint id="3237" firstItem="3184" firstAttribute="top" secondItem="3185" secondAttribute="bottom"/>
+                            <constraint id="3243" firstItem="3181" firstAttribute="top" secondItem="3184" secondAttribute="bottom"/>
+                            <constraint id="3244" firstItem="3181" firstAttribute="leading" secondItem="3178" secondAttribute="leading"/>
+                            <constraint id="3245" firstItem="3181" firstAttribute="trailing" secondItem="3178" secondAttribute="trailing"/>
+                            <constraint id="3246" firstItem="3175" firstAttribute="top" secondItem="3181" secondAttribute="bottom"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="raceCollectionView" destination="3181" id="name-outlet-3181"/>
+                        <outlet property="button" destination="3209" id="name-outlet-3209"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3179" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3680" y="1943"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Images/Backgrounds/IPhone_L_MainMenu.png" width="2668" height="4734"/>
@@ -279,5 +363,6 @@
         <image name="Particles/starSprite.png" width="533" height="533"/>
         <image name="Images/Backgrounds/RuleBookBackground.png" width="1024" height="1448"/>
         <image name="Images/Backgrounds/nebulaBlue.png" width="640" height="1136"/>
+        <image name="Images/Emblems/baraony-of-letnev-emblem.png" width="304" height="307"/>
     </resources>
 </document>

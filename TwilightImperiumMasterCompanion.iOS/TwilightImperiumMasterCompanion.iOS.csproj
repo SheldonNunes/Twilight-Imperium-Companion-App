@@ -71,7 +71,7 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <CodesignKey>iPhone Developer: sheldon.nunes02@gmail.com (F52W5Z57TS)</CodesignKey>
     <MtouchUseSGen>true</MtouchUseSGen>
-    <CodesignProvision>25dfcf6f-2751-4a13-a60a-e1eb6435d2c8</CodesignProvision>
+    <CodesignProvision>13c20efe-45df-4b6f-9ea8-6f276ee2870a</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -145,8 +145,8 @@
     <Compile Include="Views\RaceSelectionView.designer.cs">
       <DependentUpon>RaceSelectionView.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataSources\BaseCollectionSource.cs" />
     <Compile Include="Controls\RaceEmblemCell.cs" />
+    <Compile Include="DataSources\RaceCollectionSource.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -168,6 +168,7 @@
     <Folder Include="Resources\Images\Controls\" />
     <Folder Include="Controls\" />
     <Folder Include="Resources\Images\Emblems\" />
+    <Folder Include="Resources\Images\Races\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Images\Logo\twilight-imperium-logo.png" />
@@ -195,6 +196,40 @@
     <BundleResource Include="Resources\Images\Controls\button_black_gold.PNG" />
     <BundleResource Include="Resources\Images\Backgrounds\RuleBookBackgroundBlue.png" />
     <BundleResource Include="Resources\Images\Backgrounds\nebulaBlue.png" />
-    <BundleResource Include="Resources\Images\Emblems\baraony-of-letnev-emblem.png" />
+    <BundleResource Include="Resources\Images\Races\Emblems\AborecEmblem.png" />
+    <BundleResource Include="Resources\Images\Races\Emblems\EmbersEmblem.png" />
+    <BundleResource Include="Resources\Images\Races\Emblems\GhostsEmblem.png" />
+    <BundleResource Include="Resources\Images\Races\Emblems\HacanEmblem.png" />
+    <BundleResource Include="Resources\Images\Races\Emblems\JolNarEmblem.png" />
+    <BundleResource Include="Resources\Images\Races\Emblems\LazaxEmblem.png" />
+    <BundleResource Include="Resources\Images\Races\Emblems\MentakEmblem.png" />
+    <BundleResource Include="Resources\Images\Races\Emblems\MindnetEmblem.png" />
+    <BundleResource Include="Resources\Images\Races\Emblems\NaaluEmblem.png" />
+    <BundleResource Include="Resources\Images\Races\Emblems\NecroEmblem.png" />
+    <BundleResource Include="Resources\Images\Races\Emblems\SaardakEmblem.png" />
+    <BundleResource Include="Resources\Images\Races\Emblems\SaarEmblem.png" />
+    <BundleResource Include="Resources\Images\Races\Emblems\SolEmblem.png" />
+    <BundleResource Include="Resources\Images\Races\Emblems\XxchaEmblem.png" />
+    <BundleResource Include="Resources\Images\Races\Emblems\YinEmblem.PNG" />
+    <BundleResource Include="Resources\Images\Races\Emblems\YssarilEmblem.PNG" />
+    <BundleResource Include="Resources\Images\Races\Portraits\ArborecPortrait.png" />
+    <BundleResource Include="Resources\Images\Races\Portraits\BaronyPortrait.PNG" />
+    <BundleResource Include="Resources\Images\Races\Portraits\EmbersPortrait.PNG" />
+    <BundleResource Include="Resources\Images\Races\Portraits\GhostsPortrait.PNG" />
+    <BundleResource Include="Resources\Images\Races\Portraits\HacanPortrait.PNG" />
+    <BundleResource Include="Resources\Images\Races\Portraits\JolNarPortrait.png" />
+    <BundleResource Include="Resources\Images\Races\Portraits\LazaxPortrait.PNG" />
+    <BundleResource Include="Resources\Images\Races\Portraits\MentakPortrait.PNG" />
+    <BundleResource Include="Resources\Images\Races\Portraits\MindnetPortrait.png" />
+    <BundleResource Include="Resources\Images\Races\Portraits\NaaluPortrait.PNG" />
+    <BundleResource Include="Resources\Images\Races\Portraits\NecroPortrait.png" />
+    <BundleResource Include="Resources\Images\Races\Portraits\SaardakPortrait.PNG" />
+    <BundleResource Include="Resources\Images\Races\Portraits\SaarPortrait.PNG" />
+    <BundleResource Include="Resources\Images\Races\Portraits\SolPortrait.PNG" />
+    <BundleResource Include="Resources\Images\Races\Portraits\WinnuPortrait.PNG" />
+    <BundleResource Include="Resources\Images\Races\Portraits\XxchaPortrait.png" />
+    <BundleResource Include="Resources\Images\Races\Portraits\YinPortrait.PNG" />
+    <BundleResource Include="Resources\Images\Races\Portraits\YsarilPortrait.PNG" />
+    <BundleResource Include="Resources\Images\Races\Emblems\BaronyEmblem.png" />
   </ItemGroup>
 </Project>

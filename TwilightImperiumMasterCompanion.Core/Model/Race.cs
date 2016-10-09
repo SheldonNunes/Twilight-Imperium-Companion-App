@@ -21,5 +21,11 @@ namespace TwilightImperiumMasterCompanion.Core
 		{
 			this.Name = name;
 		}
+
+		public Race(string name, string emblemName) : this(name)
+		{
+			EmblemImageURI = emblemName + ".png";
+		}
+
 	}
 }

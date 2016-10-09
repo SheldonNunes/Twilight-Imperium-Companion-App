@@ -7,9 +7,9 @@ namespace TwilightImperiumMasterCompanion.Core
 {
 	public class RaceSelectionViewModel : BaseViewModel
 	{
-		private Race[] _races;
+		private List<Race> _races;
 
-		public Race[] Races
+		public List<Race> Races
 		{
 			get { return _races; }
 			set
@@ -19,25 +19,23 @@ namespace TwilightImperiumMasterCompanion.Core
 			}
 		}
 
-
-		private MvxCommand<Race> _itemSelectedCommand;
+		private MvxCommand<Race> _raceSelectionChangedCommand;
 		public ICommand RaceSelectionChangedCommand
 		{
 			get
 			{
-				_itemSelectedCommand = _itemSelectedCommand ?? new MvxCommand<Race>(DoSelectItem);
-				return _itemSelectedCommand;
+				_raceSelectionChangedCommand = _raceSelectionChangedCommand ?? new MvxCommand<Race>(RaceSelected);
+				return _raceSelectionChangedCommand;
 			}
 		}
 
-		private void DoSelectItem(Race item)
+		private void RaceSelected(Race item)
 		{
-			var test = 3;
 		}
 
 		public RaceSelectionViewModel()
 		{
-			_races = new RaceRepository().GetRaces().ToArray();
+			_races = new RaceRepository().GetRaces();
 		}
 
 		public override void Start()

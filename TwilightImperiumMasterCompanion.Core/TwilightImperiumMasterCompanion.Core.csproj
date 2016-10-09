@@ -53,6 +53,7 @@
     <Compile Include="Repositories\RaceRepositoryDecorator.cs" />
     <Compile Include="Repositories\ShatteredEmpiresRaceRepository.cs" />
     <Compile Include="Repositories\ShardsOfTheThroneRaceRepository.cs" />
+    <Compile Include="ViewModels\IRaceSelectionViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>

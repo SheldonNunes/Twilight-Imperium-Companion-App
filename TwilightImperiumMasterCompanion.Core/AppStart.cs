@@ -6,7 +6,7 @@ namespace TwilightImperiumMasterCompanion.Core
 {
 	public class AppStart : MvxNavigatingObject, IMvxAppStart
 	{
-		public async void Start(object hint = null)
+		public void Start(object hint = null)
 		{
 			ShowViewModel<MainViewModel>();
 		}

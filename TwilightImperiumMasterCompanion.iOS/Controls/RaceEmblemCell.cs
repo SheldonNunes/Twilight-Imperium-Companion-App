@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Drawing;
 using Foundation;
+using MvvmCross.Binding.BindingContext;
+using MvvmCross.Binding.iOS.Views;
+using TwilightImperiumMasterCompanion.Core;
 using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-	public class RaceEmblemCell : UICollectionViewCell
+	public class RaceEmblemCell : MvxCollectionViewCell
 	{
-		private UIImageView _emblem;
-
 		public static readonly NSString CellId = new NSString("RaceEmblemCell");
+
+		private UIImageView _emblem;
 
 		public UIImage Emblem
 		{
@@ -28,7 +31,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 		RaceEmblemCell(RectangleF frame) : base(frame)
 		{
 			_emblem = new UIImageView(ContentView.Frame);
-			_emblem.Image = UIImage.FromBundle("Images/Emblems/baraony-of-letnev-emblem.png");
+			_emblem.ContentMode = UIViewContentMode.ScaleAspectFit;
 
 			BackgroundView = new UIView { BackgroundColor = UIColor.Orange };
 
@@ -36,12 +39,6 @@ namespace TwilightImperiumMasterCompanion.iOS
 
 
 			ContentView.AddSubview(_emblem);
-		}
-
-		public override void TouchesBegan(NSSet touches, UIEvent evt)
-		{
-			BackgroundView = new UIView { BackgroundColor = UIColor.Purple};
-			base.TouchesBegan(touches, evt);
 		}
 	}
 }

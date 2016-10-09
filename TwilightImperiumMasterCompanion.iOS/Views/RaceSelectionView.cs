@@ -5,28 +5,32 @@ using MvvmCross.iOS.Views;
 using MvvmCross.Binding.BindingContext;
 using TwilightImperiumMasterCompanion.Core;
 using System.Drawing;
+using MvvmCross.Binding.iOS.Views;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
     public partial class RaceSelectionView : MvxViewController<RaceSelectionViewModel>
     {
+		private MvxImageViewLoader _imageLoader;
+
         public RaceSelectionView (IntPtr handle) : base (handle)
         {
         }
 
-		public override void ViewDidLoad()
+		public sealed override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
 
-			var source = new BaseCollectionSource(raceCollectionView);
 			raceCollectionView.RegisterClassForCell(typeof(RaceEmblemCell), RaceEmblemCell.CellId);
+			var source = new RaceCollectionSource(raceCollectionView, ViewModel);
 			raceCollectionView.Source = source;
 
 			var set = this.CreateBindingSet<RaceSelectionView, RaceSelectionViewModel>();
-			//set.Bind(test.Name).To(vm => vm.SelectedRace).TwoWay();
 			set.Bind(source).To(vm => vm.Races);
 			set.Bind(source).For(s => s.SelectionChangedCommand).To(vm => vm.RaceSelectionChangedCommand);
 			set.Apply();
+
+			raceCollectionView.ReloadData();
 
 			NavigationController.SetNavigationBarHidden(true, true);
 		}

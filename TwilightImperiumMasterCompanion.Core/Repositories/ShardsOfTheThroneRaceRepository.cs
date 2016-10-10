@@ -23,8 +23,8 @@ namespace TwilightImperiumMasterCompanion.Core
 				new Race("Lazax", "Lazax"),
 				new Race("Nekro Virus", "Nekro"),
 			};
-			newRaces.Concat(baseRaces);
-			newRaces.OrderBy(x => x.Name);
+			newRaces.AddRange(baseRaces);
+			newRaces = newRaces.OrderBy(x => x.Name).ToList();
 			return newRaces;
 		}
 	}

@@ -1,11 +1,8 @@
-using Foundation;
 using System;
 using UIKit;
 using MvvmCross.iOS.Views;
 using MvvmCross.Binding.BindingContext;
 using TwilightImperiumMasterCompanion.Core;
-using System.Drawing;
-using MvvmCross.Binding.iOS.Views;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
@@ -30,11 +27,9 @@ namespace TwilightImperiumMasterCompanion.iOS
         {
         }
 
-		public sealed override void ViewDidLoad()
+		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-
-			PortraitImageView.ContentMode = UIViewContentMode.ScaleAspectFit;
 
 			raceCollectionView.RegisterClassForCell(typeof(RaceEmblemCell), RaceEmblemCell.CellId);
 			var source = new RaceCollectionSource(raceCollectionView, ViewModel);

@@ -45,9 +45,9 @@ namespace TwilightImperiumMasterCompanion.Core
 			SelectedRace = race;
 		}
 
-		public RaceSelectionViewModel()
+		public RaceSelectionViewModel(IRaceRepository raceRepository)
 		{
-			_races = new RaceRepository().GetRaces();
+			_races = new ShatteredEmpiresRaceRepository(new ShardsOfTheThroneRaceRepository(raceRepository)).GetRaces();
 		}
 
 		public override void Start()

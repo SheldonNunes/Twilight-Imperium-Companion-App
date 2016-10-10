@@ -19,12 +19,12 @@ namespace TwilightImperiumMasterCompanion.Core
 			var baseRaces = _raceRepository.GetRaces();
 			var newRaces = new List<Race>() { 
 				new Race("Clan of Saar", "Saar"),
-				new Race("Embers of Muaat", "Clan"),
+				new Race("Embers of Muaat", "Embers"),
 				new Race("Winnu", "Winnu"),
 				new Race("Yin Brotherhood", "Yin"),
 			};
-			newRaces.Concat(baseRaces);
-			newRaces.OrderBy(x => x.Name);
+			newRaces.AddRange(baseRaces);
+			newRaces = newRaces.OrderBy(x => x.Name).ToList();
 			return newRaces;
 		}
 	}

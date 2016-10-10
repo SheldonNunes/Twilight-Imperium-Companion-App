@@ -33,9 +33,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 			_emblem = new UIImageView(ContentView.Frame);
 			_emblem.ContentMode = UIViewContentMode.ScaleAspectFit;
 
-			BackgroundView = new UIView { BackgroundColor = UIColor.Orange };
-
-			SelectedBackgroundView = new UIView { BackgroundColor = UIColor.Green };
+			SelectedBackgroundView = new UIView { BackgroundColor = ColorConstants.TWILIGHT_IMPERIUM_PURPLE };
 
 
 			ContentView.AddSubview(_emblem);

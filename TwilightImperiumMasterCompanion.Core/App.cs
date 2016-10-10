@@ -1,6 +1,7 @@
 ﻿using System;
 using MvvmCross;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
@@ -14,6 +15,8 @@ namespace TwilightImperiumMasterCompanion.Core
 			 * 
 			 * CreatableTypes.EndingWith.AsInterfaces.Singltonlazyload
 			 * */
+
+			Mvx.RegisterType<IRaceRepository, RaceRepository>();
 
 			RegisterAppStart(new AppStart());
 		}

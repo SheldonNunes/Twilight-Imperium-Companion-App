@@ -195,7 +195,7 @@
     <BundleResource Include="Resources\Images\Controls\button_black_gold.PNG" />
     <BundleResource Include="Resources\Images\Backgrounds\RuleBookBackgroundBlue.png" />
     <BundleResource Include="Resources\Images\Backgrounds\nebulaBlue.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\Aborec.png" />
+    <BundleResource Include="Resources\Images\Races\Emblems\Arborec.png" />
     <BundleResource Include="Resources\Images\Races\Emblems\Embers.png" />
     <BundleResource Include="Resources\Images\Races\Emblems\Ghosts.png" />
     <BundleResource Include="Resources\Images\Races\Emblems\Hacan.png" />
@@ -204,7 +204,7 @@
     <BundleResource Include="Resources\Images\Races\Emblems\Mentak.png" />
     <BundleResource Include="Resources\Images\Races\Emblems\Mindnet.png" />
     <BundleResource Include="Resources\Images\Races\Emblems\Naalu.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\Necro.png" />
+    <BundleResource Include="Resources\Images\Races\Emblems\Nekro.png" />
     <BundleResource Include="Resources\Images\Races\Emblems\Saardak.png" />
     <BundleResource Include="Resources\Images\Races\Emblems\Saar.png" />
     <BundleResource Include="Resources\Images\Races\Emblems\Sol.png" />
@@ -221,7 +221,7 @@
     <BundleResource Include="Resources\Images\Races\Portraits\Mentak.png" />
     <BundleResource Include="Resources\Images\Races\Portraits\Mindnet.png" />
     <BundleResource Include="Resources\Images\Races\Portraits\Naalu.png" />
-    <BundleResource Include="Resources\Images\Races\Portraits\Necro.png" />
+    <BundleResource Include="Resources\Images\Races\Portraits\Nekro.png" />
     <BundleResource Include="Resources\Images\Races\Portraits\Saardak.png" />
     <BundleResource Include="Resources\Images\Races\Portraits\Saar.png" />
     <BundleResource Include="Resources\Images\Races\Portraits\Sol.png" />

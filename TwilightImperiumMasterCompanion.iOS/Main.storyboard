@@ -276,7 +276,7 @@
                     <view key="view" contentMode="scaleToFill" id="3178">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="1"/>
+                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.13725490196078433" green="0.28235294117647058" blue="0.44313725490196076" alpha="1"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="3181" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="0.0" y="260" width="600" height="340"/>
@@ -287,10 +287,11 @@
                                     <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.13725490196078433" green="0.28235294117647058" blue="0.44313725490196076" alpha="1"/>
                             </collectionView>
                             <view contentMode="scaleToFill" id="3184" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="0.0" y="220" width="600" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedWhite" white="0.666666666666667" alpha="1"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.6470588235294118" green="0.20392156862745098" blue="0.2196078431372549" alpha="1"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3209">
                                         <rect key="frame" x="40" y="0.0" width="520" height="39"/>
@@ -309,7 +310,7 @@
                                     <constraint id="3242" firstItem="3184" firstAttribute="bottom" secondItem="3209" secondAttribute="bottom" constant="1"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" id="3185" translatesAutoresizingMaskIntoConstraints="NO" customClass="UIImageView">
+                            <view contentMode="redraw" id="3185" translatesAutoresizingMaskIntoConstraints="NO" customClass="UIImageView">
                                 <rect key="frame" x="0.0" y="20" width="600" height="200"/>
                                 <color key="backgroundColor" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
                                 <subviews/>
@@ -355,21 +356,6 @@
         <image name="Particles/starSprite.png" width="533" height="533"/>
         <image name="Images/Backgrounds/RuleBookBackground.png" width="1024" height="1448"/>
         <image name="Images/Backgrounds/nebulaBlue.png" width="640" height="1136"/>
-        <image name="Images/Races/Emblems/EmbersEmblem.png" width="180" height="180"/>
-        <image name="Images/Races/Emblems/GhostsEmblem.png" width="175" height="164"/>
-        <image name="Images/Races/Emblems/HacanEmblem.png" width="187" height="213"/>
-        <image name="Images/Races/Emblems/JolNarEmblem.png" width="200" height="200"/>
-        <image name="Images/Races/Emblems/LazaxEmblem.png" width="180" height="180"/>
-        <image name="Images/Races/Emblems/MentakEmblem.png" width="180" height="180"/>
-        <image name="Images/Races/Emblems/MindnetEmblem.png" width="200" height="200"/>
-        <image name="Images/Races/Emblems/NaaluEmblem.png" width="200" height="200"/>
-        <image name="Images/Races/Emblems/NecroEmblem.png" width="180" height="180"/>
-        <image name="Images/Races/Emblems/SaardakEmblem.png" width="171" height="190"/>
-        <image name="Images/Races/Emblems/SaarEmblem.png" width="149" height="150"/>
-        <image name="Images/Races/Emblems/SolEmblem.png" width="213" height="190"/>
-        <image name="Images/Races/Emblems/XxchaEmblem.png" width="200" height="200"/>
-        <image name="Images/Races/Portraits/ArborecPortrait.png" width="580" height="484"/>
-        <image name="Images/Races/Portraits/EmbersPortrait.PNG" width="661" height="565"/>
         <image name="Images/Races/Portraits/GhostsPortrait.PNG" width="669" height="556"/>
         <image name="Images/Races/Portraits/JolNarPortrait.png" width="585" height="485"/>
         <image name="Images/Races/Portraits/LazaxPortrait.PNG" width="664" height="558"/>
@@ -390,5 +376,41 @@
         <image name="Images/Races/Emblems/AborecEmblem.png" width="137" height="134"/>
         <image name="Images/Races/Portraits/HacanPortrait.png" width="665" height="551"/>
         <image name="Images/Races/Portraits/BaronyPortrait.png" width="750" height="563"/>
+        <image name="Images/Races/Emblems/Aborec.png" width="137" height="134"/>
+        <image name="Images/Races/Emblems/Embers.png" width="180" height="180"/>
+        <image name="Images/Races/Emblems/Ghosts.png" width="175" height="164"/>
+        <image name="Images/Races/Emblems/Hacan.png" width="187" height="213"/>
+        <image name="Images/Races/Emblems/JolNar.png" width="200" height="200"/>
+        <image name="Images/Races/Emblems/Lazax.png" width="180" height="180"/>
+        <image name="Images/Races/Emblems/Mentak.png" width="180" height="180"/>
+        <image name="Images/Races/Emblems/Mindnet.png" width="200" height="200"/>
+        <image name="Images/Races/Emblems/Naalu.png" width="200" height="200"/>
+        <image name="Images/Races/Emblems/Necro.png" width="180" height="180"/>
+        <image name="Images/Races/Emblems/Saardak.png" width="171" height="190"/>
+        <image name="Images/Races/Emblems/Saar.png" width="149" height="150"/>
+        <image name="Images/Races/Emblems/Sol.png" width="213" height="190"/>
+        <image name="Images/Races/Emblems/Xxcha.png" width="200" height="200"/>
+        <image name="Images/Races/Emblems/Yin.png" width="190" height="189"/>
+        <image name="Images/Races/Emblems/Ysaril.png" width="189" height="170"/>
+        <image name="Images/Races/Portraits/Arborec.png" width="580" height="484"/>
+        <image name="Images/Races/Portraits/Barony.png" width="750" height="563"/>
+        <image name="Images/Races/Portraits/Embers.png" width="661" height="565"/>
+        <image name="Images/Races/Portraits/Ghosts.png" width="669" height="556"/>
+        <image name="Images/Races/Portraits/Hacan.png" width="665" height="551"/>
+        <image name="Images/Races/Portraits/JolNar.png" width="585" height="485"/>
+        <image name="Images/Races/Portraits/Lazax.png" width="664" height="558"/>
+        <image name="Images/Races/Portraits/Mentak.png" width="662" height="557"/>
+        <image name="Images/Races/Portraits/Mindnet.png" width="587" height="488"/>
+        <image name="Images/Races/Portraits/Naalu.png" width="665" height="552"/>
+        <image name="Images/Races/Portraits/Necro.png" width="592" height="489"/>
+        <image name="Images/Races/Portraits/Saardak.png" width="659" height="561"/>
+        <image name="Images/Races/Portraits/Saar.png" width="662" height="566"/>
+        <image name="Images/Races/Portraits/Sol.png" width="665" height="555"/>
+        <image name="Images/Races/Portraits/Winnu.png" width="662" height="561"/>
+        <image name="Images/Races/Portraits/Xxcha.png" width="586" height="488"/>
+        <image name="Images/Races/Portraits/Yin.png" width="664" height="571"/>
+        <image name="Images/Races/Portraits/Ysaril.png" width="667" height="553"/>
+        <image name="Images/Races/Emblems/Barony.png" width="304" height="307"/>
+        <image name="Images/Races/Emblems/Arborec.png" width="137" height="134"/>
     </resources>
 </document>

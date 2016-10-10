@@ -8,6 +8,7 @@ namespace TwilightImperiumMasterCompanion.Core
 	public class RaceSelectionViewModel : BaseViewModel
 	{
 		private List<Race> _races;
+		private Race _selectedRace;
 
 		public List<Race> Races
 		{
@@ -16,6 +17,16 @@ namespace TwilightImperiumMasterCompanion.Core
 			{
 				_races = value;
 				RaisePropertyChanged(() => _races);
+			}
+		}
+
+		public Race SelectedRace
+		{
+			get { return _selectedRace; }
+			set
+			{
+				_selectedRace = value;
+				RaisePropertyChanged("SelectedRace");
 			}
 		}
 
@@ -29,8 +40,9 @@ namespace TwilightImperiumMasterCompanion.Core
 			}
 		}
 
-		private void RaceSelected(Race item)
+		private void RaceSelected(Race race)
 		{
+			SelectedRace = race;
 		}
 
 		public RaceSelectionViewModel()

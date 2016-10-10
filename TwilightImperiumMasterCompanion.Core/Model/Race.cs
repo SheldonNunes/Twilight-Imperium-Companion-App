@@ -5,26 +5,16 @@ namespace TwilightImperiumMasterCompanion.Core
 	{
 		public readonly string Name;
 
-		public string EmblemImageURI
+		public string URIName
 		{
 			get;
 			set;
 		}
 
-		public string RaceImageURI
-		{
-			get;
-			set;
-		}
-
-		public Race(string name)
+		public Race(string name, string uriName)
 		{
 			this.Name = name;
-		}
-
-		public Race(string name, string emblemName) : this(name)
-		{
-			EmblemImageURI = emblemName + ".png";
+			this.URIName = uriName + ".png";
 		}
 
 	}

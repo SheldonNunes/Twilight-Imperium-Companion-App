@@ -18,7 +18,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 		{
 			var cell = (RaceEmblemCell)collectionView.DequeueReusableCell(RaceEmblemCell.CellId, indexPath);
 
-			cell.Emblem = UIImage.FromBundle("Images/Races/Emblems/"+ vm.Races[indexPath.Row].EmblemImageURI);
+			cell.Emblem = UIImage.FromBundle("Images/Races/Emblems/"+ vm.Races[indexPath.Row].URIName);
 			return cell;
 		}
 	}

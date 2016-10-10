@@ -18,10 +18,10 @@ namespace TwilightImperiumMasterCompanion.Core
 		{
 			var baseRaces = _raceRepository.GetRaces();
 			var newRaces = new List<Race>(){
-				new Race("Arborec"),
-				new Race("Ghosts of Creuss"),
-				new Race("Lazax"),
-				new Race("Nekro Virus"),
+				new Race("Arborec", "Arborec"),
+				new Race("Ghosts of Creuss", "Ghosts"),
+				new Race("Lazax", "Lazax"),
+				new Race("Nekro Virus", "Nekro"),
 			};
 			newRaces.Concat(baseRaces);
 			newRaces.OrderBy(x => x.Name);

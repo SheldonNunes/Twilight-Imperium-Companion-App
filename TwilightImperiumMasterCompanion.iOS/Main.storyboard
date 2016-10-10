@@ -280,22 +280,13 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="3181" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="0.0" y="260" width="600" height="340"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3183">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="3183">
+                                    <size key="itemSize" width="60" height="60"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3182">
-                                        <rect key="frame" x="20" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="20" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" id="3184" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="0.0" y="220" width="600" height="40"/>
@@ -318,7 +309,7 @@
                                     <constraint id="3242" firstItem="3184" firstAttribute="bottom" secondItem="3209" secondAttribute="bottom" constant="1"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" id="3185" translatesAutoresizingMaskIntoConstraints="NO">
+                            <view contentMode="scaleToFill" id="3185" translatesAutoresizingMaskIntoConstraints="NO" customClass="UIImageView">
                                 <rect key="frame" x="0.0" y="20" width="600" height="200"/>
                                 <color key="backgroundColor" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
                                 <subviews/>
@@ -343,6 +334,7 @@
                     <connections>
                         <outlet property="raceCollectionView" destination="3181" id="name-outlet-3181"/>
                         <outlet property="button" destination="3209" id="name-outlet-3209"/>
+                        <outlet property="PortraitImageView" destination="3185" id="name-outlet-3185"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3179" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -363,7 +355,6 @@
         <image name="Particles/starSprite.png" width="533" height="533"/>
         <image name="Images/Backgrounds/RuleBookBackground.png" width="1024" height="1448"/>
         <image name="Images/Backgrounds/nebulaBlue.png" width="640" height="1136"/>
-        <image name="Images/Races/Emblems/AborecEmblem.png" width="137" height="134"/>
         <image name="Images/Races/Emblems/EmbersEmblem.png" width="180" height="180"/>
         <image name="Images/Races/Emblems/GhostsEmblem.png" width="175" height="164"/>
         <image name="Images/Races/Emblems/HacanEmblem.png" width="187" height="213"/>
@@ -377,13 +368,9 @@
         <image name="Images/Races/Emblems/SaarEmblem.png" width="149" height="150"/>
         <image name="Images/Races/Emblems/SolEmblem.png" width="213" height="190"/>
         <image name="Images/Races/Emblems/XxchaEmblem.png" width="200" height="200"/>
-        <image name="Images/Races/Emblems/YinEmblem.PNG" width="190" height="189"/>
-        <image name="Images/Races/Emblems/YssarilEmblem.PNG" width="189" height="170"/>
         <image name="Images/Races/Portraits/ArborecPortrait.png" width="580" height="484"/>
-        <image name="Images/Races/Portraits/BaronyPortrait.PNG" width="750" height="563"/>
         <image name="Images/Races/Portraits/EmbersPortrait.PNG" width="661" height="565"/>
         <image name="Images/Races/Portraits/GhostsPortrait.PNG" width="669" height="556"/>
-        <image name="Images/Races/Portraits/HacanPortrait.PNG" width="665" height="551"/>
         <image name="Images/Races/Portraits/JolNarPortrait.png" width="585" height="485"/>
         <image name="Images/Races/Portraits/LazaxPortrait.PNG" width="664" height="558"/>
         <image name="Images/Races/Portraits/MentakPortrait.PNG" width="662" height="557"/>
@@ -397,6 +384,11 @@
         <image name="Images/Races/Portraits/XxchaPortrait.png" width="586" height="488"/>
         <image name="Images/Races/Portraits/YinPortrait.PNG" width="664" height="571"/>
         <image name="Images/Races/Portraits/YsarilPortrait.PNG" width="667" height="553"/>
+        <image name="Images/Races/Emblems/YinEmblem.png" width="190" height="189"/>
+        <image name="Images/Races/Emblems/YsarilEmblem.png" width="189" height="170"/>
         <image name="Images/Races/Emblems/BaronyEmblem.png" width="304" height="307"/>
+        <image name="Images/Races/Emblems/AborecEmblem.png" width="137" height="134"/>
+        <image name="Images/Races/Portraits/HacanPortrait.png" width="665" height="551"/>
+        <image name="Images/Races/Portraits/BaronyPortrait.png" width="750" height="563"/>
     </resources>
 </document>

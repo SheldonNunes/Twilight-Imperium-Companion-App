@@ -11,7 +11,20 @@ namespace TwilightImperiumMasterCompanion.iOS
 {
     public partial class RaceSelectionView : MvxViewController<RaceSelectionViewModel>
     {
-		private MvxImageViewLoader _imageLoader;
+		private string _portraitImageURL;
+
+		public string PortraitImageURL
+		{
+			get
+			{
+				return _portraitImageURL; }
+			set
+			{
+				_portraitImageURL = value;
+				PortraitImageView.Image = UIImage.FromBundle("Images/Races/Portraits/" +  _portraitImageURL);
+			}
+		}
+
 
         public RaceSelectionView (IntPtr handle) : base (handle)
         {
@@ -21,6 +34,8 @@ namespace TwilightImperiumMasterCompanion.iOS
 		{
 			base.ViewDidLoad();
 
+			PortraitImageView.ContentMode = UIViewContentMode.ScaleAspectFit;
+
 			raceCollectionView.RegisterClassForCell(typeof(RaceEmblemCell), RaceEmblemCell.CellId);
 			var source = new RaceCollectionSource(raceCollectionView, ViewModel);
 			raceCollectionView.Source = source;
@@ -28,6 +43,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 			var set = this.CreateBindingSet<RaceSelectionView, RaceSelectionViewModel>();
 			set.Bind(source).To(vm => vm.Races);
 			set.Bind(source).For(s => s.SelectionChangedCommand).To(vm => vm.RaceSelectionChangedCommand);
+			set.Bind().For(s => s.PortraitImageURL).To(vm => vm.SelectedRace.URIName);
 			set.Apply();
 
 			raceCollectionView.ReloadData();

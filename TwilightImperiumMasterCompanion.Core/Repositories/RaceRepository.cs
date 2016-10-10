@@ -7,16 +7,16 @@ namespace TwilightImperiumMasterCompanion.Core
 	{
 		private static readonly List<Race> _races = new List<Race>()
 		{
-			new Race("Barony of Letnev", "BaronyEmblem"),
-			new Race("Emirates of Hacan", "HacanEmblem"),
-			new Race("Federation of Sol" , "SolEmblem"),
-			new Race("Lizix Mindnet", "MindnetEmblem"),
-			new Race("Mentak Coalition", "MentakEmblem"),
-			new Race("Naalu Collective", "NaaluEmblem"),
-			new Race("Sardakk Norr", "NecroEmblem"),
-			new Race("Universities of Jol-Nar", "JolNarEmblem"),
-			new Race("Xxcha Kingdom", "XxchaEmblem"),
-			new Race("Ysaril Tribes", "YsarilEmblem")
+			new Race("Barony of Letnev", "Barony"),
+			new Race("Emirates of Hacan", "Hacan"),
+			new Race("Federation of Sol" , "Sol"),
+			new Race("Lizix Mindnet", "Mindnet"),
+			new Race("Mentak Coalition", "Mentak"),
+			new Race("Naalu Collective", "Naalu"),
+			new Race("Sardakk Norr", "Necro"),
+			new Race("Universities of Jol-Nar", "JolNar"),
+			new Race("Xxcha Kingdom", "Xxcha"),
+			new Race("Ysaril Tribes", "Ysaril")
 		};
 
 

@@ -25,12 +25,13 @@ namespace TwilightImperiumMasterCompanion.iOS
 
         public RaceSelectionView (IntPtr handle) : base (handle)
         {
+			
         }
 
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-
+			raceCollectionView.CollectionViewLayout = new CircularCollectionViewLayout();
 			raceCollectionView.RegisterClassForCell(typeof(RaceEmblemCell), RaceEmblemCell.CellId);
 			var source = new RaceCollectionSource(raceCollectionView, ViewModel);
 			raceCollectionView.Source = source;

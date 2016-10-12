@@ -233,5 +233,6 @@
     <BundleResource Include="Resources\Images\Races\Portraits\Yin.png" />
     <BundleResource Include="Resources\Images\Races\Portraits\Ysaril.png" />
     <BundleResource Include="Resources\Images\Races\Emblems\Barony.png" />
+    <BundleResource Include="Resources\Images\Races\Emblems\Winnu.png" />
   </ItemGroup>
 </Project>

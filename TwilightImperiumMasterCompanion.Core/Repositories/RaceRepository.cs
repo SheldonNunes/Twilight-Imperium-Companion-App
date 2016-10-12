@@ -13,7 +13,8 @@ namespace TwilightImperiumMasterCompanion.Core
 			new Race("Lizix Mindnet", "Mindnet"),
 			new Race("Mentak Coalition", "Mentak"),
 			new Race("Naalu Collective", "Naalu"),
-			new Race("Sardakk Norr", "Necro"),
+			//todo figure out which spelling is correct
+			new Race("Sardakk Norr", "Saardak"),
 			new Race("Universities of Jol-Nar", "JolNar"),
 			new Race("Xxcha Kingdom", "Xxcha"),
 			new Race("Ysaril Tribes", "Ysaril")

@@ -97,7 +97,33 @@ namespace TwilightImperiumMasterCompanion.iOS
 				AttributesList.Add(attributes);
 			}
 		}
+		public override CGPoint TargetContentOffset(CGPoint proposedContentOffset, CGPoint scrollingVelocity)
+		{
+			var finalContentOffset = proposedContentOffset;
 
+			var factor = -AngleAtExtreme / (CollectionViewContentSize.Width - CollectionView.Bounds.Width);
+
+			var proposedAngle = proposedContentOffset.X * factor;
+
+			var ratio = proposedAngle / AnglePerItem;
+
+			double multipler;
+
+			if (scrollingVelocity.X > 0)
+			{
+				multipler = Math.Ceiling(ratio);
+			}
+			else if (scrollingVelocity.X < 0)
+			{
+				multipler = Math.Floor(ratio);
+			}
+			else {
+				multipler = Math.Round(ratio);
+			}
+			finalContentOffset.X = (float) (multipler * AnglePerItem / factor);
+			return finalContentOffset;
+		}
+		
 		public override bool ShouldInvalidateLayoutForBoundsChange(CGRect newBounds)
 		{
 			return true;

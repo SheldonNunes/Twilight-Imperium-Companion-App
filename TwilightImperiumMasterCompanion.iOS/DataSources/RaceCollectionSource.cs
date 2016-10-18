@@ -15,11 +15,26 @@ namespace TwilightImperiumMasterCompanion.iOS
 			this.vm = vm;
 		}
 
-		protected override UICollectionViewCell GetOrCreateCellFor(UICollectionView collectionView, NSIndexPath indexPath, object item)
+
+		public override void DecelerationEnded(UIScrollView scrollView)
 		{
-			var cell = (RaceEmblemCell)collectionView.DequeueReusableCell(RaceEmblemCell.CellId, indexPath);
-			cell.Emblem = UIImage.FromBundle("Images/Races/Emblems/" + vm.Races[indexPath.Row].URIName);
-			return cell;
+			//todo correct this
+			nfloat contentOffsetWhenFullyScrolledRight = scrollView.Frame.Size.Width - 50;
+
+			if (scrollView.ContentOffset.X == contentOffsetWhenFullyScrolledRight)
+			{
+				NSIndexPath newIndexPath = NSIndexPath.FromRowSection(1, 0);
+
+				CollectionView.ScrollToItem(newIndexPath, UICollectionViewScrollPosition.Left, true);
+			}
+			else if (scrollView.ContentOffset.X == 0)
+			{
+				NSIndexPath newIndexPath = NSIndexPath.FromRowSection(vm.Races.Count-1, 0);
+
+				CollectionView.ScrollToItem(newIndexPath, UICollectionViewScrollPosition.Left, true);
+				
+			}
+			//base.DecelerationEnded(scrollView);
 		}
 	}
 }

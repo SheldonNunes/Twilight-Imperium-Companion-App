@@ -71,7 +71,7 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <CodesignKey>iPhone Developer: sheldon.nunes02@gmail.com (F52W5Z57TS)</CodesignKey>
     <MtouchUseSGen>true</MtouchUseSGen>
-    <CodesignProvision>13c20efe-45df-4b6f-9ea8-6f276ee2870a</CodesignProvision>
+    <CodesignProvision>64d002bc-6d0b-49d3-810d-96993fb46ab0</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -147,9 +147,8 @@
     </Compile>
     <Compile Include="Controls\RaceEmblemCell.cs" />
     <Compile Include="DataSources\RaceCollectionSource.cs" />
-    <Compile Include="Controls\CircleLayout.cs" />
-    <Compile Include="Controls\LineLayout.cs" />
     <Compile Include="Controls\CircularCollectionViewLayout.cs" />
+    <Compile Include="Controls\RaceSelectionWheel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

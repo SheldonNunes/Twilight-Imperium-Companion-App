@@ -8,27 +8,8 @@ namespace TwilightImperiumMasterCompanion.iOS
 {
 	public class CircularCollectionViewLayout : UICollectionViewLayout
 	{
-		private CGSize _itemSize;
-
-		public CGSize ItemSize
-		{
-			get { return new CGSize(50,50); }
-			set { _itemSize = value;}
-		}
-
-		private double _angleAtExtreme;
-
-		public double AngleAtExtreme
-		{
-			get
-			{
-				return CollectionView.NumberOfItemsInSection(0) > 0 ?
-						                  -(CollectionView.NumberOfItemsInSection(0) - 1) * AnglePerItem : 0;
-			}
-			set { _angleAtExtreme = value;}
-		}
-
-
+		private readonly CGSize _itemSize;
+		private nfloat _angleAtExtreme;
 
 		private int _radius;
 
@@ -41,7 +22,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 			set 
 			{ 
 				_radius = value;
-				AnglePerItem = Math.Atan(ItemSize.Width / Radius);
+				AnglePerItem = 360 / (CollectionView.NumberOfItemsInSection(0) + 1); //Math.Atan(_itemSize.Width / Radius);
 				this.InvalidateLayout();
 			}
 		}
@@ -60,15 +41,16 @@ namespace TwilightImperiumMasterCompanion.iOS
 			set;
 		}
 
-		public CircularCollectionViewLayout()
+		public CircularCollectionViewLayout(CGSize CellSize )
 		{
+			_itemSize = CellSize;
 		}
 
 		public override CGSize CollectionViewContentSize
 		{
 			get
 			{
-				return new CGSize(ItemSize.Width * CollectionView.NumberOfItemsInSection(0), CollectionView.Bounds.Height);
+				return new CGSize(_itemSize.Width * CollectionView.NumberOfItemsInSection(0), CollectionView.Bounds.Height);
 			}
 		}
 
@@ -80,49 +62,51 @@ namespace TwilightImperiumMasterCompanion.iOS
 		public override void PrepareLayout()
 		{
 			base.PrepareLayout();
-			ItemSize = new CGSize(50, 50);
-			Angle = AngleAtExtreme * CollectionView.ContentOffset.X / (CollectionViewContentSize.Width - CollectionView.Bounds.Width);
+			_angleAtExtreme = (nfloat) (CollectionView.NumberOfItemsInSection(0) > 0 ?
+			                            -(CollectionView.NumberOfItemsInSection(0) - 1) * AnglePerItem : 0);
+			Angle = _angleAtExtreme * CollectionView.ContentOffset.X / (CollectionViewContentSize.Width - CollectionView.Bounds.Width);
 			Radius = 200;
 			var centerX = CollectionView.ContentOffset.X + (CollectionView.Bounds.Width / 2.0);
-			var anchorPointY = ((ItemSize.Height / 2.0) + Radius) / ItemSize.Height;
+			var anchorPointY = ((_itemSize.Height / 2.0) + Radius) / _itemSize.Height;
 			AttributesList = new List<CircularCollectionViewLayoutAttributes>();
 
 			for (int i = 0; i < CollectionView.NumberOfItemsInSection(0); i++)
 			{
 				CircularCollectionViewLayoutAttributes attributes = CircularCollectionViewLayoutAttributes.CreateForCell<CircularCollectionViewLayoutAttributes>(NSIndexPath.FromRowSection(i, 0));
-				attributes.Size = this.ItemSize;
+				attributes.Size = this._itemSize;
 				attributes.Center = new CGPoint(centerX, CollectionView.Bounds.GetMidY());
 				attributes.Angle = (float) ( Angle + (AnglePerItem * i));
 				attributes.AnchorPoint = new CGPoint(0.5, anchorPointY);
 				AttributesList.Add(attributes);
 			}
 		}
-		public override CGPoint TargetContentOffset(CGPoint proposedContentOffset, CGPoint scrollingVelocity)
-		{
-			var finalContentOffset = proposedContentOffset;
 
-			var factor = -AngleAtExtreme / (CollectionViewContentSize.Width - CollectionView.Bounds.Width);
+		//public override CGPoint TargetContentOffset(CGPoint proposedContentOffset, CGPoint scrollingVelocity)
+		//{
+		//	var finalContentOffset = proposedContentOffset;
 
-			var proposedAngle = proposedContentOffset.X * factor;
+		//	var factor = -_angleAtExtreme / (CollectionViewContentSize.Width - CollectionView.Bounds.Width);
 
-			var ratio = proposedAngle / AnglePerItem;
+		//	var proposedAngle = proposedContentOffset.X * factor;
 
-			double multipler;
+		//	var ratio = proposedAngle / AnglePerItem;
 
-			if (scrollingVelocity.X > 0)
-			{
-				multipler = Math.Ceiling(ratio);
-			}
-			else if (scrollingVelocity.X < 0)
-			{
-				multipler = Math.Floor(ratio);
-			}
-			else {
-				multipler = Math.Round(ratio);
-			}
-			finalContentOffset.X = (float) (multipler * AnglePerItem / factor);
-			return finalContentOffset;
-		}
+		//	double multipler;
+
+		//	if (scrollingVelocity.X > 0)
+		//	{
+		//		multipler = Math.Ceiling(ratio);
+		//	}
+		//	else if (scrollingVelocity.X < 0)
+		//	{
+		//		multipler = Math.Floor(ratio);
+		//	}
+		//	else {
+		//		multipler = Math.Round(ratio);
+		//	}
+		//	finalContentOffset.X = (float) (multipler * AnglePerItem / factor);
+		//	return finalContentOffset;
+		//}
 		
 		public override bool ShouldInvalidateLayoutForBoundsChange(CGRect newBounds)
 		{

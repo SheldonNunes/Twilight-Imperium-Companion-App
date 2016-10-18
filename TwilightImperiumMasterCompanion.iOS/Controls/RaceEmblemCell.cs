@@ -9,7 +9,7 @@ using CoreGraphics;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-	public class RaceEmblemCell : MvxCollectionViewCell
+	public class RaceEmblemCell : MvxImageView
 	{
 		public static readonly NSString CellId = new NSString("RaceEmblemCell");
 
@@ -28,24 +28,10 @@ namespace TwilightImperiumMasterCompanion.iOS
 			}
 		}
 
-		[Export("initWithFrame:")]
 		RaceEmblemCell(RectangleF frame) : base(frame)
 		{
-			_emblem = new UIImageView(ContentView.Frame);
+			_emblem = new UIImageView(frame);
 			_emblem.ContentMode = UIViewContentMode.ScaleAspectFit;
-
-			SelectedBackgroundView = new UIView { BackgroundColor = ColorConstants.TWILIGHT_IMPERIUM_PURPLE };
-
-
-			ContentView.AddSubview(_emblem);
-		}
-
-		public override void ApplyLayoutAttributes(UICollectionViewLayoutAttributes layoutAttributes)
-		{
-			base.ApplyLayoutAttributes(layoutAttributes);
-			var circularlayoutAttributes = layoutAttributes as CircularCollectionViewLayoutAttributes;
-			this.Layer.AnchorPoint = circularlayoutAttributes.AnchorPoint;
-			this.Center = new CGPoint(Center.X, Center.Y + (circularlayoutAttributes.AnchorPoint.Y - 0.5) * this.Bounds.Height);
 		}
 	}
 }

@@ -54,6 +54,7 @@
     <Compile Include="Repositories\ShatteredEmpiresRaceRepository.cs" />
     <Compile Include="Repositories\ShardsOfTheThroneRaceRepository.cs" />
     <Compile Include="ViewModels\IRaceSelectionViewModel.cs" />
+    <Compile Include="Converter\RaceListConverter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -63,6 +64,7 @@
     <Folder Include="Enum\" />
     <Folder Include="Repositories\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Converter\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\UIStrings.resx">

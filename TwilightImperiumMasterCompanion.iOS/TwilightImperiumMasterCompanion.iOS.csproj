@@ -118,7 +118,6 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="DataSources\PlanetDataSource.cs" />
     <Compile Include="StarScene.cs" />
     <Compile Include="Constants\ColorConstants.cs" />
     <Compile Include="Views\MenuNavigationController.cs" />
@@ -147,8 +146,6 @@
     </Compile>
     <Compile Include="Controls\RaceEmblemCell.cs" />
     <Compile Include="DataSources\RaceCollectionSource.cs" />
-    <Compile Include="Controls\CircularCollectionViewLayout.cs" />
-    <Compile Include="Controls\RaceSelectionWheel.cs" />
     <Compile Include="Controls\CircleCollectionLayout.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

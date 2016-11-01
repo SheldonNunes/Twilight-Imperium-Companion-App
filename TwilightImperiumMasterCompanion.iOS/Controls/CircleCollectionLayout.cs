@@ -28,12 +28,12 @@ namespace TwilightImperiumMasterCompanion.iOS
 		public override void PrepareLayout()
 		{
 			base.PrepareLayout();
-
+			CollectionView.ScrollEnabled = false;
 			CGSize containerSize = CollectionView.Frame.Size;
 			Center = new CGPoint(containerSize.Width / 2.0, containerSize.Height / 2.0);
 			CellCount = CollectionView.NumberOfItemsInSection(0);
-			Radius = Math.Min(containerSize.Width, containerSize.Height) / 2.0;
-
+			//todo replace with item size values
+			Radius = Math.Min(containerSize.Width - 50, containerSize.Height - 50) / 2.0;
 		}
 
 		public override CGSize CollectionViewContentSize

@@ -24,7 +24,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UICollectionView raceCollectionView { get; set; }
+        TwilightImperiumMasterCompanion.iOS.CircleCollectionView raceCollectionView { get; set; }
 
         void ReleaseDesignerOutlets ()
         {

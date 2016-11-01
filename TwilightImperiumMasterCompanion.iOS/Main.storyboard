@@ -278,7 +278,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" colorSpace="calibratedRGB" red="0.13725490196078433" green="0.28235294117647058" blue="0.44313725490196076" alpha="1"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="3181" translatesAutoresizingMaskIntoConstraints="NO">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="3181" translatesAutoresizingMaskIntoConstraints="NO" customClass="CircleCollectionView">
                                 <rect key="frame" x="0.0" y="260" width="600" height="340"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="3183">
                                     <size key="itemSize" width="60" height="60"/>
@@ -356,21 +356,6 @@
         <image name="Particles/starSprite.png" width="533" height="533"/>
         <image name="Images/Backgrounds/RuleBookBackground.png" width="1024" height="1448"/>
         <image name="Images/Backgrounds/nebulaBlue.png" width="640" height="1136"/>
-        <image name="Images/Races/Portraits/GhostsPortrait.PNG" width="669" height="556"/>
-        <image name="Images/Races/Portraits/JolNarPortrait.png" width="585" height="485"/>
-        <image name="Images/Races/Portraits/LazaxPortrait.PNG" width="664" height="558"/>
-        <image name="Images/Races/Portraits/MentakPortrait.PNG" width="662" height="557"/>
-        <image name="Images/Races/Portraits/MindnetPortrait.png" width="587" height="488"/>
-        <image name="Images/Races/Portraits/NaaluPortrait.PNG" width="665" height="552"/>
-        <image name="Images/Races/Portraits/NecroPortrait.png" width="592" height="489"/>
-        <image name="Images/Races/Portraits/SaardakPortrait.PNG" width="659" height="561"/>
-        <image name="Images/Races/Portraits/SaarPortrait.PNG" width="662" height="566"/>
-        <image name="Images/Races/Portraits/SolPortrait.PNG" width="665" height="555"/>
-        <image name="Images/Races/Portraits/WinnuPortrait.PNG" width="662" height="561"/>
-        <image name="Images/Races/Portraits/XxchaPortrait.png" width="586" height="488"/>
-        <image name="Images/Races/Portraits/YinPortrait.PNG" width="664" height="571"/>
-        <image name="Images/Races/Portraits/YsarilPortrait.PNG" width="667" height="553"/>
-        <image name="Images/Races/Emblems/YinEmblem.png" width="190" height="189"/>
         <image name="Images/Races/Emblems/YsarilEmblem.png" width="189" height="170"/>
         <image name="Images/Races/Emblems/BaronyEmblem.png" width="304" height="307"/>
         <image name="Images/Races/Emblems/AborecEmblem.png" width="137" height="134"/>
@@ -412,5 +397,8 @@
         <image name="Images/Races/Portraits/Ysaril.png" width="667" height="553"/>
         <image name="Images/Races/Emblems/Barony.png" width="304" height="307"/>
         <image name="Images/Races/Emblems/Arborec.png" width="137" height="134"/>
+        <image name="Images/Races/Emblems/Nekro.png" width="180" height="180"/>
+        <image name="Images/Races/Portraits/Nekro.png" width="592" height="489"/>
+        <image name="Images/Races/Emblems/Winnu.png" width="167" height="172"/>
     </resources>
 </document>

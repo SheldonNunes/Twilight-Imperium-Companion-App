@@ -27,13 +27,12 @@ namespace TwilightImperiumMasterCompanion.iOS
 
         public RaceSelectionView (IntPtr handle) : base (handle)
         {
-			
+			//raceCollectionView = new CircleCollectionView(handle);
         }
 
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			raceCollectionView.BackgroundColor = ColorConstants.TWILIGHT_IMPERIUM_RED;
 			raceCollectionView.CollectionViewLayout = new CircleCollectionLayout();
 			raceCollectionView.RegisterClassForCell(typeof(RaceEmblemCell), RaceEmblemCell.CellId);
 			var source = new RaceCollectionSource(raceCollectionView, ViewModel);

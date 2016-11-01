@@ -71,7 +71,7 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <CodesignKey>iPhone Developer: sheldon.nunes02@gmail.com (F52W5Z57TS)</CodesignKey>
     <MtouchUseSGen>true</MtouchUseSGen>
-    <CodesignProvision>64d002bc-6d0b-49d3-810d-96993fb46ab0</CodesignProvision>
+    <CodesignProvision>0b138b9e-f1ac-4156-9be5-3d26f7f14517</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -52,17 +52,16 @@ namespace TwilightImperiumMasterCompanion.iOS
 		private void DrawWheel(CGRect rect)
 		{
 			_container = new UIView(rect);
-			//container.ClipsToBounds = true;
 			var swipeGestureRecognizer = new UIPanGestureRecognizer();
 			_container.AddGestureRecognizer(swipeGestureRecognizer);
 
-			var numberOfSegments = _subsetList.Count;
+			var numberOfSegments = _dataSource.Count - 1;
 			nfloat angleSize = (nfloat)(2 * Math.PI / numberOfSegments);
 
 			for (int i = 0; i < numberOfSegments; i++)
 			{
 				UIView segment = new UIView(new CGRect(0, 0, 150, 50));
-				segment.BackgroundColor = UIColor.Purple;
+				//segment.BackgroundColor = UIColor.Purple;
 				segment.Layer.AnchorPoint = new CGPoint(1, 0.5);
 				segment.Layer.Position = new CGPoint(_container.Bounds.Size.Width / 2.0, _container.Bounds.Size.Height/2.0);
 				segment.Transform = CGAffineTransform.MakeRotation((nfloat)(Math.PI / 2 + angleSize * i));
@@ -70,7 +69,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 				var race = (Race)DataSource[i];
 				//150 = radius
 				UIImageView image = new UIImageView(new CGRect(0, 0, 50, 50));
-				image.BackgroundColor = UIColor.Blue;
+				//image.BackgroundColor = UIColor.Blue;
 				image.Image = UIImage.FromBundle("Images/Races/Emblems/" + race.URIName);
 				image.ContentMode = UIViewContentMode.ScaleAspectFit;
 				image.Transform = CGAffineTransform.MakeRotation((nfloat)(- Math.PI / 2 - angleSize * i));
@@ -101,7 +100,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 
 		public override void TouchesMoved(Foundation.NSSet touches, UIEvent evt)
 		{
-			base.TouchesMoved(touches, evt);
+			//base.TouchesMoved(touches, evt);
 			UITouch touch = (UITouch)touches.First();
 			CGPoint touchPoint = touch.LocationInView(this);
 
@@ -119,9 +118,6 @@ namespace TwilightImperiumMasterCompanion.iOS
 			_subsetList.AddRange(segmentTwo);
 		}
 
-		public Action()
-		{
-		}
 
 	}
 }

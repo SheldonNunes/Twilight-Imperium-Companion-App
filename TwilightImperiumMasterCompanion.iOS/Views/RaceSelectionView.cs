@@ -35,7 +35,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 			base.ViewDidLoad();
 			var source = new RaceCollectionSource(raceCollectionView, ViewModel);
 
-			var circle = new RaceSelectionWheel(new CGRect(0, 50, 300, 300));
+			var circle = new RaceSelectionWheel(new CGRect(0, 50, 320, 300));
 
 
 			var set = this.CreateBindingSet<RaceSelectionView, RaceSelectionViewModel>();

@@ -33,22 +33,23 @@ namespace TwilightImperiumMasterCompanion.iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			var source = new RaceCollectionSource(raceCollectionView, ViewModel);
+
+			var test = new CircularCollectionViewLayout();
+
+			var circleCollection = new UICollectionView(new CGRect(0, 50, 320, 300), new CircularCollectionViewLayout());
 
 			var circle = new RaceSelectionWheel(new CGRect(0, 50, 320, 300));
 
 
 			var set = this.CreateBindingSet<RaceSelectionView, RaceSelectionViewModel>();
 			//set.Bind(source).To(vm => vm.Races).WithConversion(new RaceListConverter());
-			set.Bind(source).For(s => s.SelectionChangedCommand).To(vm => vm.RaceSelectionChangedCommand);
-			set.Bind(circle).For(s => s.DataSource).To(vm => vm.Races);
+			//set.Bind(source).For(s => s.SelectionChangedCommand).To(vm => vm.RaceSelectionChangedCommand);
+			set.Bind(circleCollection).For(s => s.DataSource).To(vm => vm.Races);
 			set.Bind().For(s => s.PortraitImageURL).To(vm => vm.SelectedRace.URIName);
 			set.Apply();
 
-			Add(circle);
+			Add(circleCollection);
 
-			raceCollectionView.ReloadData();
-			raceCollectionView.ContentInset = new UIEdgeInsets(0, 500, 0, 500);
 			NavigationController.SetNavigationBarHidden(true, true);
 		}
     }

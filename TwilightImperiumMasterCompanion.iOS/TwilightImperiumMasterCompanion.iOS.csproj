@@ -149,6 +149,7 @@
     <Compile Include="DataSources\RaceCollectionSource.cs" />
     <Compile Include="Controls\CircularCollectionViewLayout.cs" />
     <Compile Include="Controls\RaceSelectionWheel.cs" />
+    <Compile Include="Controls\CircleCollectionLayout.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

@@ -21,5 +21,10 @@ namespace TwilightImperiumMasterCompanion.iOS
 			cell.Emblem = UIImage.FromBundle("Images/Races/Emblems/" + vm.Races[indexPath.Row].URIName);
 			return cell;
 		}
+
+		public override bool ShouldSelectItem(UICollectionView collectionView, NSIndexPath indexPath)
+		{
+			return false;
+		}
 	}
 }

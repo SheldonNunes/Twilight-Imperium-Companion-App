@@ -16,28 +16,10 @@ namespace TwilightImperiumMasterCompanion.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton button { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIImageView PortraitImageView { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         TwilightImperiumMasterCompanion.iOS.CircleCollectionView raceCollectionView { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (button != null) {
-                button.Dispose ();
-                button = null;
-            }
-
-            if (PortraitImageView != null) {
-                PortraitImageView.Dispose ();
-                PortraitImageView = null;
-            }
-
             if (raceCollectionView != null) {
                 raceCollectionView.Dispose ();
                 raceCollectionView = null;

@@ -25,10 +25,16 @@ namespace TwilightImperiumMasterCompanion.iOS
 			set;
 		}
 
+		public override bool ShouldInvalidateLayoutForBoundsChange(CGRect newBounds)
+		{
+			return true;
+		}
+
 		public override void PrepareLayout()
 		{
 			base.PrepareLayout();
 			CollectionView.ScrollEnabled = false;
+			CollectionView.ContentInset = new UIEdgeInsets(0,0,0,0);
 			CGSize containerSize = CollectionView.Frame.Size;
 			Center = new CGPoint(containerSize.Width / 2.0, containerSize.Height / 2.0);
 			CellCount = CollectionView.NumberOfItemsInSection(0);

@@ -147,8 +147,8 @@
     <Compile Include="Controls\RaceEmblemCell.cs" />
     <Compile Include="DataSources\RaceCollectionSource.cs" />
     <Compile Include="Controls\CircleCollectionLayout.cs" />
-    <Compile Include="CircleCollectionView.cs" />
-    <Compile Include="CircleCollectionView.designer.cs">
+    <Compile Include="Controls\CircleCollectionView.cs" />
+    <Compile Include="Controls\CircleCollectionView.designer.cs">
       <DependentUpon>CircleCollectionView.cs</DependentUpon>
     </Compile>
   </ItemGroup>

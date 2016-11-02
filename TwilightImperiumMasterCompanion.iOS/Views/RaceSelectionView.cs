@@ -20,15 +20,13 @@ namespace TwilightImperiumMasterCompanion.iOS
 			set
 			{
 				_portraitImageURL = value;
-				PortraitImageView.Image = UIImage.FromBundle("Images/Races/Portraits/" +  _portraitImageURL);
+				//PortraitImageView.Image = UIImage.FromBundle("Images/Races/Portraits/" +  _portraitImageURL);
 			}
 		}
 
-
-        public RaceSelectionView (IntPtr handle) : base (handle)
-        {
-			//raceCollectionView = new CircleCollectionView(handle);
-        }
+		public RaceSelectionView(IntPtr handle) : base (handle)
+		{
+		}
 
 		public override void ViewDidLoad()
 		{

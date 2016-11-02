@@ -279,7 +279,7 @@
                         <color key="backgroundColor" colorSpace="calibratedRGB" red="0.13725490196078433" green="0.28235294117647058" blue="0.44313725490196076" alpha="1"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="3181" translatesAutoresizingMaskIntoConstraints="NO" customClass="CircleCollectionView">
-                                <rect key="frame" x="0.0" y="260" width="600" height="340"/>
+                                <rect key="frame" x="0.0" y="79" width="600" height="521"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="3183">
                                     <size key="itemSize" width="60" height="60"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -289,53 +289,37 @@
                                 <cells/>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0.13725490196078433" green="0.28235294117647058" blue="0.44313725490196076" alpha="1"/>
                             </collectionView>
-                            <view contentMode="scaleToFill" id="3184" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="0.0" y="220" width="600" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.6470588235294118" green="0.20392156862745098" blue="0.2196078431372549" alpha="1"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3209">
-                                        <rect key="frame" x="40" y="0.0" width="520" height="39"/>
-                                        <state key="normal" title="Confirm Selection" backgroundImage="Images/Controls/button_black_gold.PNG">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections/>
-                                    </button>
-                                </subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3258" translatesAutoresizingMaskIntoConstraints="NO" usesAttributedText="YES">
+                                <rect key="frame" x="25" y="30" width="550" height="49"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Select your Race:">
+                                        <attributes>
+                                            <color key="NSColor" colorSpace="calibratedRGB" red="1" green="0.996078431372549" blue="0.996078431372549" alpha="1"/>
+                                            <font key="NSFont" name="BodoniSvtyTwoITCTT-BookIta" family="Bodoni 72" size="22"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <constraints>
-                                    <constraint id="3238" firstItem="3184" firstAttribute="height" constant="40"/>
-                                    <constraint id="3239" firstItem="3184" firstAttribute="trailing" secondItem="3209" secondAttribute="trailing" constant="40"/>
-                                    <constraint id="3240" firstItem="3209" firstAttribute="leading" secondItem="3184" secondAttribute="leading" constant="40"/>
-                                    <constraint id="3241" firstItem="3209" firstAttribute="top" secondItem="3184" secondAttribute="top"/>
-                                    <constraint id="3242" firstItem="3184" firstAttribute="bottom" secondItem="3209" secondAttribute="bottom" constant="1"/>
+                                    <constraint id="3262" firstItem="3258" firstAttribute="height" constant="49"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="redraw" id="3185" translatesAutoresizingMaskIntoConstraints="NO" customClass="UIImageView">
-                                <rect key="frame" x="0.0" y="20" width="600" height="200"/>
-                                <color key="backgroundColor" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
-                                <subviews/>
-                                <constraints>
-                                    <constraint id="3192" firstItem="3185" firstAttribute="height" constant="200"/>
-                                </constraints>
-                            </view>
+                            </label>
                         </subviews>
                         <constraints>
-                            <constraint id="3189" firstItem="3185" firstAttribute="top" secondItem="3174" secondAttribute="bottom"/>
-                            <constraint id="3190" firstItem="3185" firstAttribute="trailing" secondItem="3178" secondAttribute="trailing"/>
-                            <constraint id="3191" firstItem="3185" firstAttribute="leading" secondItem="3178" secondAttribute="leading"/>
-                            <constraint id="3235" firstItem="3184" firstAttribute="leading" secondItem="3178" secondAttribute="leading"/>
-                            <constraint id="3236" firstItem="3184" firstAttribute="trailing" secondItem="3178" secondAttribute="trailing"/>
-                            <constraint id="3237" firstItem="3184" firstAttribute="top" secondItem="3185" secondAttribute="bottom"/>
-                            <constraint id="3243" firstItem="3181" firstAttribute="top" secondItem="3184" secondAttribute="bottom"/>
-                            <constraint id="3244" firstItem="3181" firstAttribute="leading" secondItem="3178" secondAttribute="leading"/>
-                            <constraint id="3245" firstItem="3181" firstAttribute="trailing" secondItem="3178" secondAttribute="trailing"/>
-                            <constraint id="3246" firstItem="3175" firstAttribute="top" secondItem="3181" secondAttribute="bottom"/>
+                            <constraint id="3259" firstItem="3258" firstAttribute="top" secondItem="3174" secondAttribute="bottom" constant="10"/>
+                            <constraint id="3260" firstItem="3178" firstAttribute="trailing" secondItem="3258" secondAttribute="trailing" constant="25"/>
+                            <constraint id="3261" firstItem="3258" firstAttribute="leading" secondItem="3178" secondAttribute="leading" constant="25"/>
+                            <constraint id="3269" firstItem="3181" firstAttribute="top" secondItem="3258" secondAttribute="bottom"/>
+                            <constraint id="3270" firstItem="3181" firstAttribute="trailing" secondItem="3178" secondAttribute="trailing"/>
+                            <constraint id="3271" firstItem="3181" firstAttribute="leading" secondItem="3178" secondAttribute="leading"/>
+                            <constraint id="3272" firstItem="3181" firstAttribute="bottom" secondItem="3175" secondAttribute="top"/>
+                            <constraint id="3275" firstItem="3181" firstAttribute="centerX" secondItem="3178" secondAttribute="centerX"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="raceCollectionView" destination="3181" id="name-outlet-3181"/>
-                        <outlet property="button" destination="3209" id="name-outlet-3209"/>
-                        <outlet property="PortraitImageView" destination="3185" id="name-outlet-3185"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3179" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -356,10 +340,6 @@
         <image name="Particles/starSprite.png" width="533" height="533"/>
         <image name="Images/Backgrounds/RuleBookBackground.png" width="1024" height="1448"/>
         <image name="Images/Backgrounds/nebulaBlue.png" width="640" height="1136"/>
-        <image name="Images/Races/Emblems/YsarilEmblem.png" width="189" height="170"/>
-        <image name="Images/Races/Emblems/BaronyEmblem.png" width="304" height="307"/>
-        <image name="Images/Races/Emblems/AborecEmblem.png" width="137" height="134"/>
-        <image name="Images/Races/Portraits/HacanPortrait.png" width="665" height="551"/>
         <image name="Images/Races/Portraits/BaronyPortrait.png" width="750" height="563"/>
         <image name="Images/Races/Emblems/Aborec.png" width="137" height="134"/>
         <image name="Images/Races/Emblems/Embers.png" width="180" height="180"/>

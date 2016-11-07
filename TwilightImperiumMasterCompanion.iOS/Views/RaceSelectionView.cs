@@ -5,6 +5,7 @@ using MvvmCross.Binding.BindingContext;
 using TwilightImperiumMasterCompanion.Core;
 using Foundation;
 using CoreGraphics;
+using System.Linq;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
@@ -31,9 +32,10 @@ namespace TwilightImperiumMasterCompanion.iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			raceCollectionView.CollectionViewLayout = new CircleCollectionLayout();
+			raceCollectionView.CollectionViewLayout = new CircleCollectionLayout(new CGSize(50,50));
 			raceCollectionView.RegisterClassForCell(typeof(RaceEmblemCell), RaceEmblemCell.CellId);
 			var source = new RaceCollectionSource(raceCollectionView, ViewModel);
+
 			raceCollectionView.Source = source;
 
 			var set = this.CreateBindingSet<RaceSelectionView, RaceSelectionViewModel>();
@@ -45,7 +47,12 @@ namespace TwilightImperiumMasterCompanion.iOS
 
 			raceCollectionView.ReloadData();
 
+			//var test = raceCollectionView.IndexPathsForVisibleItems;
+
+			//raceCollectionView.DeleteItems(test.Skip(5).ToArray());
+
 			NavigationController.SetNavigationBarHidden(true, true);
 		}
+
     }
 }

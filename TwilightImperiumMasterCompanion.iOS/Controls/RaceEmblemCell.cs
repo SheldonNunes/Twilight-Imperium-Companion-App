@@ -28,6 +28,12 @@ namespace TwilightImperiumMasterCompanion.iOS
 			}
 		}
 
+		public CGPoint OriginalPosition
+		{
+			get;
+			set;
+		}
+
 		[Export("initWithFrame:")]
 		RaceEmblemCell(RectangleF frame) : base(frame)
 		{

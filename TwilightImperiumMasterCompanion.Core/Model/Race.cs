@@ -3,7 +3,11 @@ namespace TwilightImperiumMasterCompanion.Core
 {
 	public class Race
 	{
-		public readonly string Name;
+		public string Name
+		{
+			get;
+			private set;
+		}
 
 		public string URIName
 		{

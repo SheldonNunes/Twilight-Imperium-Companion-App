@@ -18,11 +18,20 @@ namespace TwilightImperiumMasterCompanion.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         TwilightImperiumMasterCompanion.iOS.CircleCollectionView raceCollectionView { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel selectYourRaceLabel { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (raceCollectionView != null) {
                 raceCollectionView.Dispose ();
                 raceCollectionView = null;
+            }
+
+            if (selectYourRaceLabel != null) {
+                selectYourRaceLabel.Dispose ();
+                selectYourRaceLabel = null;
             }
         }
     }

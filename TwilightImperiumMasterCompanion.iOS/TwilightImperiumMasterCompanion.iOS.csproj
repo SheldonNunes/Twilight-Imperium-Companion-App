@@ -151,6 +151,8 @@
     <Compile Include="Controls\CircleCollectionView.designer.cs">
       <DependentUpon>CircleCollectionView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SelectedCell.cs" />
+    <Compile Include="Controls\CircleView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

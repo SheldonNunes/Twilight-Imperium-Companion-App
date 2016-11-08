@@ -25,6 +25,22 @@ namespace TwilightImperiumMasterCompanion.iOS
 			}
 		}
 
+		private string _selectYourRaceLabel;
+
+		public string SelectYourRaceLabel
+		{
+			get
+			{
+				return _selectYourRaceLabel;
+			}
+			set
+			{
+				
+				_selectYourRaceLabel = value;
+				selectYourRaceLabel.Text = _selectYourRaceLabel;
+			}
+		}
+
 		public RaceSelectionView(IntPtr handle) : base (handle)
 		{
 		}
@@ -39,17 +55,15 @@ namespace TwilightImperiumMasterCompanion.iOS
 			raceCollectionView.Source = source;
 
 			var set = this.CreateBindingSet<RaceSelectionView, RaceSelectionViewModel>();
-
 			set.Bind(source).To(vm => vm.Races);
+
 			set.Bind(source).For(s => s.SelectionChangedCommand).To(vm => vm.RaceSelectionChangedCommand);
-			set.Bind().For(s => s.PortraitImageURL).To(vm => vm.SelectedRace.URIName);
+			//set.Bind(selectYourRaceLabel).To(vm => vm.SelectedRace.Name).OneWay();
+			set.Bind().For(s => s.SelectYourRaceLabel).To(vm => vm.SelectedRace.Name);
+			//set.Bind().For(s => s.PortraitImageURL).To(vm => vm.SelectedRace.URIName);
 			set.Apply();
 
 			raceCollectionView.ReloadData();
-
-			//var test = raceCollectionView.IndexPathsForVisibleItems;
-
-			//raceCollectionView.DeleteItems(test.Skip(5).ToArray());
 
 			NavigationController.SetNavigationBarHidden(true, true);
 		}

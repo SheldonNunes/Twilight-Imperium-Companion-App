@@ -320,6 +320,7 @@
                     </view>
                     <connections>
                         <outlet property="raceCollectionView" destination="3181" id="name-outlet-3181"/>
+                        <outlet property="selectYourRaceLabel" destination="3258" id="name-outlet-3258"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3179" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -340,7 +341,6 @@
         <image name="Particles/starSprite.png" width="533" height="533"/>
         <image name="Images/Backgrounds/RuleBookBackground.png" width="1024" height="1448"/>
         <image name="Images/Backgrounds/nebulaBlue.png" width="640" height="1136"/>
-        <image name="Images/Races/Portraits/BaronyPortrait.png" width="750" height="563"/>
         <image name="Images/Races/Emblems/Aborec.png" width="137" height="134"/>
         <image name="Images/Races/Emblems/Embers.png" width="180" height="180"/>
         <image name="Images/Races/Emblems/Ghosts.png" width="175" height="164"/>

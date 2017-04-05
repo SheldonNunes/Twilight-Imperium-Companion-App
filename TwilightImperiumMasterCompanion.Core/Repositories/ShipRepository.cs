@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace TwilightImperiumMasterCompanion.Core
@@ -9,13 +8,61 @@ namespace TwilightImperiumMasterCompanion.Core
 
 		private static readonly List<Ship> _ships = new List<Ship>()
 		{
-			new Ship("Fighter", 1, 1, 1, 0)
+			new Ship(){
+				Name = "Dreadnaught",
+				Cost = 4,
+				Movement = 2,
+				Battle = 3,
+				Capacity = 6
+			},
+			new Ship(){
+				Name = "Carrier",
+				Cost = 4,
+				Movement = 2,
+				Battle = 3,
+				Capacity = 6
+			},
+						new Ship(){
+				Name = "Fighter",
+				Cost = 4,
+				Movement = 2,
+				Battle = 3,
+				Capacity = 6
+			},
+						new Ship(){
+				Name = "Ground Forces",
+				Cost = 4,
+				Movement = 2,
+				Battle = 3,
+				Capacity = 6
+			},
+						new Ship(){
+				Name = "War Sun",
+				Cost = 4,
+				Movement = 2,
+				Battle = 3,
+				Capacity = 6
+			},
+						new Ship(){
+				Name = "Destroyer",
+				Cost = 4,
+				Movement = 2,
+				Battle = 3,
+				Capacity = 6
+			},
+						new Ship(){
+				Name = "PDS",
+				Cost = 4,
+				Movement = 2,
+				Battle = 3,
+				Capacity = 6
+			},
 		};
 
 
-		public async Task<IEnumerable<Ship>> GetShips()
+		public IEnumerable<Ship> GetShips()
 		{
-			return await Task.FromResult(_ships);
+			return _ships;
 		}
 	}
 }

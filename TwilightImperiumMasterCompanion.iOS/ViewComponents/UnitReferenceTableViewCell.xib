@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="cxk-wN-pdQ" customClass="UnitReferenceTableViewCell" accessoryType="disclosureIndicator">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxk-wN-pdQ" id="YTl-1W-gDM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="322">
+                        <rect key="frame" x="5" y="0.0" width="49.5" height="49.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="322" secondAttribute="height" multiplier="1:1" id="323"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ship Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="320">
+                        <rect key="frame" x="69.5" y="16.5" width="70.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="324">
+                        <rect key="frame" x="197" y="16.5" width="92" height="17"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="316" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="0.0" width="6.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="318" fixedFrame="YES">
+                                <rect key="frame" x="28.5" y="0.0" width="6.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="312" fixedFrame="YES">
+                                <rect key="frame" x="57" y="0.0" width="6.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="314" fixedFrame="YES">
+                                <rect key="frame" x="85.5" y="0.0" width="6.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint id="325" firstItem="322" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" constant="5"/>
+                    <constraint id="326" firstItem="322" firstAttribute="top" secondItem="YTl-1W-gDM" secondAttribute="top"/>
+                    <constraint id="327" firstItem="322" firstAttribute="height" secondItem="YTl-1W-gDM" secondAttribute="height"/>
+                    <constraint id="328" firstItem="320" firstAttribute="leading" secondItem="322" secondAttribute="trailing" constant="15"/>
+                    <constraint id="329" firstItem="320" firstAttribute="centerY" secondItem="YTl-1W-gDM" secondAttribute="centerY"/>
+                    <constraint id="330" firstItem="YTl-1W-gDM" firstAttribute="trailing" secondItem="324" secondAttribute="trailing" constant="5"/>
+                    <constraint id="331" firstItem="324" firstAttribute="centerY" secondItem="YTl-1W-gDM" secondAttribute="centerY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="shipName" destination="320" id="name-outlet-320"/>
+                <outlet property="shipCost" destination="316" id="name-outlet-316"/>
+                <outlet property="shipMove" destination="318" id="name-outlet-318"/>
+                <outlet property="shipBattle" destination="312" id="name-outlet-312"/>
+                <outlet property="shipCapacity" destination="314" id="name-outlet-314"/>
+                <outlet property="shipImage" destination="322" id="name-outlet-322"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Images/Races/Portraits/Nekro.png" width="592" height="489"/>
+        <image name="Images/Races/Portraits/Saardak.png" width="659" height="561"/>
+        <image name="Images/Races/Portraits/Saar.png" width="662" height="566"/>
+        <image name="Images/Races/Portraits/Sol.png" width="665" height="555"/>
+        <image name="Images/Races/Portraits/Winnu.png" width="662" height="561"/>
+        <image name="Images/Races/Portraits/Xxcha.png" width="586" height="488"/>
+        <image name="Images/Races/Portraits/Yin.png" width="664" height="571"/>
+        <image name="Images/Races/Portraits/Ysaril.png" width="667" height="553"/>
+        <image name="Images/Races/Emblems/Barony.png" width="304" height="307"/>
+        <image name="Images/Races/Emblems/Winnu.png" width="167" height="172"/>
+        <image name="Images/Backgrounds/blackHole.png" width="639" height="576"/>
+        <image name="UnitReferenceTabIcon" width="30" height="30"/>
+        <image name="PurchaseTabIcon" width="30" height="30"/>
+        <image name="DreadnaughtShipIcon" width="50" height="50"/>
+        <image name="DreadnaughtIcon" width="50" height="50"/>
+        <image name="CarrierIcon" width="50" height="50"/>
+        <image name="FighterIcon" width="50" height="50"/>
+        <image name="DestroyerIcon" width="50" height="50"/>
+        <image name="GroundForcesIcon" width="50" height="50"/>
+        <image name="PDSIcon" width="50" height="50"/>
+        <image name="WarSunIcon" width="50" height="50"/>
+    </resources>
+</document>

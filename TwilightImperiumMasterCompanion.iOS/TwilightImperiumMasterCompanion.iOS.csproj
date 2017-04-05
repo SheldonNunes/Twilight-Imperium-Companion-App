@@ -24,8 +24,9 @@
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchUseSGen>true</MtouchUseSGen>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: sheldon.nunes02@gmail.com (F52W5Z57TS)</CodesignKey>
     <MtouchFastDev>true</MtouchFastDev>
+    <CodesignProvision>f2ec4653-8fe1-46a4-9ff4-3ab4e2c42ef3</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>
@@ -71,7 +72,7 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <CodesignKey>iPhone Developer: sheldon.nunes02@gmail.com (F52W5Z57TS)</CodesignKey>
     <MtouchUseSGen>true</MtouchUseSGen>
-    <CodesignProvision>0b138b9e-f1ac-4156-9be5-3d26f7f14517</CodesignProvision>
+    <CodesignProvision>f2ec4653-8fe1-46a4-9ff4-3ab4e2c42ef3</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -105,10 +106,30 @@
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\UnitReferenceTabIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\PurchaseTabIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\DreadnaughtIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\CarrierIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\CarrierIcon.imageset\Carrier-Icon.png" />
+    <ImageAsset Include="Resources\Images.xcassets\FighterIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\FighterIcon.imageset\Fighter-Icon.png" />
+    <ImageAsset Include="Resources\Images.xcassets\DestroyerIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\DestroyerIcon.imageset\Destroyer-Icon.png" />
+    <ImageAsset Include="Resources\Images.xcassets\GroundForcesIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\GroundForcesIcon.imageset\Ground-Forces.png" />
+    <ImageAsset Include="Resources\Images.xcassets\PDSIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\PDSIcon.imageset\PDS-Icon.png" />
+    <ImageAsset Include="Resources\Images.xcassets\WarSunIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\WarSunIcon.imageset\War-Sun-Icon.png" />
+    <ImageAsset Include="Resources\Images.xcassets\DreadnaughtIcon.imageset\Dreadnaught Icon.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\PurchaseTabIcon.imageset\PurchaseIcon.png" />
+    <ImageAsset Include="Resources\Images.xcassets\UnitReferenceTabIcon.imageset\UnitReferenceIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
-    <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="Storyboards\UnitReference.storyboard" />
+    <InterfaceDefinition Include="ViewComponents\UnitReferenceTableViewCell.xib" />
+    <InterfaceDefinition Include="ViewComponents\PurchaseUnitTableViewCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -118,41 +139,29 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="StarScene.cs" />
     <Compile Include="Constants\ColorConstants.cs" />
-    <Compile Include="Views\MenuNavigationController.cs" />
-    <Compile Include="Views\MenuNavigationController.designer.cs">
-      <DependentUpon>MenuNavigationController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\BaseViewController.cs" />
     <Compile Include="Setup.cs" />
-    <Compile Include="StoryBoardContainer.cs" />
-    <Compile Include="Views\MainView.cs" />
-    <Compile Include="Views\MainView.designer.cs">
-      <DependentUpon>MainView.cs</DependentUpon>
+    <Compile Include="Views\Unit Views\PurchaseUnitView.cs" />
+    <Compile Include="Views\Unit Views\PurchaseUnitView.designer.cs">
+      <DependentUpon>PurchaseUnitView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainMenuView.cs" />
-    <Compile Include="Views\MainMenuView.designer.cs">
-      <DependentUpon>MainMenuView.cs</DependentUpon>
+    <Compile Include="Extensions\UIImageExtensions.cs" />
+    <Compile Include="ViewComponents\UnitReferenceTableViewCell.cs" />
+    <Compile Include="ViewComponents\UnitReferenceTableViewCell.designer.cs">
+      <DependentUpon>UnitReferenceTableViewCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\JoinGameView.cs" />
-    <Compile Include="Views\JoinGameView.designer.cs">
-      <DependentUpon>JoinGameView.cs</DependentUpon>
+    <Compile Include="Views\Unit Views\UnitReferenceView.cs" />
+    <Compile Include="Views\Unit Views\UnitReferenceView.designer.cs">
+      <DependentUpon>UnitReferenceView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\BaseView.cs" />
-    <Compile Include="Views\RaceSelectionView.cs" />
-    <Compile Include="Views\RaceSelectionView.designer.cs">
-      <DependentUpon>RaceSelectionView.cs</DependentUpon>
+    <Compile Include="Views\Unit Views\UnitTabBarController.cs" />
+    <Compile Include="Views\Unit Views\UnitTabBarController.designer.cs">
+      <DependentUpon>UnitTabBarController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\RaceEmblemCell.cs" />
-    <Compile Include="DataSources\RaceCollectionSource.cs" />
-    <Compile Include="Controls\CircleCollectionLayout.cs" />
-    <Compile Include="Controls\CircleCollectionView.cs" />
-    <Compile Include="Controls\CircleCollectionView.designer.cs">
-      <DependentUpon>CircleCollectionView.cs</DependentUpon>
+    <Compile Include="ViewComponents\PurchaseUnitTableViewCell.cs" />
+    <Compile Include="ViewComponents\PurchaseUnitTableViewCell.designer.cs">
+      <DependentUpon>PurchaseUnitTableViewCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SelectedCell.cs" />
-    <Compile Include="Controls\CircleView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -162,25 +171,24 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Images\" />
-    <Folder Include="Resources\Images\Logo\" />
-    <Folder Include="Resources\Images\Backgrounds\" />
-    <Folder Include="Resources\Images\Icons\" />
     <Folder Include="Resources\Fonts\" />
-    <Folder Include="DataSources\" />
-    <Folder Include="Particles\" />
     <Folder Include="Constants\" />
     <Folder Include="Views\" />
-    <Folder Include="Resources\Images\Controls\" />
-    <Folder Include="Controls\" />
-    <Folder Include="Resources\Images\Races\" />
+    <Folder Include="ViewComponents\" />
+    <Folder Include="Storyboards\" />
+    <Folder Include="Views\Unit Views\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Resources\Images.xcassets\UnitReferenceTabIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\PurchaseTabIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\DreadnaughtIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\CarrierIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\FighterIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\DestroyerIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\GroundForcesIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\PDSIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\WarSunIcon.imageset\" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Images\Logo\twilight-imperium-logo.png" />
-    <BundleResource Include="Resources\Images\Icons\question-mark.jpg" />
-    <BundleResource Include="Resources\Images\Icons\gear.png" />
-    <BundleResource Include="Resources\Images\Backgrounds\RedBackground.jpg" />
-    <BundleResource Include="Resources\Images\Icons\cog.png" />
     <BundleResource Include="Resources\Fonts\BodoniFLF-Bold.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
@@ -193,49 +201,5 @@
     <BundleResource Include="Resources\Fonts\BodoniFLF-Roman.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="Resources\Images\Backgrounds\IPhone_L_MainMenu.png" />
-    <BundleResource Include="Particles\starSprite.png" />
-    <BundleResource Include="Particles\StarParticles.sks" />
-    <BundleResource Include="Resources\Images\Logo\app-logo.png" />
-    <BundleResource Include="Resources\Images\Backgrounds\RuleBookBackground.png" />
-    <BundleResource Include="Resources\Images\Controls\button_black_gold.PNG" />
-    <BundleResource Include="Resources\Images\Backgrounds\RuleBookBackgroundBlue.png" />
-    <BundleResource Include="Resources\Images\Backgrounds\nebulaBlue.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\Arborec.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\Embers.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\Ghosts.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\Hacan.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\JolNar.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\Lazax.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\Mentak.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\Mindnet.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\Naalu.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\Nekro.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\Saardak.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\Saar.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\Sol.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\Xxcha.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\Yin.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\Ysaril.png" />
-    <BundleResource Include="Resources\Images\Races\Portraits\Arborec.png" />
-    <BundleResource Include="Resources\Images\Races\Portraits\Barony.png" />
-    <BundleResource Include="Resources\Images\Races\Portraits\Embers.png" />
-    <BundleResource Include="Resources\Images\Races\Portraits\Ghosts.png" />
-    <BundleResource Include="Resources\Images\Races\Portraits\Hacan.png" />
-    <BundleResource Include="Resources\Images\Races\Portraits\JolNar.png" />
-    <BundleResource Include="Resources\Images\Races\Portraits\Lazax.png" />
-    <BundleResource Include="Resources\Images\Races\Portraits\Mentak.png" />
-    <BundleResource Include="Resources\Images\Races\Portraits\Mindnet.png" />
-    <BundleResource Include="Resources\Images\Races\Portraits\Naalu.png" />
-    <BundleResource Include="Resources\Images\Races\Portraits\Nekro.png" />
-    <BundleResource Include="Resources\Images\Races\Portraits\Saardak.png" />
-    <BundleResource Include="Resources\Images\Races\Portraits\Saar.png" />
-    <BundleResource Include="Resources\Images\Races\Portraits\Sol.png" />
-    <BundleResource Include="Resources\Images\Races\Portraits\Winnu.png" />
-    <BundleResource Include="Resources\Images\Races\Portraits\Xxcha.png" />
-    <BundleResource Include="Resources\Images\Races\Portraits\Yin.png" />
-    <BundleResource Include="Resources\Images\Races\Portraits\Ysaril.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\Barony.png" />
-    <BundleResource Include="Resources\Images\Races\Emblems\Winnu.png" />
   </ItemGroup>
 </Project>

@@ -29,19 +29,6 @@ namespace TwilightImperiumMasterCompanion.Core
 			get;
 			set;
 		}
-
-		public bool isOwned {
-			get;
-			set;
-		}
-			
-		public Planet (string planetName, string description, int resourceValue, int influenceValue )
-		{
-			PlanetName = planetName;
-			Description = description;
-			Influence = influenceValue;
-			Resource = resourceValue;
-		}
 	}
 }
 

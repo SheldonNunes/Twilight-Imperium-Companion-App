@@ -13,11 +13,6 @@ namespace TwilightImperiumMasterCompanion.Core
 
 		public int Capacity { get; set; }
 
-		public Special[] Special { get; set; }
-
-
-		public Ship(string name, int cost, int battle, int movement, int capacity)
-		{
-		}
+		public SpecialAbilities[] Special { get; set; }
 	}
 }

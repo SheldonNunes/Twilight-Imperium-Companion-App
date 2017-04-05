@@ -15,6 +15,8 @@ namespace TwilightImperiumMasterCompanion.Core
 			 * 
 			 * CreatableTypes.EndingWith.AsInterfaces.Singltonlazyload
 			 * */
+			Mvx.RegisterType<IUnitReferenceViewModel, UnitReferenceViewModel>();
+			Mvx.RegisterType<IPurchaseUnitViewModel, PurchaseUnitViewModel>();
 
 			Mvx.RegisterType<IRaceRepository, RaceRepository>();
 

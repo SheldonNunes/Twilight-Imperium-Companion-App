@@ -6,6 +6,6 @@ namespace TwilightImperiumMasterCompanion.Core
 {
 	public interface IShipRepository
 	{
-		Task<IEnumerable<Ship>> GetShips();
+		IEnumerable<Ship> GetShips();
 	}
 }

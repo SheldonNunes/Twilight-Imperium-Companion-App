@@ -40,21 +40,21 @@
     <Compile Include="App.cs" />
     <Compile Include="AppStart.cs" />
     <Compile Include="Model\Ship.cs" />
-    <Compile Include="Enum\Special.cs" />
+    <Compile Include="Enum\SpecialAbilities.cs" />
     <Compile Include="Repositories\ShipRepository.cs" />
     <Compile Include="Repositories\IShipRepository.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="ViewModels\JoinGameViewModel.cs" />
-    <Compile Include="ViewModels\RaceSelectionViewModel.cs" />
     <Compile Include="Model\Race.cs" />
     <Compile Include="Repositories\IRaceRepository.cs" />
     <Compile Include="Repositories\RaceRepository.cs" />
     <Compile Include="Repositories\RaceRepositoryDecorator.cs" />
     <Compile Include="Repositories\ShatteredEmpiresRaceRepository.cs" />
     <Compile Include="Repositories\ShardsOfTheThroneRaceRepository.cs" />
-    <Compile Include="ViewModels\IRaceSelectionViewModel.cs" />
-    <Compile Include="Converter\RaceListConverter.cs" />
+    <Compile Include="ViewModels\Unit\UnitTabBarViewModel.cs" />
+    <Compile Include="ViewModels\Interfaces\IUnitReferenceViewModel.cs" />
+    <Compile Include="ViewModels\Implementation\PurchaseUnitViewModel.cs" />
+    <Compile Include="ViewModels\Interfaces\IPurchaseUnitViewModel.cs" />
+    <Compile Include="ViewModels\Implementation\UnitReferenceViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -64,7 +64,9 @@
     <Folder Include="Enum\" />
     <Folder Include="Repositories\" />
     <Folder Include="ViewModels\" />
-    <Folder Include="Converter\" />
+    <Folder Include="ViewModels\Unit\" />
+    <Folder Include="ViewModels\Interfaces\" />
+    <Folder Include="ViewModels\Implementation\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\UIStrings.resx">
@@ -74,16 +76,16 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Platform">
-      <HintPath>..\packages\MvvmCross.Platform.4.2.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
+      <HintPath>..\packages\MvvmCross.Platform.4.4.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Core">
-      <HintPath>..\packages\MvvmCross.Core.4.2.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
+      <HintPath>..\packages\MvvmCross.Core.4.4.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Binding">
-      <HintPath>..\packages\MvvmCross.Binding.4.2.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
+      <HintPath>..\packages\MvvmCross.Binding.4.4.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Localization">
-      <HintPath>..\packages\MvvmCross.Binding.4.2.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
+      <HintPath>..\packages\MvvmCross.Binding.4.4.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

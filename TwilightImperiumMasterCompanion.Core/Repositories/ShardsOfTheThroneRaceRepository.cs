@@ -20,7 +20,6 @@ namespace TwilightImperiumMasterCompanion.Core
 			var newRaces = new List<Race>(){
 				new Race("Arborec", "Arborec"),
 				new Race("Ghosts of Creuss", "Ghosts"),
-				new Race("Lazax", "Lazax"),
 				new Race("Nekro Virus", "Nekro"),
 			};
 			newRaces.AddRange(baseRaces);

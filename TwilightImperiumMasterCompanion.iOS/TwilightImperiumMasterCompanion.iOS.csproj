@@ -110,26 +110,47 @@
     <ImageAsset Include="Resources\Images.xcassets\PurchaseTabIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\DreadnaughtIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\CarrierIcon.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\CarrierIcon.imageset\Carrier-Icon.png" />
     <ImageAsset Include="Resources\Images.xcassets\FighterIcon.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\FighterIcon.imageset\Fighter-Icon.png" />
     <ImageAsset Include="Resources\Images.xcassets\DestroyerIcon.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\DestroyerIcon.imageset\Destroyer-Icon.png" />
-    <ImageAsset Include="Resources\Images.xcassets\GroundForcesIcon.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\GroundForcesIcon.imageset\Ground-Forces.png" />
     <ImageAsset Include="Resources\Images.xcassets\PDSIcon.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\PDSIcon.imageset\PDS-Icon.png" />
     <ImageAsset Include="Resources\Images.xcassets\WarSunIcon.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\WarSunIcon.imageset\War-Sun-Icon.png" />
-    <ImageAsset Include="Resources\Images.xcassets\DreadnaughtIcon.imageset\Dreadnaught Icon.pdf" />
-    <ImageAsset Include="Resources\Images.xcassets\PurchaseTabIcon.imageset\PurchaseIcon.png" />
-    <ImageAsset Include="Resources\Images.xcassets\UnitReferenceTabIcon.imageset\UnitReferenceIcon.png" />
+    <ImageAsset Include="Resources\Images.xcassets\UnitReferenceTabIcon.imageset\Dreadnaught Icon White.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\CarrierIcon.imageset\Carrier Icon copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\DreadnaughtIcon.imageset\Dreadnaught Icon copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\FighterIcon.imageset\Fighter Icon copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\DestroyerIcon.imageset\Destroyer Icon copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\PDSIcon.imageset\PDS Icon copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\PurchaseTabIcon.imageset\Purchase Icon copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\WarSunIcon.imageset\War Sun Icon copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\SpaceDockIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\SpaceDockIcon.imageset\Space Dock Icon copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\GroundForcesIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\GroundForcesIcon.imageset\Ground Forces copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\HamburgerIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\HamburgerIcon.imageset\Hamburger Icon copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\ResearchIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\ResearchIcon.imageset\Research Icon copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\RaceIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\RaceIcon.imageset\Race Icon copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\RulesIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\RulesIcon.imageset\Rules Icon copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\GalaxyMapIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\GalaxyMapIcon.imageset\Galaxy Map Icon copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\PlanetIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\PlanetIcon.imageset\Planets Icon copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\HexagonInactive.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\HexagonInactive.imageset\HexagonShape copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\HexagonActive.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\HexagonActive.imageset\HexagonShapeActive copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\HexagonInactiveLight.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\HexagonInactiveLight.imageset\HexagonShapeInactiveLight copy.pdf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
     <InterfaceDefinition Include="Storyboards\UnitReference.storyboard" />
     <InterfaceDefinition Include="ViewComponents\UnitReferenceTableViewCell.xib" />
     <InterfaceDefinition Include="ViewComponents\PurchaseUnitTableViewCell.xib" />
+    <InterfaceDefinition Include="Storyboards\Navigation.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -162,6 +183,14 @@
     <Compile Include="ViewComponents\PurchaseUnitTableViewCell.designer.cs">
       <DependentUpon>PurchaseUnitTableViewCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\UIMenuNavigationController.cs" />
+    <Compile Include="Views\UIMenuNavigationController.designer.cs">
+      <DependentUpon>UIMenuNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainNavigationView.cs" />
+    <Compile Include="Views\MainNavigationView.designer.cs">
+      <DependentUpon>MainNavigationView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -184,9 +213,19 @@
     <Folder Include="Resources\Images.xcassets\CarrierIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\FighterIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\DestroyerIcon.imageset\" />
-    <Folder Include="Resources\Images.xcassets\GroundForcesIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\PDSIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\WarSunIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\SpaceDockIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\GroundForcesIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\HamburgerIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\ResearchIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\RaceIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\RulesIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\GalaxyMapIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\PlanetIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\HexagonInactive.imageset\" />
+    <Folder Include="Resources\Images.xcassets\HexagonActive.imageset\" />
+    <Folder Include="Resources\Images.xcassets\HexagonInactiveLight.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Fonts\BodoniFLF-Bold.ttf">

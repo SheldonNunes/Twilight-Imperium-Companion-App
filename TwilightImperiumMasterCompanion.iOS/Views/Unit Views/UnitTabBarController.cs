@@ -25,6 +25,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 
 		public UnitTabBarController(IntPtr handle) : base(handle)
 		{
+			
 		}
 
 		public override void ViewDidLoad()
@@ -32,7 +33,6 @@ namespace TwilightImperiumMasterCompanion.iOS
 			base.ViewDidLoad();
 			if (ViewModel == null)
 				return;
-			
 			var viewControllers = new UIViewController[]
 								  {
 										CreateTab("Unit Reference", "UnitReferenceTabIcon", ViewModel.UnitReferenceViewModel),
@@ -42,21 +42,27 @@ namespace TwilightImperiumMasterCompanion.iOS
 			CustomizableViewControllers = new UIViewController[] { };
 			SelectedViewController = ViewControllers[0];
 
+
+
+			NavigationController.NavigationBar.TintColor = UIColor.White;
+
+			NavigationItem.SetLeftBarButtonItem(new UIBarButtonItem(
+				UIImage.FromBundle("HamburgerIcon"),
+				UIBarButtonItemStyle.Plain,
+				(sender, e) => { }), true);
+
 		}
 
 		private int _createdSoFarCount = 0;
 
 		private UIViewController CreateTab(string title, string bundle, IMvxViewModel viewModel)
 		{
-			var controller = new UINavigationController();
 			var screen = this.CreateViewControllerFor(viewModel) as UIViewController;
-
 			SetTitleAndTabBarItem(screen, title, bundle);
-			controller.PushViewController(screen, false);
-			return controller;
+			return screen;
 		}
 
-		        private void SetTitleAndTabBarItem(UIViewController screen, string title, string bundle)
+		private void SetTitleAndTabBarItem(UIViewController screen, string title, string bundle)
 		{
 			screen.Title = title;
 			screen.TabBarItem = new UITabBarItem(title,

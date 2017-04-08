@@ -57,6 +57,13 @@ namespace TwilightImperiumMasterCompanion.Core
 				Battle = 3,
 				Capacity = 6
 			},
+						new Ship(){
+				Name = "Space Dock",
+				Cost = 4,
+				Movement = 2,
+				Battle = 3,
+				Capacity = 6
+			},
 		};
 
 

@@ -19,7 +19,6 @@ namespace TwilightImperiumMasterCompanion.iOS
 		{
 			base.ViewDidLoad();
 
-						NavigationController.NavigationBar.Hidden = true;
 			var source = new PurchaseTableSource(tableView);
 
 			tableView.Source = source;

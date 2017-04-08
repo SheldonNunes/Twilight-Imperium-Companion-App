@@ -21,7 +21,16 @@ namespace TwilightImperiumMasterCompanion.iOS
 		{
 			base.ViewDidLoad();
 
-			NavigationController.NavigationBar.Hidden = true;
+			NavigationController.NavigationBar.Hidden = false;
+
+
+
+//			this.NavigationItem.SetRightBarButtonItem(
+//new UIBarButtonItem(UIBarButtonSystemItem.Action, (sender, args) =>
+//{
+//	// button was clicked
+//			}),true);
+
 			var source =  new UnitReferenceTableSource(tableView);
 
 			tableView.Source = source;

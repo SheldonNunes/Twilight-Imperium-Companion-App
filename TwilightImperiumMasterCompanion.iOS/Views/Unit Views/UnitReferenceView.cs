@@ -1,37 +1,27 @@
-using Foundation;
-using System;
-using UIKit;
-using MvvmCross.iOS.Views;
-using TwilightImperiumMasterCompanion.Core;
-using MvvmCross.Binding.iOS.Views;
-using MvvmCross.Binding.BindingContext;
+﻿using System;
 using System.Collections.Generic;
-using ObjCRuntime;
+using MvvmCross.Binding.BindingContext;
+using MvvmCross.Binding.iOS.Views;
+using MvvmCross.iOS.Views;
+using MvvmCross.Platform;
+using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-	[MvxFromStoryboard(StoryboardName = "UnitReference")]
 	public partial class UnitReferenceView : MvxViewController
 	{
-		public UnitReferenceView(IntPtr handle) : base(handle)
+		public UnitReferenceView()
+			: base("UnitReferenceView", null)
 		{
 		}
 
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-
-			NavigationController.NavigationBar.Hidden = false;
-
-
-
-//			this.NavigationItem.SetRightBarButtonItem(
-//new UIBarButtonItem(UIBarButtonSystemItem.Action, (sender, args) =>
-//{
-//	// button was clicked
-//			}),true);
-
-			var source =  new UnitReferenceTableSource(tableView);
+			if (ViewModel == null)
+				return;
+			
+			var source = new UnitReferenceTableSource(tableView);
 
 			tableView.Source = source;
 			tableView.ReloadData();
@@ -49,7 +39,8 @@ namespace TwilightImperiumMasterCompanion.iOS
 	{
 		public UnitReferenceTableSource(UITableView tableView)
 			: base(tableView, "UnitReferenceTableViewCell", "UnitReferenceTableViewCell")
-        {
+		{
 		}
 	}
 }
+

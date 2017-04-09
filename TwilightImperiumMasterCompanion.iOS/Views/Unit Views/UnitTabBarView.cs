@@ -1,14 +1,13 @@
-using Foundation;
-using System;
-using UIKit;
-using MvvmCross.iOS.Views;
-using TwilightImperiumMasterCompanion.Core;
+﻿using System;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.iOS.Views;
+using MvvmCross.Platform;
+using TwilightImperiumMasterCompanion.Core;
+using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-	[MvxFromStoryboard(StoryboardName = "UnitReference")]
-	public partial class UnitTabBarController : MvxTabBarViewController<UnitTabBarViewModel>
+	public partial class UnitTabBarView : MvxTabBarViewController<UnitTabBarViewModel>
 	{
 		public override UIViewController SelectedViewController
 		{
@@ -23,9 +22,14 @@ namespace TwilightImperiumMasterCompanion.iOS
 			}
 		}
 
-		public UnitTabBarController(IntPtr handle) : base(handle)
+		private readonly INavigationBar navigationBar;
+
+		public UnitTabBarView() : base()
 		{
-			
+			navigationBar = Mvx.Resolve<INavigationBar>();
+            ViewDidLoad();
+
+
 		}
 
 		public override void ViewDidLoad()
@@ -33,6 +37,8 @@ namespace TwilightImperiumMasterCompanion.iOS
 			base.ViewDidLoad();
 			if (ViewModel == null)
 				return;
+			
+
 			var viewControllers = new UIViewController[]
 								  {
 										CreateTab("Unit Reference", "UnitReferenceTabIcon", ViewModel.UnitReferenceViewModel),
@@ -41,16 +47,12 @@ namespace TwilightImperiumMasterCompanion.iOS
 			ViewControllers = viewControllers;
 			CustomizableViewControllers = new UIViewController[] { };
 			SelectedViewController = ViewControllers[0];
+		}
 
-
-
-			NavigationController.NavigationBar.TintColor = UIColor.White;
-
-			NavigationItem.SetLeftBarButtonItem(new UIBarButtonItem(
-				UIImage.FromBundle("HamburgerIcon"),
-				UIBarButtonItemStyle.Plain,
-				(sender, e) => { }), true);
-
+		public override void ViewWillAppear(bool animated)
+		{
+			base.ViewWillAppear(animated);
+			navigationBar.Initialize(this);
 		}
 
 		private int _createdSoFarCount = 0;
@@ -66,10 +68,11 @@ namespace TwilightImperiumMasterCompanion.iOS
 		{
 			screen.Title = title;
 			screen.TabBarItem = new UITabBarItem(title,
-			                                     UIImage.FromBundle(bundle),
+												 UIImage.FromBundle(bundle),
 												 _createdSoFarCount);
 			screen.TabBarItem.Image = screen.TabBarItem.Image.ImageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal);
 			_createdSoFarCount++;
 		}
 	}
 }
+

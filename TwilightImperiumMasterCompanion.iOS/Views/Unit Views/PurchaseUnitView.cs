@@ -1,23 +1,23 @@
-using Foundation;
-using System;
-using UIKit;
-using MvvmCross.iOS.Views;
-using MvvmCross.Binding.BindingContext;
+﻿using System;
 using System.Collections.Generic;
+using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
+using MvvmCross.iOS.Views;
+using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-	[MvxFromStoryboard(StoryboardName = "UnitReference")]
-    public partial class PurchaseUnitView : MvxViewController
-    {
-        public PurchaseUnitView (IntPtr handle) : base (handle)
-        {
-        }
+	public partial class PurchaseUnitView : MvxViewController
+	{
+		public PurchaseUnitView() : base("PurchaseUnitView", null)
+		{
+		}
 
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+			if (ViewModel == null)
+				return;
 
 			var source = new PurchaseTableSource(tableView);
 
@@ -29,9 +29,9 @@ namespace TwilightImperiumMasterCompanion.iOS
 					{source, "ItemsSource Ships"}
 				});
 		}
-    }
+	}
 
-		public class PurchaseTableSource : MvxSimpleTableViewSource
+	public class PurchaseTableSource : MvxSimpleTableViewSource
 	{
 		public PurchaseTableSource(UITableView tableView)
 			: base(tableView, "PurchaseUnitTableViewCell", "PurchaseUnitTableViewCell")
@@ -39,3 +39,4 @@ namespace TwilightImperiumMasterCompanion.iOS
 		}
 	}
 }
+

@@ -21,8 +21,6 @@
     <ConsolePause>false</ConsolePause>
     <MtouchArch>i386</MtouchArch>
     <MtouchLink>None</MtouchLink>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
-    <MtouchUseSGen>true</MtouchUseSGen>
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer: sheldon.nunes02@gmail.com (F52W5Z57TS)</CodesignKey>
     <MtouchFastDev>true</MtouchFastDev>
@@ -38,9 +36,7 @@
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchFloat32>true</MtouchFloat32>
-    <MtouchUseSGen>true</MtouchUseSGen>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>full</DebugType>
@@ -51,9 +47,7 @@
     <ConsolePause>false</ConsolePause>
     <MtouchArch>i386</MtouchArch>
     <MtouchLink>None</MtouchLink>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchUseSGen>true</MtouchUseSGen>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,11 +61,9 @@
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchFloat32>true</MtouchFloat32>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchDebug>true</MtouchDebug>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <CodesignKey>iPhone Developer: sheldon.nunes02@gmail.com (F52W5Z57TS)</CodesignKey>
-    <MtouchUseSGen>true</MtouchUseSGen>
     <CodesignProvision>f2ec4653-8fe1-46a4-9ff4-3ab4e2c42ef3</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
@@ -151,6 +143,8 @@
     <InterfaceDefinition Include="ViewComponents\UnitReferenceTableViewCell.xib" />
     <InterfaceDefinition Include="ViewComponents\PurchaseUnitTableViewCell.xib" />
     <InterfaceDefinition Include="Storyboards\Navigation.storyboard" />
+    <InterfaceDefinition Include="Views\Unit Views\UnitReferenceView.xib" />
+    <InterfaceDefinition Include="Views\Unit Views\PurchaseUnitView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -162,22 +156,10 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Constants\ColorConstants.cs" />
     <Compile Include="Setup.cs" />
-    <Compile Include="Views\Unit Views\PurchaseUnitView.cs" />
-    <Compile Include="Views\Unit Views\PurchaseUnitView.designer.cs">
-      <DependentUpon>PurchaseUnitView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Extensions\UIImageExtensions.cs" />
     <Compile Include="ViewComponents\UnitReferenceTableViewCell.cs" />
     <Compile Include="ViewComponents\UnitReferenceTableViewCell.designer.cs">
       <DependentUpon>UnitReferenceTableViewCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Unit Views\UnitReferenceView.cs" />
-    <Compile Include="Views\Unit Views\UnitReferenceView.designer.cs">
-      <DependentUpon>UnitReferenceView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Unit Views\UnitTabBarController.cs" />
-    <Compile Include="Views\Unit Views\UnitTabBarController.designer.cs">
-      <DependentUpon>UnitTabBarController.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewComponents\PurchaseUnitTableViewCell.cs" />
     <Compile Include="ViewComponents\PurchaseUnitTableViewCell.designer.cs">
@@ -190,6 +172,20 @@
     <Compile Include="Views\MainNavigationView.cs" />
     <Compile Include="Views\MainNavigationView.designer.cs">
       <DependentUpon>MainNavigationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Unit Views\UnitReferenceView.cs" />
+    <Compile Include="Views\Unit Views\UnitReferenceView.designer.cs">
+      <DependentUpon>UnitReferenceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\MenuNavigationBar.cs" />
+    <Compile Include="ViewComponents\INavigationBar.cs" />
+    <Compile Include="Views\Unit Views\UnitTabBarView.cs" />
+    <Compile Include="Views\Unit Views\UnitTabBarView.designer.cs">
+      <DependentUpon>UnitTabBarView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Unit Views\PurchaseUnitView.cs" />
+    <Compile Include="Views\Unit Views\PurchaseUnitView.designer.cs">
+      <DependentUpon>PurchaseUnitView.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
@@ -226,6 +222,8 @@
     <Folder Include="Resources\Images.xcassets\HexagonInactive.imageset\" />
     <Folder Include="Resources\Images.xcassets\HexagonActive.imageset\" />
     <Folder Include="Resources\Images.xcassets\HexagonInactiveLight.imageset\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="ViewControllers\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Fonts\BodoniFLF-Bold.ttf">

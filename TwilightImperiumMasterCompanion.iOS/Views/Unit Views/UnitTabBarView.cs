@@ -23,20 +23,20 @@ namespace TwilightImperiumMasterCompanion.iOS
 		}
 
 		private readonly INavigationBar navigationBar;
+		private bool constructed;
 
 		public UnitTabBarView() : base()
 		{
+			constructed = true;
 			navigationBar = Mvx.Resolve<INavigationBar>();
-            ViewDidLoad();
-
-
+			ViewDidLoad();
 		}
 
-		public override void ViewDidLoad()
+		sealed public override void ViewDidLoad()
 		{
-			base.ViewDidLoad();
-			if (ViewModel == null)
+			if (!constructed)
 				return;
+			base.ViewDidLoad();
 			
 
 			var viewControllers = new UIViewController[]
@@ -47,12 +47,20 @@ namespace TwilightImperiumMasterCompanion.iOS
 			ViewControllers = viewControllers;
 			CustomizableViewControllers = new UIViewController[] { };
 			SelectedViewController = ViewControllers[0];
+
+		}
+
+		public void Test()
+		{
+			var modal = new HexMainMenuView();
+			modal.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
+			PresentViewController(modal, false, null);
 		}
 
 		public override void ViewWillAppear(bool animated)
 		{
 			base.ViewWillAppear(animated);
-			navigationBar.Initialize(this);
+			navigationBar.Initialize(this, (sender, e) => Test());
 		}
 
 		private int _createdSoFarCount = 0;

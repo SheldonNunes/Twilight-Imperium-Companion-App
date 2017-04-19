@@ -11,11 +11,19 @@ using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-    [Register ("MainNavigationView")]
-    partial class MainNavigationView
+    [Register ("HexMainMenuView")]
+    partial class HexMainMenuView
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIVisualEffectView blurView { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (blurView != null) {
+                blurView.Dispose ();
+                blurView = null;
+            }
         }
     }
 }

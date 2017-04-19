@@ -24,7 +24,7 @@
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer: sheldon.nunes02@gmail.com (F52W5Z57TS)</CodesignKey>
     <MtouchFastDev>true</MtouchFastDev>
-    <CodesignProvision>f2ec4653-8fe1-46a4-9ff4-3ab4e2c42ef3</CodesignProvision>
+    <CodesignProvision>iOS Team Provisioning Profile: com.grumpygiraffe.twilight-imperium-master-companion</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>
@@ -64,7 +64,7 @@
     <MtouchDebug>true</MtouchDebug>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <CodesignKey>iPhone Developer: sheldon.nunes02@gmail.com (F52W5Z57TS)</CodesignKey>
-    <CodesignProvision>f2ec4653-8fe1-46a4-9ff4-3ab4e2c42ef3</CodesignProvision>
+    <CodesignProvision>iOS Team Provisioning Profile: com.grumpygiraffe.twilight-imperium-master-companion</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -145,6 +145,9 @@
     <InterfaceDefinition Include="Storyboards\Navigation.storyboard" />
     <InterfaceDefinition Include="Views\Unit Views\UnitReferenceView.xib" />
     <InterfaceDefinition Include="Views\Unit Views\PurchaseUnitView.xib" />
+    <InterfaceDefinition Include="Views\MainMenuView.xib" />
+    <InterfaceDefinition Include="ViewComponents\HexMenuViewComponent.xib" />
+    <InterfaceDefinition Include="Views\HexMainMenuView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -165,14 +168,6 @@
     <Compile Include="ViewComponents\PurchaseUnitTableViewCell.designer.cs">
       <DependentUpon>PurchaseUnitTableViewCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\UIMenuNavigationController.cs" />
-    <Compile Include="Views\UIMenuNavigationController.designer.cs">
-      <DependentUpon>UIMenuNavigationController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MainNavigationView.cs" />
-    <Compile Include="Views\MainNavigationView.designer.cs">
-      <DependentUpon>MainNavigationView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\Unit Views\UnitReferenceView.cs" />
     <Compile Include="Views\Unit Views\UnitReferenceView.designer.cs">
       <DependentUpon>UnitReferenceView.cs</DependentUpon>
@@ -187,6 +182,19 @@
     <Compile Include="Views\Unit Views\PurchaseUnitView.designer.cs">
       <DependentUpon>PurchaseUnitView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\MainMenuView.cs" />
+    <Compile Include="Views\MainMenuView.designer.cs">
+      <DependentUpon>MainMenuView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\HexMenuViewComponent.cs" />
+    <Compile Include="ViewComponents\HexMenuViewComponent.designer.cs">
+      <DependentUpon>HexMenuViewComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HexMainMenuView.cs" />
+    <Compile Include="Views\HexMainMenuView.designer.cs">
+      <DependentUpon>HexMainMenuView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\HexImageView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using MvvmCross.Binding.BindingContext;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Views;
 using MvvmCross.Platform;
@@ -37,7 +39,6 @@ namespace TwilightImperiumMasterCompanion.iOS
 			if (!constructed)
 				return;
 			base.ViewDidLoad();
-			
 
 			var viewControllers = new UIViewController[]
 								  {
@@ -61,6 +62,12 @@ namespace TwilightImperiumMasterCompanion.iOS
 		{
 			base.ViewWillAppear(animated);
 			navigationBar.Initialize(this, (sender, e) => Test());
+
+            this.AddBindings(new Dictionary<object, string>()
+			{
+				{ NavigationItem.LeftBarButtonItem, "Clicked ShowHexMainMenu" }
+			});
+
 		}
 
 		private int _createdSoFarCount = 0;

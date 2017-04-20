@@ -49,48 +49,72 @@ namespace TwilightImperiumMasterCompanion.iOS
 			return path;
 		}
 
+		public string HexText
+		{
+			get;
+			set;
+		}
 
 		public UIImage HexImage
 		{
-			get { return hexImageView.Image; }
-			set { hexImageView.Image = value; }
-		}
-
-		public UIImage HexIconImage
-		{
-			get { return hexIconImage.Image; }
-			set { hexIconImage.Image = value; }
+			get;
+			set;
 		}
 
 		private CAShapeLayer mask;
+		private UIImageView hexImage;
+		private UILabel hexLabel;
 
-		public HexMenuViewComponent() : base()
+		public HexMenuViewComponent()
 		{
+
+			mask = new CAShapeLayer();
+			hexImage = new UIImageView();
+			hexLabel = new UILabel();
+			Layer.AddSublayer(mask);
+            AddSubview(hexImage);
+            AddSubview(hexLabel);
 		}
 
 		public override void LayoutSubviews()
 		{
-			var lineWidth = 1f;
 			base.LayoutSubviews();
+			var lineWidth = 1f;
 
-			//NSBundle.MainBundle.LoadNib("HexMenuViewComponent", this, null);
 			var path = RoundedPolygonPath(Bounds, lineWidth, 6, 10f, (float)(Math.PI / 2.0));
-
-			mask = new CAShapeLayer();
-			//mask.Frame = Frame;
-			//mask.Bounds = Bounds;
-
 			mask.Path = path.CGPath;
 			mask.LineWidth = lineWidth;
 			mask.FillColor = ColorConstants.BLUE_PRIMARY.CGColor;
 			mask.StrokeColor = UIColor.Black.CGColor;
 			mask.Frame = this.Bounds;
-
-			this.Layer.InsertSublayer(mask, 0);
+			mask.Bounds = this.Bounds;
 			mask.AnchorPoint = new CGPoint(0.5, 0.5);
-			//this.TouchesBegan += (arg1, arg2) => mask.FillColor = ColorConstants.ORANGE_PRIMARY;
 
 			mask.AffineTransform = CGAffineTransform.MakeRotation((float)Math.PI / 6);
+
+			if (HexImage != null)
+			{
+
+				hexImage.Frame = new CGRect(0, 0, Bounds.Width / 2.5, Bounds.Height / 2.5);
+				hexImage.Center = new CGPoint(mask.Frame.GetMidX(), mask.Frame.GetMidY() - 10);
+				hexImage.Image = HexImage;
+
+			}
+
+			if (HexText != null)
+			{
+
+				hexLabel.Frame = new CGRect(0, 0, Bounds.Width, Bounds.Height);
+				hexLabel.Center = new CGPoint(mask.Frame.GetMidX(), mask.Frame.GetMidY() + 30);
+				hexLabel.TextColor = UIColor.White;
+				hexLabel.Font = UIFont.FromName("HandelGothicBT-Regular", 13f);
+				hexLabel.TextAlignment = UITextAlignment.Center;
+				hexLabel.Text = HexText;
+
+			}
+			//this.TouchesBegan += (arg1, arg2) => mask.FillColor = ColorConstants.ORANGE_PRIMARY;
+
+
 			//this.AddSubview(rootView);
 			//rootView.BackgroundColor = UIColor.Clear;
 			//HexImage = UIImage.FromBundle("HexagonInactive");
@@ -105,7 +129,8 @@ namespace TwilightImperiumMasterCompanion.iOS
 		}
 
 		public override bool PointInside(CGPoint point, UIEvent uievent)
-		{;
+		{
+			;
 			return mask.Path.ContainsPoint(point, false);
 		}
 	}

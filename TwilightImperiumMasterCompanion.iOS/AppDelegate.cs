@@ -1,6 +1,7 @@
 ﻿using Foundation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Platform;
+using MvvmCross.iOS.Views.Presenters;
 using MvvmCross.Platform;
 using UIKit;
 
@@ -21,8 +22,8 @@ namespace TwilightImperiumMasterCompanion.iOS
 
 		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
 		{
-
-			var setup = new Setup(this, Window);
+			var presenter = new MvxModalSupportIosViewPresenter(this, Window);
+			var setup = new Setup(this, presenter);
 			setup.Initialize();
 
 			var startup = Mvx.Resolve<IMvxAppStart>();
@@ -31,6 +32,8 @@ namespace TwilightImperiumMasterCompanion.iOS
 			var result = UIImageExtensions.CreateImageWithColor(UIColor.FromRGB(255, 172, 56), new CoreGraphics.CGSize(screenWidth / 2, 50));
 			UITabBar.Appearance.SelectionIndicatorImage = (result);
 			UITabBar.Appearance.BarTintColor = UIColor.FromRGB(57, 121, 205);
+			UINavigationBar.Appearance.TintColor = UIColor.White;
+//			viewController.NavigationController.NavigationBar.TintColor = UIColor.White;
 			UITabBarItem.Appearance.SetTitleTextAttributes(new UITextAttributes()
 			{
 				TextColor = UIColor.White

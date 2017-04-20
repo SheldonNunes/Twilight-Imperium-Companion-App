@@ -136,6 +136,10 @@
     <ImageAsset Include="Resources\Images.xcassets\HexagonActive.imageset\HexagonShapeActive copy.pdf" />
     <ImageAsset Include="Resources\Images.xcassets\HexagonInactiveLight.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\HexagonInactiveLight.imageset\HexagonShapeInactiveLight copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\HexagonBase.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\ShipIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\ShipIcon.imageset\Ship Icon.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\HexagonBase.imageset\Base Hexagon Image copy.pdf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
@@ -232,18 +236,11 @@
     <Folder Include="Resources\Images.xcassets\HexagonInactiveLight.imageset\" />
     <Folder Include="Interfaces\" />
     <Folder Include="ViewControllers\" />
+    <Folder Include="Resources\Images.xcassets\HexagonBase.imageset\" />
+    <Folder Include="Resources\Images.xcassets\ShipIcon.imageset\" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Fonts\BodoniFLF-Bold.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-    <BundleResource Include="Resources\Fonts\BodoniFLF-BoldItalic.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-    <BundleResource Include="Resources\Fonts\BodoniFLF-Italic.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-    <BundleResource Include="Resources\Fonts\BodoniFLF-Roman.ttf">
+    <BundleResource Include="Resources\Fonts\Handel-Gothic.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>

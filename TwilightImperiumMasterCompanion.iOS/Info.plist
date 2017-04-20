@@ -43,7 +43,7 @@
 	<string>Resources/Images.xcassets/AppIcons.appiconset</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Fonts/BodoniFLF-Bold.ttf</string>
+		<string>Fonts/Handel-Gothic.ttf</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>

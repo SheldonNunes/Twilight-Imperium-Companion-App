@@ -17,7 +17,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 			base.ViewDidLoad();
 
 			this.View.BackgroundColor = UIColor.Clear;
-			menuView.Frame = UIScreen.MainScreen.Bounds;
+			menuView.Frame = this.View.Bounds;
 
 
 			//blurView = new UIVisualEffectView();

@@ -117,6 +117,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 
 		public void Test(object sender, EventArgs e)
 		{
+			DismissViewController(true, null);
 		}
 
 

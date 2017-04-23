@@ -53,9 +53,9 @@ namespace TwilightImperiumMasterCompanion.iOS
 
 		public void Test()
 		{
-			var modal = new HexMainMenuView();
-			modal.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
-			PresentViewController(modal, false, null);
+			//var modal = new HexMainMenuView();
+			//modal.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
+			//PresentViewController(modal, false, null);
 		}
 
 		public override void ViewWillAppear(bool animated)

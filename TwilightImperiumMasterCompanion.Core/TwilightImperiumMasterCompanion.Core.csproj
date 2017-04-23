@@ -56,6 +56,7 @@
     <Compile Include="ViewModels\Interfaces\IPurchaseUnitViewModel.cs" />
     <Compile Include="ViewModels\Implementation\UnitReferenceViewModel.cs" />
     <Compile Include="ViewModels\HexMainMenuViewModel.cs" />
+    <Compile Include="ViewModels\NavigationParameters.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>

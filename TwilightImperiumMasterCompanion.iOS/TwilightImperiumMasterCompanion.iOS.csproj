@@ -149,8 +149,6 @@
     <InterfaceDefinition Include="Storyboards\Navigation.storyboard" />
     <InterfaceDefinition Include="Views\Unit Views\UnitReferenceView.xib" />
     <InterfaceDefinition Include="Views\Unit Views\PurchaseUnitView.xib" />
-    <InterfaceDefinition Include="Views\MainMenuView.xib" />
-    <InterfaceDefinition Include="ViewComponents\HexMenuViewComponent.xib" />
     <InterfaceDefinition Include="Views\HexMainMenuView.xib" />
   </ItemGroup>
   <ItemGroup>
@@ -186,19 +184,16 @@
     <Compile Include="Views\Unit Views\PurchaseUnitView.designer.cs">
       <DependentUpon>PurchaseUnitView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainMenuView.cs" />
-    <Compile Include="Views\MainMenuView.designer.cs">
-      <DependentUpon>MainMenuView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewComponents\HexMenuViewComponent.cs" />
-    <Compile Include="ViewComponents\HexMenuViewComponent.designer.cs">
-      <DependentUpon>HexMenuViewComponent.cs</DependentUpon>
-    </Compile>
+    <Compile Include="ViewComponents\HexViewComponent.cs" />
     <Compile Include="Views\HexMainMenuView.cs" />
     <Compile Include="Views\HexMainMenuView.designer.cs">
       <DependentUpon>HexMainMenuView.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewComponents\HexImageView.cs" />
+    <Compile Include="ModalSupportIosViewPresenter.cs" />
+    <Compile Include="HexMenuViewComponent.cs" />
+    <Compile Include="HexMenuViewComponent.designer.cs">
+      <DependentUpon>HexMenuViewComponent.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

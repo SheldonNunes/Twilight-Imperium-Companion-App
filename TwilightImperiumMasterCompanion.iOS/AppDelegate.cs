@@ -22,7 +22,8 @@ namespace TwilightImperiumMasterCompanion.iOS
 
 		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
 		{
-			var presenter = new MvxModalSupportIosViewPresenter(this, Window);
+			var presenter = new ModalSupportIosViewPresenter(this, Window);
+
 			var setup = new Setup(this, presenter);
 			setup.Initialize();
 
@@ -33,7 +34,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 			UITabBar.Appearance.SelectionIndicatorImage = (result);
 			UITabBar.Appearance.BarTintColor = UIColor.FromRGB(57, 121, 205);
 			UINavigationBar.Appearance.TintColor = UIColor.White;
-//			viewController.NavigationController.NavigationBar.TintColor = UIColor.White;
+			//			viewController.NavigationController.NavigationBar.TintColor = UIColor.White;
 			UITabBarItem.Appearance.SetTitleTextAttributes(new UITextAttributes()
 			{
 				TextColor = UIColor.White

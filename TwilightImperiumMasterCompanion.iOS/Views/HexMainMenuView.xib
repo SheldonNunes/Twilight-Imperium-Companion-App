@@ -51,7 +51,7 @@
                 <constraint firstItem="20" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="52"/>
                 <constraint firstItem="20" firstAttribute="bottom" secondItem="2" secondAttribute="bottom" id="53"/>
             </constraints>
-            <point key="canvasLocation" x="33.5" y="53.5"/>
+            <point key="canvasLocation" x="-4.5" y="17.5"/>
         </view>
     </objects>
 </document>

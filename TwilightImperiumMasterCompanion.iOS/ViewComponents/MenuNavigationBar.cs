@@ -11,9 +11,8 @@ namespace TwilightImperiumMasterCompanion.iOS
 			set;
 		}
 
-		public void Initialize(UIViewController viewController, EventHandler leftBarButtonPressed)
+		public void Initialize(UIViewController viewController)
 		{
-			LeftBarButtonPressed = leftBarButtonPressed;
 			viewController.NavigationItem.SetLeftBarButtonItem(new UIBarButtonItem(
 							UIImage.FromBundle("HamburgerIcon"),
 							UIBarButtonItemStyle.Plain,

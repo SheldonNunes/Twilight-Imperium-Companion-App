@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using MvvmCross.Binding.BindingContext;
-using MvvmCross.Core.ViewModels;
+﻿using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Views;
 using MvvmCross.Platform;
 using TwilightImperiumMasterCompanion.Core;
@@ -9,7 +6,7 @@ using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-	public partial class UnitTabBarView : MvxTabBarViewController<UnitTabBarViewModel>
+	public class RaceTabView : MvxTabBarViewController<RaceTabViewModel>
 	{
 		public override UIViewController SelectedViewController
 		{
@@ -27,7 +24,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 		private readonly INavigationBar navigationBar;
 		private bool constructed;
 
-		public UnitTabBarView() : base()
+		public RaceTabView()
 		{
 			constructed = true;
 			navigationBar = Mvx.Resolve<INavigationBar>();
@@ -42,8 +39,9 @@ namespace TwilightImperiumMasterCompanion.iOS
 
 			var viewControllers = new UIViewController[]
 								  {
-										CreateTab("Unit Reference", "UnitReferenceTabIcon", ViewModel.UnitReferenceViewModel),
-										CreateTab("Purchase", "PurchaseTabIcon", ViewModel.PurchaseUnitViewModel),
+										CreateTab("Overview", "RaceOverviewTabIcon", ViewModel.RaceOverviewViewModel),
+										CreateTab("Leaders", "RaceLeadersTabIcon", ViewModel.RaceLeadersViewModel),
+										CreateTab("Setup", "RaceSetupTabIcon", ViewModel.RaceSetupViewModel),
 								  };
 			ViewControllers = viewControllers;
 			CustomizableViewControllers = new UIViewController[] { };
@@ -54,12 +52,12 @@ namespace TwilightImperiumMasterCompanion.iOS
 		public override void ViewWillAppear(bool animated)
 		{
 			base.ViewWillAppear(animated);
-			navigationBar.Initialize(this);
+			//navigationBar.Initialize(this, (sender, e) => Test());
 
-			var set = this.CreateBindingSet<UnitTabBarView, UnitTabBarViewModel>();
-			set.Bind(NavigationItem.LeftBarButtonItem)
-			   .To(vm => vm.ShowHexMainMenu);
-			set.Apply();  
+			//var set = this.CreateBindingSet<RaceTabView, RaceTabViewModel>();
+			//set.Bind(NavigationItem.LeftBarButtonItem)
+			//   .To(vm => vm.ShowHexMainMenu);
+			//set.Apply();
 		}
 
 		private int _createdSoFarCount = 0;

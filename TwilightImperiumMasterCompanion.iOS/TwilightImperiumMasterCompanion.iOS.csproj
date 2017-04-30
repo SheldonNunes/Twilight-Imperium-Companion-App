@@ -20,7 +20,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>i386</MtouchArch>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>SdkOnly</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer: sheldon.nunes02@gmail.com (F52W5Z57TS)</CodesignKey>
     <MtouchFastDev>true</MtouchFastDev>
@@ -65,6 +65,7 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <CodesignKey>iPhone Developer: sheldon.nunes02@gmail.com (F52W5Z57TS)</CodesignKey>
     <CodesignProvision>iOS Team Provisioning Profile: com.grumpygiraffe.twilight-imperium-master-companion</CodesignProvision>
+    <MtouchLink>SdkOnly</MtouchLink>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -140,6 +141,7 @@
     <ImageAsset Include="Resources\Images.xcassets\ShipIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\ShipIcon.imageset\Ship Icon.pdf" />
     <ImageAsset Include="Resources\Images.xcassets\HexagonBase.imageset\Base Hexagon Image copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
@@ -150,6 +152,8 @@
     <InterfaceDefinition Include="Views\Unit Views\UnitReferenceView.xib" />
     <InterfaceDefinition Include="Views\Unit Views\PurchaseUnitView.xib" />
     <InterfaceDefinition Include="Views\HexMainMenuView.xib" />
+    <InterfaceDefinition Include="Views\SelectStartingOptionView.xib" />
+    <InterfaceDefinition Include="Views\RaceSelectionView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -194,6 +198,16 @@
     <Compile Include="HexMenuViewComponent.designer.cs">
       <DependentUpon>HexMenuViewComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\SelectStartingOptionView.cs" />
+    <Compile Include="Views\SelectStartingOptionView.designer.cs">
+      <DependentUpon>SelectStartingOptionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RaceSelectionView.cs" />
+    <Compile Include="Views\RaceSelectionView.designer.cs">
+      <DependentUpon>RaceSelectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinkerPleaseInclude.cs" />
+    <Compile Include="Views\Race Views\RaceTabView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -233,6 +247,7 @@
     <Folder Include="ViewControllers\" />
     <Folder Include="Resources\Images.xcassets\HexagonBase.imageset\" />
     <Folder Include="Resources\Images.xcassets\ShipIcon.imageset\" />
+    <Folder Include="Views\Race Views\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Fonts\Handel-Gothic.ttf">

@@ -5,6 +5,6 @@ namespace TwilightImperiumMasterCompanion.iOS
 {
 	public interface INavigationBar
 	{
-		void Initialize(UIViewController viewController, EventHandler leftBarItemPressed);
+		void Initialize(UIViewController viewController);
 	}
 }

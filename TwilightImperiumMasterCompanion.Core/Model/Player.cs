@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TwilightImperiumMasterCompanion.Core
+﻿namespace TwilightImperiumMasterCompanion.Core
 {
 	public class Player
 	{

@@ -2,7 +2,7 @@
 
 namespace TwilightImperiumMasterCompanion.Core
 {
-	public class BaseViewModel : MvxViewModel
+	public interface IRaceLeadersViewModel : IMvxViewModel
 	{
 	}
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
 
 namespace TwilightImperiumMasterCompanion.Core
@@ -12,12 +11,12 @@ namespace TwilightImperiumMasterCompanion.Core
 
 		public ICommand ShowHexMainMenu
 		{
-			get { return new MvxCommand(() => ShowViewModel<HexMainMenuViewModel>(new NavigationParameters() { Index = UNIT_TAB})); }
+			get { return new MvxCommand(() => ShowViewModel<HexMainMenuViewModel>(new NavigationParameters() { Index = UNIT_TAB })); }
 		}
 
 
 		public UnitTabBarViewModel(
-			IUnitReferenceViewModel unitReferenceViewModel, 
+			IUnitReferenceViewModel unitReferenceViewModel,
 			IPurchaseUnitViewModel purchaseUnitViewModel)
 		{
 			this.PurchaseUnitViewModel = purchaseUnitViewModel;

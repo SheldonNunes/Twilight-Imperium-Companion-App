@@ -1,6 +1,4 @@
-﻿using System;
-using MvvmCross;
-using MvvmCross.Core.ViewModels;
+﻿using MvvmCross.Core.ViewModels;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
@@ -8,7 +6,7 @@ namespace TwilightImperiumMasterCompanion.Core
 	{
 		public void Start(object hint = null)
 		{
-			ShowViewModel<UnitTabBarViewModel>();
+			ShowViewModel<SelectStartingOptionViewModel>();
 		}
 	}
 }

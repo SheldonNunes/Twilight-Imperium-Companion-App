@@ -55,8 +55,14 @@
     <Compile Include="ViewModels\Implementation\PurchaseUnitViewModel.cs" />
     <Compile Include="ViewModels\Interfaces\IPurchaseUnitViewModel.cs" />
     <Compile Include="ViewModels\Implementation\UnitReferenceViewModel.cs" />
-    <Compile Include="ViewModels\HexMainMenuViewModel.cs" />
-    <Compile Include="ViewModels\NavigationParameters.cs" />
+    <Compile Include="ViewModels\Implementation\HexMainMenuViewModel.cs" />
+    <Compile Include="ViewModels\Implementation\NavigationParameters.cs" />
+    <Compile Include="ViewModels\Implementation\SelectStartingOptionViewModel.cs" />
+    <Compile Include="ViewModels\Implementation\RaceSelectionViewModel.cs" />
+    <Compile Include="ViewModels\Implementation\RaceTabViewModel.cs" />
+    <Compile Include="ViewModels\Interfaces\IRaceSetupViewModel.cs" />
+    <Compile Include="ViewModels\Interfaces\IRaceLeadersViewModel.cs" />
+    <Compile Include="ViewModels\Interfaces\IRaceOverviewViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>

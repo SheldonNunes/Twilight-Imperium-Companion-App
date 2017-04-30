@@ -1,7 +1,6 @@
-﻿using System;
-using MvvmCross;
-using MvvmCross.Core.ViewModels;
+﻿using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
+using MvvmCross.Platform.IoC;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
@@ -11,15 +10,8 @@ namespace TwilightImperiumMasterCompanion.Core
 		{
 			base.Initialize();
 
-			/*
-			 * 
-			 * CreatableTypes.EndingWith.AsInterfaces.Singltonlazyload
-			 * */
-			Mvx.RegisterType<IUnitReferenceViewModel, UnitReferenceViewModel>();
-			Mvx.RegisterType<IPurchaseUnitViewModel, PurchaseUnitViewModel>();
-
+			CreatableTypes().EndingWith("ViewModel").AsInterfaces().RegisterAsLazySingleton();
 			Mvx.RegisterType<IRaceRepository, RaceRepository>();
-
 			RegisterAppStart(new AppStart());
 		}
 	}

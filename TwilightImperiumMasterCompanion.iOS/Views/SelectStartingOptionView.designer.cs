@@ -28,7 +28,15 @@ namespace TwilightImperiumMasterCompanion.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISwitch shardsOfTheThroneSwitch { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel shatteredEmpiresLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISwitch shatteredEmpireSwitch { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
@@ -47,9 +55,19 @@ namespace TwilightImperiumMasterCompanion.iOS
                 selectRaceButton = null;
             }
 
+            if (shardsOfTheThroneSwitch != null) {
+                shardsOfTheThroneSwitch.Dispose ();
+                shardsOfTheThroneSwitch = null;
+            }
+
             if (shatteredEmpiresLabel != null) {
                 shatteredEmpiresLabel.Dispose ();
                 shatteredEmpiresLabel = null;
+            }
+
+            if (shatteredEmpireSwitch != null) {
+                shatteredEmpireSwitch.Dispose ();
+                shatteredEmpireSwitch = null;
             }
         }
     }

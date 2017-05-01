@@ -47,6 +47,30 @@ namespace TwilightImperiumMasterCompanion.Core.Resources {
             }
         }
         
+        internal static string TwilightImperiumCompanion {
+            get {
+                return ResourceManager.GetString("TwilightImperiumCompanion", resourceCulture);
+            }
+        }
+        
+        internal static string RaceSelection {
+            get {
+                return ResourceManager.GetString("RaceSelection", resourceCulture);
+            }
+        }
+        
+        internal static string UnitReference {
+            get {
+                return ResourceManager.GetString("UnitReference", resourceCulture);
+            }
+        }
+        
+        internal static string Purchase {
+            get {
+                return ResourceManager.GetString("Purchase", resourceCulture);
+            }
+        }
+        
         internal static string BaronyOfLetnev {
             get {
                 return ResourceManager.GetString("BaronyOfLetnev", resourceCulture);

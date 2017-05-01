@@ -1,5 +1,6 @@
 ﻿using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
+using TwilightImperiumMasterCompanion.Core.Resources;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
@@ -7,7 +8,37 @@ namespace TwilightImperiumMasterCompanion.Core
 	{
 		public ICommand NavigateToRaceSelectionView
 		{
-			get { return new MvxCommand(() => ShowViewModel<RaceSelectionViewModel>()); }
+			get { return new MvxCommand(
+				() => ShowViewModel<RaceSelectionViewModel, ExpansionsNavigationParameter>(
+					new ExpansionsNavigationParameter()
+					{
+						ShatteredEmpiresExpansionEnabled = ShatteredEmpiresExpansionEnabled,
+						ShardsofTheThroneExpansionEnabled = ShardsOfTheThroneExpansionEnabled
+					}
+					)); 
+				}
+		}
+
+		public bool ShatteredEmpiresExpansionEnabled
+		{
+			get;
+			set;
+		}
+
+		public bool ShardsOfTheThroneExpansionEnabled
+		{
+			get;
+			set;
+		}
+
+		public string Title
+		{
+			get { return UIStrings.TwilightImperiumCompanion; }
+		}
+
+		public SelectStartingOptionViewModel() : base()
+		{
+
 		}
 	}
 }

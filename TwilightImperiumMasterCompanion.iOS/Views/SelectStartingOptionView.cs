@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using CoreAnimation;
+﻿using CoreAnimation;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
+using TwilightImperiumMasterCompanion.Core;
 using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
@@ -16,7 +15,13 @@ namespace TwilightImperiumMasterCompanion.iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			Title = "Twilight Imperium Companion";
+
+			var set = this.CreateBindingSet<SelectStartingOptionView, SelectStartingOptionViewModel>();
+			set.Bind(this).For(v => v.Title).To(vm => vm.Title).OneTime();
+			set.Bind(shatteredEmpireSwitch).To(vm => vm.ShatteredEmpiresExpansionEnabled).OneWayToSource();
+			set.Bind(shardsOfTheThroneSwitch).To(vm => vm.ShardsOfTheThroneExpansionEnabled).OneWayToSource();
+			set.Bind(selectRaceButton).To(vm => vm.NavigateToRaceSelectionView);
+			set.Apply();
 
 			var gradient = new CAGradientLayer();
 			gradient.Frame = rootView.Bounds;
@@ -28,12 +33,6 @@ namespace TwilightImperiumMasterCompanion.iOS
 
 			selectRaceButton.Layer.BorderWidth = 1;
 			selectRaceButton.Layer.BorderColor = UIColor.White.CGColor;
-
-			this.AddBindings(new Dictionary<object, string>()
-			{
-				{ selectRaceButton, "TouchUpInside NavigateToRaceSelectionView" }
-			});
-			// Perform any additional setup after loading the view, typically from a nib.
 		}
 	}
 }

@@ -63,6 +63,8 @@
     <Compile Include="ViewModels\Interfaces\IRaceSetupViewModel.cs" />
     <Compile Include="ViewModels\Interfaces\IRaceLeadersViewModel.cs" />
     <Compile Include="ViewModels\Interfaces\IRaceOverviewViewModel.cs" />
+    <Compile Include="ExpansionsNavigationParameter.cs" />
+    <Compile Include="Services\RaceService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -75,6 +77,7 @@
     <Folder Include="ViewModels\Unit\" />
     <Folder Include="ViewModels\Interfaces\" />
     <Folder Include="ViewModels\Implementation\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\UIStrings.resx">

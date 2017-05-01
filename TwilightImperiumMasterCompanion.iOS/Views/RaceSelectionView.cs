@@ -4,11 +4,12 @@ using System.Windows.Input;
 using CoreAnimation;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
+using TwilightImperiumMasterCompanion.Core;
 using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-	public partial class RaceSelectionView : MvxViewController
+	public partial class RaceSelectionView : MvxViewController<RaceSelectionViewModel>
 	{
 		public RaceSelectionView() : base("RaceSelectionView", null)
 		{

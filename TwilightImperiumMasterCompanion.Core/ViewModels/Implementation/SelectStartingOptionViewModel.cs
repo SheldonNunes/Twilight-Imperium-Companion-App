@@ -1,4 +1,4 @@
-﻿using System.Windows.Input;
+using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
 using TwilightImperiumMasterCompanion.Core.Resources;
 
@@ -9,7 +9,7 @@ namespace TwilightImperiumMasterCompanion.Core
 		public ICommand NavigateToRaceSelectionView
 		{
 			get { return new MvxCommand(
-				() => ShowViewModel<RaceSelectionViewModel, ExpansionsNavigationParameter>(
+				() => ShowViewModel<ConfirmRaceViewModel, ExpansionsNavigationParameter>(
 					new ExpansionsNavigationParameter()
 					{
 						ShatteredEmpiresExpansionEnabled = ShatteredEmpiresExpansionEnabled,

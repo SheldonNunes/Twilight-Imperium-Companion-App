@@ -105,6 +105,9 @@
     <Reference Include="Calabash">
       <HintPath>..\packages\Xamarin.TestCloud.Agent.0.20.3\lib\Xamarin.iOS10\Calabash.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\packages\MvvmCross.Plugin.Messenger.4.4.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
@@ -161,7 +164,9 @@
     <InterfaceDefinition Include="Views\Unit Views\PurchaseUnitView.xib" />
     <InterfaceDefinition Include="Views\HexMainMenuView.xib" />
     <InterfaceDefinition Include="Views\SelectStartingOptionView.xib" />
+    <InterfaceDefinition Include="Views\ConfirmRaceView.xib" />
     <InterfaceDefinition Include="Views\RaceSelectionView.xib" />
+    <InterfaceDefinition Include="ViewComponents\RaceSelectionTableViewCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -210,13 +215,22 @@
     <Compile Include="Views\SelectStartingOptionView.designer.cs">
       <DependentUpon>SelectStartingOptionView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\RaceSelectionView.cs" />
-    <Compile Include="Views\RaceSelectionView.designer.cs">
-      <DependentUpon>RaceSelectionView.cs</DependentUpon>
+    <Compile Include="Views\ConfirmRaceView.cs" />
+    <Compile Include="Views\ConfirmRaceView.designer.cs">
+      <DependentUpon>ConfirmRaceView.cs</DependentUpon>
     </Compile>
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Views\Race Views\RaceTabView.cs" />
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
+    <Compile Include="Views\RaceSelectionView.cs" />
+    <Compile Include="Views\RaceSelectionView.designer.cs">
+      <DependentUpon>RaceSelectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\RaceSelectionTableViewCell.cs" />
+    <Compile Include="ViewComponents\RaceSelectionTableViewCell.designer.cs">
+      <DependentUpon>RaceSelectionTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Windows.Input;
-using CoreAnimation;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Binding.iOS.Views;
 using MvvmCross.iOS.Views;
 using TwilightImperiumMasterCompanion.Core;
 using UIKit;
@@ -18,24 +16,18 @@ namespace TwilightImperiumMasterCompanion.iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			Title = "Race Selection";
+			var source = new MvxStandardTableViewSource(tableView, "TitleText Name");//;ImageUrl ImagePath");
 
-			var gradient = new CAGradientLayer();
-			gradient.Frame = rootView.Bounds;
-			gradient.Colors = new CoreGraphics.CGColor[] { ColorConstants.BLUE_PRIMARY.CGColor, ColorConstants.BLUE_FADED.CGColor };
-			rootView.Layer.InsertSublayer(gradient, 0);
+			var set = this.CreateBindingSet<RaceSelectionView, RaceSelectionViewModel>();
+			tableView.Source = source;
+			set.Bind(source).To(vm => vm.Races);
+			set.Bind(source).For(s => s.SelectionChangedCommand).To(vm => vm.RaceSelected);
+			set.Apply();
+		}
 
-			abilitiesView.Layer.BorderWidth = 1;
-			abilitiesView.Layer.BorderColor = UIColor.White.CGColor;
-
-			confirmSelectionButton.Layer.BorderWidth = 1;
-			confirmSelectionButton.Layer.BorderColor = UIColor.White.CGColor;
-
-			this.AddBindings(new Dictionary<object, string>()
-			{
-				{ confirmSelectionButton, "TouchUpInside NavigateToRaceView" }
-			});
-			// Perform any additional setup after loading the view, typically from a nib.
+		public override void DidReceiveMemoryWarning()
+		{
+			base.DidReceiveMemoryWarning();
 		}
 	}
 }

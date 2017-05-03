@@ -1,33 +1,60 @@
-﻿using System.Windows.Input;
+﻿using System.Collections.Generic;
+using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Plugins.Messenger;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
 	public class RaceSelectionViewModel : BaseViewModel<ExpansionsNavigationParameter>
 	{
-		public IRaceRepository RaceRepository
+
+		private readonly IMvxMessenger messenger;
+		private IRaceRepository raceRepository;
+
+		private IEnumerable<Race> _races;
+		public IEnumerable<Race> Races
 		{
-			get;
-			private set;
+			get { return _races; }
+			set
+			{
+				_races = value;
+				RaisePropertyChanged(() => Races);
+			}
 		}
 
-		public ICommand NavigateToRaceView
+		public ICommand RaceSelected
 		{
-			get { return new MvxCommand(() => ShowViewModel<UnitTabBarViewModel>()); }
+			get
+			{
+				return new MvxCommand<Race>((race) =>
+				{
+					messenger.Publish(new RaceSelectedMessage(this, race));
+					this.Close(this);
+				});
+			}
+		}
+
+		public RaceSelectionViewModel(IMvxMessenger messenger)
+		{
+			this.messenger = messenger;
 		}
 
 		protected override void RealInit(ExpansionsNavigationParameter parameter)
 		{
-			RaceRepository = new RaceRepository();
+			if (raceRepository != null)
+				return;
+
+			raceRepository = new RaceRepository();
 			if (parameter.ShardsofTheThroneExpansionEnabled)
 			{
-				RaceRepository = new ShardsOfTheThroneRaceRepository(RaceRepository);
+				raceRepository = new ShardsOfTheThroneRaceRepository(raceRepository);
 			}
 
 			if (parameter.ShatteredEmpiresExpansionEnabled)
 			{
-				RaceRepository = new ShatteredEmpiresRaceRepository(RaceRepository);
+				raceRepository = new ShatteredEmpiresRaceRepository(raceRepository);
 			}
+			Races = raceRepository.GetRaces();
 		}
 	}
 }

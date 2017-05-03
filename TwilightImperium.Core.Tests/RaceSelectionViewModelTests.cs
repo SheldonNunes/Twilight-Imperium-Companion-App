@@ -1,4 +1,4 @@
-﻿using MvvmCross.Test.Core;
+using MvvmCross.Test.Core;
 using NUnit.Framework;
 using TwilightImperiumMasterCompanion.Core;
 using MvvmCross.Core.Views;
@@ -46,7 +46,7 @@ namespace TwilightImperium.Core.Tests
 				ShardsofTheThroneExpansionEnabled = false
 			};
 			var serialized = Mvx.Resolve<IMvxJsonConverter>().SerializeObject(parameter);
-			var viewModel = Mvx.IocConstruct<RaceSelectionViewModel>();
+			var viewModel = Mvx.IocConstruct<ConfirmRaceViewModel>();
 
 			//Act
 			viewModel.Init(serialized);
@@ -67,7 +67,7 @@ namespace TwilightImperium.Core.Tests
 				ShardsofTheThroneExpansionEnabled = false
 			};
 			var serialized = Mvx.Resolve<IMvxJsonConverter>().SerializeObject(parameter);
-			var viewModel = Mvx.IocConstruct<RaceSelectionViewModel>();
+			var viewModel = Mvx.IocConstruct<ConfirmRaceViewModel>();
 
 			//Act
 			viewModel.Init(serialized);
@@ -88,7 +88,7 @@ namespace TwilightImperium.Core.Tests
 				ShardsofTheThroneExpansionEnabled = true
 			};
 			var serialized = Mvx.Resolve<IMvxJsonConverter>().SerializeObject(parameter);
-			var viewModel = Mvx.IocConstruct<RaceSelectionViewModel>();
+			var viewModel = Mvx.IocConstruct<ConfirmRaceViewModel>();
 
 			//Act
 			viewModel.Init(serialized);
@@ -110,7 +110,7 @@ namespace TwilightImperium.Core.Tests
 				ShardsofTheThroneExpansionEnabled = true
 			};
 			var serialized = Mvx.Resolve<IMvxJsonConverter>().SerializeObject(parameter);
-			var viewModel = Mvx.IocConstruct<RaceSelectionViewModel>();
+			var viewModel = Mvx.IocConstruct<ConfirmRaceViewModel>();
 
 			//Act
 			viewModel.Init(serialized);

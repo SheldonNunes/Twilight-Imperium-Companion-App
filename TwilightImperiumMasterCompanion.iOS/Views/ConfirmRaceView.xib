@@ -11,6 +11,7 @@
                 <outlet property="rootView" destination="2" id="name-outlet-2"/>
                 <outlet property="abilitiesView" destination="21" id="name-outlet-21"/>
                 <outlet property="raceIcon" destination="42" id="name-outlet-42"/>
+                <outlet property="raceNameLabel" destination="23" id="name-outlet-23"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

@@ -1,24 +1,24 @@
-﻿namespace TwilightImperiumMasterCompanion.Core
+﻿using SQLite;
+
+namespace TwilightImperiumMasterCompanion.Core
 {
 	public class Race
 	{
-		public string Name
-		{
-			get;
-			private set;
-		}
-
-		public string URIName
+		[PrimaryKey, AutoIncrement]
+		public int ID
 		{
 			get;
 			set;
 		}
-
-		public Race(string name, string uriName)
+		public string Name
 		{
-			this.Name = name;
-			this.URIName = uriName + ".png";
+			get;
+			set;
 		}
-
+		public int Expansions
+		{
+			get;
+			set;
+		}
 	}
 }

@@ -10,10 +10,15 @@ namespace TwilightImperiumMasterCompanion.Core
 		private MvxSubscriptionToken messageSubscriberToken;
 		private ExpansionsNavigationParameter parameter;
 
+		private Race selectedRace;
 		public Race SelectedRace
 		{
-			get;
-			set;
+			get { return selectedRace; }
+			set
+			{
+				selectedRace = value;
+				RaisePropertyChanged(() => SelectedRace);
+			}
 		}
 
 		public ICommand NavigateToRaceSelection

@@ -1,8 +1,12 @@
-﻿using Foundation;
+﻿using System;
+using System.IO;
+using Foundation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Platform;
 using MvvmCross.iOS.Views.Presenters;
 using MvvmCross.Platform;
+using SQLite;
+using TwilightImperiumMasterCompanion.Core;
 using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
@@ -19,6 +23,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 			get;
 			set;
 		}
+		SQLiteConnection conn;
 
 		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
 		{
@@ -29,6 +34,22 @@ namespace TwilightImperiumMasterCompanion.iOS
 
 			var startup = Mvx.Resolve<IMvxAppStart>();
 			startup.Start();
+
+			var sqliteFilename = "AppDatabase.db";
+			string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+			string libraryPath = Path.Combine(documentsPath, "..", "Library"); // Library folder
+
+			var path = Path.Combine(libraryPath, sqliteFilename);
+
+			if (!File.Exists(path))
+				File.Copy(sqliteFilename, path);
+
+			conn = new SQLiteConnection(path);
+			DatabaseConnection.GetInstance(conn);
+			var db = new AppDatabase(conn);
+
+			var results = db.GetItems();
+
 			var screenWidth = UIScreen.MainScreen.Bounds.Width;
 			var result = UIImageExtensions.CreateImageWithColor(UIColor.FromRGB(255, 172, 56), new CoreGraphics.CGSize(screenWidth / 2, 50));
 			UITabBar.Appearance.SelectionIndicatorImage = (result);

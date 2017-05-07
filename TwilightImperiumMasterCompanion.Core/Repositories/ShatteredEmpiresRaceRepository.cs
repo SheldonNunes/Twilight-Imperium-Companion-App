@@ -16,11 +16,12 @@ namespace TwilightImperiumMasterCompanion.Core
 		public override List<Race> GetRaces()
 		{
 			var baseRaces = _raceRepository.GetRaces();
-			var newRaces = new List<Race>() {
-				new Race("Clan of Saar", "Saar"),
-				new Race("Embers of Muaat", "Embers"),
-				new Race("Winnu", "Winnu"),
-				new Race("Yin Brotherhood", "Yin"),
+			var newRaces = new List<Race>()
+			{
+				//new Race("Clan of Saar", "Saar"),
+				//new Race("Embers of Muaat", "Embers"),
+				//new Race("Winnu", "Winnu"),
+				//new Race("Yin Brotherhood", "Yin"),
 			};
 			newRaces.AddRange(baseRaces);
 			newRaces = newRaces.OrderBy(x => x.Name).ToList();

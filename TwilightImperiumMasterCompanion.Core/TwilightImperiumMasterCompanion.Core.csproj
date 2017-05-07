@@ -68,6 +68,7 @@
     <Compile Include="Database\AppDatabase.cs" />
     <Compile Include="ViewModels\Implementation\RaceSelectionViewModel.cs" />
     <Compile Include="Messages\RaceSelectedMessage.cs" />
+    <Compile Include="Database\DatabaseConnection.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>

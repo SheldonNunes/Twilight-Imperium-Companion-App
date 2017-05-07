@@ -28,6 +28,10 @@ namespace TwilightImperiumMasterCompanion.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel raceNameLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView rootView { get; set; }
 
         void ReleaseDesignerOutlets ()
@@ -45,6 +49,11 @@ namespace TwilightImperiumMasterCompanion.iOS
             if (raceIcon != null) {
                 raceIcon.Dispose ();
                 raceIcon = null;
+            }
+
+            if (raceNameLabel != null) {
+                raceNameLabel.Dispose ();
+                raceNameLabel = null;
             }
 
             if (rootView != null) {

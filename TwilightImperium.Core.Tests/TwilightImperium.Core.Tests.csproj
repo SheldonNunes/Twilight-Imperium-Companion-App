@@ -64,6 +64,7 @@
     <Compile Include="RaceSelectionViewModelTests.cs" />
     <Compile Include="MockDispatcher.cs" />
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
+    <Compile Include="Services\RaceServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -73,6 +74,9 @@
       <Project>{C3D6A6A9-CFAC-46FF-9B64-86CDD2DA70AD}</Project>
       <Name>TwilightImperiumMasterCompanion.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

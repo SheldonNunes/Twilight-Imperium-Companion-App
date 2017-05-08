@@ -35,7 +35,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 			var set = this.CreateBindingSet<ConfirmRaceView, ConfirmRaceViewModel>();
 			set.Bind(confirmSelectionButton).To(vm => vm.NavigateToRaceView);
 			set.Bind(raceIcon).To(vm => vm.NavigateToRaceSelection);
-			set.Bind(raceNameLabel).For(v => v.Text).To(vm => vm.SelectedRace.Name);
+			set.Bind(raceNameLabel).For(v => v.Text).To(vm => vm.SelectedRace.NAME);
 			set.Apply();
 		}
 	}

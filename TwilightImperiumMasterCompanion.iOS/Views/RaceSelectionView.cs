@@ -16,7 +16,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			var source = new MvxStandardTableViewSource(tableView, "TitleText Name");//;ImageUrl ImagePath");
+			var source = new MvxStandardTableViewSource(tableView, "TitleText NAME");//;ImageUrl ImagePath");
 
 			var set = this.CreateBindingSet<RaceSelectionView, RaceSelectionViewModel>();
 			tableView.Source = source;

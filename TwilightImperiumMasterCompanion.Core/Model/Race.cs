@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using SQLite.Net.Attributes;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
@@ -10,12 +11,14 @@ namespace TwilightImperiumMasterCompanion.Core
 			get;
 			set;
 		}
-		public string Name
+
+		public string NAME
 		{
 			get;
 			set;
 		}
-		public int Expansions
+
+		public int Expansion
 		{
 			get;
 			set;

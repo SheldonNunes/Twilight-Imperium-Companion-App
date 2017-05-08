@@ -9,6 +9,8 @@ namespace TwilightImperiumMasterCompanion.Core
 	{
 
 		private readonly IMvxMessenger messenger;
+		private readonly IRaceService raceService;
+
 		private IRaceRepository raceRepository;
 
 		private IEnumerable<Race> _races;
@@ -34,27 +36,15 @@ namespace TwilightImperiumMasterCompanion.Core
 			}
 		}
 
-		public RaceSelectionViewModel(IMvxMessenger messenger)
+		public RaceSelectionViewModel(IMvxMessenger messenger, IRaceService raceService)
 		{
 			this.messenger = messenger;
+			this.raceService = raceService;
 		}
 
 		protected override void RealInit(ExpansionsNavigationParameter parameter)
 		{
-			if (raceRepository != null)
-				return;
-
-			raceRepository = new RaceRepository();
-			if (parameter.ShardsofTheThroneExpansionEnabled)
-			{
-				raceRepository = new ShardsOfTheThroneRaceRepository(raceRepository);
-			}
-
-			if (parameter.ShatteredEmpiresExpansionEnabled)
-			{
-				raceRepository = new ShatteredEmpiresRaceRepository(raceRepository);
-			}
-			Races = raceRepository.GetRaces();
+			Races = raceService.GetRaces();
 		}
 	}
 }

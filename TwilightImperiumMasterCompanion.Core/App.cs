@@ -15,6 +15,7 @@ namespace TwilightImperiumMasterCompanion.Core
 			base.Initialize();
 
 			CreatableTypes().EndingWith("ViewModel").AsInterfaces().RegisterAsLazySingleton();
+			CreatableTypes().EndingWith("Service").AsInterfaces().RegisterAsLazySingleton();
 			Mvx.RegisterType<IRaceRepository, RaceRepository>();
 			RegisterAppStart(new AppStart());
 		}

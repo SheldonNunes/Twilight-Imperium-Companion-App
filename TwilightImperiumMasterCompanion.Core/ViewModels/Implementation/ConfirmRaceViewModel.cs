@@ -40,6 +40,8 @@ namespace TwilightImperiumMasterCompanion.Core
 		protected override void RealInit(ExpansionsNavigationParameter parameter)
 		{
 			this.parameter = parameter;
+			BaseService.ShatteredEmpiresExpansionEnabled = parameter.ShatteredEmpiresExpansionEnabled;
+			BaseService.ShardsOfTheThroneExpansionEnabled = parameter.ShardsofTheThroneExpansionEnabled;
 		}
 
 		private void RaceSelected(RaceSelectedMessage message)

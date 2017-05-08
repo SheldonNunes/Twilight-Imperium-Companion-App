@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace TwilightImperiumMasterCompanion.Core
@@ -23,7 +23,7 @@ namespace TwilightImperiumMasterCompanion.Core
 				//new Race("Nekro Virus", "Nekro"),
 			};
 			newRaces.AddRange(baseRaces);
-			newRaces = newRaces.OrderBy(x => x.Name).ToList();
+			newRaces = newRaces.OrderBy(x => x.NAME).ToList();
 			return newRaces;
 		}
 	}

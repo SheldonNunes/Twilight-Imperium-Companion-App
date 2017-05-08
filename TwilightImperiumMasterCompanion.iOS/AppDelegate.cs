@@ -23,7 +23,6 @@ namespace TwilightImperiumMasterCompanion.iOS
 			get;
 			set;
 		}
-		SQLiteConnection conn;
 
 		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
 		{
@@ -35,27 +34,14 @@ namespace TwilightImperiumMasterCompanion.iOS
 			var startup = Mvx.Resolve<IMvxAppStart>();
 			startup.Start();
 
-			var sqliteFilename = "AppDatabase.db";
-			string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-			string libraryPath = Path.Combine(documentsPath, "..", "Library"); // Library folder
-
-			var path = Path.Combine(libraryPath, sqliteFilename);
-
-			if (!File.Exists(path))
-				File.Copy(sqliteFilename, path);
-
-			conn = new SQLiteConnection(path);
-			DatabaseConnection.GetInstance(conn);
-			var db = new AppDatabase(conn);
-
-			var results = db.GetItems();
+			var test = new RaceService();
+			var results = test.GetRaces();
 
 			var screenWidth = UIScreen.MainScreen.Bounds.Width;
 			var result = UIImageExtensions.CreateImageWithColor(UIColor.FromRGB(255, 172, 56), new CoreGraphics.CGSize(screenWidth / 2, 50));
 			UITabBar.Appearance.SelectionIndicatorImage = (result);
 			UITabBar.Appearance.BarTintColor = UIColor.FromRGB(57, 121, 205);
 			UINavigationBar.Appearance.TintColor = UIColor.White;
-			//			viewController.NavigationController.NavigationBar.TintColor = UIColor.White;
 			UITabBarItem.Appearance.SetTitleTextAttributes(new UITextAttributes()
 			{
 				TextColor = UIColor.White

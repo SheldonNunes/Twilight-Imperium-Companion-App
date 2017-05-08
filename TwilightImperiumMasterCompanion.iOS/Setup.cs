@@ -25,6 +25,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 			base.InitializeIoC();
 
 			Mvx.RegisterType<INavigationBar, MenuNavigationBar>();
+			Mvx.RegisterType<ISQLite, SqliteService>();
 		}
 
 	}

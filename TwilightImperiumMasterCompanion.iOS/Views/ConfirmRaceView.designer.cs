@@ -16,6 +16,10 @@ namespace TwilightImperiumMasterCompanion.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView abilitiesTextView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView abilitiesView { get; set; }
 
         [Outlet]
@@ -36,6 +40,11 @@ namespace TwilightImperiumMasterCompanion.iOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (abilitiesTextView != null) {
+                abilitiesTextView.Dispose ();
+                abilitiesTextView = null;
+            }
+
             if (abilitiesView != null) {
                 abilitiesView.Dispose ();
                 abilitiesView = null;

@@ -24,7 +24,7 @@ namespace TwilightImperiumMasterCompanion.Core
 				//new Race("Yin Brotherhood", "Yin"),
 			};
 			newRaces.AddRange(baseRaces);
-			newRaces = newRaces.OrderBy(x => x.NAME).ToList();
+			newRaces = newRaces.OrderBy(x => x.Name).ToList();
 			return newRaces;
 		}
 	}

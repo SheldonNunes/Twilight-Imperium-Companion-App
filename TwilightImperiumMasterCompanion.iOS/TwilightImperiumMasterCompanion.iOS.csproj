@@ -283,6 +283,8 @@
     <BundleResource Include="Resources\Fonts\Handel-Gothic.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="Resources\AppDatabase.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\AppDatabase.db" />
   </ItemGroup>
 </Project>

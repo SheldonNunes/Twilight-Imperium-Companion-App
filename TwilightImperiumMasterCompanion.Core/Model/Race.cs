@@ -12,7 +12,7 @@ namespace TwilightImperiumMasterCompanion.Core
 			set;
 		}
 
-		public string NAME
+		public string Name
 		{
 			get;
 			set;

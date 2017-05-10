@@ -71,6 +71,10 @@
     <Compile Include="DataAccess\RaceDataAccess.cs" />
     <Compile Include="Services\BaseService.cs" />
     <Compile Include="Services\Interfaces\IRaceService.cs" />
+    <Compile Include="Model\RaceAbility.cs" />
+    <Compile Include="Services\RaceAbilityService.cs" />
+    <Compile Include="Services\Interfaces\IRaceAbilityService.cs" />
+    <Compile Include="Converters\RaceAbilityConverter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -84,10 +88,10 @@
     <Folder Include="ViewModels\Interfaces\" />
     <Folder Include="ViewModels\Implementation\" />
     <Folder Include="Services\" />
-    <Folder Include="Database\" />
     <Folder Include="Messages\" />
     <Folder Include="Services\Interfaces\" />
     <Folder Include="DataAccess\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\UIStrings.resx">

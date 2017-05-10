@@ -24,5 +24,8 @@ namespace TwilightImperiumMasterCompanion.Core
 			}
 			return raceDataAccess.GetRaces(expansionValue);
 		}
+
+
+
 	}
 }

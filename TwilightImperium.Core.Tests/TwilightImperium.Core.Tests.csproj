@@ -65,6 +65,7 @@
     <Compile Include="MockDispatcher.cs" />
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
     <Compile Include="Services\RaceServiceTests.cs" />
+    <Compile Include="Services\RaceAbilityServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

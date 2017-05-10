@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Collections.Generic;
+using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Plugins.Messenger;
 
@@ -21,6 +22,17 @@ namespace TwilightImperiumMasterCompanion.Core
 			}
 		}
 
+		private List<RaceAbility> raceAbilities;
+		public List<RaceAbility> RaceAbilities
+		{
+			get { return raceAbilities; }
+			set
+			{
+				raceAbilities = value;
+				RaisePropertyChanged(() => RaceAbilities);
+			}
+		}
+
 		public ICommand NavigateToRaceSelection
 		{
 			get { return new MvxCommand(() => ShowViewModel<RaceSelectionViewModel, ExpansionsNavigationParameter>(parameter)); }
@@ -31,8 +43,11 @@ namespace TwilightImperiumMasterCompanion.Core
 			get { return new MvxCommand(() => ShowViewModel<UnitTabBarViewModel>()); }
 		}
 
-		public ConfirmRaceViewModel(IMvxMessenger messenger)
+		readonly IRaceAbilityService raceAbilityService;
+
+		public ConfirmRaceViewModel(IMvxMessenger messenger, IRaceAbilityService raceAbilityService)
 		{
+			this.raceAbilityService = raceAbilityService;
 			this.messenger = messenger;
 			messageSubscriberToken = messenger.Subscribe<RaceSelectedMessage>(RaceSelected);
 		}
@@ -47,6 +62,7 @@ namespace TwilightImperiumMasterCompanion.Core
 		private void RaceSelected(RaceSelectedMessage message)
 		{
 			this.SelectedRace = message.SelectedRace;
+			this.RaceAbilities = raceAbilityService.GetRaceAbility(message.SelectedRace);
 		}
 
 

@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Windows.Input;
 using CoreAnimation;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
@@ -35,7 +32,8 @@ namespace TwilightImperiumMasterCompanion.iOS
 			var set = this.CreateBindingSet<ConfirmRaceView, ConfirmRaceViewModel>();
 			set.Bind(confirmSelectionButton).To(vm => vm.NavigateToRaceView);
 			set.Bind(raceIcon).To(vm => vm.NavigateToRaceSelection);
-			set.Bind(raceNameLabel).For(v => v.Text).To(vm => vm.SelectedRace.NAME);
+			set.Bind(raceNameLabel).For(v => v.Text).To(vm => vm.SelectedRace.Name);
+			set.Bind(abilitiesTextView).For(v => v.Text).To(vm => vm.RaceAbilities).WithConversion(new RaceAbilityConverter());
 			set.Apply();
 		}
 	}

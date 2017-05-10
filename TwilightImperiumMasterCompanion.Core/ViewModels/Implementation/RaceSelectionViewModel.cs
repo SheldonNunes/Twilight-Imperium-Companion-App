@@ -10,6 +10,7 @@ namespace TwilightImperiumMasterCompanion.Core
 
 		private readonly IMvxMessenger messenger;
 		private readonly IRaceService raceService;
+		private readonly IRaceAbilityService raceAbilityService;
 
 		private IRaceRepository raceRepository;
 
@@ -36,10 +37,11 @@ namespace TwilightImperiumMasterCompanion.Core
 			}
 		}
 
-		public RaceSelectionViewModel(IMvxMessenger messenger, IRaceService raceService)
+		public RaceSelectionViewModel(IMvxMessenger messenger, IRaceService raceService, IRaceAbilityService raceAbilityService)
 		{
 			this.messenger = messenger;
 			this.raceService = raceService;
+			this.raceAbilityService = raceAbilityService;
 		}
 
 		protected override void RealInit(ExpansionsNavigationParameter parameter)

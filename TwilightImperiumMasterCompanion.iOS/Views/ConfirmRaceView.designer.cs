@@ -28,7 +28,11 @@ namespace TwilightImperiumMasterCompanion.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton raceIcon { get; set; }
+        MvvmCross.Binding.iOS.Views.MvxImageView raceIcon { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton raceIconButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -58,6 +62,11 @@ namespace TwilightImperiumMasterCompanion.iOS
             if (raceIcon != null) {
                 raceIcon.Dispose ();
                 raceIcon = null;
+            }
+
+            if (raceIconButton != null) {
+                raceIconButton.Dispose ();
+                raceIconButton = null;
             }
 
             if (raceNameLabel != null) {

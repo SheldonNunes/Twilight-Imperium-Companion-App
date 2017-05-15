@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using CoreGraphics;
+using TwilightImperiumMasterCompanion.Core;
 using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
@@ -9,7 +11,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 		HexViewComponent centerHex;
 		UIImageView backgroundHexBase;
 
-		public HexViewComponent[] Hexes
+		public Dictionary<MenuPageType, HexViewComponent> Hexes
 		{
 			get;
 			private set;
@@ -20,7 +22,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 
 		public HexMenuViewComponent()
 		{
-			Hexes = new HexViewComponent[6];
+			Hexes = new Dictionary<MenuPageType, HexViewComponent>();
 
 			backgroundHexBase = new UIImageView();
 			backgroundHexBase.Image = UIImage.FromBundle("HexagonBase");
@@ -29,34 +31,37 @@ namespace TwilightImperiumMasterCompanion.iOS
 			centerHex = new HexViewComponent();
 			AddSubview(centerHex);
 
-			for (int i = 0; i < 6; i++)
+			foreach (MenuPageType item in Enum.GetValues(typeof(MenuPageType)))
 			{
 				var hex = new HexViewComponent();
-				Hexes[i] = hex;
+				Hexes.Add(item, hex);
 				AddSubview(hex);
 			}
 
-			Hexes[0].HexImage = UIImage.FromBundle("RulesIcon");
-			Hexes[1].HexImage = UIImage.FromBundle("RaceIcon");
-			Hexes[2].HexImage = UIImage.FromBundle("ShipIcon");
-			Hexes[3].HexImage = UIImage.FromBundle("PlanetIcon");
-			Hexes[4].HexImage = UIImage.FromBundle("ResearchIcon");
-			Hexes[5].HexImage = UIImage.FromBundle("GalaxyMapIcon");
+			Hexes[MenuPageType.Rules].HexImage = UIImage.FromBundle("RulesIcon");
+			Hexes[MenuPageType.Race].HexImage = UIImage.FromBundle("RaceIcon");
+			Hexes[MenuPageType.Ship].HexImage = UIImage.FromBundle("ShipIcon");
+			Hexes[MenuPageType.Planet].HexImage = UIImage.FromBundle("PlanetIcon");
+			Hexes[MenuPageType.Research].HexImage = UIImage.FromBundle("ResearchIcon");
+			Hexes[MenuPageType.Galaxy].HexImage = UIImage.FromBundle("GalaxyMapIcon");
 
-			Hexes[0].HexText = "Rules";
-			Hexes[1].HexText = "Race";
-			Hexes[2].HexText = "Units";
-			Hexes[3].HexText = "Planets";
-			Hexes[4].HexText = "Research";
-			Hexes[5].HexText = "Galaxy";
+			Hexes[MenuPageType.Rules].HexText = "Rules";
+			Hexes[MenuPageType.Race].HexText = "Race";
+			Hexes[MenuPageType.Ship].HexText = "Units";
+			Hexes[MenuPageType.Planet].HexText = "Planets";
+			Hexes[MenuPageType.Research].HexText = "Research";
+			Hexes[MenuPageType.Galaxy].HexText = "Galaxy";
 		}
 
 		public override bool PointInside(CGPoint point, UIEvent uievent)
 		{
-			for (int i = 0; i < 6; i++)
+			foreach (var hex in Hexes)
 			{
-				if (Hexes[i].Frame.Contains(point))
+				if (hex.Value.Frame.Contains(point))
+				{
+
 					return true;
+				}
 			}
 			return false;
 		}
@@ -76,19 +81,19 @@ namespace TwilightImperiumMasterCompanion.iOS
 			backgroundHexBase.Center = new CGPoint(Bounds.GetMidX(), Bounds.GetMidY());
 
 			centerHex.Frame = new CGRect(0, 0, centerHexSize, centerHexSize);
-			for (int i = 0; i < 6; i++)
+
+			foreach (MenuPageType item in Enum.GetValues(typeof(MenuPageType)))
 			{
-				Hexes[i].Frame = new CGRect(0, 0, altHexSize, altHexSize);
+				Hexes[item].Frame = new CGRect(0, 0, altHexSize, altHexSize);
 			}
 
-
 			centerHex.Center = new CGPoint(Bounds.GetMidX(), Bounds.GetMidY());
-			Hexes[0].Center = new CGPoint(Bounds.GetMidX(), Bounds.GetMidY() + (centerHexHeight + altHexHeight) / 2.0 + 3);
-			Hexes[1].Center = new CGPoint(Bounds.GetMidX(), Bounds.GetMidY() - (centerHexHeight + altHexHeight) / 2.0 - 3);
-			Hexes[2].Center = new CGPoint(Bounds.GetMidX() + Math.Cos(Math.PI / 6) * centerHexHeight / 2 + altHexHeight / 2 - 3, Bounds.GetMidY() + centerHexHeight * 0.25 + altHexHeight * 0.25);
-			Hexes[3].Center = new CGPoint(Bounds.GetMidX() + Math.Cos(Math.PI / 6) * centerHexHeight / 2 + altHexHeight / 2 - 3, Bounds.GetMidY() - centerHexHeight * 0.25 - altHexHeight * 0.25);
-			Hexes[4].Center = new CGPoint(Bounds.GetMidX() - Math.Cos(Math.PI / 6) * centerHexHeight / 2 - altHexHeight / 2 + 3, Bounds.GetMidY() + centerHexHeight * 0.25 + altHexHeight * 0.25);
-			Hexes[5].Center = new CGPoint(Bounds.GetMidX() - Math.Cos(Math.PI / 6) * centerHexHeight / 2 - altHexHeight / 2 + 3, Bounds.GetMidY() - centerHexHeight * 0.25 - altHexHeight * 0.25);
+			Hexes[MenuPageType.Rules].Center = new CGPoint(Bounds.GetMidX(), Bounds.GetMidY() + (centerHexHeight + altHexHeight) / 2.0 + 3);
+			Hexes[MenuPageType.Race].Center = new CGPoint(Bounds.GetMidX(), Bounds.GetMidY() - (centerHexHeight + altHexHeight) / 2.0 - 3);
+			Hexes[MenuPageType.Ship].Center = new CGPoint(Bounds.GetMidX() + Math.Cos(Math.PI / 6) * centerHexHeight / 2 + altHexHeight / 2 - 3, Bounds.GetMidY() + centerHexHeight * 0.25 + altHexHeight * 0.25);
+			Hexes[MenuPageType.Planet].Center = new CGPoint(Bounds.GetMidX() + Math.Cos(Math.PI / 6) * centerHexHeight / 2 + altHexHeight / 2 - 3, Bounds.GetMidY() - centerHexHeight * 0.25 - altHexHeight * 0.25);
+			Hexes[MenuPageType.Research].Center = new CGPoint(Bounds.GetMidX() - Math.Cos(Math.PI / 6) * centerHexHeight / 2 - altHexHeight / 2 + 3, Bounds.GetMidY() + centerHexHeight * 0.25 + altHexHeight * 0.25);
+			Hexes[MenuPageType.Galaxy].Center = new CGPoint(Bounds.GetMidX() - Math.Cos(Math.PI / 6) * centerHexHeight / 2 - altHexHeight / 2 + 3, Bounds.GetMidY() - centerHexHeight * 0.25 - altHexHeight * 0.25);
 		}
 	}
 }

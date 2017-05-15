@@ -37,10 +37,8 @@ namespace TwilightImperiumMasterCompanion.iOS
 			var test = new RaceService();
 			var results = test.GetRaces();
 
-			var screenWidth = UIScreen.MainScreen.Bounds.Width;
-			var result = UIImageExtensions.CreateImageWithColor(UIColor.FromRGB(255, 172, 56), new CoreGraphics.CGSize(screenWidth / 2, 50));
-			UITabBar.Appearance.SelectionIndicatorImage = (result);
 			UITabBar.Appearance.BarTintColor = UIColor.FromRGB(57, 121, 205);
+
 			UINavigationBar.Appearance.TintColor = UIColor.White;
 			UITabBarItem.Appearance.SetTitleTextAttributes(new UITextAttributes()
 			{

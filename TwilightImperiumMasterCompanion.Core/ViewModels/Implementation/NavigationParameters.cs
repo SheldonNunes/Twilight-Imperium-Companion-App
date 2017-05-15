@@ -1,7 +1,9 @@
-﻿namespace TwilightImperiumMasterCompanion.Core
+﻿using MvvmCross.Core.ViewModels;
+
+namespace TwilightImperiumMasterCompanion.Core
 {
 	public class NavigationParameters
 	{
-		public int Index { get; set; }
+		public MenuPageType CurrentMenu { get; set; }
 	}
 }

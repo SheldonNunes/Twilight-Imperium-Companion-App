@@ -23,26 +23,6 @@ namespace TwilightImperiumMasterCompanion.iOS
 			set;
 		}
 
-		public override bool Selected
-		{
-			get
-			{
-				return base.Selected;
-			}
-			set
-			{
-				base.Selected = value;
-				if (Selected == true)
-				{
-					mask.FillColor = ColorConstants.ORANGE_PRIMARY.CGColor;
-				}
-				else
-				{
-					mask.FillColor = ColorConstants.BLUE_PRIMARY.CGColor;
-				}
-			}
-		}
-
 		public int Index { get; private set; }
 
 
@@ -72,14 +52,24 @@ namespace TwilightImperiumMasterCompanion.iOS
 			base.LayoutSubviews();
 			var lineWidth = 1f;
 
+
+
 			var path = RoundedPolygonPath(Bounds, lineWidth, 6, 10f, (float)(Math.PI / 2.0));
 			mask.Path = path.CGPath;
 			mask.LineWidth = lineWidth;
-			mask.FillColor = ColorConstants.BLUE_PRIMARY.CGColor;
 			mask.StrokeColor = UIColor.Black.CGColor;
 			mask.Frame = this.Bounds;
 			mask.Bounds = this.Bounds;
 			mask.AnchorPoint = new CGPoint(0.5, 0.5);
+
+			if (Selected == true)
+			{
+				mask.FillColor = ColorConstants.ORANGE_PRIMARY.CGColor;
+			}
+			else
+			{
+				mask.FillColor = ColorConstants.BLUE_PRIMARY.CGColor;
+			}
 
 			mask.AffineTransform = CGAffineTransform.MakeRotation((float)Math.PI / 6);
 

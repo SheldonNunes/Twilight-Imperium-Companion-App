@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Views.Presenters;
 using UIKit;
@@ -7,10 +9,11 @@ namespace TwilightImperiumMasterCompanion.iOS
 {
 	public class ModalSupportIosViewPresenter : MvxModalSupportIosViewPresenter
 	{
-		private UIViewController currentModalViewController;
+		private Stack<UIViewController> modalViewControllerStack;
 
 		public ModalSupportIosViewPresenter(UIApplicationDelegate appDelegate, UIWindow window) : base(appDelegate, window)
 		{
+			modalViewControllerStack = new Stack<UIViewController>();
 		}
 
 		public override void ChangePresentation(MvxPresentationHint hint)
@@ -20,29 +23,40 @@ namespace TwilightImperiumMasterCompanion.iOS
 
 		public override bool PresentModalViewController(UIViewController viewController, bool animated)
 		{
-			currentModalViewController = viewController;
+			modalViewControllerStack.Push(viewController);
 			return base.PresentModalViewController(viewController, false);
 		}
 
-		public override void Close(IMvxViewModel toClose)
+		public override void Show(MvvmCross.iOS.Views.IMvxIosView view)
 		{
-			base.Close(toClose);
+			var request = view.Request;
+			if (request.PresentationValues != null)
+			{
+				if (request.PresentationValues.ContainsKey("AnimateNavigation") && request.PresentationValues["AnimateNavigation"] == "true")
+					MasterNavigationController.PushViewController(view as UIViewController, false);
+			}
+			else
+			{
+				base.Show(view);
+			}
 		}
 
 		public override void CloseModalViewController()
 		{
-			bool flag = this.currentModalViewController != null;
-			if (flag)
-			{
-				this.currentModalViewController.DismissModalViewController(false);
-				this.currentModalViewController = null;
-			}
-			else
-			{
-				base.CloseModalViewController();
-			}
+			var currentModalViewController = modalViewControllerStack.Pop();
+			currentModalViewController.DismissModalViewController(false);
 		}
 
 
+		public override void Close(IMvxViewModel toClose)
+		{
+			if (modalViewControllerStack.Any())
+			{
+				CloseModalViewController();
+
+				return;
+			}
+			base.Close(toClose);
+		}
 	}
 }

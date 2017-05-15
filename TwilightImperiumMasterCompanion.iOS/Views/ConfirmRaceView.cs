@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using CoreAnimation;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
@@ -28,13 +29,20 @@ namespace TwilightImperiumMasterCompanion.iOS
 			confirmSelectionButton.Layer.BorderWidth = 1;
 			confirmSelectionButton.Layer.BorderColor = UIColor.White.CGColor;
 
-
 			var set = this.CreateBindingSet<ConfirmRaceView, ConfirmRaceViewModel>();
+			set.Bind(this).For(v => v.Title).To(vm => vm.Title).OneTime();
 			set.Bind(confirmSelectionButton).To(vm => vm.NavigateToRaceView);
-			set.Bind(raceIcon).To(vm => vm.NavigateToRaceSelection);
 			set.Bind(raceNameLabel).For(v => v.Text).To(vm => vm.SelectedRace.Name);
 			set.Bind(abilitiesTextView).For(v => v.Text).To(vm => vm.RaceAbilities).WithConversion(new RaceAbilityConverter());
+			//set.Bind(raceIcon).For(v => v.ImageView.Image).To(vm => vm.SelectedRace.Name).WithConversion("RaceIconTest");
+			set.Bind(raceIconButton).To(vm => vm.NavigateToRaceSelection);
+			set.Bind(raceIcon).To(vm => vm.SelectedRace.Name).WithConversion("RaceIconImagePath");
 			set.Apply();
+
+			//this.AddBindings(new Dictionary<object, string>()
+			//{
+			//	{ raceIcon, "TouchUpInside NavigateToRaceSelection" },
+			//});
 		}
 	}
 }

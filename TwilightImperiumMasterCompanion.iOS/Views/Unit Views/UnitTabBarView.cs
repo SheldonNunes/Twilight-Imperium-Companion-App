@@ -9,7 +9,7 @@ using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-	public partial class UnitTabBarView : MvxTabBarViewController<UnitTabBarViewModel>
+	public partial class UnitTabBarView : TabView<UnitTabBarViewModel>
 	{
 		public override UIViewController SelectedViewController
 		{
@@ -27,7 +27,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 		private readonly INavigationBar navigationBar;
 		private bool constructed;
 
-		public UnitTabBarView() : base()
+		public UnitTabBarView() : base(2)
 		{
 			constructed = true;
 			navigationBar = Mvx.Resolve<INavigationBar>();
@@ -59,7 +59,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 			var set = this.CreateBindingSet<UnitTabBarView, UnitTabBarViewModel>();
 			set.Bind(NavigationItem.LeftBarButtonItem)
 			   .To(vm => vm.ShowHexMainMenu);
-			set.Apply();  
+			set.Apply();
 		}
 
 		private int _createdSoFarCount = 0;

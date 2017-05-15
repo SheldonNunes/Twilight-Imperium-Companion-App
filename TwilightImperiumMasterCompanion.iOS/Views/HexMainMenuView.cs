@@ -18,12 +18,20 @@ namespace TwilightImperiumMasterCompanion.iOS
 			ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
 		}
 
+		private MenuPageType activeMenu;
+		public MenuPageType ActiveMenu
+		{
+			get { return activeMenu; }
+			set
+			{
+				activeMenu = value;
+				hexMenuView.Hexes[activeMenu].Selected = true;
+			}
+		}
+
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-
-			//blurView.BackgroundColor = UIColor.Blue;
-
 			View.BackgroundColor = UIColor.Clear;
 			hexNavigationBar.BarTintColor = UIColor.Clear;
 			hexNavigationBar.Translucent = true;
@@ -32,23 +40,40 @@ namespace TwilightImperiumMasterCompanion.iOS
 			navigationItem.SetLeftBarButtonItem(new UIBarButtonItem(
 							UIImage.FromBundle("HamburgerIcon"),
 				UIBarButtonItemStyle.Plain, null), true);
-			
+
 			hexMenuView = new HexMenuViewComponent();
 			View.AddSubview(hexMenuView);
 
+			var set = this.CreateBindingSet<HexMainMenuView, HexMainMenuViewModel>();
+			set.Bind(NavigationItem.LeftBarButtonItem)
+			   .To(vm => vm.CloseMenu);
+			//set.Bind(this).For(ActiveMenu).To(vm => vm.SelectedMenu)
+			set.Apply();
+
 			this.AddBindings(new Dictionary<object, string>()
 			{
-				{ navigationItem.LeftBarButtonItem, "Clicked CloseMenu"}
+				{ hexMenuView.Hexes[MenuPageType.Race], "TouchUpInside NavigateToRaceView" },
+				{ hexMenuView.Hexes[MenuPageType.Ship], "TouchUpInside NavigateToUnitView" },
+				{ this, "ActiveMenu SelectedMenu"}
 			});
+
+			blurView.Effect = UIBlurEffect.FromStyle(UIBlurEffectStyle.Dark);
+			blurView.Alpha = 0;
+			hexMenuView.Alpha = 0;
 		}
 
 		public override void ViewDidAppear(bool animated)
 		{
 			base.ViewDidAppear(animated);
-			blurView.Effect = UIBlurEffect.FromStyle(UIBlurEffectStyle.Dark);
+			UIView.Animate(0.25, 0, UIViewAnimationOptions.CurveEaseInOut, () => blurView.Alpha = 1, null);
+			UIView.Animate(0.25, 0, UIViewAnimationOptions.CurveEaseInOut, () => hexMenuView.Alpha = 1, null);
+		}
 
-
-			//UIView.Animate(0.25, 0, UIViewAnimationOptions.CurveLinear, () => , null);
+		public override void ViewWillDisappear(bool animated)
+		{
+			UIView.AnimateAsync(5, () => blurView.Alpha = 0);
+			UIView.Animate(0.25, 0, UIViewAnimationOptions.CurveEaseInOut, () => hexMenuView.Alpha = 0, null);
+			base.ViewWillDisappear(animated);
 		}
 
 		public override void ViewDidLayoutSubviews()

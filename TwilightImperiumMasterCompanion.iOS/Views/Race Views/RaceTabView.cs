@@ -1,4 +1,5 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using MvvmCross.Binding.BindingContext;
+using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Views;
 using MvvmCross.Platform;
 using TwilightImperiumMasterCompanion.Core;
@@ -6,28 +7,14 @@ using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-	public class RaceTabView : MvxTabBarViewController<RaceTabViewModel>
+	public class RaceTabView : TabView<RaceTabViewModel>
 	{
-		public override UIViewController SelectedViewController
-		{
-			get
-			{
-				return base.SelectedViewController;
-			}
-			set
-			{
-				base.SelectedViewController = value;
-				this.Title = value.Title;
-			}
-		}
 
-		private readonly INavigationBar navigationBar;
 		private bool constructed;
 
-		public RaceTabView()
+		public RaceTabView() : base(3)
 		{
 			constructed = true;
-			navigationBar = Mvx.Resolve<INavigationBar>();
 			ViewDidLoad();
 		}
 
@@ -45,19 +32,12 @@ namespace TwilightImperiumMasterCompanion.iOS
 								  };
 			ViewControllers = viewControllers;
 			CustomizableViewControllers = new UIViewController[] { };
-			SelectedViewController = ViewControllers[0];
+			SelectedViewController = ViewControllers[2];
 
-		}
-
-		public override void ViewWillAppear(bool animated)
-		{
-			base.ViewWillAppear(animated);
-			//navigationBar.Initialize(this, (sender, e) => Test());
-
-			//var set = this.CreateBindingSet<RaceTabView, RaceTabViewModel>();
-			//set.Bind(NavigationItem.LeftBarButtonItem)
-			//   .To(vm => vm.ShowHexMainMenu);
-			//set.Apply();
+			var set = this.CreateBindingSet<RaceTabView, RaceTabViewModel>();
+			set.Bind(NavigationItem.LeftBarButtonItem)
+			   .To(vm => vm.ShowHexMainMenu);
+			set.Apply();
 		}
 
 		private int _createdSoFarCount = 0;
@@ -73,9 +53,9 @@ namespace TwilightImperiumMasterCompanion.iOS
 		{
 			screen.Title = title;
 			screen.TabBarItem = new UITabBarItem(title,
-												 UIImage.FromBundle(bundle),
+												 null,//UIImage.FromBundle(bundle),
 												 _createdSoFarCount);
-			screen.TabBarItem.Image = screen.TabBarItem.Image.ImageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal);
+			//screen.TabBarItem.Image = screen.TabBarItem.Image.ImageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal);
 			_createdSoFarCount++;
 		}
 	}

@@ -114,6 +114,21 @@
     <Reference Include="SQLite.Net.Platform.XamarinIOS.Unified">
       <HintPath>..\packages\SQLite.Net-PCL.3.1.1\lib\Xamarin.iOS10\SQLite.Net.Platform.XamarinIOS.Unified.dll</HintPath>
     </Reference>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>..\packages\System.Collections.Immutable.1.2.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.DownloadCache">
+      <HintPath>..\packages\MvvmCross.Plugin.DownloadCache.4.4.0\lib\Xamarin.iOS10\MvvmCross.Plugins.DownloadCache.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.DownloadCache.iOS">
+      <HintPath>..\packages\MvvmCross.Plugin.DownloadCache.4.4.0\lib\Xamarin.iOS10\MvvmCross.Plugins.DownloadCache.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.File">
+      <HintPath>..\packages\MvvmCross.Plugin.File.4.4.0\lib\Xamarin.iOS10\MvvmCross.Plugins.File.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.File.iOS">
+      <HintPath>..\packages\MvvmCross.Plugin.File.4.4.0\lib\Xamarin.iOS10\MvvmCross.Plugins.File.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
@@ -160,6 +175,40 @@
     <ImageAsset Include="Resources\Images.xcassets\ShipIcon.imageset\Ship Icon.pdf" />
     <ImageAsset Include="Resources\Images.xcassets\HexagonBase.imageset\Base Hexagon Image copy.pdf" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon.png" />
+    <ImageAsset Include="Resources\Images.xcassets\MentakCoalitionIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\LizixMindnetIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\LizixMindnetIcon.imageset\Mindnet Complete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\MentakCoalitionIcon.imageset\Mentak Complete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\NaaluCollectiveIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\NaaluCollectiveIcon.imageset\Naalu Complete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\SardakkNorrIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\SardakkNorrIcon.imageset\Saardak Complete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\XxchaKingdomIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\XxchaKingdomIcon.imageset\XxchaComplete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\YsarilTribesIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\YsarilTribesIcon.imageset\Yssaril Complete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\WinnuIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\WinnuIcon.imageset\Winnu Complete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\YinBrotherhoodIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\YinBrotherhoodIcon.imageset\Yin Complete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\ArborecIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\NekroVirusIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\ArborecIcon.imageset\Aroborec Complete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\NekroVirusIcon.imageset\Necro Complete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\EmiratesofHacanIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\EmiratesofHacanIcon.imageset\Hacan Complete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\EmbersofMuaatIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\EmbersofMuaatIcon.imageset\Embers Complete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\BaronyofLetnevIcon.imageset\Aroborec Complete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\BaronyofLetnevIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\ClanofSaarIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\ClanofSaarIcon.imageset\Saar Complete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\FederationofSolIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\FederationofSolIcon.imageset\Sol Complete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\GhostsofCreussIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\GhostsofCreussIcon.imageset\Ghosts Complete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\UniversitiesofJol-NarIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\UniversitiesofJol-NarIcon.imageset\JolNar Complete.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
@@ -173,6 +222,9 @@
     <InterfaceDefinition Include="Views\ConfirmRaceView.xib" />
     <InterfaceDefinition Include="Views\RaceSelectionView.xib" />
     <InterfaceDefinition Include="ViewComponents\RaceSelectionTableViewCell.xib" />
+    <InterfaceDefinition Include="Views\Race Views\RaceSetupView.xib" />
+    <InterfaceDefinition Include="Views\Race Views\RaceOverviewView.xib" />
+    <InterfaceDefinition Include="Views\Race Views\RaceLeadersView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -238,6 +290,27 @@
     </Compile>
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="SqliteService.cs" />
+    <Compile Include="Views\Race Views\RaceSetupView.cs" />
+    <Compile Include="Views\Race Views\RaceSetupView.designer.cs">
+      <DependentUpon>RaceSetupView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Race Views\RaceOverviewView.cs" />
+    <Compile Include="Views\Race Views\RaceOverviewView.designer.cs">
+      <DependentUpon>RaceOverviewView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Race Views\RaceLeadersView.cs" />
+    <Compile Include="Views\Race Views\RaceLeadersView.designer.cs">
+      <DependentUpon>RaceLeadersView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\ITabBar.cs" />
+    <Compile Include="Views\TabView.cs" />
+    <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
+    <Compile Include="ViewComponents\UIImageButton.cs" />
+    <Compile Include="ViewComponents\UIImageButton.designer.cs">
+      <DependentUpon>UIImageButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\RaceIconTestValueConverter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -278,6 +351,24 @@
     <Folder Include="Resources\Images.xcassets\HexagonBase.imageset\" />
     <Folder Include="Resources\Images.xcassets\ShipIcon.imageset\" />
     <Folder Include="Views\Race Views\" />
+    <Folder Include="Converter\" />
+    <Folder Include="Resources\Images.xcassets\MentakCoalitionIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\LizixMindnetIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\NaaluCollectiveIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\SardakkNorrIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\XxchaKingdomIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\YsarilTribesIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\WinnuIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\YinBrotherhoodIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\ArborecIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\NekroVirusIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\EmiratesofHacanIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\EmbersofMuaatIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\BaronyofLetnevIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\ClanofSaarIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\FederationofSolIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\GhostsofCreussIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\UniversitiesofJol-NarIcon.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Fonts\Handel-Gothic.ttf">

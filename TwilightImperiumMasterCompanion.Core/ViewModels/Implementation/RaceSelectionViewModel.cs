@@ -2,10 +2,11 @@
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Plugins.Messenger;
+using TwilightImperiumMasterCompanion.Core.Resources;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
-	public class RaceSelectionViewModel : BaseViewModel<ExpansionsNavigationParameter>
+	public class RaceSelectionViewModel : BaseViewModel
 	{
 
 		private readonly IMvxMessenger messenger;
@@ -25,14 +26,19 @@ namespace TwilightImperiumMasterCompanion.Core
 			}
 		}
 
+		public string Title
+		{
+			get { return UIStrings.RaceSelection; }
+		}
+
 		public ICommand RaceSelected
 		{
 			get
 			{
 				return new MvxCommand<Race>((race) =>
 				{
-					messenger.Publish(new RaceSelectedMessage(this, race));
-					this.Close(this);
+					//messenger.Publish(new RaceSelectedMessage(this, race));
+					ShowViewModel<ConfirmRaceViewModel, SelectedRaceNavigationParameter>(new SelectedRaceNavigationParameter() { SelectedRace = race });
 				});
 			}
 		}
@@ -42,10 +48,7 @@ namespace TwilightImperiumMasterCompanion.Core
 			this.messenger = messenger;
 			this.raceService = raceService;
 			this.raceAbilityService = raceAbilityService;
-		}
 
-		protected override void RealInit(ExpansionsNavigationParameter parameter)
-		{
 			Races = raceService.GetRaces();
 		}
 	}

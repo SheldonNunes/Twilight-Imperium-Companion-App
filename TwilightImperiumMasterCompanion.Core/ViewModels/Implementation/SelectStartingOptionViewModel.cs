@@ -8,27 +8,26 @@ namespace TwilightImperiumMasterCompanion.Core
 	{
 		public ICommand NavigateToRaceSelectionView
 		{
-			get { return new MvxCommand(
-				() => ShowViewModel<ConfirmRaceViewModel, ExpansionsNavigationParameter>(
-					new ExpansionsNavigationParameter()
-					{
-						ShatteredEmpiresExpansionEnabled = ShatteredEmpiresExpansionEnabled,
-						ShardsofTheThroneExpansionEnabled = ShardsOfTheThroneExpansionEnabled
-					}
-					)); 
-				}
+			get
+			{
+				return new MvxCommand(
+			  () => ShowViewModel<RaceSelectionViewModel>());
+			}
 		}
 
 		public bool ShatteredEmpiresExpansionEnabled
 		{
-			get;
-			set;
+			get { return BaseService.ShatteredEmpiresExpansionEnabled; }
+			set { BaseService.ShatteredEmpiresExpansionEnabled = value; }
 		}
 
 		public bool ShardsOfTheThroneExpansionEnabled
 		{
-			get;
-			set;
+			get { return BaseService.ShardsOfTheThroneExpansionEnabled; }
+			set
+			{
+				BaseService.ShardsOfTheThroneExpansionEnabled = value;
+			}
 		}
 
 		public string Title

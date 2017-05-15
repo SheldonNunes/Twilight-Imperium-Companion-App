@@ -1,15 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Plugins.Messenger;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
-	public class ConfirmRaceViewModel : BaseViewModel<ExpansionsNavigationParameter>
+	public class ConfirmRaceViewModel : BaseViewModel<SelectedRaceNavigationParameter>
 	{
 		private readonly IMvxMessenger messenger;
 		private MvxSubscriptionToken messageSubscriberToken;
-		private ExpansionsNavigationParameter parameter;
+		private SelectedRaceNavigationParameter parameter;
+
+		public string Title
+		{
+			get { return String.Empty; }
+		}
 
 		private Race selectedRace;
 		public Race SelectedRace
@@ -35,12 +41,12 @@ namespace TwilightImperiumMasterCompanion.Core
 
 		public ICommand NavigateToRaceSelection
 		{
-			get { return new MvxCommand(() => ShowViewModel<RaceSelectionViewModel, ExpansionsNavigationParameter>(parameter)); }
+			get { return new MvxCommand(() => ShowViewModel<RaceSelectionViewModel>()); }
 		}
 
 		public ICommand NavigateToRaceView
 		{
-			get { return new MvxCommand(() => ShowViewModel<UnitTabBarViewModel>()); }
+			get { return new MvxCommand(() => ShowViewModel<RaceTabViewModel>()); }
 		}
 
 		readonly IRaceAbilityService raceAbilityService;
@@ -49,22 +55,19 @@ namespace TwilightImperiumMasterCompanion.Core
 		{
 			this.raceAbilityService = raceAbilityService;
 			this.messenger = messenger;
-			messageSubscriberToken = messenger.Subscribe<RaceSelectedMessage>(RaceSelected);
+			//messageSubscriberToken = messenger.Subscribe<RaceSelectedMessage>(RaceSelected);
 		}
 
-		protected override void RealInit(ExpansionsNavigationParameter parameter)
+		protected override void RealInit(SelectedRaceNavigationParameter parameter)
 		{
-			this.parameter = parameter;
-			BaseService.ShatteredEmpiresExpansionEnabled = parameter.ShatteredEmpiresExpansionEnabled;
-			BaseService.ShardsOfTheThroneExpansionEnabled = parameter.ShardsofTheThroneExpansionEnabled;
+			SelectedRace = parameter.SelectedRace;
+			RaceAbilities = raceAbilityService.GetRaceAbility(parameter.SelectedRace);
 		}
 
-		private void RaceSelected(RaceSelectedMessage message)
-		{
-			this.SelectedRace = message.SelectedRace;
-			this.RaceAbilities = raceAbilityService.GetRaceAbility(message.SelectedRace);
-		}
-
-
+		//private void RaceSelected(RaceSelectedMessage message)
+		//{
+		//	this.SelectedRace = message.SelectedRace;
+		//	this.RaceAbilities = raceAbilityService.GetRaceAbility(message.SelectedRace);
+		//}
 	}
 }

@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
-	public class RaceAbilityService : BaseService, IRaceAbilityService
+    public class RaceAbilityService : BaseService, IRaceAbilityService
 	{
-		private readonly RaceDataAccess raceDataAccess;
-		public RaceAbilityService()
+		private readonly IRaceDataAccess raceDataAccess;
+		public RaceAbilityService(IRaceDataAccess raceDataAccess)
 		{
-			raceDataAccess = new RaceDataAccess();
+            this.raceDataAccess = raceDataAccess;
 		}
 
 		public List<RaceAbility> GetRaceAbility(Race race)

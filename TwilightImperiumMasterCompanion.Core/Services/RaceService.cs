@@ -1,31 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces;
+using TwilightImperiumMasterCompanion.Core.Enum;
+using TwilightImperiumMasterCompanion.Core.Services.Interfaces;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
-	public class RaceService : BaseService, IRaceService
+    public class RaceService : BaseService, IRaceService
 	{
-		private readonly RaceDataAccess raceDataAccess;
-		public RaceService()
+		private readonly IRaceDataAccess raceDataAccess;
+        private readonly ISessionService sessionService;
+
+		public RaceService(IRaceDataAccess raceDataAccess, ISessionService sessionService)
 		{
-			raceDataAccess = new RaceDataAccess();
+            this.raceDataAccess = raceDataAccess;
+            this.sessionService = sessionService;
 		}
 
 		public List<Race> GetRaces()
 		{
-			int expansionValue = 0;
-			if (ShatteredEmpiresExpansionEnabled)
-			{
-				expansionValue++;
-			}
-			if (ShardsOfTheThroneExpansionEnabled)
-			{
-				expansionValue++;
-			}
-			return raceDataAccess.GetRaces(expansionValue);
+            var shatteredEmpiresEnabled = sessionService.GetExpansionStatus(Expansion.ShatteredEmpire);
+            var shardsOfTheThroneEnabled = sessionService.GetExpansionStatus(Expansion.ShardsOfTheThrone);
+            return raceDataAccess.GetRaces(shatteredEmpiresEnabled, shardsOfTheThroneEnabled);
 		}
-
-
-
 	}
 }

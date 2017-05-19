@@ -7,7 +7,6 @@ namespace TwilightImperiumMasterCompanion.Core
 {
 	public class BaseViewModel : MvxViewModel
 	{
-
 		protected bool ShowViewModel<TViewModel, TInit>(TInit parameter) where TViewModel : BaseViewModel<TInit>
 		{
 			var text = Mvx.Resolve<IMvxJsonConverter>().SerializeObject(parameter);

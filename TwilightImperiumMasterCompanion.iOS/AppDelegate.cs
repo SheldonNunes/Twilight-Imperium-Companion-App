@@ -34,9 +34,6 @@ namespace TwilightImperiumMasterCompanion.iOS
 			var startup = Mvx.Resolve<IMvxAppStart>();
 			startup.Start();
 
-			var test = new RaceService();
-			var results = test.GetRaces();
-
 			UITabBar.Appearance.BarTintColor = UIColor.FromRGB(57, 121, 205);
 
 			UINavigationBar.Appearance.TintColor = UIColor.White;

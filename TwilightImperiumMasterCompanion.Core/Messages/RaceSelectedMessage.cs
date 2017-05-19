@@ -1,9 +1,8 @@
-﻿using System;
-using MvvmCross.Plugins.Messenger;
+﻿using MvvmCross.Plugins.Messenger;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
-	public class RaceSelectedMessage : MvxMessage
+    public class RaceSelectedMessage : MvxMessage
 	{
 		public Race SelectedRace
 		{

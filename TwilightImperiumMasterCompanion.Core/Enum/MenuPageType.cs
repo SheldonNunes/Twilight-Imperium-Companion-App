@@ -1,7 +1,6 @@
-﻿using System;
-namespace TwilightImperiumMasterCompanion.Core
+﻿namespace TwilightImperiumMasterCompanion.Core
 {
-	public enum MenuPageType
+    public enum MenuPageType
 	{
 		Rules,
 		Race,

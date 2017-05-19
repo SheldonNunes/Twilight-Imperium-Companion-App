@@ -114,9 +114,6 @@
     <Reference Include="SQLite.Net.Platform.XamarinIOS.Unified">
       <HintPath>..\packages\SQLite.Net-PCL.3.1.1\lib\Xamarin.iOS10\SQLite.Net.Platform.XamarinIOS.Unified.dll</HintPath>
     </Reference>
-    <Reference Include="System.Collections.Immutable">
-      <HintPath>..\packages\System.Collections.Immutable.1.2.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
-    </Reference>
     <Reference Include="MvvmCross.Plugins.DownloadCache">
       <HintPath>..\packages\MvvmCross.Plugin.DownloadCache.4.4.0\lib\Xamarin.iOS10\MvvmCross.Plugins.DownloadCache.dll</HintPath>
     </Reference>
@@ -128,6 +125,9 @@
     </Reference>
     <Reference Include="MvvmCross.Plugins.File.iOS">
       <HintPath>..\packages\MvvmCross.Plugin.File.4.4.0\lib\Xamarin.iOS10\MvvmCross.Plugins.File.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>..\packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -150,8 +150,6 @@
     <ImageAsset Include="Resources\Images.xcassets\WarSunIcon.imageset\War Sun Icon copy.pdf" />
     <ImageAsset Include="Resources\Images.xcassets\SpaceDockIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\SpaceDockIcon.imageset\Space Dock Icon copy.pdf" />
-    <ImageAsset Include="Resources\Images.xcassets\GroundForcesIcon.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\GroundForcesIcon.imageset\Ground Forces copy.pdf" />
     <ImageAsset Include="Resources\Images.xcassets\HamburgerIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\HamburgerIcon.imageset\Hamburger Icon copy.pdf" />
     <ImageAsset Include="Resources\Images.xcassets\ResearchIcon.imageset\Contents.json" />
@@ -212,19 +210,19 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
-    <InterfaceDefinition Include="ViewComponents\UnitReferenceTableViewCell.xib" />
-    <InterfaceDefinition Include="ViewComponents\PurchaseUnitTableViewCell.xib" />
+    <InterfaceDefinition Include="Controls\UnitReferenceTableViewCell.xib" />
+    <InterfaceDefinition Include="Controls\PurchaseUnitTableViewCell.xib" />
     <InterfaceDefinition Include="Storyboards\Navigation.storyboard" />
-    <InterfaceDefinition Include="Views\Unit Views\UnitReferenceView.xib" />
-    <InterfaceDefinition Include="Views\Unit Views\PurchaseUnitView.xib" />
+    <InterfaceDefinition Include="Views\Unit\UnitReferenceView.xib" />
+    <InterfaceDefinition Include="Views\Unit\UnitPurchaseView.xib" />
     <InterfaceDefinition Include="Views\HexMainMenuView.xib" />
-    <InterfaceDefinition Include="Views\SelectStartingOptionView.xib" />
-    <InterfaceDefinition Include="Views\ConfirmRaceView.xib" />
-    <InterfaceDefinition Include="Views\RaceSelectionView.xib" />
-    <InterfaceDefinition Include="ViewComponents\RaceSelectionTableViewCell.xib" />
-    <InterfaceDefinition Include="Views\Race Views\RaceSetupView.xib" />
-    <InterfaceDefinition Include="Views\Race Views\RaceOverviewView.xib" />
-    <InterfaceDefinition Include="Views\Race Views\RaceLeadersView.xib" />
+    <InterfaceDefinition Include="Views\Race\RaceSetupView.xib" />
+    <InterfaceDefinition Include="Views\Race\RaceOverviewView.xib" />
+    <InterfaceDefinition Include="Views\Race\RaceLeadersView.xib" />
+    <InterfaceDefinition Include="Views\Setup\ConfirmRaceView.xib" />
+    <InterfaceDefinition Include="Views\Setup\RaceSelectionView.xib" />
+    <InterfaceDefinition Include="Views\Setup\SelectStartingOptionView.xib" />
+    <InterfaceDefinition Include="Controls\PlanetCollectionViewCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -237,80 +235,76 @@
     <Compile Include="Constants\ColorConstants.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Extensions\UIImageExtensions.cs" />
-    <Compile Include="ViewComponents\UnitReferenceTableViewCell.cs" />
-    <Compile Include="ViewComponents\UnitReferenceTableViewCell.designer.cs">
+    <Compile Include="Controls\UnitReferenceTableViewCell.cs" />
+    <Compile Include="Controls\UnitReferenceTableViewCell.designer.cs">
       <DependentUpon>UnitReferenceTableViewCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewComponents\PurchaseUnitTableViewCell.cs" />
-    <Compile Include="ViewComponents\PurchaseUnitTableViewCell.designer.cs">
+    <Compile Include="Controls\PurchaseUnitTableViewCell.cs" />
+    <Compile Include="Controls\PurchaseUnitTableViewCell.designer.cs">
       <DependentUpon>PurchaseUnitTableViewCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Unit Views\UnitReferenceView.cs" />
-    <Compile Include="Views\Unit Views\UnitReferenceView.designer.cs">
-      <DependentUpon>UnitReferenceView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewComponents\MenuNavigationBar.cs" />
-    <Compile Include="ViewComponents\INavigationBar.cs" />
-    <Compile Include="Views\Unit Views\UnitTabBarView.cs" />
-    <Compile Include="Views\Unit Views\UnitTabBarView.designer.cs">
-      <DependentUpon>UnitTabBarView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Unit Views\PurchaseUnitView.cs" />
-    <Compile Include="Views\Unit Views\PurchaseUnitView.designer.cs">
-      <DependentUpon>PurchaseUnitView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewComponents\HexViewComponent.cs" />
-    <Compile Include="Views\HexMainMenuView.cs" />
-    <Compile Include="Views\HexMainMenuView.designer.cs">
-      <DependentUpon>HexMainMenuView.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Controls\MenuNavigationBar.cs" />
+    <Compile Include="Controls\INavigationBar.cs" />
+    <Compile Include="Controls\HexViewComponent.cs" />
     <Compile Include="ModalSupportIosViewPresenter.cs" />
-    <Compile Include="HexMenuViewComponent.cs" />
-    <Compile Include="HexMenuViewComponent.designer.cs">
-      <DependentUpon>HexMenuViewComponent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SelectStartingOptionView.cs" />
-    <Compile Include="Views\SelectStartingOptionView.designer.cs">
-      <DependentUpon>SelectStartingOptionView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ConfirmRaceView.cs" />
-    <Compile Include="Views\ConfirmRaceView.designer.cs">
-      <DependentUpon>ConfirmRaceView.cs</DependentUpon>
-    </Compile>
     <Compile Include="LinkerPleaseInclude.cs" />
-    <Compile Include="Views\Race Views\RaceTabView.cs" />
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
-    <Compile Include="Views\RaceSelectionView.cs" />
-    <Compile Include="Views\RaceSelectionView.designer.cs">
-      <DependentUpon>RaceSelectionView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewComponents\RaceSelectionTableViewCell.cs" />
-    <Compile Include="ViewComponents\RaceSelectionTableViewCell.designer.cs">
-      <DependentUpon>RaceSelectionTableViewCell.cs</DependentUpon>
-    </Compile>
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="SqliteService.cs" />
-    <Compile Include="Views\Race Views\RaceSetupView.cs" />
-    <Compile Include="Views\Race Views\RaceSetupView.designer.cs">
-      <DependentUpon>RaceSetupView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Race Views\RaceOverviewView.cs" />
-    <Compile Include="Views\Race Views\RaceOverviewView.designer.cs">
-      <DependentUpon>RaceOverviewView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Race Views\RaceLeadersView.cs" />
-    <Compile Include="Views\Race Views\RaceLeadersView.designer.cs">
-      <DependentUpon>RaceLeadersView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewComponents\ITabBar.cs" />
-    <Compile Include="Views\TabView.cs" />
+    <Compile Include="Controls\ITabBar.cs" />
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
-    <Compile Include="ViewComponents\UIImageButton.cs" />
-    <Compile Include="ViewComponents\UIImageButton.designer.cs">
-      <DependentUpon>UIImageButton.cs</DependentUpon>
+    <Compile Include="ViewControllers\HexMainMenuView.cs" />
+    <Compile Include="ViewControllers\HexMainMenuView.designer.cs">
+      <DependentUpon>HexMainMenuView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Converter\RaceIconTestValueConverter.cs" />
+    <Compile Include="ViewControllers\Setup\ConfirmRaceView.cs" />
+    <Compile Include="ViewControllers\Setup\ConfirmRaceView.designer.cs">
+      <DependentUpon>ConfirmRaceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Setup\RaceSelectionView.cs" />
+    <Compile Include="ViewControllers\Setup\RaceSelectionView.designer.cs">
+      <DependentUpon>RaceSelectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Setup\SelectStartingOptionView.cs" />
+    <Compile Include="ViewControllers\Setup\SelectStartingOptionView.designer.cs">
+      <DependentUpon>SelectStartingOptionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Unit\UnitPurchaseView.cs" />
+    <Compile Include="ViewControllers\Unit\UnitPurchaseView.designer.cs">
+      <DependentUpon>UnitPurchaseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Unit\UnitReferenceView.cs" />
+    <Compile Include="ViewControllers\Unit\UnitReferenceView.designer.cs">
+      <DependentUpon>UnitReferenceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Unit\UnitTabBarView.cs" />
+    <Compile Include="ViewControllers\Unit\UnitTabBarView.designer.cs">
+      <DependentUpon>UnitTabBarView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Race\RaceLeadersView.cs" />
+    <Compile Include="ViewControllers\Race\RaceLeadersView.designer.cs">
+      <DependentUpon>RaceLeadersView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Race\RaceOverviewView.cs" />
+    <Compile Include="ViewControllers\Race\RaceOverviewView.designer.cs">
+      <DependentUpon>RaceOverviewView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Race\RaceSetupView.cs" />
+    <Compile Include="ViewControllers\Race\RaceSetupView.designer.cs">
+      <DependentUpon>RaceSetupView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Race\RaceTabView.cs" />
+    <Compile Include="ViewControllers\TabView.cs" />
+    <Compile Include="Controls\HexMenuViewComponent.cs" />
+    <Compile Include="Controls\HexMenuViewComponent.designer.cs">
+      <DependentUpon>HexMenuViewComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlanetCollectionViewCell.cs" />
+    <Compile Include="Controls\PlanetCollectionViewCell.designer.cs">
+      <DependentUpon>PlanetCollectionViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CenteredCollectionViewLayout.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -323,9 +317,9 @@
     <Folder Include="Resources\Fonts\" />
     <Folder Include="Constants\" />
     <Folder Include="Views\" />
-    <Folder Include="ViewComponents\" />
+    <Folder Include="Controls\" />
     <Folder Include="Storyboards\" />
-    <Folder Include="Views\Unit Views\" />
+    <Folder Include="Views\Unit\" />
     <Folder Include="Extensions\" />
     <Folder Include="Resources\Images.xcassets\UnitReferenceTabIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\PurchaseTabIcon.imageset\" />
@@ -347,11 +341,9 @@
     <Folder Include="Resources\Images.xcassets\HexagonActive.imageset\" />
     <Folder Include="Resources\Images.xcassets\HexagonInactiveLight.imageset\" />
     <Folder Include="Interfaces\" />
-    <Folder Include="ViewControllers\" />
     <Folder Include="Resources\Images.xcassets\HexagonBase.imageset\" />
     <Folder Include="Resources\Images.xcassets\ShipIcon.imageset\" />
-    <Folder Include="Views\Race Views\" />
-    <Folder Include="Converter\" />
+    <Folder Include="Views\Race\" />
     <Folder Include="Resources\Images.xcassets\MentakCoalitionIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\LizixMindnetIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\NaaluCollectiveIcon.imageset\" />
@@ -369,13 +361,16 @@
     <Folder Include="Resources\Images.xcassets\FederationofSolIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\GhostsofCreussIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\UniversitiesofJol-NarIcon.imageset\" />
+    <Folder Include="ViewControllers\" />
+    <Folder Include="ViewControllers\Unit\" />
+    <Folder Include="ViewControllers\Race\" />
+    <Folder Include="ViewControllers\Setup\" />
+    <Folder Include="Views\Setup\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Fonts\Handel-Gothic.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\AppDatabase.db" />
+    <BundleResource Include="Resources\AppDatabase.db" />
   </ItemGroup>
 </Project>

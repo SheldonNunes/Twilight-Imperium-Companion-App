@@ -174,8 +174,6 @@
     <ImageAsset Include="Resources\Images.xcassets\HexagonBase.imageset\Base Hexagon Image copy.pdf" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon.png" />
     <ImageAsset Include="Resources\Images.xcassets\MentakCoalitionIcon.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\LizixMindnetIcon.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\LizixMindnetIcon.imageset\Mindnet Complete.png" />
     <ImageAsset Include="Resources\Images.xcassets\MentakCoalitionIcon.imageset\Mentak Complete.png" />
     <ImageAsset Include="Resources\Images.xcassets\NaaluCollectiveIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\NaaluCollectiveIcon.imageset\Naalu Complete.png" />
@@ -207,6 +205,12 @@
     <ImageAsset Include="Resources\Images.xcassets\GhostsofCreussIcon.imageset\Ghosts Complete.png" />
     <ImageAsset Include="Resources\Images.xcassets\UniversitiesofJol-NarIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\UniversitiesofJol-NarIcon.imageset\JolNar Complete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\CruiserIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\CruiserIcon.imageset\Cruiser Icon.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\StartingPlanetIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\StartingPlanetIcon.imageset\Planet Orange Icon.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\L1z1xMindnetIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\L1z1xMindnetIcon.imageset\Mindnet Complete.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
@@ -345,7 +349,6 @@
     <Folder Include="Resources\Images.xcassets\ShipIcon.imageset\" />
     <Folder Include="Views\Race\" />
     <Folder Include="Resources\Images.xcassets\MentakCoalitionIcon.imageset\" />
-    <Folder Include="Resources\Images.xcassets\LizixMindnetIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\NaaluCollectiveIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\SardakkNorrIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\XxchaKingdomIcon.imageset\" />
@@ -366,11 +369,16 @@
     <Folder Include="ViewControllers\Race\" />
     <Folder Include="ViewControllers\Setup\" />
     <Folder Include="Views\Setup\" />
+    <Folder Include="Resources\Images.xcassets\CruiserIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\StartingPlanetIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\L1z1xMindnetIcon.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Fonts\Handel-Gothic.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="Resources\AppDatabase.db" />
+    <BundleResource Include="..\TwilightImperiumMasterCompanion.Core\Resources\AppDatabase.db">
+      <Link>Resources\AppDatabase.db</Link>
+    </BundleResource>
   </ItemGroup>
 </Project>

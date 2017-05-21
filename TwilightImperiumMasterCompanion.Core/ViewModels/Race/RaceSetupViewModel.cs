@@ -20,7 +20,7 @@ namespace TwilightImperiumMasterCompanion.Core
 		public RaceSetupViewModel()
 		{
             StartingPlanets = new List<Planet>(){
-                new Planet(), new Planet(), new Planet()
+                new Planet(){Name = "Test"}, new Planet(), new Planet()
             };
 		}
 	}

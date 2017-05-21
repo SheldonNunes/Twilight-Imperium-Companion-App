@@ -79,9 +79,10 @@
     <Compile Include="Database\RaceTableTests.cs" />
     <Compile Include="Services\CoreSqliteService.cs" />
     <Compile Include="Services\SessionServiceTests.cs" />
-    <Compile Include="DataAccess\RaceDataAccessTests.cs" />
     <Compile Include="Services\UnitServiceTests.cs" />
     <Compile Include="Database\UnitTableTests.cs" />
+    <Compile Include="Database\PlanetTableTests.cs" />
+    <Compile Include="Database\RaceStartingPlanetsTableTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -95,7 +96,6 @@
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="Database\" />
-    <Folder Include="DataAccess\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

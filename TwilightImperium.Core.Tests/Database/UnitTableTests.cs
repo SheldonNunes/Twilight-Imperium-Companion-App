@@ -86,5 +86,14 @@ namespace TwilightImperium.Core.Tests.Database
 			//Assert
 			Assert.IsNotNull(result);
 		}
+
+		[Test]
+		public void UnitTable_Has_OnlySevenColumns()
+		{
+			//Act
+            var result = unitTableInfo;
+			//Assert
+			Assert.AreEqual(7, result.Count);
+		}
 	}
 }

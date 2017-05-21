@@ -8,6 +8,10 @@ namespace TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces
     {
         List<Race> GetRaces(bool ShatteredEmpiresExpansion, bool ShardsOfTheThroneExpansion);
 
+        Race GetRace(string raceName);
+
         List<RaceAbility> GetRaceAbility(Race race);
+
+        List<Planet> GetStartingPlanets(int raceID);
     }
 }

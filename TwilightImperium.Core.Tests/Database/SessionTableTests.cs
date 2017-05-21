@@ -69,6 +69,15 @@ namespace TwilightImperium.Core.Tests.Database
 			//Assert
             Assert.AreEqual(1, result.Count);
 		}
+
+		[Test]
+		public void SessionTable_Has_OnlyFourColumns()
+		{
+			//Act
+            var result = sessionTableInfo;
+			//Assert
+			Assert.AreEqual(4, result.Count);
+		}
     }
 
 }

@@ -15,13 +15,22 @@ namespace TwilightImperiumMasterCompanion.iOS.Controls
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel planetName { get; set; }
+        UIKit.UIImageView cellImageView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel cellNameLabel { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (planetName != null) {
-                planetName.Dispose ();
-                planetName = null;
+            if (cellImageView != null) {
+                cellImageView.Dispose ();
+                cellImageView = null;
+            }
+
+            if (cellNameLabel != null) {
+                cellNameLabel.Dispose ();
+                cellNameLabel = null;
             }
         }
     }

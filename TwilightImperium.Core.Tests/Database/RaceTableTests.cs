@@ -52,6 +52,13 @@ namespace TwilightImperium.Core.Tests.Database
 			Assert.IsNotNull(result);
 		}
 
-
+		[Test]
+		public void RaceTable_Has_OnlyThreeColumns()
+		{
+			//Act
+			var result = raceTableInfo;
+			//Assert
+            Assert.AreEqual(3, result.Count);
+		}
 	}
 }

@@ -30,7 +30,8 @@
             </view>
             <size key="customSize" width="75" height="100"/>
             <connections>
-                <outlet property="planetName" destination="2" id="name-outlet-2"/>
+                <outlet property="cellNameLabel" destination="2" id="name-outlet-2"/>
+                <outlet property="cellImageView" destination="10" id="name-outlet-10"/>
             </connections>
             <point key="canvasLocation" x="-9.5" y="-19"/>
             <constraints>

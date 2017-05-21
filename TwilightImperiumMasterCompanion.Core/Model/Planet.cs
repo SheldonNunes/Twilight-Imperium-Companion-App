@@ -3,10 +3,15 @@
 	public class Planet
 	{
 
-		public string PlanetName
+        public string Name
 		{
 			get;
 			set;
+		}
+
+		public string Image
+		{
+            get { return "StartingPlanetIcon"; }
 		}
 
 		public string Description

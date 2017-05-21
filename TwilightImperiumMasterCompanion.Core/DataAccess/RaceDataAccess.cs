@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using MvvmCross.Platform;
 using SQLite.Net;
@@ -29,7 +30,22 @@ namespace TwilightImperiumMasterCompanion.Core
 		public List<RaceAbility> GetRaceAbility(Race race)
 		{
 			return databaseConnection.Query<RaceAbility>("SELECT DESCRIPTION FROM RaceAbilityTranslation JOIN Race ON Race.ID = RaceAbilityTranslation.RaceID WHERE Name=?", race.Name);
-		} 
+		}
 
-	}
+        public Race GetRace(string raceName)
+        {
+            return databaseConnection.Query<Race>("Select * FROM RACE WHERE Name = ? LIMIT 1", raceName).FirstOrDefault();
+        }
+
+        public List<Planet> GetStartingPlanets(int raceID)
+        {
+            var query = "" +
+                "SELECT * FROM Planet " +
+                "JOIN RaceStartingPlanets " +
+                "ON Planet.ID = RaceStartingPlanets.PlanetID " +
+                "WHERE RaceStartingPlanets.RaceID = ?";
+
+            return databaseConnection.Query<Planet>(query, raceID);
+        }
+    }
 }

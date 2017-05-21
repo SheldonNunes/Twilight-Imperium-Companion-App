@@ -177,12 +177,8 @@
     <ImageAsset Include="Resources\Images.xcassets\MentakCoalitionIcon.imageset\Mentak Complete.png" />
     <ImageAsset Include="Resources\Images.xcassets\NaaluCollectiveIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\NaaluCollectiveIcon.imageset\Naalu Complete.png" />
-    <ImageAsset Include="Resources\Images.xcassets\SardakkNorrIcon.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\SardakkNorrIcon.imageset\Saardak Complete.png" />
     <ImageAsset Include="Resources\Images.xcassets\XxchaKingdomIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\XxchaKingdomIcon.imageset\XxchaComplete.png" />
-    <ImageAsset Include="Resources\Images.xcassets\YsarilTribesIcon.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\YsarilTribesIcon.imageset\Yssaril Complete.png" />
     <ImageAsset Include="Resources\Images.xcassets\WinnuIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\WinnuIcon.imageset\Winnu Complete.png" />
     <ImageAsset Include="Resources\Images.xcassets\YinBrotherhoodIcon.imageset\Contents.json" />
@@ -211,6 +207,10 @@
     <ImageAsset Include="Resources\Images.xcassets\StartingPlanetIcon.imageset\Planet Orange Icon.pdf" />
     <ImageAsset Include="Resources\Images.xcassets\L1z1xMindnetIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\L1z1xMindnetIcon.imageset\Mindnet Complete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\SardakkN%27orrIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\SardakkN%27orrIcon.imageset\Saardak Complete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\YssarilTribesIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\YssarilTribesIcon.imageset\Yssaril Complete.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
@@ -350,9 +350,7 @@
     <Folder Include="Views\Race\" />
     <Folder Include="Resources\Images.xcassets\MentakCoalitionIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\NaaluCollectiveIcon.imageset\" />
-    <Folder Include="Resources\Images.xcassets\SardakkNorrIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\XxchaKingdomIcon.imageset\" />
-    <Folder Include="Resources\Images.xcassets\YsarilTribesIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\WinnuIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\YinBrotherhoodIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\ArborecIcon.imageset\" />
@@ -372,6 +370,8 @@
     <Folder Include="Resources\Images.xcassets\CruiserIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\StartingPlanetIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\L1z1xMindnetIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\SardakkN%27orrIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\YssarilTribesIcon.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Fonts\Handel-Gothic.ttf">

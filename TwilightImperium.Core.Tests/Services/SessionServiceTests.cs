@@ -106,5 +106,38 @@ namespace TwilightImperium.Core.Tests.Services
 			//Assert
             Assert.IsNotNull(session.Find(x => x.ShardsOfTheThroneExpansionEnabled == false));
 		}
+
+		[Test]
+		public void SetSelectedRace_SetsSelectedRaceInDatabase()
+		{
+            //Act
+            var race = new Race() {RaceID = 3};
+			sessionService.SetSelectedRace(race);
+
+			var session = databaseConnection.Query<Session>("SELECT * FROM Session");
+			//Assert
+            Assert.IsNotNull(session.Find(x => x.RaceID == race.RaceID));
+		}
+
+
+		[Test]
+		public void GetSelectedRace_WhenSelectedRaceNotSet_ThrowsException()
+		{
+			Assert.Throws<InvalidOperationException>(() => sessionService.GetSelectedRace());
+		}
+
+		[Test]
+		public void GetSelectedRace_WhenSelectedSet_ReturnsSelectedRace()
+		{
+			//Arrange
+            //Federation of Sol
+			var race = new Race() { RaceID = 3 };
+			sessionService.SetSelectedRace(race);
+
+            //Act
+            var result = sessionService.GetSelectedRace();
+            //Assert
+            Assert.AreEqual(race.RaceID, result.RaceID);
+		}
     }
 }

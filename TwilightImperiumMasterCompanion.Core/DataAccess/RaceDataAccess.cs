@@ -29,7 +29,7 @@ namespace TwilightImperiumMasterCompanion.Core
 
 		public List<RaceAbility> GetRaceAbility(Race race)
 		{
-			return databaseConnection.Query<RaceAbility>("SELECT DESCRIPTION FROM RaceAbilityTranslation JOIN Race ON Race.ID = RaceAbilityTranslation.RaceID WHERE Name=?", race.Name);
+			return databaseConnection.Query<RaceAbility>("SELECT DESCRIPTION FROM RaceAbilityTranslation JOIN Race ON Race.RaceID = RaceAbilityTranslation.RaceID WHERE Name=?", race.Name);
 		}
 
         public Race GetRace(string raceName)

@@ -10,10 +10,10 @@ namespace TwilightImperiumMasterCompanion.iOS
 	{
 		private const string BindingText = 
 			"ShipName Name;" +
-			"ShipCost Cost;" +
-			"ShipMove Movement;" +
-			"ShipBattle Battle;" +
-			"ShipCapacity Capacity;";
+            "ShipCost Cost, Converter=Unit;" +
+			"ShipMove Movement, Converter=Unit;" +
+			"ShipBattle Battle, Converter=Unit;" +
+			"ShipCapacity Capacity, Converter=Unit;";
 
 		public string ShipImageName
 		{

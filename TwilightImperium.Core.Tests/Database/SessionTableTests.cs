@@ -26,10 +26,10 @@ namespace TwilightImperium.Core.Tests.Database
         }
 
         [Test]
-        public void SessionTable_Has_IDColumn()
+        public void SessionTable_Has_SessionIDColumn()
         {
 			//Act
-			var result = sessionTableInfo.Find(x => x.Name == "ID");
+			var result = sessionTableInfo.Find(x => x.Name == "SessionID");
 			//Assert
 			Assert.IsNotNull(result);
         }

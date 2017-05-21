@@ -83,6 +83,7 @@
     <Compile Include="Services\SessionService.cs" />
     <Compile Include="Model\Session.cs" />
     <Compile Include="DataAccess\UnitDataAccess.cs" />
+    <Compile Include="Converters\UnitValueConverter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>

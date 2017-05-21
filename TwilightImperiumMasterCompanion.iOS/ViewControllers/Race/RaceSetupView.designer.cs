@@ -18,11 +18,20 @@ namespace TwilightImperiumMasterCompanion.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UICollectionView startingPlanetsCollectionView { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UICollectionView startingUnitsCollectionView { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (startingPlanetsCollectionView != null) {
                 startingPlanetsCollectionView.Dispose ();
                 startingPlanetsCollectionView = null;
+            }
+
+            if (startingUnitsCollectionView != null) {
+                startingUnitsCollectionView.Dispose ();
+                startingUnitsCollectionView = null;
             }
         }
     }

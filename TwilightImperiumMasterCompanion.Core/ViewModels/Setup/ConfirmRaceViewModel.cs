@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Plugins.Messenger;
+using TwilightImperiumMasterCompanion.Core.Services.Interfaces;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
@@ -35,22 +36,23 @@ namespace TwilightImperiumMasterCompanion.Core
 			}
 		}
 
-		public ICommand NavigateToRaceSelection
-		{
-			get { return new MvxCommand(() => ShowViewModel<RaceSelectionViewModel>()); }
-		}
-
 		public ICommand NavigateToRaceView
 		{
-			get { return new MvxCommand(() => ShowViewModel<RaceTabViewModel>()); }
+            get { return new MvxCommand(() => 
+            { 
+                sessionService.SetSelectedRace(SelectedRace);
+                ShowViewModel<RaceTabViewModel>(); 
+            }); }
 		}
 
 		private readonly IMvxMessenger messenger;
 		private readonly IRaceAbilityService raceAbilityService;
+        private readonly ISessionService sessionService;
 
-		public ConfirmRaceViewModel(IMvxMessenger messenger, IRaceAbilityService raceAbilityService)
+        public ConfirmRaceViewModel(IMvxMessenger messenger, IRaceAbilityService raceAbilityService, ISessionService sessionService)
 		{
-			this.raceAbilityService = raceAbilityService;
+            this.sessionService = sessionService;
+            this.raceAbilityService = raceAbilityService;
 			this.messenger = messenger;
 		}
 

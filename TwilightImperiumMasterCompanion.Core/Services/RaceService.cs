@@ -31,7 +31,7 @@ namespace TwilightImperiumMasterCompanion.Core
 
         public List<Planet> GetStartingPlanets(Race race)
         {
-            return raceDataAccess.GetStartingPlanets(race.ID);
+            return raceDataAccess.GetStartingPlanets(race.RaceID);
         }
     }
 }

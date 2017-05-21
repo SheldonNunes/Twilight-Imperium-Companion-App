@@ -18,9 +18,19 @@ namespace TwilightImperiumMasterCompanion.Core.Services.Interfaces
             return sessionDataAccess.GetExpansionStatus(expansion);        
         }
 
+        public Race GetSelectedRace()
+        {
+            return sessionDataAccess.GetSelectedRace();
+        }
+
         public void SaveExpansion(Expansion expansion, bool expansionEnabled)
         {
             sessionDataAccess.SaveExpansion(expansion, expansionEnabled);
+        }
+
+        public void SetSelectedRace(Race race)
+        {
+            sessionDataAccess.SetSelectedRace(race.RaceID);
         }
     }
 }

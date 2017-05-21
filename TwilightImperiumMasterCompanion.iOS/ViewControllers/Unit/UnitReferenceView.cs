@@ -4,6 +4,7 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.iOS.Views;
 using MvvmCross.Platform;
+using TwilightImperiumMasterCompanion.Core;
 using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
@@ -26,10 +27,9 @@ namespace TwilightImperiumMasterCompanion.iOS
 			tableView.Source = source;
 			tableView.ReloadData();
 
-			this.AddBindings(new Dictionary<object, string>
-				{
-					{source, "ItemsSource Units"}
-				});
+			var set = this.CreateBindingSet<UnitReferenceView, UnitReferenceViewModel>();
+            set.Bind(source).For(v => v.ItemsSource).To(vm => vm.Units);
+			set.Apply();
 		}
 
 

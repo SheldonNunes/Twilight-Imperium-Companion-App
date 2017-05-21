@@ -26,10 +26,10 @@ namespace TwilightImperium.Core.Tests.Database
 		}
 
 		[Test]
-		public void RaceTable_Has_IDColumn()
+		public void RaceTable_Has_RaceIDColumn()
 		{
 			//Act
-			var result = raceTableInfo.Find(x => x.Name == "ID");
+			var result = raceTableInfo.Find(x => x.Name == "RaceID");
 			//Assert
 			Assert.IsNotNull(result);
 		}

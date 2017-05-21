@@ -5,8 +5,7 @@ namespace TwilightImperiumMasterCompanion.Core
 {
 	public class Race
 	{
-		[PrimaryKey, AutoIncrement]
-		public int ID
+		public int RaceID
 		{
 			get;
 			set;

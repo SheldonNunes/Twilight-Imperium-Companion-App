@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MvvmCross.Core.ViewModels;
+using TwilightImperiumMasterCompanion.Core.Services.Interfaces;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
@@ -17,11 +18,11 @@ namespace TwilightImperiumMasterCompanion.Core
 			}
 		}
 
-		public RaceSetupViewModel()
+        public RaceSetupViewModel(IRaceService raceService, ISessionService sessionService)
 		{
-            StartingPlanets = new List<Planet>(){
-                new Planet(){Name = "Test"}, new Planet(), new Planet()
-            };
+            var selectedRace = sessionService.GetSelectedRace();
+            var startingPlanets = raceService.GetStartingPlanets(selectedRace);
+            StartingPlanets = startingPlanets;
 		}
 	}
 }

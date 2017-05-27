@@ -1,11 +1,8 @@
-﻿using SQLite.Net.Attributes;
-
-namespace TwilightImperiumMasterCompanion.Core
+﻿namespace TwilightImperiumMasterCompanion.Core
 {
-	public class Unit
+    public class Unit
 	{
-		[PrimaryKey, AutoIncrement]
-		public int ID
+		public int UnitID
 		{
 			get;
 			set;

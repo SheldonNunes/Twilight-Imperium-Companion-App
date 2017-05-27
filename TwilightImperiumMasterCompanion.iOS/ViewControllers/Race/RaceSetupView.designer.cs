@@ -20,7 +20,15 @@ namespace TwilightImperiumMasterCompanion.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView startingTechnologiesTextView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UICollectionView startingUnitsCollectionView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.NSLayoutConstraint startingUnitViewHeightConstraint { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
@@ -29,9 +37,19 @@ namespace TwilightImperiumMasterCompanion.iOS
                 startingPlanetsCollectionView = null;
             }
 
+            if (startingTechnologiesTextView != null) {
+                startingTechnologiesTextView.Dispose ();
+                startingTechnologiesTextView = null;
+            }
+
             if (startingUnitsCollectionView != null) {
                 startingUnitsCollectionView.Dispose ();
                 startingUnitsCollectionView = null;
+            }
+
+            if (startingUnitViewHeightConstraint != null) {
+                startingUnitViewHeightConstraint.Dispose ();
+                startingUnitViewHeightConstraint = null;
             }
         }
     }

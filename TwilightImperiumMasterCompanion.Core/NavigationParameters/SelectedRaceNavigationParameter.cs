@@ -1,8 +1,6 @@
-﻿using MvvmCross.Core.ViewModels;
-
-namespace TwilightImperiumMasterCompanion.Core
+﻿namespace TwilightImperiumMasterCompanion.Core
 {
-	public class SelectedRaceNavigationParameter
+    public class SelectedRaceNavigationParameter
 	{
 		public Race SelectedRace
 		{

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using MvvmCross.Platform;
 using MvvmCross.Test.Core;
 using NUnit.Framework;
@@ -9,7 +8,7 @@ using TwilightImperiumMasterCompanion.Core;
 
 namespace TwilightImperium.Core.Tests.Database
 {
-	[TestFixture]
+    [TestFixture]
 	public class UnitTableTests : MvxIoCSupportingTest
 	{
 		private SQLiteConnection databaseConnection;
@@ -25,10 +24,10 @@ namespace TwilightImperium.Core.Tests.Database
 		}
 
 		[Test]
-		public void UnitTable_Has_IDColumn()
+		public void UnitTable_Has_UnitIDColumn()
 		{
 			//Act
-            var result = unitTableInfo.Find(x => x.Name == "ID");
+            var result = unitTableInfo.Find(x => x.Name == "UnitID");
 			//Assert
 			Assert.IsNotNull(result);
 		}

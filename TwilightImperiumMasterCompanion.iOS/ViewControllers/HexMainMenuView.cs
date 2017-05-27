@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using CoreGraphics;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
+using MvvmCross.iOS.Views.Presenters.Attributes;
 using TwilightImperiumMasterCompanion.Core;
 using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-	public partial class HexMainMenuView : MvxViewController<HexMainMenuViewModel>, IMvxModalIosView
+    [MvxModalPresentation(ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen, ModalTransitionStyle = UIModalTransitionStyle.CrossDissolve)]
+	public partial class HexMainMenuView : MvxViewController<HexMainMenuViewModel>
 	{
 
 		HexMenuViewComponent hexMenuView;
@@ -58,23 +60,23 @@ namespace TwilightImperiumMasterCompanion.iOS
 			});
 
 			blurView.Effect = UIBlurEffect.FromStyle(UIBlurEffectStyle.Dark);
-			blurView.Alpha = 0;
-			hexMenuView.Alpha = 0;
+			//blurView.Alpha = 0;
+			//hexMenuView.Alpha = 0;
 		}
 
-		public override void ViewDidAppear(bool animated)
-		{
-			base.ViewDidAppear(animated);
-			UIView.Animate(0.25, 0, UIViewAnimationOptions.CurveEaseInOut, () => blurView.Alpha = 1, null);
-			UIView.Animate(0.25, 0, UIViewAnimationOptions.CurveEaseInOut, () => hexMenuView.Alpha = 1, null);
-		}
+		//public override void ViewDidAppear(bool animated)
+		//{
+		//	base.ViewDidAppear(animated);
+		//	UIView.Animate(0.25, 0, UIViewAnimationOptions.CurveEaseInOut, () => blurView.Alpha = 1, null);
+		//	UIView.Animate(0.25, 0, UIViewAnimationOptions.CurveEaseInOut, () => hexMenuView.Alpha = 1, null);
+		//}
 
-		public override void ViewWillDisappear(bool animated)
-		{
-			UIView.AnimateAsync(5, () => blurView.Alpha = 0);
-			UIView.Animate(0.25, 0, UIViewAnimationOptions.CurveEaseInOut, () => hexMenuView.Alpha = 0, null);
-			base.ViewWillDisappear(animated);
-		}
+		//public override void ViewWillDisappear(bool animated)
+		//{
+		//	UIView.AnimateAsync(5, () => blurView.Alpha = 0);
+		//	UIView.Animate(0.25, 0, UIViewAnimationOptions.CurveEaseInOut, () => hexMenuView.Alpha = 0, null);
+		//	base.ViewWillDisappear(animated);
+		//}
 
 		public override void ViewDidLayoutSubviews()
 		{

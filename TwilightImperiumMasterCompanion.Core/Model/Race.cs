@@ -1,9 +1,6 @@
-﻿using SQLite;
-using SQLite.Net.Attributes;
-
-namespace TwilightImperiumMasterCompanion.Core
+﻿namespace TwilightImperiumMasterCompanion.Core
 {
-	public class Race
+    public class Race
 	{
 		public int RaceID
 		{

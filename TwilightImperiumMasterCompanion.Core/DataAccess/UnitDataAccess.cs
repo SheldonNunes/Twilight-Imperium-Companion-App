@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using SQLite.Net;
 using TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces;
 

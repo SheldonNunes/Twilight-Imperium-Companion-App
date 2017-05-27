@@ -9,11 +9,6 @@
 			set;
 		}
 
-		public string Image
-		{
-            get { return "StartingPlanetIcon"; }
-		}
-
 		public string Description
 		{
 			get;

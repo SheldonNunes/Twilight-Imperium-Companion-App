@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Input;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Plugins.Messenger;
 using TwilightImperiumMasterCompanion.Core.Services.Interfaces;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
-	public class ConfirmRaceViewModel : BaseViewModel<SelectedRaceNavigationParameter>
+    public class ConfirmRaceViewModel : BaseViewModel<SelectedRaceNavigationParameter>
 	{
 		public string Title
 		{
@@ -36,24 +36,26 @@ namespace TwilightImperiumMasterCompanion.Core
 			}
 		}
 
-		public ICommand NavigateToRaceView
+		private IMvxAsyncCommand _navigateToRaceView;
+		public IMvxAsyncCommand NavigateToRaceView
 		{
-            get { return new MvxCommand(() => 
-            { 
+			get
+			{
                 sessionService.SetSelectedRace(SelectedRace);
-                ShowViewModel<RaceTabViewModel>(); 
-            }); }
+                _navigateToRaceView = _navigateToRaceView ?? new MvxAsyncCommand(() => navigationService.Navigate<RaceTabViewModel>());
+				return _navigateToRaceView;
+			}
 		}
 
-		private readonly IMvxMessenger messenger;
 		private readonly IRaceAbilityService raceAbilityService;
         private readonly ISessionService sessionService;
+        private readonly IMvxNavigationService navigationService;
 
-        public ConfirmRaceViewModel(IMvxMessenger messenger, IRaceAbilityService raceAbilityService, ISessionService sessionService)
+        public ConfirmRaceViewModel(IMvxNavigationService navigationService, IRaceAbilityService raceAbilityService, ISessionService sessionService)
 		{
+            this.navigationService = navigationService;
             this.sessionService = sessionService;
             this.raceAbilityService = raceAbilityService;
-			this.messenger = messenger;
 		}
 
 		protected override void RealInit(SelectedRaceNavigationParameter parameter)

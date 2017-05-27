@@ -1,19 +1,28 @@
-﻿using System;
-using MvvmCross.Binding.BindingContext;
+﻿using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.iOS.Views;
+using MvvmCross.iOS.Views.Presenters.Attributes;
 using TwilightImperiumMasterCompanion.Core;
 using TwilightImperiumMasterCompanion.iOS.Controls;
 using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
+    [MvxTabPresentation(WrapInNavigationController = true)]
     public partial class RaceSetupView : MvxViewController<RaceSetupViewModel>
     {
-        
         public RaceSetupView() : base("RaceSetupView", null)
         {
         }
+
+		public override UINavigationItem NavigationItem
+		{
+			get
+			{
+				return new UINavigationItem("test2");
+				//return base.NavigationItem;
+			}
+		}
 
         public override void ViewDidLoad()
         {
@@ -22,18 +31,29 @@ namespace TwilightImperiumMasterCompanion.iOS
             startingPlanetsCollectionView.RegisterNibForCell(PlanetCollectionViewCell.Nib, PlanetCollectionViewCell.CellIdentifier);
             var source = new MvxCollectionViewSource(startingPlanetsCollectionView, PlanetCollectionViewCell.CellIdentifier);
             startingPlanetsCollectionView.Source = source;
-            startingPlanetsCollectionView.ReloadData();
 
 
+            startingUnitsCollectionView.RegisterNibForCell(PlanetCollectionViewCell.Nib, PlanetCollectionViewCell.CellIdentifier);
+            var startingUnitsSource = new MvxCollectionViewSource(startingUnitsCollectionView, PlanetCollectionViewCell.CellIdentifier);
+			startingUnitsCollectionView.Source = startingUnitsSource;
+
+
+            //Bindings
             var set = this.CreateBindingSet<RaceSetupView, RaceSetupViewModel>();
             set.Bind(source).For(v => v.ItemsSource).To(vm => vm.StartingPlanets);
+            set.Bind(startingUnitsSource).For(v => v.ItemsSource).To(vm => vm.StartingUnits);
+            set.Bind(startingTechnologiesTextView).For(v => v.Text).To(vm => vm.StartingTechnology).WithConversion("StartingTechnology");
 			set.Apply();
+
+
+			startingUnitsCollectionView.ReloadData();
+			startingUnitsCollectionView.LayoutIfNeeded();
         }
 
-        public override void DidReceiveMemoryWarning()
+        public override void ViewWillLayoutSubviews()
         {
-            base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
+            base.ViewWillLayoutSubviews();
+			startingUnitViewHeightConstraint.Constant = startingUnitsCollectionView.CollectionViewLayout.CollectionViewContentSize.Height + 60;
         }
     }
 }

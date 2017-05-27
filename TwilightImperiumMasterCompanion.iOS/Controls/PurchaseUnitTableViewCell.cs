@@ -1,12 +1,9 @@
 ﻿using System;
-
-using Foundation;
 using MvvmCross.Binding.iOS.Views;
-using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-	public partial class PurchaseUnitTableViewCell : MvxTableViewCell
+    public partial class PurchaseUnitTableViewCell : MvxTableViewCell
 	{
 		public PurchaseUnitTableViewCell(IntPtr handle) : base(handle)
 		{

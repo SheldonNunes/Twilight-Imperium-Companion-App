@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using TwilightImperiumMasterCompanion.Core.Enum;
+﻿using System.Collections.Generic;
+using TwilightImperiumMasterCompanion.Core.Dto;
+using TwilightImperiumMasterCompanion.Core.Model;
 
 namespace TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces
 {
@@ -12,6 +12,10 @@ namespace TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces
 
         List<RaceAbility> GetRaceAbility(Race race);
 
-        List<Planet> GetStartingPlanets(int raceID);
+        List<StartingPlanetDto> GetStartingPlanets(int raceID);
+
+        List<StartingUnitDto> GetStartingUnits(int raceID);
+
+        List<Technology> GetStartingTechnology(int raceID);
     }
 }

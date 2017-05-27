@@ -1,9 +1,6 @@
-﻿using System;
-using UIKit;
-
-namespace TwilightImperiumMasterCompanion.iOS
+﻿namespace TwilightImperiumMasterCompanion.iOS
 {
-	public interface ITabBar
+    public interface ITabBar
 	{
 	}
 }

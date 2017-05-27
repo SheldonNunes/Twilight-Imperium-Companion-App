@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using TwilightImperiumMasterCompanion.Core.Dto;
+using TwilightImperiumMasterCompanion.Core.Model;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
@@ -9,6 +11,10 @@ namespace TwilightImperiumMasterCompanion.Core
 
         Race GetRace(string raceName);
 
-        List<Planet> GetStartingPlanets(Race race);
+        List<StartingPlanetDto> GetStartingPlanets(Race race);
+
+        List<StartingUnitDto> GetStartingUnits(Race race);
+
+        List<Technology> GetStartingTechnology(Race race);
 	}
 }

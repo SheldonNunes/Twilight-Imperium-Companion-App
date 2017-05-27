@@ -1,22 +1,33 @@
 ﻿using MvvmCross.Binding.BindingContext;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Views;
+using MvvmCross.iOS.Views.Presenters.Attributes;
 using MvvmCross.Platform;
 using TwilightImperiumMasterCompanion.Core;
 using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-	public class RaceTabView : TabView<RaceTabViewModel>
+    [MvxRootPresentation]
+    public class RaceTabView : MvxTabBarViewController<RaceTabViewModel>
 	{
 
 		private bool constructed;
 
-		public RaceTabView() : base(3)
+		public RaceTabView() : base()
 		{
 			constructed = true;
 			ViewDidLoad();
 		}
+
+        public override UINavigationItem NavigationItem
+        {
+            get
+            {
+                return new UINavigationItem("test");
+                //return base.NavigationItem;
+            }
+        }
 
 		sealed public override void ViewDidLoad()
 		{
@@ -39,6 +50,8 @@ namespace TwilightImperiumMasterCompanion.iOS
 			   .To(vm => vm.ShowHexMainMenu);
 			set.Apply();
 		}
+
+
 
 		private int _createdSoFarCount = 0;
 

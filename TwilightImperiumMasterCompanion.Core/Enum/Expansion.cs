@@ -2,7 +2,7 @@
 {
     public enum Expansion
     {
-        ShatteredEmpire = 1,
-        ShardsOfTheThrone = 2
+        ShatteredEmpire,
+        ShardsOfTheThrone
     }
 }

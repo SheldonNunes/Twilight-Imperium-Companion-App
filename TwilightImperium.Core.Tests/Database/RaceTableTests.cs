@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using MvvmCross.Platform;
 using MvvmCross.Test.Core;
 using NUnit.Framework;
@@ -9,7 +8,7 @@ using TwilightImperiumMasterCompanion.Core;
 
 namespace TwilightImperium.Core.Tests.Database
 {
-	[TestFixture]
+    [TestFixture]
 	public class RaceTableTests : MvxIoCSupportingTest
 	{
 		private SQLiteConnection databaseConnection;

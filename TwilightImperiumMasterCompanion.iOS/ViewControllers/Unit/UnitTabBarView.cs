@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Views;
+using MvvmCross.iOS.Views.Presenters.Attributes;
 using MvvmCross.Platform;
 using TwilightImperiumMasterCompanion.Core;
 using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
+    [MvxRootPresentation]
 	public partial class UnitTabBarView : TabView<UnitTabBarViewModel>
 	{
 		public override UIViewController SelectedViewController

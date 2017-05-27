@@ -11,7 +11,7 @@ namespace TwilightImperiumMasterCompanion.Core
 
 		public ICommand ShowHexMainMenu
 		{
-			get { return new MvxCommand(() => ShowViewModel<HexMainMenuViewModel>(new NavigationParameters() { CurrentMenu = MenuPageType.Race })); }
+            get { return new MvxCommand(() => ShowViewModel<HexMainMenuViewModel>(new NavigationParameters() { CurrentMenu = MenuPageType.Race })); }
 		}
 
 

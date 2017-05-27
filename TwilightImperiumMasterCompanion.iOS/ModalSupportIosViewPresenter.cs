@@ -7,7 +7,7 @@ using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-	public class ModalSupportIosViewPresenter : MvxModalSupportIosViewPresenter
+	public class ModalSupportIosViewPresenter : MvxIosViewPresenter
 	{
 		private Stack<UIViewController> modalViewControllerStack;
 
@@ -21,42 +21,55 @@ namespace TwilightImperiumMasterCompanion.iOS
 			base.ChangePresentation(hint);
 		}
 
-		public override bool PresentModalViewController(UIViewController viewController, bool animated)
-		{
-			modalViewControllerStack.Push(viewController);
-			return base.PresentModalViewController(viewController, false);
-		}
+        protected override void ShowModalViewController(UIViewController viewController, MvvmCross.iOS.Views.Presenters.Attributes.MvxModalPresentationAttribute attribute, MvxViewModelRequest request)
+        {
+            base.ShowModalViewController(viewController, attribute, request);
+        }
 
-		public override void Show(MvvmCross.iOS.Views.IMvxIosView view)
-		{
-			var request = view.Request;
-			if (request.PresentationValues != null)
-			{
-				if (request.PresentationValues.ContainsKey("AnimateNavigation") && request.PresentationValues["AnimateNavigation"] == "true")
-					MasterNavigationController.PushViewController(view as UIViewController, false);
-			}
-			else
-			{
-				base.Show(view);
-			}
-		}
+		//public override bool PresentModalViewController(UIViewController viewController, bool animated)
+		//{
+		//	modalViewControllerStack.Push(viewController);
+		//	return base.PresentModalViewController(viewController, false);
+		//}
 
-		public override void CloseModalViewController()
-		{
-			var currentModalViewController = modalViewControllerStack.Pop();
-			currentModalViewController.DismissModalViewController(false);
-		}
+        public override void Show(MvxViewModelRequest request)
+        {
+            base.Show(request);
+        }
+
+		//public override void Show(MvvmCross.iOS.Views.IMvxIosView view)
+		//{
+		//	var request = view.Request;
+		//	if (request.PresentationValues != null)
+		//	{
+		//		if (request.PresentationValues.ContainsKey("AnimateNavigation") && request.PresentationValues["AnimateNavigation"] == "true")
+		//			MasterNavigationController.PushViewController(view as UIViewController, false);
+		//	}
+		//	else
+		//	{
+		//		base.Show(view);
+  //              //MasterNavigationController.PushViewController(view as UIViewController, true);
+		//	}
+		//}
+
+		//public override void CloseModalViewController()
+		//{
+		//	var currentModalViewController = modalViewControllerStack.Pop();
+		//	currentModalViewController.DismissModalViewController(false);
+  //          base.CloseModalViewController();
+		//}
 
 
-		public override void Close(IMvxViewModel toClose)
-		{
-			if (modalViewControllerStack.Any())
-			{
-				CloseModalViewController();
+		//public override void Close(IMvxViewModel toClose)
+		//{
+		//	if (modalViewControllerStack.Any())
+		//	{
+		//		CloseModalViewController();
 
-				return;
-			}
-			base.Close(toClose);
-		}
+		//		return;
+		//	}
+
+		//	base.Close(toClose);
+		//}
 	}
 }

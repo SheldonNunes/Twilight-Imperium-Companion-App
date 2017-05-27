@@ -1,5 +1,4 @@
-﻿using System;
-using TwilightImperiumMasterCompanion.Core.Enum;
+﻿using TwilightImperiumMasterCompanion.Core.Enum;
 
 namespace TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces
 {

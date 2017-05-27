@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Core.Views;
 using MvvmCross.Platform.Core;
-using NUnit.Framework;
 
 namespace TwilightImperium.Core.Tests
 {
-	public class MockDispatcher
+    public class MockDispatcher
 	: MvxMainThreadDispatcher
 	, IMvxViewDispatcher
 	{

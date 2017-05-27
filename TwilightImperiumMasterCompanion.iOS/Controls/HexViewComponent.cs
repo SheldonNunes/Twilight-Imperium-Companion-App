@@ -1,15 +1,12 @@
 using Foundation;
 using System;
 using UIKit;
-using System.ComponentModel;
 using CoreGraphics;
 using CoreAnimation;
-using System.Drawing;
-using System.Runtime.InteropServices;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-	public partial class HexViewComponent : UIControl
+    public partial class HexViewComponent : UIControl
 	{
 		public string HexText
 		{

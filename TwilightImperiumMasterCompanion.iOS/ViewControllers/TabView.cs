@@ -33,9 +33,9 @@ namespace TwilightImperiumMasterCompanion.iOS
 		{
 			base.ViewDidLoad();
 			navigationBar.Initialize(this);
-			var screenWidth = UIScreen.MainScreen.Bounds.Width;
-			var result = UIImageExtensions.CreateImageWithColor(UIColor.FromRGB(255, 172, 56), new CoreGraphics.CGSize(screenWidth / numberOfTabs, 49));
-			UITabBar.Appearance.SelectionIndicatorImage = (result);
+			//var screenWidth = UIScreen.MainScreen.Bounds.Width;
+			//var result = UIImageExtensions.CreateImageWithColor(UIColor.FromRGB(255, 172, 56), new CoreGraphics.CGSize(screenWidth / numberOfTabs, 49));
+			//UITabBar.Appearance.SelectionIndicatorImage = (result);
 		}
 	}
 }

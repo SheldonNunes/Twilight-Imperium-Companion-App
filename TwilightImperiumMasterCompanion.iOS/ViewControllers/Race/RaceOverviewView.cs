@@ -1,19 +1,35 @@
 ﻿using System;
+using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
+using MvvmCross.iOS.Views.Presenters.Attributes;
+using MvvmCross.Platform;
+using TwilightImperiumMasterCompanion.Core;
 using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-	public partial class RaceOverviewView : MvxViewController
+	[MvxTabPresentation(WrapInNavigationController = true)]
+    public partial class RaceOverviewView : MvxViewController<RaceOverviewViewModel>
 	{
+		private readonly INavigationBar navigationBar;
+
 		public RaceOverviewView() : base("RaceOverviewView", null)
 		{
+            this.Title = RaceOverviewViewModel.Title;
+            navigationBar = Mvx.Resolve<INavigationBar>();
 		}
+		
 
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			// Perform any additional setup after loading the view, typically from a nib.
+			navigationBar.Initialize(this);
+
+			//Bindings
+			//var set = this.CreateBindingSet<RaceOverviewView, RaceOverviewViewModel>();
+			//set.Bind(this).For(v => v.Title).To(vm => vm.Title);
+			//set.Apply();
+
 		}
 
 		public override void DidReceiveMemoryWarning()

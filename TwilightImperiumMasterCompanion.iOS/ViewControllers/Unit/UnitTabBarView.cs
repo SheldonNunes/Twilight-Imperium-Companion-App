@@ -6,81 +6,38 @@ using MvvmCross.iOS.Views;
 using MvvmCross.iOS.Views.Presenters.Attributes;
 using MvvmCross.Platform;
 using TwilightImperiumMasterCompanion.Core;
+using TwilightImperiumMasterCompanion.Core.Helpers;
 using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
     [MvxRootPresentation]
-	public partial class UnitTabBarView : TabView<UnitTabBarViewModel>
+	public partial class UnitTabBarView : MvxTabBarViewController<UnitTabBarViewModel>
 	{
-		public override UIViewController SelectedViewController
-		{
-			get
-			{
-				return base.SelectedViewController;
-			}
-			set
-			{
-				base.SelectedViewController = value;
-				this.Title = value.Title;
-			}
-		}
+		private bool isPresentedFirstTime = true;
+		private INavigationBar navigationBar;
 
-		private readonly INavigationBar navigationBar;
-		private bool constructed;
-
-		public UnitTabBarView() : base(2)
+		public UnitTabBarView()
 		{
-			constructed = true;
 			navigationBar = Mvx.Resolve<INavigationBar>();
-			ViewDidLoad();
 		}
 
-		sealed public override void ViewDidLoad()
+		protected override void SetTitleAndTabBarItem(UIViewController viewController, string title, string iconName)
 		{
-			if (!constructed)
-				return;
-			base.ViewDidLoad();
-
-			var viewControllers = new UIViewController[]
-								  {
-										CreateTab("Unit Reference", "UnitReferenceTabIcon", ViewModel.UnitReferenceViewModel),
-										CreateTab("Purchase", "PurchaseTabIcon", ViewModel.PurchaseUnitViewModel),
-								  };
-			ViewControllers = viewControllers;
-			CustomizableViewControllers = new UIViewController[] { };
-			SelectedViewController = ViewControllers[0];
-
+			title = viewController.Title;
+            iconName = IconImageNameBuilder.IconImageNameForString(title);
+			base.SetTitleAndTabBarItem(viewController, title, iconName);
 		}
 
 		public override void ViewWillAppear(bool animated)
 		{
 			base.ViewWillAppear(animated);
-			navigationBar.Initialize(this);
+			if (ViewModel != null && isPresentedFirstTime)
+			{
+				isPresentedFirstTime = false;
+				ViewModel.ShowInitialViewModelsCommand.Execute(null);
+			}
 
-			var set = this.CreateBindingSet<UnitTabBarView, UnitTabBarViewModel>();
-			set.Bind(NavigationItem.LeftBarButtonItem)
-			   .To(vm => vm.ShowHexMainMenu);
-			set.Apply();
-		}
-
-		private int _createdSoFarCount = 0;
-
-		private UIViewController CreateTab(string title, string bundle, IMvxViewModel viewModel)
-		{
-			var screen = this.CreateViewControllerFor(viewModel) as UIViewController;
-			SetTitleAndTabBarItem(screen, title, bundle);
-			return screen;
-		}
-
-		private void SetTitleAndTabBarItem(UIViewController screen, string title, string bundle)
-		{
-			screen.Title = title;
-			screen.TabBarItem = new UITabBarItem(title,
-												 UIImage.FromBundle(bundle),
-												 _createdSoFarCount);
-			screen.TabBarItem.Image = screen.TabBarItem.Image.ImageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal);
-			_createdSoFarCount++;
 		}
 	}
 }

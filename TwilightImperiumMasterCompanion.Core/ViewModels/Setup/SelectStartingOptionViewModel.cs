@@ -1,4 +1,6 @@
+using System.Threading.Tasks;
 using System.Windows.Input;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using TwilightImperiumMasterCompanion.Core.Enum;
 using TwilightImperiumMasterCompanion.Core.Resources;
@@ -6,20 +8,25 @@ using TwilightImperiumMasterCompanion.Core.Services.Interfaces;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
-	public class SelectStartingOptionViewModel : BaseViewModel
+    public class SelectStartingOptionViewModel : MvxViewModel
 	{
         private readonly ISessionService playerService;
 
-        public ICommand NavigateToRaceSelectionView
+        private IMvxAsyncCommand navigateToRaceSelectionView;
+		public IMvxAsyncCommand NavigateToRaceSelectionView
 		{
 			get
 			{
-                return new MvxCommand(
-                    () =>
-                    {
+                navigateToRaceSelectionView = navigateToRaceSelectionView ?? new MvxAsyncCommand(() => 
+                {
+                    return Task.Run(() => {
                         SaveExpansionSelection();
-                        ShowViewModel<RaceSelectionViewModel>();
+                        navigationService.Navigate<RaceSelectionViewModel>(); 
                     });
+
+
+                });
+				return navigateToRaceSelectionView;
 			}
 		}
 
@@ -40,8 +47,11 @@ namespace TwilightImperiumMasterCompanion.Core
 			get { return UIStrings.TwilightImperiumCompanion; }
 		}
 
-		public SelectStartingOptionViewModel(ISessionService playerService) : base()
+        private readonly IMvxNavigationService navigationService;
+
+        public SelectStartingOptionViewModel(IMvxNavigationService navigationService, ISessionService playerService) : base()
 		{
+            this.navigationService = navigationService;
             this.playerService = playerService;
 
 		}

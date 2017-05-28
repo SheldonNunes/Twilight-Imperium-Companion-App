@@ -26,29 +26,23 @@ namespace TwilightImperiumMasterCompanion.iOS
 
 		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
 		{
-			var presenter = new ModalSupportIosViewPresenter(this, Window);
-
-			var setup = new Setup(this, presenter);
+            var setup = new Setup(this, Window);
 			setup.Initialize();
 
 			var startup = Mvx.Resolve<IMvxAppStart>();
 			startup.Start();
 
-			UITabBar.Appearance.BarTintColor = UIColor.FromRGB(57, 121, 205);
 
+            //Appearances
+            UITabBar.Appearance.BarTintColor = ColorConstants.GRAY_LIGHT;
 			UINavigationBar.Appearance.TintColor = UIColor.White;
-			UITabBarItem.Appearance.SetTitleTextAttributes(new UITextAttributes()
-			{
-				TextColor = UIColor.White
-			}, UIControlState.Normal);
-
-			UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(57, 121, 205);
-			UITabBar.Appearance.TintColor = UIColor.Blue;
+            UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(57, 121, 205);
 			UINavigationBar.Appearance.Translucent = false;
 			UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes()
 			{
 				TextColor = UIColor.White
 			});
+
 			return true;
 		}
 

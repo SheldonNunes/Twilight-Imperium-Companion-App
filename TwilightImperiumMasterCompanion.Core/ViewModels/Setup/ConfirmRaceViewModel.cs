@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
@@ -7,7 +8,7 @@ using TwilightImperiumMasterCompanion.Core.Services.Interfaces;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
-    public class ConfirmRaceViewModel : BaseViewModel<SelectedRaceNavigationParameter>
+    public class ConfirmRaceViewModel : MvxViewModel<SelectedRaceNavigationParameter>
 	{
 		public string Title
 		{
@@ -58,10 +59,13 @@ namespace TwilightImperiumMasterCompanion.Core
             this.raceAbilityService = raceAbilityService;
 		}
 
-		protected override void RealInit(SelectedRaceNavigationParameter parameter)
-		{
-			SelectedRace = parameter.SelectedRace;
-			RaceAbilities = raceAbilityService.GetRaceAbility(parameter.SelectedRace);
-		}
+        public override Task Initialize(SelectedRaceNavigationParameter parameter)
+        {
+            return Task.Run(() =>
+            {
+                SelectedRace = parameter.SelectedRace;
+                RaceAbilities = raceAbilityService.GetRaceAbility(parameter.SelectedRace);
+            });
+        }
 	}
 }

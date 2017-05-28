@@ -1,10 +1,10 @@
 {
   "images": [
     {
+      "filename": "SetupIcon.pdf",
       "idiom": "universal"
     },
     {
-      "filename": "icon-letnev.png",
       "scale": "1x",
       "idiom": "universal"
     },

@@ -70,5 +70,23 @@ namespace TwilightImperiumMasterCompanion.Core.Resources {
                 return ResourceManager.GetString("Purchase", resourceCulture);
             }
         }
+        
+        internal static string Overview {
+            get {
+                return ResourceManager.GetString("Overview", resourceCulture);
+            }
+        }
+        
+        internal static string Leaders {
+            get {
+                return ResourceManager.GetString("Leaders", resourceCulture);
+            }
+        }
+        
+        internal static string Setup {
+            get {
+                return ResourceManager.GetString("Setup", resourceCulture);
+            }
+        }
     }
 }

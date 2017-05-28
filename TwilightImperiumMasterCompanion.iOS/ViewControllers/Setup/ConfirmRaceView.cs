@@ -10,17 +10,15 @@ namespace TwilightImperiumMasterCompanion.iOS
 	public partial class ConfirmRaceView : MvxViewController<ConfirmRaceViewModel>
 	{
 		public ConfirmRaceView() : base("ConfirmRaceView", null)
-		{
-		}
+        {}
+
+        private CAGradientLayer gradient;
 
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			Title = "Race Selection";
 
-			var gradient = new CAGradientLayer();
-			gradient.Frame = rootView.Bounds;
-			gradient.Colors = new CoreGraphics.CGColor[] { ColorConstants.BLUE_PRIMARY.CGColor, ColorConstants.BLUE_FADED.CGColor };
+			gradient = new CAGradientLayer();
 			rootView.Layer.InsertSublayer(gradient, 0);
 
 			abilitiesView.Layer.BorderWidth = 1;
@@ -37,6 +35,15 @@ namespace TwilightImperiumMasterCompanion.iOS
 			set.Bind(raceIcon).To(vm => vm.SelectedRace.Name).WithConversion("RaceIconImagePath");
 			set.Apply();
 		}
+
+        public override void ViewDidLayoutSubviews()
+        {
+            base.ViewDidLayoutSubviews();
+
+
+            gradient.Frame = rootView.Bounds;
+            gradient.Colors = new CoreGraphics.CGColor[] { ColorConstants.BLUE_PRIMARY.CGColor, ColorConstants.BLUE_FADED.CGColor };
+        }
 	}
 }
 

@@ -132,19 +132,15 @@
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\UnitReferenceTabIcon.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\PurchaseTabIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\CarrierIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\FighterIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\DestroyerIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\PDSIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\WarSunIcon.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\UnitReferenceTabIcon.imageset\Dreadnaught Icon White.pdf" />
     <ImageAsset Include="Resources\Images.xcassets\CarrierIcon.imageset\Carrier Icon copy.pdf" />
     <ImageAsset Include="Resources\Images.xcassets\FighterIcon.imageset\Fighter Icon copy.pdf" />
     <ImageAsset Include="Resources\Images.xcassets\DestroyerIcon.imageset\Destroyer Icon copy.pdf" />
     <ImageAsset Include="Resources\Images.xcassets\PDSIcon.imageset\PDS Icon copy.pdf" />
-    <ImageAsset Include="Resources\Images.xcassets\PurchaseTabIcon.imageset\Purchase Icon copy.pdf" />
     <ImageAsset Include="Resources\Images.xcassets\WarSunIcon.imageset\War Sun Icon copy.pdf" />
     <ImageAsset Include="Resources\Images.xcassets\SpaceDockIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\SpaceDockIcon.imageset\Space Dock Icon copy.pdf" />
@@ -183,13 +179,11 @@
     <ImageAsset Include="Resources\Images.xcassets\YinBrotherhoodIcon.imageset\Yin Complete.png" />
     <ImageAsset Include="Resources\Images.xcassets\ArborecIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\NekroVirusIcon.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\ArborecIcon.imageset\Aroborec Complete.png" />
     <ImageAsset Include="Resources\Images.xcassets\NekroVirusIcon.imageset\Necro Complete.png" />
     <ImageAsset Include="Resources\Images.xcassets\EmiratesofHacanIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\EmiratesofHacanIcon.imageset\Hacan Complete.png" />
     <ImageAsset Include="Resources\Images.xcassets\EmbersofMuaatIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\EmbersofMuaatIcon.imageset\Embers Complete.png" />
-    <ImageAsset Include="Resources\Images.xcassets\BaronyofLetnevIcon.imageset\Aroborec Complete.png" />
     <ImageAsset Include="Resources\Images.xcassets\BaronyofLetnevIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\ClanofSaarIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\ClanofSaarIcon.imageset\Saar Complete.png" />
@@ -213,6 +207,18 @@
     <ImageAsset Include="Resources\Images.xcassets\GroundForceIcon.imageset\Ground Forces.pdf" />
     <ImageAsset Include="Resources\Images.xcassets\DreadnoughtIcon.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\DreadnoughtIcon.imageset\Dreadnaught Icon copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\UnitReferenceIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\UnitReferenceIcon.imageset\Dreadnaught Icon White.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\PurchaseIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\PurchaseIcon.imageset\Purchase Icon copy.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\SetupIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\SetupIcon.imageset\SetupIcon.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\LeadersIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\LeadersIcon.imageset\LeadersIcon.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\OverviewIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\OverviewIcon.imageset\OverviewIcon.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\BaronyofLetnevIcon.imageset\icon-letnev.png" />
+    <ImageAsset Include="Resources\Images.xcassets\ArborecIcon.imageset\Aroborec Complete.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
@@ -230,7 +236,6 @@
     <InterfaceDefinition Include="Views\Setup\SelectStartingOptionView.xib" />
     <InterfaceDefinition Include="Controls\PlanetCollectionViewCell.xib" />
     <InterfaceDefinition Include="Controls\UnitCollectionViewCell.xib" />
-    <InterfaceDefinition Include="Storyboards\RaceStoryboard.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -254,7 +259,6 @@
     <Compile Include="Controls\MenuNavigationBar.cs" />
     <Compile Include="Controls\INavigationBar.cs" />
     <Compile Include="Controls\HexViewComponent.cs" />
-    <Compile Include="ModalSupportIosViewPresenter.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="SqliteService.cs" />
     <Compile Include="Controls\ITabBar.cs" />
@@ -299,7 +303,6 @@
       <DependentUpon>RaceSetupView.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewControllers\Race\RaceTabView.cs" />
-    <Compile Include="ViewControllers\TabView.cs" />
     <Compile Include="Controls\HexMenuViewComponent.cs" />
     <Compile Include="Controls\HexMenuViewComponent.designer.cs">
       <DependentUpon>HexMenuViewComponent.cs</DependentUpon>
@@ -316,7 +319,6 @@
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
-    <Compile Include="ViewControllers\Race\RaceNavigationController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -333,8 +335,6 @@
     <Folder Include="Storyboards\" />
     <Folder Include="Views\Unit\" />
     <Folder Include="Extensions\" />
-    <Folder Include="Resources\Images.xcassets\UnitReferenceTabIcon.imageset\" />
-    <Folder Include="Resources\Images.xcassets\PurchaseTabIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\CarrierIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\FighterIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\DestroyerIcon.imageset\" />
@@ -381,6 +381,11 @@
     <Folder Include="Resources\Images.xcassets\GroundForcesIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\GroundForceIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\DreadnoughtIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\UnitReferenceIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\PurchaseIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\SetupIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\LeadersIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\OverviewIcon.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Fonts\Handel-Gothic.ttf">

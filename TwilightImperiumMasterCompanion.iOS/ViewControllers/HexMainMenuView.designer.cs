@@ -14,34 +14,8 @@ namespace TwilightImperiumMasterCompanion.iOS
     [Register ("HexMainMenuView")]
     partial class HexMainMenuView
     {
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIVisualEffectView blurView { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UINavigationBar hexNavigationBar { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UINavigationItem navigationItem { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
-            if (blurView != null) {
-                blurView.Dispose ();
-                blurView = null;
-            }
-
-            if (hexNavigationBar != null) {
-                hexNavigationBar.Dispose ();
-                hexNavigationBar = null;
-            }
-
-            if (navigationItem != null) {
-                navigationItem.Dispose ();
-                navigationItem = null;
-            }
         }
     }
 }

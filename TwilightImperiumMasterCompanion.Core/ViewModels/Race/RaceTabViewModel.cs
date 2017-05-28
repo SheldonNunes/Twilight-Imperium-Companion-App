@@ -3,26 +3,22 @@ using MvvmCross.Core.ViewModels;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
-	public class RaceTabViewModel : BaseViewModel
-	{
-		public readonly IRaceOverviewViewModel RaceOverviewViewModel;
-		public readonly IRaceLeadersViewModel RaceLeadersViewModel;
-		public readonly IRaceSetupViewModel RaceSetupViewModel;
-
-		public ICommand ShowHexMainMenu
+    public class RaceTabViewModel : MvxViewModel
+    {
+		private ICommand _showInitialViewModelsCommand;
+		public ICommand ShowInitialViewModelsCommand
 		{
-            get { return new MvxCommand(() => ShowViewModel<HexMainMenuViewModel>(new NavigationParameters() { CurrentMenu = MenuPageType.Race })); }
+			get
+			{
+				return _showInitialViewModelsCommand ?? (_showInitialViewModelsCommand = new MvxCommand(ShowInitialViewModels));
+			}
 		}
 
-
-		public RaceTabViewModel(
-			IRaceOverviewViewModel raceOverviewViewModel,
-			IRaceLeadersViewModel raceLeadersViewModel,
-			IRaceSetupViewModel raceSetupViewModel)
-		{
-			RaceOverviewViewModel = raceOverviewViewModel;
-			RaceLeadersViewModel = raceLeadersViewModel;
-			RaceSetupViewModel = raceSetupViewModel;
-		}
-	}
+        void ShowInitialViewModels()
+        {
+            ShowViewModel<RaceSetupViewModel>();
+            ShowViewModel<RaceOverviewViewModel>();
+            ShowViewModel<RaceLeadersViewModel>();
+        }
+    }
 }

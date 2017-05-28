@@ -1,10 +1,18 @@
 ﻿using System.Collections.Generic;
+using MvvmCross.Core.Navigation;
+using TwilightImperiumMasterCompanion.Core.Resources;
 using TwilightImperiumMasterCompanion.Core.Services.Interfaces;
+using TwilightImperiumMasterCompanion.Core.ViewModels.Unit;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
-    public class UnitReferenceViewModel : BaseViewModel, IUnitReferenceViewModel
+    public class UnitReferenceViewModel : UnitViewModel, IUnitReferenceViewModel
 	{
+		public static string Title
+		{
+            get { return UIStrings.UnitReference; }
+		}
+
         private IEnumerable<Unit> _units;
         public IEnumerable<Unit> Units
 		{
@@ -16,7 +24,8 @@ namespace TwilightImperiumMasterCompanion.Core
 			}
 		}
 
-		public UnitReferenceViewModel(IUnitService unitService)
+		public UnitReferenceViewModel(IMvxNavigationService navigationService, IUnitService unitService)
+            :base(navigationService)
 		{
 			Units = unitService.GetUnits();
 		}

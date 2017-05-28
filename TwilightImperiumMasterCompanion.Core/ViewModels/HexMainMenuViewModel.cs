@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Input;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
-    public class HexMainMenuViewModel : BaseViewModel
+    public class HexMainMenuViewModel : MvxViewModel<NavigationParameters>
 	{
 		private MenuPageType selectedMenu;
 		public MenuPageType SelectedMenu
@@ -28,41 +30,51 @@ namespace TwilightImperiumMasterCompanion.Core
 			}
 		}
 
-		public ICommand CloseMenu
-		{
-			get { return new MvxCommand(() => Close(this)); }
-		}
-
-
-		public ICommand NavigateToUnitView
+		private MvxCommand closeMenu;
+		public MvxCommand CloseMenu
 		{
 			get
 			{
-				return new MvxCommand(() =>
-		  		{
-			  		ShowViewModel<UnitTabBarViewModel>(presentationBundle: presentationBundle);
-			  		Close(this);
-		  		});
+				closeMenu = closeMenu ?? new MvxCommand(() =>navigationService.Close(this));
+				return closeMenu;
 			}
 		}
 
-		public ICommand NavigateToRaceView
+        private MvxCommand navigateToUnitView;
+		public MvxCommand NavigateToUnitView
 		{
 			get
 			{
-				return new MvxCommand(() =>
-		  		{
-			  		ShowViewModel<RaceTabViewModel>(presentationBundle: presentationBundle);
-			  		Close(this);
-		  		});
+                navigateToUnitView = navigateToUnitView ?? new MvxCommand(() =>
+                {
+                    navigationService.Navigate<UnitTabBarViewModel>();
+                    navigationService.Close(this);
+                });
+				return navigateToUnitView;
 			}
 		}
 
-		private MvxBundle presentationBundle;
-
-		public HexMainMenuViewModel()
+		private MvxCommand navigateToRaceView;
+		public MvxCommand NavigateToRaceView
 		{
-			this.presentationBundle = new MvxBundle(new Dictionary<string, string>() { { "AnimateNavigation", "true" } });
+			get
+			{
+				navigateToRaceView = navigateToRaceView ?? new MvxCommand(() =>
+				{
+                    navigationService.Navigate<RaceTabViewModel>();
+					navigationService.Close(this);
+				});
+				return navigateToRaceView;
+			}
+		}
+
+		//private MvxBundle presentationBundle;
+        private readonly IMvxNavigationService navigationService;
+
+		public HexMainMenuViewModel(IMvxNavigationService navigationService)
+		{
+            this.navigationService = navigationService;
+			//this.presentationBundle = new MvxBundle(new Dictionary<string, string>() { { "AnimateNavigation", "true" } });
 			menuItems = new List<string>()
 			{
 				"Rules",
@@ -72,15 +84,14 @@ namespace TwilightImperiumMasterCompanion.Core
                 "Research",
                 "Galaxy"
 			};
-
-
-
 		}
 
-		public void Init(NavigationParameters navigationParameters)
-		{
-
-			SelectedMenu = navigationParameters.CurrentMenu;
-		}
+        public override Task Initialize(NavigationParameters parameter)
+        {
+            return Task.Run(() =>
+            {
+                SelectedMenu = parameter.CurrentMenu;
+            });
+        }
 	}
 }

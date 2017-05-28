@@ -25,4 +25,13 @@
 	<data name="Purchase" xml:space="preserve">
         <value>Purchase</value>
     </data>
+	<data name="Overview" xml:space="preserve">
+        <value>Overview</value>
+    </data>
+	<data name="Leaders" xml:space="preserve">
+        <value>Leaders</value>
+    </data>
+	<data name="Setup" xml:space="preserve">
+        <value>Setup</value>
+    </data>
 </root>

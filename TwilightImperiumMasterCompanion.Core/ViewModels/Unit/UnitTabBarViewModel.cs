@@ -3,27 +3,22 @@ using MvvmCross.Core.ViewModels;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
-	public class UnitTabBarViewModel : BaseViewModel
+    public class UnitTabBarViewModel : MvxViewModel
 	{
-		public readonly IUnitReferenceViewModel UnitReferenceViewModel;
-		public readonly IPurchaseUnitViewModel PurchaseUnitViewModel;
-
-		public ICommand ShowHexMainMenu
+		private ICommand _showInitialViewModelsCommand;
+		public ICommand ShowInitialViewModelsCommand
 		{
-			get { return new MvxCommand(() => 
-                    ShowViewModel<HexMainMenuViewModel>(new NavigationParameters() { CurrentMenu = MenuPageType.Ship })
-                    ); }
+			get
+			{
+				return _showInitialViewModelsCommand ?? (_showInitialViewModelsCommand = new MvxCommand(ShowInitialViewModels));
+			}
 		}
 
-
-		public UnitTabBarViewModel(
-			IUnitReferenceViewModel unitReferenceViewModel,
-			IPurchaseUnitViewModel purchaseUnitViewModel)
+		void ShowInitialViewModels()
 		{
-			this.PurchaseUnitViewModel = purchaseUnitViewModel;
-			this.UnitReferenceViewModel = unitReferenceViewModel;
+            ShowViewModel<UnitReferenceViewModel>();
+            ShowViewModel<UnitPurchaseViewModel>();
 		}
-
 
 	}
 }

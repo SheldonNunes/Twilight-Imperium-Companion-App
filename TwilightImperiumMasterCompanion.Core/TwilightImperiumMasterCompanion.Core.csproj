@@ -87,6 +87,9 @@
     <Compile Include="Dto\StartingPlanetDto.cs" />
     <Compile Include="Model\Technology.cs" />
     <Compile Include="Converters\StartingTechnologyValueConverter.cs" />
+    <Compile Include="ViewModels\Race\RaceViewModel.cs" />
+    <Compile Include="ViewModels\Unit\UnitViewModel.cs" />
+    <Compile Include="Helpers\IconImageNameBuilder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -106,6 +109,7 @@
     <Folder Include="ViewModels\Setup\" />
     <Folder Include="NavigationParameters\" />
     <Folder Include="Dto\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\UIStrings.resx">

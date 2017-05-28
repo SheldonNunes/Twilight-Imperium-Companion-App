@@ -1,5 +1,4 @@
 ﻿using MvvmCross.Core.ViewModels;
-using MvvmCross.Core.Views;
 using MvvmCross.iOS.Platform;
 using MvvmCross.iOS.Views.Presenters;
 using MvvmCross.Platform;
@@ -8,10 +7,10 @@ using UIKit;
 
 namespace TwilightImperiumMasterCompanion.iOS
 {
-	public class Setup : MvxIosSetup
+    public class Setup : MvxIosSetup
 	{
-		public Setup(MvxApplicationDelegate applicationDelegate, IMvxIosViewPresenter presenter)
-			: base(applicationDelegate, presenter)
+        public Setup(MvxApplicationDelegate applicationDelegate, UIWindow window)
+			: base(applicationDelegate, window)
 		{
 		}
 
@@ -28,5 +27,9 @@ namespace TwilightImperiumMasterCompanion.iOS
 			Mvx.RegisterType<ISQLite, SqliteService>();
 		}
 
+		protected override IMvxIosViewPresenter CreatePresenter()
+		{
+			return new MvxIosViewPresenter(this.ApplicationDelegate, this.Window);
+		}
 	}
 }

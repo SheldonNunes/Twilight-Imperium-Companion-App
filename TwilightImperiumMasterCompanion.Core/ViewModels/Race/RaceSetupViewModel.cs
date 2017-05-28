@@ -1,13 +1,22 @@
 ﻿using System.Collections.Generic;
+using System.Windows.Input;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using TwilightImperiumMasterCompanion.Core.Dto;
 using TwilightImperiumMasterCompanion.Core.Model;
+using TwilightImperiumMasterCompanion.Core.Resources;
 using TwilightImperiumMasterCompanion.Core.Services.Interfaces;
+using TwilightImperiumMasterCompanion.Core.ViewModels.Race;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
-    public class RaceSetupViewModel : MvxViewModel, IRaceSetupViewModel
+    public class RaceSetupViewModel : RaceViewModel, IRaceSetupViewModel
 	{
+		public static string Title
+		{
+			get { return UIStrings.Setup; }
+		}
+
         private IEnumerable<StartingPlanetDto> _startingPlanets;
         public IEnumerable<StartingPlanetDto> StartingPlanets
 		{
@@ -41,7 +50,8 @@ namespace TwilightImperiumMasterCompanion.Core
 			}
 		}
 
-        public RaceSetupViewModel(IRaceService raceService, ISessionService sessionService)
+        public RaceSetupViewModel(IMvxNavigationService navigationService, IRaceService raceService, ISessionService sessionService)
+        :base(navigationService)
 		{
             var selectedRace = sessionService.GetSelectedRace();
 

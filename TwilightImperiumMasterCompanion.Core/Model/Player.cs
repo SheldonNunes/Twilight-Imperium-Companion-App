@@ -1,12 +1,7 @@
-﻿using System;
-
-namespace TwilightImperiumMasterCompanion.Core
+﻿namespace TwilightImperiumMasterCompanion.Core
 {
 	public class Player
 	{
-		public Player (string name)
-		{
-		}
 	}
 }
 

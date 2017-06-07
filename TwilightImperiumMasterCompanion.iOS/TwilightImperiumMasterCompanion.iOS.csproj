@@ -219,6 +219,16 @@
     <ImageAsset Include="Resources\Images.xcassets\OverviewIcon.imageset\OverviewIcon.pdf" />
     <ImageAsset Include="Resources\Images.xcassets\BaronyofLetnevIcon.imageset\icon-letnev.png" />
     <ImageAsset Include="Resources\Images.xcassets\ArborecIcon.imageset\Aroborec Complete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\ScientistIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\ScientistIcon.imageset\ScientistIcon.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\DiplomatIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\DiplomatIcon.imageset\DiplomatIcon.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\GeneralIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\GeneralIcon.imageset\GeneralIcon.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\AdmiralIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\AdmiralIcon.imageset\AdmiralIcon.pdf" />
+    <ImageAsset Include="Resources\Images.xcassets\AgentIcon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\AgentIcon.imageset\AgentIcon copy.pdf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
@@ -230,12 +240,15 @@
     <InterfaceDefinition Include="Views\HexMainMenuView.xib" />
     <InterfaceDefinition Include="Views\Race\RaceSetupView.xib" />
     <InterfaceDefinition Include="Views\Race\RaceOverviewView.xib" />
-    <InterfaceDefinition Include="Views\Race\RaceLeadersView.xib" />
     <InterfaceDefinition Include="Views\Setup\ConfirmRaceView.xib" />
     <InterfaceDefinition Include="Views\Setup\RaceSelectionView.xib" />
     <InterfaceDefinition Include="Views\Setup\SelectStartingOptionView.xib" />
     <InterfaceDefinition Include="Controls\PlanetCollectionViewCell.xib" />
     <InterfaceDefinition Include="Controls\UnitCollectionViewCell.xib" />
+    <InterfaceDefinition Include="Controls\LeaderCollectionViewCell.xib" />
+    <InterfaceDefinition Include="Views\Unit\UnitDetailView.xib" />
+    <InterfaceDefinition Include="Views\Rules\RulesView.xib" />
+    <InterfaceDefinition Include="ViewControllers\Race\RaceLeadersPageComponentView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -290,10 +303,6 @@
     <Compile Include="ViewControllers\Unit\UnitTabBarView.designer.cs">
       <DependentUpon>UnitTabBarView.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\Race\RaceLeadersView.cs" />
-    <Compile Include="ViewControllers\Race\RaceLeadersView.designer.cs">
-      <DependentUpon>RaceLeadersView.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewControllers\Race\RaceOverviewView.cs" />
     <Compile Include="ViewControllers\Race\RaceOverviewView.designer.cs">
       <DependentUpon>RaceOverviewView.cs</DependentUpon>
@@ -319,6 +328,24 @@
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
+    <Compile Include="Controls\LeaderCollectionViewCell.cs" />
+    <Compile Include="Controls\LeaderCollectionViewCell.designer.cs">
+      <DependentUpon>LeaderCollectionViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Unit\UnitDetailView.cs" />
+    <Compile Include="ViewControllers\Unit\UnitDetailView.designer.cs">
+      <DependentUpon>UnitDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Rules\RulesTableView.cs" />
+    <Compile Include="ViewControllers\Rules\RulesView.cs" />
+    <Compile Include="ViewControllers\Rules\RulesView.designer.cs">
+      <DependentUpon>RulesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Race\RaceLeadersPageView.cs" />
+    <Compile Include="RaceLeadersPageComponentView.cs" />
+    <Compile Include="RaceLeadersPageComponentView.designer.cs">
+      <DependentUpon>RaceLeadersPageComponentView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -386,13 +413,31 @@
     <Folder Include="Resources\Images.xcassets\SetupIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\LeadersIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\OverviewIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\ScientistIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\DiplomatIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\GeneralIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\AdmiralIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\AgentIcon.imageset\" />
+    <Folder Include="Views\Rules\" />
+    <Folder Include="ViewControllers\Rules\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Fonts\Handel-Gothic.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="..\TwilightImperiumMasterCompanion.Core\Resources\AppDatabase.db">
-      <Link>Resources\AppDatabase.db</Link>
+    <BundleResource Include="..\TwilightImperiumMasterCompanion.Core\Resources\ShardsOfTheThroneRuleBook.pdf">
+      <Link>Resources\ShardsOfTheThroneRuleBook.pdf</Link>
     </BundleResource>
+    <BundleResource Include="..\TwilightImperiumMasterCompanion.Core\Resources\ShatteredEmpiresRuleBook.pdf">
+      <Link>Resources\ShatteredEmpiresRuleBook.pdf</Link>
+    </BundleResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\TwilightImperiumMasterCompanion.Core\Resources\AppDatabase.db">
+      <Link>Resources\AppDatabase.db</Link>
+    </Content>
+    <Content Include="..\TwilightImperiumMasterCompanion.Core\Resources\BaseRuleBook.pdf">
+      <Link>Resources\BaseRuleBook.pdf</Link>
+    </Content>
   </ItemGroup>
 </Project>

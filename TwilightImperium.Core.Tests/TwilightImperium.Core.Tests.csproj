@@ -84,6 +84,11 @@
     <Compile Include="Services\RaceServiceStartingTechnologyTests.cs" />
     <Compile Include="Services\RaceServiceStartingPlanetsTests.cs" />
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
+    <Compile Include="Services\RaceServiceLeadersTests.cs" />
+    <Compile Include="Database\RaceLeaderTableTests.cs" />
+    <Compile Include="Database\LeaderTableTests.cs" />
+    <Compile Include="Database\RaceAbilityTranslationTableTests.cs" />
+    <Compile Include="Database\LeaderAbilityTranslationTableTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

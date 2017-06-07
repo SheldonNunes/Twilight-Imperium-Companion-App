@@ -16,5 +16,7 @@ namespace TwilightImperiumMasterCompanion.Core
         List<StartingUnitDto> GetStartingUnits(Race race);
 
         List<Technology> GetStartingTechnology(Race race);
+
+        List<Leader> GetLeaders(Race race);
 	}
 }

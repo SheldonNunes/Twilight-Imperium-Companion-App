@@ -1,5 +1,6 @@
 ﻿using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
+using TwilightImperiumMasterCompanion.Core.ViewModels.Race;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
@@ -18,7 +19,7 @@ namespace TwilightImperiumMasterCompanion.Core
         {
             ShowViewModel<RaceSetupViewModel>();
             ShowViewModel<RaceOverviewViewModel>();
-            ShowViewModel<RaceLeadersViewModel>();
+            ShowViewModel<RaceLeadersPageViewModel>();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using SQLite.Net;
 using TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces;
@@ -57,5 +58,17 @@ namespace TwilightImperiumMasterCompanion.Core
 			var query = "SELECT * FROM RaceStartingTechnology JOIN Technology ON RaceStartingTechnology.TechnologyID = Technology.TechnologyID WHERE RaceStartingTechnology.RaceID = ?";
             return databaseConnection.Query<Technology>(query, raceID);
         }
+
+        public List<Leader> GetLeaders(int raceID)
+        {
+            var query = "SELECT Name, LeaderType  FROM Leader JOIN RaceLeader ON Leader.LeaderID = RaceLeader.LeaderID WHERE RaceID = ?";
+            return databaseConnection.Query<Leader>(query, raceID);
+        }
+
+		public List<LeaderAbility> GetLeaderAbilities(string LeaderType)
+		{
+			var query = "SELECT Description FROM LeaderAbilityTranslation JOIN Leader ON Leader.LeaderID = LeaderAbilityTranslation.LeaderID WHERE LeaderType = ?";
+            return databaseConnection.Query<LeaderAbility>(query, LeaderType);
+		}
     }
 }

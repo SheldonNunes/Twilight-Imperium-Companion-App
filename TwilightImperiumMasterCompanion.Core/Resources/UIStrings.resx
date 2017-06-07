@@ -34,4 +34,7 @@
 	<data name="Setup" xml:space="preserve">
         <value>Setup</value>
     </data>
+	<data name="RuleBooks" xml:space="preserve">
+        <value>Rule Books</value>
+    </data>
 </root>

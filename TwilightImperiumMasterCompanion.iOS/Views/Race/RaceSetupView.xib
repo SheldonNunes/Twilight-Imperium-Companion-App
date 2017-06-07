@@ -31,8 +31,8 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="32" misplaced="YES">
-                            <rect key="frame" x="15" y="33" width="515" height="60"/>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="32">
+                            <rect key="frame" x="15" y="31" width="515" height="60"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="62"/>
@@ -155,7 +155,7 @@
         <image name="NekroVirusIcon" width="180" height="180"/>
         <image name="EmiratesofHacanIcon" width="187" height="213"/>
         <image name="EmbersofMuaatIcon" width="180" height="180"/>
-        <image name="BaronyofLetnevIcon" width="137" height="134"/>
+        <image name="BaronyofLetnevIcon" width="300" height="300"/>
         <image name="ClanofSaarIcon" width="149" height="150"/>
         <image name="FederationofSolIcon" width="213" height="190"/>
         <image name="GhostsofCreussIcon" width="175" height="164"/>

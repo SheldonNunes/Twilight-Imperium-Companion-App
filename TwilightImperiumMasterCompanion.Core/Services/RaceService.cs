@@ -48,5 +48,19 @@ namespace TwilightImperiumMasterCompanion.Core
 			var technologyList = raceDataAccess.GetStartingTechnology(race.RaceID);
             return technologyList;
 		}
+
+        public List<Leader> GetLeaders(Race race)
+        {
+            var leaders = raceDataAccess.GetLeaders(race.RaceID);
+
+            foreach (var leader in leaders)
+            {
+                var leaderAbilities = raceDataAccess.GetLeaderAbilities(leader.LeaderType);
+                leader.Abilities = leaderAbilities;
+            }
+
+            return leaders;
+        }
+
     }
 }

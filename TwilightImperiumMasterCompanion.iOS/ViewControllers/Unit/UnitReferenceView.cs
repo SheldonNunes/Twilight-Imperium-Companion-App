@@ -34,6 +34,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 			var set = this.CreateBindingSet<UnitReferenceView, UnitReferenceViewModel>();
             set.Bind(source).For(v => v.ItemsSource).To(vm => vm.Units);
             set.Bind(NavigationItem.LeftBarButtonItem).To(vm => vm.ShowHexMainMenu);
+            set.Bind(source).For(v => v.SelectionChangedCommand).To(vm => vm.ShowDetailView);
 			set.Apply();
 		}
 	}

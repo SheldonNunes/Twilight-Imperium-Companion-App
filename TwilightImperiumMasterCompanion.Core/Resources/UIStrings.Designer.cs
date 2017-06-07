@@ -88,5 +88,11 @@ namespace TwilightImperiumMasterCompanion.Core.Resources {
                 return ResourceManager.GetString("Setup", resourceCulture);
             }
         }
+        
+        internal static string RuleBooks {
+            get {
+                return ResourceManager.GetString("RuleBooks", resourceCulture);
+            }
+        }
     }
 }

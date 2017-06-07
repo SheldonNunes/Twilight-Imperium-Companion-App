@@ -60,7 +60,8 @@ namespace TwilightImperiumMasterCompanion.iOS
                 { NavigationItem.LeftBarButtonItem, "Clicked CloseMenu"},
                 { hexMenuView.Hexes[MenuPageType.Race], "TouchUpInside NavigateToRaceView" },
                 { hexMenuView.Hexes[MenuPageType.Ship], "TouchUpInside NavigateToUnitView" },
-                { this, "ActiveMenu SelectedMenu"}
+                { hexMenuView.Hexes[MenuPageType.Rules], "TouchUpInside NavigateToRulesView" },
+				{ this, "ActiveMenu SelectedMenu"}
             });
 		}
 

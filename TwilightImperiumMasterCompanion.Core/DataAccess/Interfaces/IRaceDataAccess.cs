@@ -17,5 +17,9 @@ namespace TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces
         List<StartingUnitDto> GetStartingUnits(int raceID);
 
         List<Technology> GetStartingTechnology(int raceID);
+
+        List<Leader> GetLeaders(int raceID);
+
+        List<LeaderAbility> GetLeaderAbilities(string leaderType);
     }
 }

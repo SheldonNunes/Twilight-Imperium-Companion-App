@@ -10,7 +10,6 @@
                 <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
                 <outlet property="leaderType" destination="45" id="name-outlet-45"/>
                 <outlet property="leaderImage" destination="46" id="name-outlet-46"/>
-                <outlet property="leaderName" destination="3" id="name-outlet-3"/>
                 <outlet property="leaderDescription" destination="68" id="name-outlet-68"/>
             </connections>
         </placeholder>
@@ -21,7 +20,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <subviews>
                 <view contentMode="scaleToFill" id="5" translatesAutoresizingMaskIntoConstraints="NO">
-                    <rect key="frame" x="20" y="20" width="560" height="473"/>
+                    <rect key="frame" x="20" y="20" width="560" height="540"/>
                     <color key="backgroundColor" colorSpace="calibratedRGB" red="0.807843137254902" green="0.807843137254902" blue="0.807843137254902" alpha="1"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
@@ -43,7 +42,7 @@
                             </constraints>
                         </imageView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="68" translatesAutoresizingMaskIntoConstraints="NO" usesAttributedText="YES" editable="NO" selectable="NO" showsHorizontalScrollIndicator="NO" scrollEnabled="NO" showsVerticalScrollIndicator="NO" bounces="NO" bouncesZoom="NO">
-                            <rect key="frame" x="20" y="155" width="520" height="298"/>
+                            <rect key="frame" x="20" y="142" width="520" height="378"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
                             <attributedString key="attributedText">
@@ -55,24 +54,16 @@
                                 </fragment>
                             </attributedString>
                         </textView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3" translatesAutoresizingMaskIntoConstraints="NO">
-                            <rect key="frame" x="264" y="120" width="33" height="15"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                     <constraints>
                         <constraint id="49" firstItem="46" firstAttribute="top" secondItem="5" secondAttribute="top" constant="16"/>
                         <constraint id="50" firstItem="46" firstAttribute="centerX" secondItem="5" secondAttribute="centerX"/>
                         <constraint id="60" firstItem="45" firstAttribute="top" secondItem="46" secondAttribute="bottom" constant="16"/>
                         <constraint id="61" firstItem="45" firstAttribute="centerX" secondItem="5" secondAttribute="centerX"/>
-                        <constraint id="71" firstItem="3" firstAttribute="top" secondItem="45" secondAttribute="bottom" constant="8"/>
-                        <constraint id="72" firstItem="3" firstAttribute="centerX" secondItem="5" secondAttribute="centerX"/>
-                        <constraint id="73" firstItem="68" firstAttribute="top" secondItem="3" secondAttribute="bottom" constant="20"/>
                         <constraint id="74" firstItem="68" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20"/>
                         <constraint id="75" firstItem="5" firstAttribute="bottom" secondItem="68" secondAttribute="bottom" constant="20"/>
                         <constraint id="76" firstItem="5" firstAttribute="trailing" secondItem="68" secondAttribute="trailing" constant="20"/>
+                        <constraint id="127" firstItem="68" firstAttribute="top" secondItem="45" secondAttribute="bottom" constant="30"/>
                     </constraints>
                 </view>
             </subviews>
@@ -80,8 +71,9 @@
                 <constraint id="53" firstItem="5" firstAttribute="top" secondItem="2" secondAttribute="top" constant="20"/>
                 <constraint id="54" firstItem="2" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" constant="20"/>
                 <constraint id="55" firstItem="5" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20"/>
-                <constraint id="64" firstItem="2" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" constant="107"/>
+                <constraint id="64" firstItem="2" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" constant="40"/>
             </constraints>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
         </view>
     </objects>
     <resources>

@@ -1,32 +1,23 @@
-using System;
+﻿using System;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.iOS.Views;
 using MvvmCross.iOS.Views.Presenters.Attributes;
 using MvvmCross.Platform;
 using TwilightImperiumMasterCompanion.Core;
-using TwilightImperiumMasterCompanion.Core.Converters;
 using TwilightImperiumMasterCompanion.Core.ViewModels.Race;
 using TwilightImperiumMasterCompanion.iOS.Controls;
 using UIKit;
 
-namespace TwilightImperiumMasterCompanion.iOS
+namespace TwilightImperiumMasterCompanion.iOS.ViewControllers.Race
 {
-	[MvxChildPresentation]
+	//[MvxTabPresentation(WrapInNavigationController = true)]
 	public partial class RaceLeadersPageComponentView : MvxViewController<RaceLeadersPageComponentViewModel>
 	{
 		private readonly INavigationBar navigationBar;
-        private readonly MvxImageViewLoader imageLoader;
-
-		//public string LeaderIcon
-		//{
-  //          set { leaderImage.Image = UIImage.FromBundle(value); }
-		//}
 
 		public RaceLeadersPageComponentView() : base()
 		{
-			this.imageLoader = new MvxImageViewLoader(() => leaderImage);
-
 			//this.Title = RaceLeadersPageViewModel.Title;
 			//navigationBar = Mvx.Resolve<INavigationBar>();
 		}
@@ -34,19 +25,6 @@ namespace TwilightImperiumMasterCompanion.iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-
-            //Bindings
-			var set = this.CreateBindingSet<RaceLeadersPageComponentView, RaceLeadersPageComponentViewModel>();
-            set.Bind(leaderType).For(v => v.Text).To(vm => vm.Leader.LeaderType);
-            set.Bind(leaderName).For(v => v.Text).To(vm => vm.Leader.Name);
-            set.Bind(imageLoader).To(vm => vm.Leader.LeaderType).WithConversion<RaceIconImagePathValueConverter>();
-            set.Bind(leaderDescription).For(v => v.Text).To(vm => vm.Leader.Abilities).WithConversion<LeaderAbilityValueConverter>();
-
-			//set.Bind(source).For(v => v.ItemsSource).To(vm => vm.Leaders);
-			set.Apply();
-
-            var test = ViewModel.Leader.Name;
-
 
 			//CollectionView.BackgroundColor = UIColor.White;
 			//navigationBar.Initialize(this);

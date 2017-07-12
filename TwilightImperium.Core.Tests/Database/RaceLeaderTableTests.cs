@@ -51,22 +51,12 @@ namespace TwilightImperium.Core.Tests.Database
 		}
 
 		[Test]
-		public void RaceLeader_Has_NameColumn()
-		{
-			//Act
-			var result = raceLeaderColumnInfo.Find(x => x.Name == "Name");
-			//Assert
-			Assert.IsNotNull(result);
-		}
-
-
-		[Test]
-		public void RaceLeader_Has_OnlyFourColumns()
+		public void RaceLeader_Has_OnlyThreeColumns()
 		{
 			//Act
 			var result = raceLeaderColumnInfo;
 			//Assert
-			Assert.AreEqual(4, result.Count);
+			Assert.AreEqual(3, result.Count);
 		}
 	}
 }

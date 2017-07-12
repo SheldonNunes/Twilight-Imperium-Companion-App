@@ -248,7 +248,7 @@
     <InterfaceDefinition Include="Controls\LeaderCollectionViewCell.xib" />
     <InterfaceDefinition Include="Views\Unit\UnitDetailView.xib" />
     <InterfaceDefinition Include="Views\Rules\RulesView.xib" />
-    <InterfaceDefinition Include="ViewControllers\Race\RaceLeadersPageComponentView.xib" />
+    <InterfaceDefinition Include="Views\Race\RaceLeadersPageComponentView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -342,8 +342,8 @@
       <DependentUpon>RulesView.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewControllers\Race\RaceLeadersPageView.cs" />
-    <Compile Include="RaceLeadersPageComponentView.cs" />
-    <Compile Include="RaceLeadersPageComponentView.designer.cs">
+    <Compile Include="ViewControllers\Race\RaceLeadersPageComponentView.cs" />
+    <Compile Include="ViewControllers\Race\RaceLeadersPageComponentView.designer.cs">
       <DependentUpon>RaceLeadersPageComponentView.cs</DependentUpon>
     </Compile>
   </ItemGroup>

@@ -61,7 +61,7 @@ namespace TwilightImperiumMasterCompanion.Core
 
         public List<Leader> GetLeaders(int raceID)
         {
-            var query = "SELECT Name, LeaderType  FROM Leader JOIN RaceLeader ON Leader.LeaderID = RaceLeader.LeaderID WHERE RaceID = ?";
+            var query = "SELECT RaceLeaderID,LeaderType  FROM Leader JOIN RaceLeader ON Leader.LeaderID = RaceLeader.LeaderID WHERE RaceID = ?";
             return databaseConnection.Query<Leader>(query, raceID);
         }
 

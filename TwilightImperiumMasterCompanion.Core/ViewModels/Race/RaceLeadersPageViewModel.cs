@@ -11,25 +11,45 @@ using TwilightImperiumMasterCompanion.Core.ViewModels.Race;
 namespace TwilightImperiumMasterCompanion.Core
 {
     public class RaceLeadersPageViewModel : RaceViewModel, IRaceLeadersViewModel, IMvxPageViewModel
-	{
-		public static string Title
+    {
+        public static string Title
+        {
+            get { return UIStrings.Leaders; }
+        }
+
+        private int pageIndex;
+        public int PageIndex
+        {
+			get { return pageIndex; }
+			set
+			{
+				pageIndex = value;
+				RaisePropertyChanged(() => PageIndex);
+			}
+        }
+
+		private int leadersCount;
+		public int LeadersCount
 		{
-			get { return UIStrings.Leaders; }
+			get { return leadersCount; }
+			set
+			{
+				leadersCount = value;
+				RaisePropertyChanged(() => LeadersCount);
+			}
 		}
 
         private List<IMvxPagedViewModel> viewModels;
-        private int position;
         private List<Leader> Leaders;
 
         public RaceLeadersPageViewModel(IMvxNavigationService navigationService, ISessionService sessionService, IRaceService raceService) : base(navigationService)
-		{
+        {
             var race = sessionService.GetSelectedRace();
             Leaders = raceService.GetLeaders(race);
-            position = 0;
             viewModels = new List<IMvxPagedViewModel>();
             foreach (var leader in Leaders)
             {
-                var viewModel = new RaceLeadersPageComponentViewModel(leader.Name, leader);
+                var viewModel = new RaceLeadersPageComponentViewModel(leader.RaceLeaderID.ToString(), leader);
                 viewModels.Add(viewModel);
             }
         }
@@ -41,29 +61,30 @@ namespace TwilightImperiumMasterCompanion.Core
 
         public IMvxPagedViewModel GetNextViewModel(IMvxPagedViewModel currentViewModel)
         {
-            position++;
+
 
             var id = currentViewModel.PagedViewId;
             var index = viewModels.FindIndex(x => x.PagedViewId == id);
-
-            if(index == viewModels.Count() - 1){
+            PageIndex = index;
+            if (index == viewModels.Count() - 1)
+            {
                 return null;
             }
+
             return viewModels[index + 1];
 
-		}
+        }
 
         public IMvxPagedViewModel GetPreviousViewModel(IMvxPagedViewModel currentViewModel)
         {
-            position--;
+            var id = currentViewModel.PagedViewId;
+            var index = viewModels.FindIndex(x => x.PagedViewId == id);
+            PageIndex = index;
+            if (index == 0)
+            {
+                return null;
+            }
 
-			var id = currentViewModel.PagedViewId;
-			var index = viewModels.FindIndex(x => x.PagedViewId == id);
-
-			if (index == 0)
-			{
-				return null;
-			}
             return viewModels[index - 1];
         }
     }

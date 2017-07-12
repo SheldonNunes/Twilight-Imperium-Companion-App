@@ -39,282 +39,568 @@ namespace TwilightImperium.Core.Tests.Services
             databaseConnection.Rollback();
         }
 
+		[Test]
+		public void GetRaceLeaders_ForBaronyofLetnev_HasAdmiral()
+		{
+			//Arrange
+			var race = raceService.GetRace("Barony of Letnev");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+            var result = leaders.FindAll(x => x.LeaderType == "Admiral");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForBaronyofLetnev_HasGeneral()
+		{
+			//Arrange
+			var race = raceService.GetRace("Barony of Letnev");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+            var result = leaders.FindAll(x => x.LeaderType == "General");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForBaronyofLetnev_HasDiplomat()
+		{
+			//Arrange
+			var race = raceService.GetRace("Barony of Letnev");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+            var result = leaders.FindAll(x => x.LeaderType == "Diplomat");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForEmiratesOfHacan_HasScientist()
+		{
+			//Arrange
+			var race = raceService.GetRace("Emirates of Hacan");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Scientist");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForEmiratesOfHacan_HasGeneral()
+		{
+			//Arrange
+			var race = raceService.GetRace("Emirates of Hacan");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "General");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForEmiratesOfHacan_HasDiplomat()
+		{
+			//Arrange
+			var race = raceService.GetRace("Emirates of Hacan");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Diplomat");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForFederationOfSol_HasDiplomat()
+		{
+			//Arrange
+			var race = raceService.GetRace("Federation of Sol");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Diplomat");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForFederationOfSol_HasAdmiral()
+		{
+			//Arrange
+			var race = raceService.GetRace("Federation of Sol");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Admiral");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForFederationOfSol_HasAgent()
+		{
+			//Arrange
+			var race = raceService.GetRace("Federation of Sol");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Agent");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForL1z1xMindnet_HasAgent()
+		{
+			//Arrange
+			var race = raceService.GetRace("L1z1x Mindnet");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Agent");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForL1z1xMindnet_HasScientist()
+		{
+			//Arrange
+			var race = raceService.GetRace("L1z1x Mindnet");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Scientist");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForL1z1xMindnet_HasDiplomat()
+		{
+			//Arrange
+			var race = raceService.GetRace("L1z1x Mindnet");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Diplomat");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForMentakCoalition_HasDiplomat()
+		{
+			//Arrange
+			var race = raceService.GetRace("Mentak Coalition");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Diplomat");
+			Assert.AreEqual(1, result.Count);
+		}
+
         [Test]
-        public void EachRaceOnlyHasThreeLeadersEach()
+        public void GetRaceLeaders_ForMentakCoalition_HasAgent()
         {
             //Arrange
-            var races = raceService.GetRaces();
-
-            foreach (var race in races)
-            {
-                var leaders = raceService.GetLeaders(race);
-                Assert.AreEqual(3, leaders.Count);
-            }
+            var race = raceService.GetRace("Mentak Coalition");
+            //Act
+            var leaders = raceService.GetLeaders(race);
+            //Assert
+            var result = leaders.FindAll(x => x.LeaderType == "Agent");
+            Assert.AreEqual(1, result.Count);
         }
 
 		[Test]
-		public void GetRaceLeaders_ForBaronyofLetnev_HasAdmiralCalledUnlenn()
+		public void GetRaceLeaders_ForMentakCoalition_HasAdmiral()
 		{
 			//Arrange
-			var race = raceService.GetRace("Barony of Letnev");
+			var race = raceService.GetRace("Mentak Coalition");
 			//Act
 			var leaders = raceService.GetLeaders(race);
 			//Assert
-            var result = leaders.FindAll(x => x.LeaderType == "Admiral" && x.Name == "Unlenn");
+			var result = leaders.FindAll(x => x.LeaderType == "Admiral");
 			Assert.AreEqual(1, result.Count);
 		}
 
 		[Test]
-		public void GetRaceLeaders_ForBaronyofLetnev_HasGeneralCalledFarran()
+		public void GetRaceLeaders_ForNaaluCollective_HasAdmiral()
 		{
 			//Arrange
-			var race = raceService.GetRace("Barony of Letnev");
+			var race = raceService.GetRace("Naalu Collective");
 			//Act
 			var leaders = raceService.GetLeaders(race);
 			//Assert
-            var result = leaders.FindAll(x => x.LeaderType == "General" && x.Name == "Farran");
+			var result = leaders.FindAll(x => x.LeaderType == "Admiral");
 			Assert.AreEqual(1, result.Count);
 		}
 
 		[Test]
-		public void GetRaceLeaders_ForBaronyofLetnev_HasDiplomatCalledCiel()
+		public void GetRaceLeaders_ForNaaluCollective_HasAgent()
 		{
 			//Arrange
-			var race = raceService.GetRace("Barony of Letnev");
+			var race = raceService.GetRace("Naalu Collective");
 			//Act
 			var leaders = raceService.GetLeaders(race);
 			//Assert
-            var result = leaders.FindAll(x => x.LeaderType == "Diplomat" && x.Name == "Ciel");
+			var result = leaders.FindAll(x => x.LeaderType == "Agent");
 			Assert.AreEqual(1, result.Count);
 		}
 
 		[Test]
-		public void GetRaceLeaders_ForEmiratesOfHacan_HasAdmiralCalledUnlenn()
+		public void GetRaceLeaders_ForNaaluCollective_HasDiplomat()
 		{
 			//Arrange
-			var race = raceService.GetRace("Emirates of Hacan");
+			var race = raceService.GetRace("Naalu Collective");
 			//Act
 			var leaders = raceService.GetLeaders(race);
 			//Assert
-			var result = leaders.FindAll(x => x.LeaderType == "Admiral" && x.Name == "Unlenn");
+			var result = leaders.FindAll(x => x.LeaderType == "Diplomat");
 			Assert.AreEqual(1, result.Count);
 		}
 
 		[Test]
-		public void GetRaceLeaders_ForEmiratesOfHacan_HasGeneralCalledFarran()
+		public void GetRaceLeaders_ForSardakkNorr_HasAdmiral()
 		{
 			//Arrange
-			var race = raceService.GetRace("Emirates of Hacan");
+			var race = raceService.GetRace("Sardakk N’orr");
 			//Act
 			var leaders = raceService.GetLeaders(race);
 			//Assert
-			var result = leaders.FindAll(x => x.LeaderType == "General" && x.Name == "Farran");
+			var result = leaders.FindAll(x => x.LeaderType == "Admiral");
 			Assert.AreEqual(1, result.Count);
 		}
 
 		[Test]
-		public void GetRaceLeaders_ForEmiratesOfHacan_HasDiplomatCalledCiel()
+		public void GetRaceLeaders_ForSardakkNorr_HasGeneral()
 		{
 			//Arrange
-			var race = raceService.GetRace("Emirates of Hacan");
+			var race = raceService.GetRace("Sardakk N’orr");
 			//Act
 			var leaders = raceService.GetLeaders(race);
 			//Assert
-			var result = leaders.FindAll(x => x.LeaderType == "Diplomat" && x.Name == "Ciel");
+			var result = leaders.FindAll(x => x.LeaderType == "General");
 			Assert.AreEqual(1, result.Count);
 		}
 
+		[Test]
+		public void GetRaceLeaders_ForUniversitiesOfJolNar_HasScientist()
+		{
+			//Arrange
+			var race = raceService.GetRace("Universities of Jol-Nar");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Scientist");
+			Assert.AreEqual(1, result.Count);
+		}
 
-//		[Test]
-//		public void GetRaceLeaders_ForEmiratesOfHacan_ReturnsCorrectSetOfRepresentatives()
-//		{
-//			//Arrange
-//			var race = raceService.GetRace("Emirates of Hacan");
-//			//Act
-//			var leaders = raceService.GetLeaders(race);
-//			//Assert
-//			var result = leaders.FindAll(x => x.Title == "Arretze" || x.Title == "Hercant" || x.Title == "Kamdorn");
-//			Assert.AreEqual(3, result.Count);
-//		}
+		[Test]
+		public void GetRaceLeaders_ForUniversitiesOfJolNar_HasAdmiral()
+		{
+			//Arrange
+			var race = raceService.GetRace("Universities of Jol-Nar");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Admiral");
+			Assert.AreEqual(1, result.Count);
+		}
 
-//		[Test]
-//		public void GetRaceLeaders_ForFederationOfSol_ReturnsCorrectSetOfRepresentatives()
-//		{
-//			//Arrange
-//			var race = raceService.GetRace("Federation of Sol");
-//			//Act
-//			var leaders = raceService.GetLeaders(race);
-//			//Assert
-//			var result = leaders.FindAll(x => x.Title == "Jord");
-//			Assert.AreEqual(1, result.Count);
-//		}
+		[Test]
+		public void GetRaceLeaders_ForXxchaKingdom_HasAdmiral()
+		{
+			//Arrange
+			var race = raceService.GetRace("Xxcha Kingdom");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Admiral");
+			Assert.AreEqual(1, result.Count);
+		}
 
-//		[Test]
-//		public void GetRaceLeaders_ForL1z1xMindnet_ReturnsCorrectSetOfRepresentatives()
-//		{
-//			//Arrange
-//			var race = raceService.GetRace("L1z1x Mindnet");
-//			//Act
-//			var leaders = raceService.GetLeaders(race);
-//			//Assert
-//			var result = leaders.FindAll(x => x.Title == "[0.0.0]");
-//			Assert.AreEqual(1, result.Count);
-//		}
+		[Test]
+		public void GetRaceLeaders_ForXxchaKingdom_HasDiplomat()
+		{
+			//Arrange
+			var race = raceService.GetRace("Xxcha Kingdom");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Diplomat");
+			Assert.AreEqual(1, result.Count);
+		}
 
-//		[Test]
-//		public void GetRaceLeaders_ForMentakCoalition_ReturnsCorrectSetOfRepresentatives()
-//		{
-//			//Arrange
-//			var race = raceService.GetRace("Mentak Coalition");
-//			//Act
-//			var leaders = raceService.GetLeaders(race);
-//			//Assert
-//			var result = leaders.FindAll(x => x.Title == "Moll Primus");
-//			Assert.AreEqual(1, result.Count);
-//		}
+		[Test]
+		public void GetRaceLeaders_ForYssarilTribes_HasAgent()
+		{
+			//Arrange
+			var race = raceService.GetRace("Yssaril Tribes");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Agent");
+			Assert.AreEqual(1, result.Count);
+		}
 
-//		[Test]
-//		public void GetRaceLeaders_ForNaaluCollective_ReturnsCorrectSetOfRepresentatives()
-//		{
-//			//Arrange
-//			var race = raceService.GetRace("Naalu Collective");
-//			//Act
-//			var leaders = raceService.GetLeaders(race);
-//			//Assert
-//			var result = leaders.FindAll(x => x.Title == "Maaluuk" || x.Title == "Druaa");
-//			Assert.AreEqual(2, result.Count);
-//		}
+		[Test]
+		public void GetRaceLeaders_ForYssarilTribes_HasAdmiral()
+		{
+			//Arrange
+			var race = raceService.GetRace("Yssaril Tribes");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Admiral");
+			Assert.AreEqual(1, result.Count);
+		}
 
-//		[Test]
-//		public void GetRaceLeaders_ForSardakkNorr_ReturnsCorrectSetOfRepresentatives()
-//		{
-//			//Arrange
-//			var race = raceService.GetRace("Sardakk N’orr");
-//			//Act
-//			var leaders = raceService.GetLeaders(race);
-//			//Assert
-//			var result = leaders.FindAll(x => x.Title == "Tren’lak" || x.Title == "Quinarra");
-//			Assert.AreEqual(2, result.Count);
-//		}
+		[Test]
+		public void GetRaceLeaders_ForClanOfSaar_HasAdmiral()
+		{
+			//Arrange
+			var race = raceService.GetRace("Clan of Saar");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Admiral");
+			Assert.AreEqual(1, result.Count);
+		}
 
-//		[Test]
-//		public void GetRaceLeaders_ForUniversitiesOfJolNar_ReturnsCorrectSetOfRepresentatives()
-//		{
-//			//Arrange
-//			var race = raceService.GetRace("Universities of Jol-Nar");
-//			//Act
-//			var leaders = raceService.GetLeaders(race);
-//			//Assert
-//			var result = leaders.FindAll(x => x.Title == "Jol" || x.Title == "Nar");
-//			Assert.AreEqual(2, result.Count);
-//		}
+		[Test]
+		public void GetRaceLeaders_ForClanOfSaar_HasAgent()
+		{
+			//Arrange
+			var race = raceService.GetRace("Clan of Saar");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Agent");
+			Assert.AreEqual(1, result.Count);
+		}
 
-//		[Test]
-//		public void GetRaceLeaders_ForXxchaKingdom_ReturnsCorrectSetOfRepresentatives()
-//		{
-//			//Arrange
-//			var race = raceService.GetRace("Xxcha Kingdom");
-//			//Act
-//			var leaders = raceService.GetLeaders(race);
-//			//Assert
-//			var result = leaders.FindAll(x => x.Title == "Archon Ren" || x.Title == "Archon Tau");
-//			Assert.AreEqual(2, result.Count);
-//		}
+		[Test]
+		public void GetRaceLeaders_ForClanOfSaar_HasGeneral()
+		{
+			//Arrange
+			var race = raceService.GetRace("Clan of Saar");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "General");
+			Assert.AreEqual(1, result.Count);
+		}
 
-//		[Test]
-//		public void GetRaceLeaders_ForYssarilTribes_ReturnsCorrectSetOfRepresentatives()
-//		{
-//			//Arrange
-//			var race = raceService.GetRace("Yssaril Tribes");
-//			//Act
-//			var leaders = raceService.GetLeaders(race);
-//			//Assert
-//			var result = leaders.FindAll(x => x.Title == "Retillion" || x.Title == "Shalloq");
-//			Assert.AreEqual(2, result.Count);
-//		}
+		[Test]
+		public void GetRaceLeaders_ForEmbersOfMuaat_HasGeneral()
+		{
+			//Arrange
+			var race = raceService.GetRace("Embers of Muaat");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "General");
+			Assert.AreEqual(1, result.Count);
+		}
 
-//		[Test]
-//		public void GetRaceLeaders_ForClanOfSaar_ReturnsCorrectSetOfRepresentatives()
-//		{
-//			//Arrange
-//			var race = raceService.GetRace("Clan of Saar");
-//			//Act
-//			var leaders = raceService.GetLeaders(race);
-//			//Assert
-//			var result = leaders.FindAll(x => x.Title == "Lisis II" || x.Title == "Ragh");
-//			Assert.AreEqual(2, result.Count);
-//		}
+		[Test]
+		public void GetRaceLeaders_ForEmbersOfMuaat_HasScientist()
+		{
+			//Arrange
+			var race = raceService.GetRace("Embers of Muaat");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Scientist");
+			Assert.AreEqual(1, result.Count);
+		}
 
-//		[Test]
-//		public void GetRaceLeaders_ForEmbersOfMuaat_ReturnsCorrectSetOfRepresentatives()
-//		{
-//			//Arrange
-//			var race = raceService.GetRace("Embers of Muaat");
-//			//Act
-//			var leaders = raceService.GetLeaders(race);
-//			//Assert
-//			var result = leaders.FindAll(x => x.Title == "Muaat");
-//			Assert.AreEqual(1, result.Count);
-//		}
+		[Test]
+		public void GetRaceLeaders_ForEmbersOfMuaat_HasDiplomat()
+		{
+			//Arrange
+			var race = raceService.GetRace("Embers of Muaat");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Diplomat");
+			Assert.AreEqual(1, result.Count);
+		}
 
-//		[Test]
-//		public void GetRaceLeaders_ForWinnu_ReturnsCorrectSetOfRepresentatives()
-//		{
-//			//Arrange
-//			var race = raceService.GetRace("Winnu");
-//			//Act
-//			var leaders = raceService.GetLeaders(race);
-//			//Assert
-//			var result = leaders.FindAll(x => x.Title == "Winnu");
-//			Assert.AreEqual(1, result.Count);
-//		}
+		[Test]
+		public void GetRaceLeaders_ForWinnu_HasAgent()
+		{
+			//Arrange
+			var race = raceService.GetRace("Winnu");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Agent");
+			Assert.AreEqual(1, result.Count);
+		}
 
-//		[Test]
-//		public void GetRaceLeaders_ForYinBrotherhood_ReturnsCorrectSetOfRepresentatives()
-//		{
-//			//Arrange
-//			var race = raceService.GetRace("Yin Brotherhood");
-//			//Act
-//			var leaders = raceService.GetLeaders(race);
-//			//Assert
-//			var result = leaders.FindAll(x => x.Title == "Darien");
-//			Assert.AreEqual(1, result.Count);
-//		}
+		[Test]
+		public void GetRaceLeaders_ForWinnu_HasAdmiral()
+		{
+			//Arrange
+			var race = raceService.GetRace("Winnu");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Admiral");
+			Assert.AreEqual(1, result.Count);
+		}
 
-//		[Test]
-//		public void GetRaceLeaders_ForArborec_ReturnsCorrectSetOfRepresentatives()
-//		{
-//			//Arrange
-//			var race = raceService.GetRace("Arborec");
-//			//Act
-//			var leaders = raceService.GetLeaders(race);
-//			//Assert
-//			var result = leaders.FindAll(x => x.Title == "Nestphar");
-//			Assert.AreEqual(1, result.Count);
-//		}
+		[Test]
+		public void GetRaceLeaders_ForWinnu_HasScientist()
+		{
+			//Arrange
+			var race = raceService.GetRace("Winnu");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Scientist");
+			Assert.AreEqual(1, result.Count);
+		}
 
-//		[Test]
-//		public void GetRaceLeaders_ForGhostsOfCreuss_ReturnsCorrectSetOfRepresentatives()
-//		{
-//			//Arrange
-//			var race = raceService.GetRace("Ghosts of Creuss");
-//			//Act
-//			var leaders = raceService.GetLeaders(race);
-//			//Assert
-//			var result = leaders.FindAll(x => x.Title == "Creuss");
-//			Assert.AreEqual(1, result.Count);
-//		}
+		[Test]
+		public void GetRaceLeaders_ForYinBrotherhood_HasAgent()
+		{
+			//Arrange
+			var race = raceService.GetRace("Yin Brotherhood");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Agent");
+			Assert.AreEqual(1, result.Count);
+		}
 
-//		[Test]
-//		public void GetRaceLeaders_ForNekroVirus_ReturnsCorrectSetOfRepresentatives()
-//		{
-//			//Arrange
-//			var race = raceService.GetRace("Nekro Virus");
-//			//Act
-//			var leaders = raceService.GetLeaders(race);
-//			//Assert
-//			var result = leaders.FindAll(x => x.Title == "Mordai II");
-//			Assert.AreEqual(1, result.Count);
-//		}   
-    }
+		[Test]
+		public void GetRaceLeaders_ForYinBrotherhood_HasAdmiral()
+		{
+			//Arrange
+			var race = raceService.GetRace("Yin Brotherhood");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Admiral");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForYinBrotherhood_HasDiplomat()
+		{
+			//Arrange
+			var race = raceService.GetRace("Yin Brotherhood");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Diplomat");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForArborec_HasDiplomat()
+		{
+			//Arrange
+			var race = raceService.GetRace("Arborec");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Diplomat");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForArborec_HasAdmiral()
+		{
+			//Arrange
+			var race = raceService.GetRace("Arborec");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Admiral");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForArborec_HasGeneral()
+		{
+			//Arrange
+			var race = raceService.GetRace("Arborec");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "General");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForGhostsOfCreuss_HasDiplomat()
+		{
+			//Arrange
+			var race = raceService.GetRace("Ghosts of Creuss");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Diplomat");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForGhostsOfCreuss_HasAdmiral()
+		{
+			//Arrange
+			var race = raceService.GetRace("Ghosts of Creuss");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Admiral");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForGhostsOfCreuss_HasScientist()
+		{
+			//Arrange
+			var race = raceService.GetRace("Ghosts of Creuss");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Scientist");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForNekroVirus_HasAgent()
+		{
+			//Arrange
+			var race = raceService.GetRace("Nekro Virus");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Agent");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForNekroVirus_HasAdmiral()
+		{
+			//Arrange
+			var race = raceService.GetRace("Nekro Virus");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "Admiral");
+			Assert.AreEqual(1, result.Count);
+		}
+
+		[Test]
+		public void GetRaceLeaders_ForNekroVirus_HasGeneral()
+		{
+			//Arrange
+			var race = raceService.GetRace("Nekro Virus");
+			//Act
+			var leaders = raceService.GetLeaders(race);
+			//Assert
+			var result = leaders.FindAll(x => x.LeaderType == "General");
+			Assert.AreEqual(1, result.Count);
+		}
+	}
 }

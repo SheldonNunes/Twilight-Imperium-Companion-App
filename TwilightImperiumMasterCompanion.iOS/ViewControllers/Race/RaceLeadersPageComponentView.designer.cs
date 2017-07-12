@@ -23,10 +23,6 @@ namespace TwilightImperiumMasterCompanion.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel leaderName { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel leaderType { get; set; }
 
         void ReleaseDesignerOutlets ()
@@ -39,11 +35,6 @@ namespace TwilightImperiumMasterCompanion.iOS
             if (leaderImage != null) {
                 leaderImage.Dispose ();
                 leaderImage = null;
-            }
-
-            if (leaderName != null) {
-                leaderName.Dispose ();
-                leaderName = null;
             }
 
             if (leaderType != null) {

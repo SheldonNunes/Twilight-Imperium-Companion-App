@@ -7,11 +7,11 @@ namespace TwilightImperiumMasterCompanion.Core.Model
 {
     public class Leader
     {
-        public string Name
-        {
-            get;
-            set;
-        }
+		public int RaceLeaderID
+		{
+			get;
+			set;
+		}
 
         public string Image
         {

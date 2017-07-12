@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using SQLite.Net;
 using TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces;
+using TwilightImperiumMasterCompanion.Core.Model;
 
 namespace TwilightImperiumMasterCompanion.Core.DataAccess
 {

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using MvvmCross.Core.Navigation;
+using TwilightImperiumMasterCompanion.Core.Model;
 using TwilightImperiumMasterCompanion.Core.Resources;
 using TwilightImperiumMasterCompanion.Core.Services.Interfaces;
 using TwilightImperiumMasterCompanion.Core.ViewModels.Unit;

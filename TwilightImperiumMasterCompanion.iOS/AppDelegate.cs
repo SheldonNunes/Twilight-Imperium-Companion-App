@@ -35,7 +35,8 @@ namespace TwilightImperiumMasterCompanion.iOS
 
             //Appearances
             UITabBar.Appearance.BarTintColor = ColorConstants.GRAY_LIGHT;
-            UIPageControl.Appearance.CurrentPageIndicatorTintColor = UIColor.Orange;
+            UIPageControl.Appearance.CurrentPageIndicatorTintColor = ColorConstants.ORANGE_PRIMARY;
+            UIPageControl.Appearance.PageIndicatorTintColor = ColorConstants.GRAY_LIGHT;
 			UINavigationBar.Appearance.TintColor = UIColor.White;
             UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(57, 121, 205);
 			UINavigationBar.Appearance.Translucent = false;

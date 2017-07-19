@@ -243,12 +243,14 @@
     <InterfaceDefinition Include="Views\Setup\ConfirmRaceView.xib" />
     <InterfaceDefinition Include="Views\Setup\RaceSelectionView.xib" />
     <InterfaceDefinition Include="Views\Setup\SelectStartingOptionView.xib" />
-    <InterfaceDefinition Include="Controls\PlanetCollectionViewCell.xib" />
     <InterfaceDefinition Include="Controls\UnitCollectionViewCell.xib" />
     <InterfaceDefinition Include="Controls\LeaderCollectionViewCell.xib" />
     <InterfaceDefinition Include="Views\Unit\UnitDetailView.xib" />
     <InterfaceDefinition Include="Views\Rules\RulesView.xib" />
     <InterfaceDefinition Include="Views\Race\RaceLeadersPageComponentView.xib" />
+    <InterfaceDefinition Include="Views\Planet\PlanetView.xib" />
+    <InterfaceDefinition Include="Controls\PlanetTableViewCell.xib" />
+    <InterfaceDefinition Include="Controls\PlanetCollectionViewCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -316,10 +318,6 @@
     <Compile Include="Controls\HexMenuViewComponent.designer.cs">
       <DependentUpon>HexMenuViewComponent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\PlanetCollectionViewCell.cs" />
-    <Compile Include="Controls\PlanetCollectionViewCell.designer.cs">
-      <DependentUpon>PlanetCollectionViewCell.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\UnitCollectionViewCell.cs" />
     <Compile Include="Controls\UnitCollectionViewCell.designer.cs">
       <DependentUpon>UnitCollectionViewCell.cs</DependentUpon>
@@ -346,6 +344,20 @@
     <Compile Include="ViewControllers\Race\RaceLeadersPageComponentView.designer.cs">
       <DependentUpon>RaceLeadersPageComponentView.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewControllers\Planet\PlanetView.cs" />
+    <Compile Include="ViewControllers\Planet\PlanetView.designer.cs">
+      <DependentUpon>PlanetView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlanetTableViewCell.cs" />
+    <Compile Include="Controls\PlanetTableViewCell.designer.cs">
+      <DependentUpon>PlanetTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Planet\AddPlanetView.cs" />
+    <Compile Include="ViewControllers\Planet\AddPlanetView.designer.cs">
+      <DependentUpon>AddPlanetView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlanetCollectionViewCell.cs" />
+    <Compile Include="Controls\PlanetCollectionViewCell.designer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -420,6 +432,8 @@
     <Folder Include="Resources\Images.xcassets\AgentIcon.imageset\" />
     <Folder Include="Views\Rules\" />
     <Folder Include="ViewControllers\Rules\" />
+    <Folder Include="ViewControllers\Planet\" />
+    <Folder Include="Views\Planet\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Fonts\Handel-Gothic.ttf">

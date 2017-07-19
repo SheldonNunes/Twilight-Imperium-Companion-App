@@ -46,6 +46,7 @@ namespace TwilightImperiumMasterCompanion.Core
         {
             var race = sessionService.GetSelectedRace();
             Leaders = raceService.GetLeaders(race);
+            LeadersCount = Leaders.Count();
             viewModels = new List<IMvxPagedViewModel>();
             foreach (var leader in Leaders)
             {

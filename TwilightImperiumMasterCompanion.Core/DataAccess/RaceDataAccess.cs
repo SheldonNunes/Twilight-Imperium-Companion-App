@@ -40,7 +40,7 @@ namespace TwilightImperiumMasterCompanion.Core
         public List<StartingPlanetDto> GetStartingPlanets(int raceID)
         {
             var query = "" +
-                "SELECT Name AS Title FROM Planet " +
+                "SELECT Planet.ID As PlanetId, Name AS Title, Resource, Influence, ExpansionLevel FROM Planet " +
                 "JOIN RaceStartingPlanets " +
                 "ON Planet.ID = RaceStartingPlanets.PlanetID " +
                 "WHERE RaceStartingPlanets.RaceID = ?";

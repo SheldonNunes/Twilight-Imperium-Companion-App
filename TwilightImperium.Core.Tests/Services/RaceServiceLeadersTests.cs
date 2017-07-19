@@ -24,13 +24,16 @@ namespace TwilightImperium.Core.Tests.Services
 
             Ioc.RegisterSingleton<ISQLite>(new CoreSqliteService());
             Ioc.RegisterType<IRaceService, RaceService>();
-            Ioc.RegisterType<ISessionService, SessionService>();
-            Ioc.RegisterType<IRaceDataAccess, RaceDataAccess>();
+			Ioc.RegisterType<IRaceDataAccess, RaceDataAccess>();
+			Ioc.RegisterType<ISessionService, SessionService>();
             Ioc.RegisterType<ISessionDataAccess, SessionDataAccess>();
+
+
             databaseConnection = Mvx.Resolve<ISQLite>().GetConnection();
             databaseConnection.BeginTransaction();
-            raceService = Mvx.Resolve<IRaceService>();
-            sessionService = Mvx.Resolve<ISessionService>();
+			sessionService = Mvx.Resolve<ISessionService>();
+
+			raceService = Mvx.Resolve<IRaceService>();
         }
 
         [TearDown]

@@ -1,4 +1,5 @@
-﻿using TwilightImperiumMasterCompanion.Core.Enum;
+﻿using System.Collections.Generic;
+using TwilightImperiumMasterCompanion.Core.Enum;
 
 namespace TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces
 {
@@ -11,5 +12,10 @@ namespace TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces
         void SetSelectedRace(int raceID);
 
         Race GetSelectedRace();
-    }
+
+        void SavePlanet(int planetId, bool exhausted = true);
+
+		List<Planet> GetSessionPlanets();
+
+	}
 }

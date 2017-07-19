@@ -94,5 +94,17 @@ namespace TwilightImperiumMasterCompanion.Core.Resources {
                 return ResourceManager.GetString("RuleBooks", resourceCulture);
             }
         }
+        
+        internal static string Planets {
+            get {
+                return ResourceManager.GetString("Planets", resourceCulture);
+            }
+        }
+        
+        internal static string AddPlanet {
+            get {
+                return ResourceManager.GetString("AddPlanet", resourceCulture);
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using MvvmCross.Platform;
 using MvvmCross.Test.Core;
 using NUnit.Framework;
@@ -26,7 +27,9 @@ namespace TwilightImperium.Core.Tests.Services
             Ioc.RegisterSingleton<ISQLite>(sqLite);
             Ioc.RegisterType<ISessionService, SessionService>();
             Ioc.RegisterType<ISessionDataAccess, SessionDataAccess>();
-            databaseConnection = Mvx.Resolve<ISQLite>().GetConnection();
+            Ioc.RegisterType<IRaceDataAccess, RaceDataAccess>();
+
+			databaseConnection = Mvx.Resolve<ISQLite>().GetConnection();
 
             var plat = new SQLite.Net.Platform.Generic.SQLitePlatformGeneric();
             databaseConnection.BeginTransaction();
@@ -138,6 +141,38 @@ namespace TwilightImperium.Core.Tests.Services
             var result = sessionService.GetSelectedRace();
             //Assert
             Assert.AreEqual(race.RaceID, result.RaceID);
+		}
+
+		[Test]
+		public void SavePlanet_SavesPlanetInSessionTable()
+		{
+            //Arrange
+            var planet = new Planet() { PlanetId = 1 };
+            sessionService.SavePlanet(planet, false);
+
+			//Act
+			var result = sessionService.GetSessionPlanets();
+			//Assert
+			Assert.AreEqual(1, result.First().PlanetId);
+		}
+
+		[Test]
+		public void SavePlanets_SavesPlanetsInSessionTable()
+		{
+			//Arrange
+			var planet = new Planet() { PlanetId = 1 };
+			sessionService.SavePlanet(planet, false);
+
+			var planetTwo = new Planet() { PlanetId = 2 };
+			sessionService.SavePlanet(planetTwo, false);
+
+			var planetThree = new Planet() { PlanetId = 3 };
+			sessionService.SavePlanet(planetThree, false);
+
+			//Act
+			var result = sessionService.GetSessionPlanets();
+			//Assert
+            Assert.AreEqual(3, result.Count);
 		}
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
+using TwilightImperiumMasterCompanion.Core.ViewModels;
 using TwilightImperiumMasterCompanion.Core.ViewModels.Rules;
 
 namespace TwilightImperiumMasterCompanion.Core
@@ -80,6 +80,20 @@ namespace TwilightImperiumMasterCompanion.Core
 					navigationService.Close(this);
 				});
 				return navigateToRulesView;
+			}
+		}
+
+		private MvxCommand navigateToPlanetsView;
+		public MvxCommand NavigateToPlanetsView
+		{
+			get
+			{
+				navigateToPlanetsView = navigateToPlanetsView ?? new MvxCommand(() =>
+				{
+					navigationService.Navigate<PlanetViewModel>();
+					navigationService.Close(this);
+				});
+				return navigateToPlanetsView;
 			}
 		}
 

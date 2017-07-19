@@ -37,4 +37,10 @@
 	<data name="RuleBooks" xml:space="preserve">
         <value>Rule Books</value>
     </data>
+	<data name="Planets" xml:space="preserve">
+        <value>Planets</value>
+    </data>
+	<data name="AddPlanet" xml:space="preserve">
+        <value>Add Planet</value>
+    </data>
 </root>

@@ -42,8 +42,14 @@ namespace TwilightImperiumMasterCompanion.Core
 		{
 			get
 			{
-                sessionService.SetSelectedRace(SelectedRace);
-                _navigateToRaceView = _navigateToRaceView ?? new MvxAsyncCommand(() => navigationService.Navigate<RaceTabViewModel>());
+                _navigateToRaceView = _navigateToRaceView ?? new MvxAsyncCommand(() =>
+                {
+                    return Task.Run(() =>
+                    {
+                        sessionService.SetSelectedRace(SelectedRace);
+                        navigationService.Navigate<RaceTabViewModel>();
+                    });
+                });
 				return _navigateToRaceView;
 			}
 		}

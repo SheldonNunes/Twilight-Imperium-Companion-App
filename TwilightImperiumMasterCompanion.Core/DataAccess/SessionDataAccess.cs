@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using SQLite.Net;
 using TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces;
@@ -44,6 +45,17 @@ namespace TwilightImperiumMasterCompanion.Core.DataAccess
         public void SetSelectedRace(int raceID)
         {
             databaseConnection.Execute("UPDATE Session SET RaceID = ?", raceID);
+        }
+
+        public void SavePlanet(int planetId, bool exhausted){
+            int exhaustedValue = exhausted ? 1 : 0;
+            var script = String.Format("INSERT INTO SessionPlanet (PlanetId, Exhausted) VALUES ({0},{1});", planetId, exhaustedValue);
+            databaseConnection.Execute(script);
+        }
+
+        public List<Planet> GetSessionPlanets()
+        {
+            return databaseConnection.Query<Planet>("SELECT * FROM SessionPlanet JOIN Planet ON SessionPlanet.PlanetId = Planet.ID");
         }
     }
 }

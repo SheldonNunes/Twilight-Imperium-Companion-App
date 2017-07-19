@@ -101,6 +101,12 @@
     <Compile Include="ViewModels\Rules\RulesViewModel.cs" />
     <Compile Include="NavigationParameters\RuleBookNavigationParameter.cs" />
     <Compile Include="ViewModels\Race\RaceLeadersPageComponentViewModel.cs" />
+    <Compile Include="ViewModels\Planet\PlanetViewModel.cs" />
+    <Compile Include="ViewModels\Planet\AddPlanetViewModel.cs" />
+    <Compile Include="DataAccess\Interfaces\IPlanetDataAccess.cs" />
+    <Compile Include="DataAccess\PlanetDataAccess.cs" />
+    <Compile Include="Services\Interfaces\IPlanetService.cs" />
+    <Compile Include="Services\PlanetService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -122,6 +128,7 @@
     <Folder Include="Dto\" />
     <Folder Include="Helpers\" />
     <Folder Include="ViewModels\Rules\" />
+    <Folder Include="ViewModels\Planet\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\UIStrings.resx">

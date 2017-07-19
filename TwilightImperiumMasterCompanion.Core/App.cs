@@ -15,8 +15,8 @@ namespace TwilightImperiumMasterCompanion.Core
 			base.Initialize();
 
 			CreatableTypes().EndingWith("ViewModel").AsInterfaces().RegisterAsLazySingleton();
+			CreatableTypes().EndingWith("DataAccess").AsInterfaces().RegisterAsLazySingleton();
 			CreatableTypes().EndingWith("Service").AsInterfaces().RegisterAsLazySingleton();
-            CreatableTypes().EndingWith("DataAccess").AsInterfaces().RegisterAsLazySingleton();
 			RegisterAppStart(new AppStart());
 		}
 	}

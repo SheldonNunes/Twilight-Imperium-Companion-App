@@ -25,7 +25,7 @@ namespace TwilightImperiumMasterCompanion.iOS.ViewControllers.Unit
 			//Bindings
 			var set = this.CreateBindingSet<UnitDetailView, UnitDetailViewModel>();
             set.Bind(shipName).For(v => v.Text).To(vm => vm.SelectedUnit.Name);
-            set.Bind(imageLoader).To(vm => vm.SelectedUnit.Name).WithConversion<RaceIconImagePathValueConverter>();
+            set.Bind(imageLoader).To(vm => vm.SelectedUnit.Name).WithConversion<IconImagePathValueConverter>();
 
 			set.Apply();
 

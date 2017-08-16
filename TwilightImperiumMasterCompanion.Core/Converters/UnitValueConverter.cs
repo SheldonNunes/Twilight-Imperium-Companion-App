@@ -8,13 +8,8 @@ namespace TwilightImperiumMasterCompanion.Core.Converters
         protected override string Convert(int value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (value < 0)
-            {
                 return "-";
-            }
-            else
-            {
-                return value.ToString();
-            }
+            return value.ToString();
         }
     }
 }

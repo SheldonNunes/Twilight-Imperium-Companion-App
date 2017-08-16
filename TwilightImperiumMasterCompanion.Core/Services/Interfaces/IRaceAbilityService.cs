@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TwilightImperiumMasterCompanion.Core
+namespace TwilightImperiumMasterCompanion.Core.Services.Interfaces
 {
 	public interface IRaceAbilityService
 	{

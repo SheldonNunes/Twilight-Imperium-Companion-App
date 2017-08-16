@@ -17,7 +17,7 @@ namespace TwilightImperium.Core.Tests.Database
 		public void Init()
 		{
 			base.ClearAll();
-			Ioc.RegisterSingleton<ISQLite>(new CoreSqliteService());
+			Ioc.RegisterSingleton<ISQLite>(new TestSqliteService());
 			databaseConnection = Mvx.Resolve<ISQLite>().GetConnection();
 
 			raceLeaderColumnInfo = databaseConnection.GetTableInfo("RaceAbilityTranslation");

@@ -23,7 +23,7 @@ namespace TwilightImperiumMasterCompanion.iOS
 				{
 					var set = this.CreateBindingSet<RaceLeadersPageComponentView, RaceLeadersPageComponentViewModel>();
 					set.Bind(leaderType).For(v => v.Text).To(vm => vm.Leader.LeaderType);
-					set.Bind(imageLoader).To(vm => vm.Leader.LeaderType).WithConversion<RaceIconImagePathValueConverter>();
+					set.Bind(imageLoader).To(vm => vm.Leader.LeaderType).WithConversion<IconImagePathValueConverter>();
 					set.Bind(leaderDescription).For(v => v.Text).To(vm => vm.Leader.Abilities).WithConversion<LeaderAbilityValueConverter>();
 					set.Apply();
 

@@ -2,7 +2,7 @@
 using TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces;
 using TwilightImperiumMasterCompanion.Core.Enum;
 
-namespace TwilightImperiumMasterCompanion.Core.Services.Interfaces
+namespace TwilightImperiumMasterCompanion.Core.Services
 {
     public class SessionService : BaseService, ISessionService
     {
@@ -15,11 +15,6 @@ namespace TwilightImperiumMasterCompanion.Core.Services.Interfaces
             this.sessionDataAccess = playerDataAccess;
         }
 
-        public bool GetExpansionStatus(Expansion expansion)
-        {
-            return sessionDataAccess.GetExpansionStatus(expansion);        
-        }
-
         public Race GetSelectedRace()
         {
             return sessionDataAccess.GetSelectedRace();
@@ -27,12 +22,12 @@ namespace TwilightImperiumMasterCompanion.Core.Services.Interfaces
 
         public void SaveExpansion(Expansion expansion, bool expansionEnabled)
         {
-            sessionDataAccess.SaveExpansion(expansion, expansionEnabled);
+            sessionDataAccess.UpdateExpansionStatus(expansion, expansionEnabled);
         }
 
         public void SetSelectedRace(Race race)
         {
-            sessionDataAccess.SetSelectedRace(race.RaceID);
+            sessionDataAccess.UpdateSelectedRace(race.RaceID);
 
             var startingPlanets = raceDataAccess.GetStartingPlanets(race.RaceID);
 
@@ -52,7 +47,7 @@ namespace TwilightImperiumMasterCompanion.Core.Services.Interfaces
         }
 
         public void SavePlanet(Planet planet, bool exhausted = true){
-            sessionDataAccess.SavePlanet(planet.PlanetId, exhausted);
+            sessionDataAccess.UpdatePlanet(planet.PlanetId, exhausted);
         }
 
         public List<Planet> GetSessionPlanets(){

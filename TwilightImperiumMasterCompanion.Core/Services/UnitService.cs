@@ -15,7 +15,7 @@ namespace TwilightImperiumMasterCompanion.Core.Services
 
         public List<Unit> GetUnits()
 		{
-			return unitDataAccess.GetUnits(false, false);
+			return unitDataAccess.GetUnits();
 		}
     }
 }

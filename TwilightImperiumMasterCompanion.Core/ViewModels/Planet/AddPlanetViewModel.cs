@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using MvvmCross.Core.ViewModels;
+using TwilightImperiumMasterCompanion.Core.Model;
 using TwilightImperiumMasterCompanion.Core.Resources;
 using TwilightImperiumMasterCompanion.Core.Services.Interfaces;
 

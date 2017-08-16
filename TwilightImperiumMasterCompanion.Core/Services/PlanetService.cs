@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces;
 using TwilightImperiumMasterCompanion.Core.Services.Interfaces;
 

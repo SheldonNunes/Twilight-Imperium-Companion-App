@@ -3,7 +3,7 @@ using MvvmCross.Platform.Converters;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
-    public class RaceIconImagePathValueConverter : MvxValueConverter<string>
+    public class IconImagePathValueConverter : MvxValueConverter<string>
     {
         protected override object Convert(string value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {

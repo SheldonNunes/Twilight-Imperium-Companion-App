@@ -5,7 +5,7 @@ using TwilightImperiumMasterCompanion.Core;
 
 namespace TwilightImperium.Core.Tests.Services
 {
-    public class CoreSqliteService : ISQLite
+    public class TestSqliteService : ISQLite
     {
         private SQLiteConnection connection;
 

@@ -1,4 +1,4 @@
-﻿namespace TwilightImperiumMasterCompanion.Core
+﻿namespace TwilightImperiumMasterCompanion.Core.Model
 {
 	public class Planet
 	{

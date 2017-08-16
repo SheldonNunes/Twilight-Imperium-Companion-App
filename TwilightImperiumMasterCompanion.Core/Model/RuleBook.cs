@@ -1,5 +1,4 @@
-﻿using System;
-namespace TwilightImperiumMasterCompanion.Core.Model
+﻿namespace TwilightImperiumMasterCompanion.Core.Model
 {
     public class RuleBook
     {
@@ -7,10 +6,6 @@ namespace TwilightImperiumMasterCompanion.Core.Model
         {
             get;
             set;
-        }
-
-        public RuleBook()
-        {
         }
     }
 }

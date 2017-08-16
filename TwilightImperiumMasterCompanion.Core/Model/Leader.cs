@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using TwilightImperiumMasterCompanion.Core.Enum;
+﻿using System.Collections.Generic;
 using TwilightImperiumMasterCompanion.Core.Helpers;
 
 namespace TwilightImperiumMasterCompanion.Core.Model

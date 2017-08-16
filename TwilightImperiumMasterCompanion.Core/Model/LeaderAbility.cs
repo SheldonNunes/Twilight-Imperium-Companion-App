@@ -1,5 +1,4 @@
-﻿using System;
-namespace TwilightImperiumMasterCompanion.Core.Model
+﻿namespace TwilightImperiumMasterCompanion.Core.Model
 {
     public class LeaderAbility
     {

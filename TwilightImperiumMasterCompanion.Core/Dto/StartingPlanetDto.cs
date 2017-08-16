@@ -8,7 +8,6 @@
             set;
         }
 
-
 		public string Title
 		{
 			get;

@@ -5,6 +5,7 @@ using SQLite.Net;
 using TwilightImperiumMasterCompanion.Core;
 using TwilightImperiumMasterCompanion.Core.DataAccess;
 using TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces;
+using TwilightImperiumMasterCompanion.Core.DataAccess.Scripts;
 using TwilightImperiumMasterCompanion.Core.Services.Interfaces;
 
 namespace TwilightImperium.Core.Tests.Services
@@ -21,11 +22,13 @@ namespace TwilightImperium.Core.Tests.Services
 		{
 			base.ClearAll();
 
-			Ioc.RegisterSingleton<ISQLite>(new CoreSqliteService());
+			Ioc.RegisterSingleton<ISQLite>(new TestSqliteService());
 			Ioc.RegisterType<IRaceService, RaceService>();
 			Ioc.RegisterType<ISessionService, SessionService>();
 			Ioc.RegisterType<IRaceDataAccess, RaceDataAccess>();
 			Ioc.RegisterType<ISessionDataAccess, SessionDataAccess>();
+			Ioc.RegisterType<IScriptRepository, ScriptRepository>();
+
 			databaseConnection = Mvx.Resolve<ISQLite>().GetConnection();
 			databaseConnection.BeginTransaction();
 			raceService = Mvx.Resolve<IRaceService>();

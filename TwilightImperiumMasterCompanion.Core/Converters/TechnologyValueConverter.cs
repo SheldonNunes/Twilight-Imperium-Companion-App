@@ -6,7 +6,7 @@ using TwilightImperiumMasterCompanion.Core.Model;
 
 namespace TwilightImperiumMasterCompanion.Core.Converters
 {
-    public class StringListToBulletPointValueConverter : MvxValueConverter<List<Technology>, string>
+    public class TechnologyValueConverter : MvxValueConverter<List<Technology>, string>
     {
         protected override string Convert(List<Technology> value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {

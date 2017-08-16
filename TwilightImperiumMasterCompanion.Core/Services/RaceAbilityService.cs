@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces;
 
-namespace TwilightImperiumMasterCompanion.Core
+namespace TwilightImperiumMasterCompanion.Core.Services
 {
     public class RaceAbilityService : BaseService, IRaceAbilityService
 	{
@@ -13,7 +13,7 @@ namespace TwilightImperiumMasterCompanion.Core
 
 		public List<RaceAbility> GetRaceAbility(Race race)
 		{
-			return raceDataAccess.GetRaceAbility(race);
+			return raceDataAccess.GetRaceAbilities(race);
 		}
 	}
 }

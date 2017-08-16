@@ -1,0 +1,1 @@
+﻿UPDATE Session SET {0} = '{1}'

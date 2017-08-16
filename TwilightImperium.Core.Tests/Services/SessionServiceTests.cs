@@ -7,6 +7,7 @@ using SQLite.Net;
 using TwilightImperiumMasterCompanion.Core;
 using TwilightImperiumMasterCompanion.Core.DataAccess;
 using TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces;
+using TwilightImperiumMasterCompanion.Core.DataAccess.Scripts;
 using TwilightImperiumMasterCompanion.Core.Enum;
 using TwilightImperiumMasterCompanion.Core.Model;
 using TwilightImperiumMasterCompanion.Core.Services.Interfaces;
@@ -23,11 +24,12 @@ namespace TwilightImperium.Core.Tests.Services
         public void Init()
         {
             base.ClearAll();
-            var sqLite = new CoreSqliteService();
+            var sqLite = new TestSqliteService();
             Ioc.RegisterSingleton<ISQLite>(sqLite);
             Ioc.RegisterType<ISessionService, SessionService>();
             Ioc.RegisterType<ISessionDataAccess, SessionDataAccess>();
             Ioc.RegisterType<IRaceDataAccess, RaceDataAccess>();
+			Ioc.RegisterType<IScriptRepository, ScriptRepository>();
 
 			databaseConnection = Mvx.Resolve<ISQLite>().GetConnection();
 
@@ -40,41 +42,6 @@ namespace TwilightImperium.Core.Tests.Services
 		public void TearDown()
 		{
             databaseConnection.Rollback();
-		}
-		[Test]
-		public void GetShatteredEmpireExpansion_ReturnsFalseByDefault()
-		{
-			//Assert
-			var result = sessionService.GetExpansionStatus(Expansion.ShatteredEmpire);
-            Assert.IsFalse(result);
-		}
-
-        [Test]
-        public void GetShardsOfTheThroneExpansion_ReturnsFalseByDefault()
-		{
-			//Assert
-            var result = sessionService.GetExpansionStatus(Expansion.ShardsOfTheThrone);
-            Assert.IsFalse(result);
-		}
-
-        [Test]
-        public void GetShatteredEmpireExpansion_AfterBeingSetToTrue_ReturnsTrue()
-        {
-			//Act
-			sessionService.SaveExpansion(Expansion.ShatteredEmpire, true);
-			//Assert
-			var result = sessionService.GetExpansionStatus(Expansion.ShatteredEmpire);
-            Assert.IsTrue(result);
-        }
-
-        [Test]
-        public void GetShardsOfTheThroneExpansion_AfterBeingSetToTrue_ReturnsTrue()
-		{
-			//Act
-            sessionService.SaveExpansion(Expansion.ShardsOfTheThrone, true);
-			//Assert
-			var result = sessionService.GetExpansionStatus(Expansion.ShardsOfTheThrone);
-			Assert.IsTrue(result);
 		}
 
 		[Test]

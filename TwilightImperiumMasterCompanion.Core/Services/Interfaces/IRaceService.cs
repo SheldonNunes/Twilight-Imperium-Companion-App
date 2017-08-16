@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TwilightImperiumMasterCompanion.Core.Dto;
 using TwilightImperiumMasterCompanion.Core.Model;
 
-namespace TwilightImperiumMasterCompanion.Core
+namespace TwilightImperiumMasterCompanion.Core.Services.Interfaces
 {
 	public interface IRaceService
 	{

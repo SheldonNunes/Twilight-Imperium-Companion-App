@@ -8,8 +8,6 @@ namespace TwilightImperiumMasterCompanion.Core.Services.Interfaces
     {
         void SaveExpansion(Expansion expansion, bool expansionEnabled);
 
-        bool GetExpansionStatus(Expansion expansion);
-
         void SetSelectedRace(Race race);
 
         Race GetSelectedRace();

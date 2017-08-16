@@ -1,0 +1,2 @@
+﻿UPDATE Session 
+    SET RaceID = ?

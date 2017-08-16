@@ -19,7 +19,7 @@ namespace TwilightImperium.Core.Tests.Database
         public void init()
         {
             base.ClearAll();
-            Ioc.RegisterSingleton<ISQLite>(new CoreSqliteService());
+            Ioc.RegisterSingleton<ISQLite>(new TestSqliteService());
             databaseConnection = Mvx.Resolve<ISQLite>().GetConnection();
             sessionTableInfo = databaseConnection.GetTableInfo("Session");
         }

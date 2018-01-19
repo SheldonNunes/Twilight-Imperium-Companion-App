@@ -17,7 +17,7 @@ namespace TwilightImperium.Core.Tests.Database
 		public void Init()
 		{
 			base.ClearAll();
-			Ioc.RegisterSingleton<ISQLite>(new CoreSqliteService());
+			Ioc.RegisterSingleton<ISQLite>(new TestSqliteService());
 			databaseConnection = Mvx.Resolve<ISQLite>().GetConnection();
 
 			planetTableInfo = databaseConnection.GetTableInfo("Planet");
@@ -42,12 +42,12 @@ namespace TwilightImperium.Core.Tests.Database
 		}
 
 		[Test]
-		public void RaceTable_Has_OnlyTwoColumns()
+		public void PlanetTable_Has_OnlyFiveColumns()
 		{
 			//Act
 			var result = planetTableInfo;
 			//Assert
-			Assert.AreEqual(2, result.Count);
+			Assert.AreEqual(5, result.Count);
 		}
 	}
 }

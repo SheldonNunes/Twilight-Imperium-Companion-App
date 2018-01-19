@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces;
 using TwilightImperiumMasterCompanion.Core.Dto;
-using TwilightImperiumMasterCompanion.Core.Enum;
 using TwilightImperiumMasterCompanion.Core.Model;
 using TwilightImperiumMasterCompanion.Core.Services.Interfaces;
 
-namespace TwilightImperiumMasterCompanion.Core
+namespace TwilightImperiumMasterCompanion.Core.Services
 {
     public class RaceService : BaseService, IRaceService
 	{
@@ -27,9 +24,7 @@ namespace TwilightImperiumMasterCompanion.Core
 
         public List<Race> GetRaces()
 		{
-            var shatteredEmpiresEnabled = sessionService.GetExpansionStatus(Expansion.ShatteredEmpire);
-            var shardsOfTheThroneEnabled = sessionService.GetExpansionStatus(Expansion.ShardsOfTheThrone);
-            return raceDataAccess.GetRaces(shatteredEmpiresEnabled, shardsOfTheThroneEnabled);
+            return raceDataAccess.GetRaces();
 		}
 
         public List<StartingPlanetDto> GetStartingPlanets(Race race)
@@ -48,5 +43,19 @@ namespace TwilightImperiumMasterCompanion.Core
 			var technologyList = raceDataAccess.GetStartingTechnology(race.RaceID);
             return technologyList;
 		}
+
+        public List<Leader> GetLeaders(Race race)
+        {
+            var leaders = raceDataAccess.GetLeaders(race.RaceID);
+
+            foreach (var leader in leaders)
+            {
+                var leaderAbilities = raceDataAccess.GetLeaderAbilities(leader.LeaderType);
+                leader.Abilities = leaderAbilities;
+            }
+
+            return leaders;
+        }
+
     }
 }

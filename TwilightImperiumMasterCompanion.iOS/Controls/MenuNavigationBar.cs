@@ -5,6 +5,14 @@ namespace TwilightImperiumMasterCompanion.iOS
 {
     public class MenuNavigationBar : INavigationBar
     {
+
+		public EventHandler RightBarButtonPressed
+		{
+			get;
+			set;
+		}
+
+
         public EventHandler LeftBarButtonPressed
         {
             get;
@@ -17,6 +25,10 @@ namespace TwilightImperiumMasterCompanion.iOS
                             UIImage.FromBundle("HamburgerIcon"),
                             UIBarButtonItemStyle.Plain,
                 LeftBarButtonPressed), false);
+
+            viewController.NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(
+                UIBarButtonSystemItem.Add,
+                RightBarButtonPressed), false);
         }
     }
 }

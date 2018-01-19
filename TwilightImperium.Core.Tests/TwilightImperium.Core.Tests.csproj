@@ -74,16 +74,22 @@
     <Compile Include="Services\RaceServiceTests.cs" />
     <Compile Include="Database\SessionTableTests.cs" />
     <Compile Include="Database\RaceTableTests.cs" />
-    <Compile Include="Services\CoreSqliteService.cs" />
     <Compile Include="Services\SessionServiceTests.cs" />
     <Compile Include="Services\UnitServiceTests.cs" />
     <Compile Include="Database\UnitTableTests.cs" />
     <Compile Include="Database\PlanetTableTests.cs" />
     <Compile Include="Database\RaceStartingPlanetsTableTests.cs" />
-    <Compile Include="Services\RaceServiceStartingUnitTests.cs" />
+    <Compile Include="Services\RaceServiceStartingUnitsTests.cs" />
     <Compile Include="Services\RaceServiceStartingTechnologyTests.cs" />
     <Compile Include="Services\RaceServiceStartingPlanetsTests.cs" />
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
+    <Compile Include="Services\RaceServiceLeadersTests.cs" />
+    <Compile Include="Database\RaceLeaderTableTests.cs" />
+    <Compile Include="Database\LeaderTableTests.cs" />
+    <Compile Include="Database\RaceAbilityTranslationTableTests.cs" />
+    <Compile Include="Database\LeaderAbilityTranslationTableTests.cs" />
+    <Compile Include="Services\PlanetServiceTests.cs" />
+    <Compile Include="TestSqliteService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using TwilightImperiumMasterCompanion.Core.Enum;
 
 namespace TwilightImperiumMasterCompanion.Core.Services.Interfaces
@@ -7,10 +8,12 @@ namespace TwilightImperiumMasterCompanion.Core.Services.Interfaces
     {
         void SaveExpansion(Expansion expansion, bool expansionEnabled);
 
-        bool GetExpansionStatus(Expansion expansion);
-
         void SetSelectedRace(Race race);
 
-		Race GetSelectedRace();
+        Race GetSelectedRace();
+
+        void SavePlanet(Planet planet, bool exhausted);
+
+        List<Planet> GetSessionPlanets();
     }
 }

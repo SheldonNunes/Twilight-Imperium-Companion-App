@@ -6,16 +6,20 @@ namespace TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces
 {
     public interface IRaceDataAccess
     {
-        List<Race> GetRaces(bool ShatteredEmpiresExpansion, bool ShardsOfTheThroneExpansion);
+        List<Race> GetRaces();
 
         Race GetRace(string raceName);
 
-        List<RaceAbility> GetRaceAbility(Race race);
+        List<RaceAbility> GetRaceAbilities(Race race);
 
         List<StartingPlanetDto> GetStartingPlanets(int raceID);
 
         List<StartingUnitDto> GetStartingUnits(int raceID);
 
         List<Technology> GetStartingTechnology(int raceID);
+
+        List<Leader> GetLeaders(int raceID);
+
+        List<LeaderAbility> GetLeaderAbilities(string leaderType);
     }
 }

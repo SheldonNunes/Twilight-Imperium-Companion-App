@@ -1,4 +1,4 @@
-﻿namespace TwilightImperiumMasterCompanion.Core
+﻿namespace TwilightImperiumMasterCompanion.Core.Model
 {
     public class Race
 	{
@@ -9,12 +9,6 @@
 		}
 
 		public string Name
-		{
-			get;
-			set;
-		}
-
-		public int Expansion
 		{
 			get;
 			set;

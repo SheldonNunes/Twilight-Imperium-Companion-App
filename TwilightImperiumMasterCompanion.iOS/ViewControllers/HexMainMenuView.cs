@@ -50,17 +50,15 @@ namespace TwilightImperiumMasterCompanion.iOS
 			View.AddSubview(hexMenuView);
 
 			var set = this.CreateBindingSet<HexMainMenuView, HexMainMenuViewModel>();
-            //set.Bind(NavigationItem.LeftBarButtonItem)
-            //   .To(vm => vm.CloseMenu);
-            ////set.Bind(this).For(ActiveMenu).To(vm => vm.SelectedMenu)
-            //set.Apply();
 
             this.AddBindings(new Dictionary<object, string>()
             {
                 { NavigationItem.LeftBarButtonItem, "Clicked CloseMenu"},
                 { hexMenuView.Hexes[MenuPageType.Race], "TouchUpInside NavigateToRaceView" },
                 { hexMenuView.Hexes[MenuPageType.Ship], "TouchUpInside NavigateToUnitView" },
-                { this, "ActiveMenu SelectedMenu"}
+                { hexMenuView.Hexes[MenuPageType.Rules], "TouchUpInside NavigateToRulesView" },
+                { hexMenuView.Hexes[MenuPageType.Planet], "TouchUpInside NavigateToPlanetsView" },
+				{ this, "ActiveMenu SelectedMenu"}
             });
 		}
 

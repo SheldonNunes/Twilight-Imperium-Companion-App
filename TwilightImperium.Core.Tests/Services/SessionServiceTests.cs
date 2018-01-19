@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using MvvmCross.Platform;
 using MvvmCross.Test.Core;
 using NUnit.Framework;
@@ -6,6 +7,7 @@ using SQLite.Net;
 using TwilightImperiumMasterCompanion.Core;
 using TwilightImperiumMasterCompanion.Core.DataAccess;
 using TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces;
+using TwilightImperiumMasterCompanion.Core.DataAccess.Scripts;
 using TwilightImperiumMasterCompanion.Core.Enum;
 using TwilightImperiumMasterCompanion.Core.Model;
 using TwilightImperiumMasterCompanion.Core.Services.Interfaces;
@@ -22,11 +24,14 @@ namespace TwilightImperium.Core.Tests.Services
         public void Init()
         {
             base.ClearAll();
-            var sqLite = new CoreSqliteService();
+            var sqLite = new TestSqliteService();
             Ioc.RegisterSingleton<ISQLite>(sqLite);
             Ioc.RegisterType<ISessionService, SessionService>();
             Ioc.RegisterType<ISessionDataAccess, SessionDataAccess>();
-            databaseConnection = Mvx.Resolve<ISQLite>().GetConnection();
+            Ioc.RegisterType<IRaceDataAccess, RaceDataAccess>();
+			Ioc.RegisterType<IScriptRepository, ScriptRepository>();
+
+			databaseConnection = Mvx.Resolve<ISQLite>().GetConnection();
 
             var plat = new SQLite.Net.Platform.Generic.SQLitePlatformGeneric();
             databaseConnection.BeginTransaction();
@@ -37,41 +42,6 @@ namespace TwilightImperium.Core.Tests.Services
 		public void TearDown()
 		{
             databaseConnection.Rollback();
-		}
-		[Test]
-		public void GetShatteredEmpireExpansion_ReturnsFalseByDefault()
-		{
-			//Assert
-			var result = sessionService.GetExpansionStatus(Expansion.ShatteredEmpire);
-            Assert.IsFalse(result);
-		}
-
-        [Test]
-        public void GetShardsOfTheThroneExpansion_ReturnsFalseByDefault()
-		{
-			//Assert
-            var result = sessionService.GetExpansionStatus(Expansion.ShardsOfTheThrone);
-            Assert.IsFalse(result);
-		}
-
-        [Test]
-        public void GetShatteredEmpireExpansion_AfterBeingSetToTrue_ReturnsTrue()
-        {
-			//Act
-			sessionService.SaveExpansion(Expansion.ShatteredEmpire, true);
-			//Assert
-			var result = sessionService.GetExpansionStatus(Expansion.ShatteredEmpire);
-            Assert.IsTrue(result);
-        }
-
-        [Test]
-        public void GetShardsOfTheThroneExpansion_AfterBeingSetToTrue_ReturnsTrue()
-		{
-			//Act
-            sessionService.SaveExpansion(Expansion.ShardsOfTheThrone, true);
-			//Assert
-			var result = sessionService.GetExpansionStatus(Expansion.ShardsOfTheThrone);
-			Assert.IsTrue(result);
 		}
 
 		[Test]
@@ -138,6 +108,38 @@ namespace TwilightImperium.Core.Tests.Services
             var result = sessionService.GetSelectedRace();
             //Assert
             Assert.AreEqual(race.RaceID, result.RaceID);
+		}
+
+		[Test]
+		public void SavePlanet_SavesPlanetInSessionTable()
+		{
+            //Arrange
+            var planet = new Planet() { PlanetId = 1 };
+            sessionService.SavePlanet(planet, false);
+
+			//Act
+			var result = sessionService.GetSessionPlanets();
+			//Assert
+			Assert.AreEqual(1, result.First().PlanetId);
+		}
+
+		[Test]
+		public void SavePlanets_SavesPlanetsInSessionTable()
+		{
+			//Arrange
+			var planet = new Planet() { PlanetId = 1 };
+			sessionService.SavePlanet(planet, false);
+
+			var planetTwo = new Planet() { PlanetId = 2 };
+			sessionService.SavePlanet(planetTwo, false);
+
+			var planetThree = new Planet() { PlanetId = 3 };
+			sessionService.SavePlanet(planetThree, false);
+
+			//Act
+			var result = sessionService.GetSessionPlanets();
+			//Assert
+            Assert.AreEqual(3, result.Count);
 		}
     }
 }

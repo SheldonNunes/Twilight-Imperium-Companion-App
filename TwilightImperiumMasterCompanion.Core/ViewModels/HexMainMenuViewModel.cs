@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
+using TwilightImperiumMasterCompanion.Core.ViewModels;
+using TwilightImperiumMasterCompanion.Core.ViewModels.Rules;
 
 namespace TwilightImperiumMasterCompanion.Core
 {
-    public class HexMainMenuViewModel : MvxViewModel<NavigationParameters>
+    public class HexMainMenuViewModel : MvxViewModel<MenuNavigationParameters>
 	{
 		private MenuPageType selectedMenu;
 		public MenuPageType SelectedMenu
@@ -68,6 +69,34 @@ namespace TwilightImperiumMasterCompanion.Core
 			}
 		}
 
+		private MvxCommand navigateToRulesView;
+		public MvxCommand NavigateToRulesView
+		{
+			get
+			{
+				navigateToRulesView = navigateToRulesView ?? new MvxCommand(() =>
+				{
+					navigationService.Navigate<RulesTableViewModel>();
+					navigationService.Close(this);
+				});
+				return navigateToRulesView;
+			}
+		}
+
+		private MvxCommand navigateToPlanetsView;
+		public MvxCommand NavigateToPlanetsView
+		{
+			get
+			{
+				navigateToPlanetsView = navigateToPlanetsView ?? new MvxCommand(() =>
+				{
+					navigationService.Navigate<PlanetViewModel>();
+					navigationService.Close(this);
+				});
+				return navigateToPlanetsView;
+			}
+		}
+
 		//private MvxBundle presentationBundle;
         private readonly IMvxNavigationService navigationService;
 
@@ -86,7 +115,7 @@ namespace TwilightImperiumMasterCompanion.Core
 			};
 		}
 
-        public override Task Initialize(NavigationParameters parameter)
+        public override Task Initialize(MenuNavigationParameters parameter)
         {
             return Task.Run(() =>
             {

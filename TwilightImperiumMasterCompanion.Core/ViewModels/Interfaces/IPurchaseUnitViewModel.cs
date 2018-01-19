@@ -1,8 +1,8 @@
 ﻿using MvvmCross.Core.ViewModels;
 
-namespace TwilightImperiumMasterCompanion.Core
+namespace TwilightImperiumMasterCompanion.Core.ViewModels.Interfaces
 {
-	public interface IPurchaseUnitViewModel : IMvxViewModel
-	{
-	}
+    public interface IPurchaseUnitViewModel : IMvxViewModel
+    {
+    }
 }

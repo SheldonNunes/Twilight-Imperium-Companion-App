@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using TwilightImperiumMasterCompanion.Core.DataAccess.Interfaces;
+using TwilightImperiumMasterCompanion.Core.Model;
 using TwilightImperiumMasterCompanion.Core.Services.Interfaces;
 
 namespace TwilightImperiumMasterCompanion.Core.Services
@@ -14,7 +15,7 @@ namespace TwilightImperiumMasterCompanion.Core.Services
 
         public List<Unit> GetUnits()
 		{
-			return unitDataAccess.GetUnits(false, false);
+			return unitDataAccess.GetUnits();
 		}
     }
 }

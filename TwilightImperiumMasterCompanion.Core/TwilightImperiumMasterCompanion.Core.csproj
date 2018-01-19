@@ -50,14 +50,13 @@
     <Compile Include="Services\RaceService.cs" />
     <Compile Include="Messages\RaceSelectedMessage.cs" />
     <Compile Include="Services\Interfaces\ISQLite.cs" />
-    <Compile Include="DataAccess\RaceDataAccess.cs" />
     <Compile Include="Services\BaseService.cs" />
     <Compile Include="Services\Interfaces\IRaceService.cs" />
     <Compile Include="Model\RaceAbility.cs" />
     <Compile Include="Services\RaceAbilityService.cs" />
     <Compile Include="Services\Interfaces\IRaceAbilityService.cs" />
     <Compile Include="Converters\RaceAbilityConverter.cs" />
-    <Compile Include="Converters\RaceIconImagePathValueConverter.cs" />
+    <Compile Include="Converters\IconImagePathValueConverter.cs" />
     <Compile Include="Enum\MenuPageType.cs" />
     <Compile Include="Services\UnitService.cs" />
     <Compile Include="DataAccess\Interfaces\IUnitDataAccess.cs" />
@@ -68,28 +67,49 @@
     <Compile Include="ViewModels\Unit\UnitPurchaseViewModel.cs" />
     <Compile Include="ViewModels\Race\RaceSetupViewModel.cs" />
     <Compile Include="ViewModels\Race\RaceTabViewModel.cs" />
-    <Compile Include="ViewModels\Race\RaceLeadersViewModel.cs" />
+    <Compile Include="ViewModels\Race\RaceLeadersPageViewModel.cs" />
     <Compile Include="ViewModels\Race\RaceOverviewViewModel.cs" />
     <Compile Include="ViewModels\Setup\RaceSelectionViewModel.cs" />
     <Compile Include="ViewModels\Setup\SelectStartingOptionViewModel.cs" />
     <Compile Include="ViewModels\Setup\ConfirmRaceViewModel.cs" />
     <Compile Include="ViewModels\HexMainMenuViewModel.cs" />
     <Compile Include="NavigationParameters\SelectedRaceNavigationParameter.cs" />
-    <Compile Include="NavigationParameters\NavigationParameters.cs" />
+    <Compile Include="NavigationParameters\MenuNavigationParameters.cs" />
     <Compile Include="DataAccess\Interfaces\ISessionDataAccess.cs" />
-    <Compile Include="DataAccess\SessionDataAccess.cs" />
     <Compile Include="Enum\Expansion.cs" />
     <Compile Include="Services\SessionService.cs" />
     <Compile Include="Model\Session.cs" />
-    <Compile Include="DataAccess\UnitDataAccess.cs" />
     <Compile Include="Converters\UnitValueConverter.cs" />
     <Compile Include="Dto\StartingUnitDto.cs" />
     <Compile Include="Dto\StartingPlanetDto.cs" />
     <Compile Include="Model\Technology.cs" />
-    <Compile Include="Converters\StartingTechnologyValueConverter.cs" />
+    <Compile Include="Converters\TechnologyValueConverter.cs" />
     <Compile Include="ViewModels\Race\RaceViewModel.cs" />
     <Compile Include="ViewModels\Unit\UnitViewModel.cs" />
     <Compile Include="Helpers\IconImageNameBuilder.cs" />
+    <Compile Include="Model\Leader.cs" />
+    <Compile Include="Enum\LeaderType.cs" />
+    <Compile Include="Model\LeaderAbility.cs" />
+    <Compile Include="Converters\LeaderAbilityValueConverter.cs" />
+    <Compile Include="ViewModels\Unit\UnitDetailViewModel.cs" />
+    <Compile Include="NavigationParameters\SelectedUnitNavigationParameter.cs" />
+    <Compile Include="ViewModels\Rules\RulesTableViewModel.cs" />
+    <Compile Include="Model\RuleBook.cs" />
+    <Compile Include="ViewModels\Rules\RulesViewModel.cs" />
+    <Compile Include="NavigationParameters\RuleBookNavigationParameter.cs" />
+    <Compile Include="ViewModels\Race\RaceLeadersPageComponentViewModel.cs" />
+    <Compile Include="ViewModels\Planet\PlanetViewModel.cs" />
+    <Compile Include="ViewModels\Planet\AddPlanetViewModel.cs" />
+    <Compile Include="DataAccess\Interfaces\IPlanetDataAccess.cs" />
+    <Compile Include="Services\Interfaces\IPlanetService.cs" />
+    <Compile Include="Services\PlanetService.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="DataAccess\Implementation\PlanetDataAccess.cs" />
+    <Compile Include="DataAccess\Implementation\RaceDataAccess.cs" />
+    <Compile Include="DataAccess\Implementation\SessionDataAccess.cs" />
+    <Compile Include="DataAccess\Implementation\UnitDataAccess.cs" />
+    <Compile Include="DataAccess\ScriptRepository.cs" />
+    <Compile Include="DataAccess\Interfaces\IScriptRepository.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -110,12 +130,32 @@
     <Folder Include="NavigationParameters\" />
     <Folder Include="Dto\" />
     <Folder Include="Helpers\" />
+    <Folder Include="ViewModels\Rules\" />
+    <Folder Include="ViewModels\Planet\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="DataAccess\Scripts\" />
+    <Folder Include="DataAccess\Implementation\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\UIStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>UIStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="DataAccess\Scripts\GetRaces.sql" />
+    <EmbeddedResource Include="DataAccess\Scripts\GetStartingUnits.sql" />
+    <EmbeddedResource Include="DataAccess\Scripts\GetStartingTechnology.sql" />
+    <EmbeddedResource Include="DataAccess\Scripts\GetStartingPlanets.sql" />
+    <EmbeddedResource Include="DataAccess\Scripts\GetRaceAbilities.sql" />
+    <EmbeddedResource Include="DataAccess\Scripts\GetRace.sql" />
+    <EmbeddedResource Include="DataAccess\Scripts\GetLeaders.sql" />
+    <EmbeddedResource Include="DataAccess\Scripts\GetLeaderAbilities.sql" />
+    <EmbeddedResource Include="DataAccess\Scripts\GetPlanets.sql" />
+    <EmbeddedResource Include="DataAccess\Scripts\UpdateSelectedRace.sql" />
+    <EmbeddedResource Include="DataAccess\Scripts\UpdatePlanet.sql" />
+    <EmbeddedResource Include="DataAccess\Scripts\UpdateExpansionStatus.sql" />
+    <EmbeddedResource Include="DataAccess\Scripts\GetSelectedRace.sql" />
+    <EmbeddedResource Include="DataAccess\Scripts\GetSessionPlanets.sql" />
+    <EmbeddedResource Include="DataAccess\Scripts\GetUnits.sql" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SQLite.Net">
@@ -149,5 +189,8 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Resources\AppDatabase.db" />
+    <None Include="Resources\BaseRuleBook.pdf" />
+    <None Include="Resources\ShatteredEmpiresRuleBook.pdf" />
+    <None Include="Resources\ShardsOfTheThroneRuleBook.pdf" />
   </ItemGroup>
 </Project>

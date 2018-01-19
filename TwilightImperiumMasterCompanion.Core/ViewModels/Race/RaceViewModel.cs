@@ -12,7 +12,7 @@ namespace TwilightImperiumMasterCompanion.Core.ViewModels.Race
 		{
 			get
 			{
-                showHexMainMenu = showHexMainMenu ?? new MvxAsyncCommand(() => navigationService.Navigate<HexMainMenuViewModel, NavigationParameters>(new NavigationParameters() { CurrentMenu = MenuPageType.Race }));
+                showHexMainMenu = showHexMainMenu ?? new MvxAsyncCommand(() => navigationService.Navigate<HexMainMenuViewModel, MenuNavigationParameters>(new MenuNavigationParameters() { CurrentMenu = MenuPageType.Race }));
 				return showHexMainMenu;
 			}
 		}

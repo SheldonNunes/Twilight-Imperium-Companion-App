@@ -14,20 +14,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="322" misplaced="YES">
-                        <rect key="frame" x="5" y="0.0" width="50" height="50"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="322">
+                        <rect key="frame" x="5" y="0.0" width="49" height="49"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="49" id="329"/>
+                            <constraint id="356" firstAttribute="width" secondItem="322" secondAttribute="height" multiplier="1:1"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ship Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="320" misplaced="YES">
-                        <rect key="frame" x="70" y="17" width="70" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ship Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="320">
+                        <rect key="frame" x="69" y="16" width="71" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="332" misplaced="YES">
-                        <rect key="frame" x="198" y="10" width="123" height="29"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="332">
+                        <rect key="frame" x="197" y="10" width="123" height="29"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="333">
                                 <rect key="frame" x="0.0" y="0.0" width="7" height="29"/>
@@ -45,16 +45,20 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="322" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" constant="5" id="324"/>
-                    <constraint firstItem="322" firstAttribute="centerY" secondItem="YTl-1W-gDM" secondAttribute="centerY" id="325"/>
-                    <constraint firstItem="322" firstAttribute="centerY" secondItem="YTl-1W-gDM" secondAttribute="centerY" id="327"/>
                     <constraint firstItem="322" firstAttribute="height" secondItem="YTl-1W-gDM" secondAttribute="height" id="328"/>
                     <constraint firstItem="320" firstAttribute="leading" secondItem="322" secondAttribute="trailing" constant="15" id="330"/>
                     <constraint firstItem="320" firstAttribute="centerY" secondItem="YTl-1W-gDM" secondAttribute="centerY" id="331"/>
                     <constraint firstItem="332" firstAttribute="trailing" secondItem="YTl-1W-gDM" secondAttribute="trailing" id="346"/>
                     <constraint firstItem="332" firstAttribute="centerY" secondItem="YTl-1W-gDM" secondAttribute="centerY" id="347"/>
+                    <constraint id="353" firstItem="322" firstAttribute="top" secondItem="YTl-1W-gDM" secondAttribute="top"/>
                 </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="3" y="-65"/>
+            <connections>
+                <outlet property="shipName" destination="320" id="name-outlet-320"/>
+                <outlet property="shipCost" destination="333" id="name-outlet-333"/>
+                <outlet property="shipImage" destination="322" id="name-outlet-322"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>
@@ -67,7 +71,7 @@
         <image name="NekroVirusIcon" width="180" height="180"/>
         <image name="EmiratesofHacanIcon" width="187" height="213"/>
         <image name="EmbersofMuaatIcon" width="180" height="180"/>
-        <image name="BaronyofLetnevIcon" width="137" height="134"/>
+        <image name="BaronyofLetnevIcon" width="300" height="300"/>
         <image name="ClanofSaarIcon" width="149" height="150"/>
         <image name="FederationofSolIcon" width="213" height="190"/>
         <image name="GhostsofCreussIcon" width="175" height="164"/>

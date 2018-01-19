@@ -38,7 +38,7 @@ namespace TwilightImperiumMasterCompanion.iOS
             var set = this.CreateBindingSet<RaceSetupView, RaceSetupViewModel>();
             set.Bind(source).For(v => v.ItemsSource).To(vm => vm.StartingPlanets);
             set.Bind(startingUnitsSource).For(v => v.ItemsSource).To(vm => vm.StartingUnits);
-            set.Bind(startingTechnologiesTextView).For(v => v.Text).To(vm => vm.StartingTechnology).WithConversion("StartingTechnology");
+            set.Bind(startingTechnologiesTextView).For(v => v.Text).To(vm => vm.StartingTechnology).WithConversion("StringListToBulletPoint");
 			set.Bind(NavigationItem.LeftBarButtonItem).To(vm => vm.ShowHexMainMenu);
 			set.Apply();
 
